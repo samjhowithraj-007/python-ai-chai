@@ -1,4 +1,4 @@
-# Publishes the website/ folder to GitHub Pages (www.samjhowithraj.online) on every push that changes it.
+# Publishes the website/ folder to GitHub Pages (www.samjhowithraj.online) on every push that changes it or this file.
 name: Publish website
 on:
   push:
