@@ -1,0 +1,67 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f05-cta-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f05-cta-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f05-cta-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f05-cta-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f05-cta-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f05-cta-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f05-cta-w { display:inline-block; }
+  .f05-cta-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f05-cta-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f05-cta-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f05-cta-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f05-cta-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f05-cta-k { color:#0AF0F0; } .f05-cta-s { color:#FFB020; } .f05-cta-n { color:#FF8FA3; } .f05-cta-f { color:#B8F5A0; }
+  .f05-cta-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f05-cta-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div data-hf-id="hf-nvuc" id="root" data-composition-id="05-cta" data-width="1080" data-height="1080">
+  <div data-hf-id="hf-xw5t" class="clip f05-cta-bg" id="f05-cta-bg" data-start="0" data-duration="5" data-track-index="0"><div data-hf-id="hf-jwf3" class="f05-cta-grid"></div></div>
+  <div data-hf-id="hf-w3se" class="clip f05-cta-stage" id="f05-cta-stage" data-start="0" data-duration="5" data-track-index="1">
+    <div data-hf-id="hf-zpf8" class="f05-cta-h" id="f05-cta-l1" style="top:128px;font-size:76px"><span data-hf-id="hf-vgz6" class="f05-cta-w">Agar</span> <span data-hf-id="hf-50rk" class="f05-cta-w f05-cta-a">chai</span> <span data-hf-id="hf-5435" class="f05-cta-w">bana</span> <span data-hf-id="hf-of4l" class="f05-cta-w">sakte</span> <span data-hf-id="hf-fu9k" class="f05-cta-w">ho,</span></div>
+    <div data-hf-id="hf-gpk3" class="f05-cta-h" id="f05-cta-l2" style="top:230px;font-size:92px"><span data-hf-id="hf-3uz1" class="f05-cta-w f05-cta-c">Python</span> <span data-hf-id="hf-r4if" class="f05-cta-w">seekh</span> <span data-hf-id="hf-21ft" class="f05-cta-w">sakte</span> <span data-hf-id="hf-f1ni" class="f05-cta-w">ho.</span></div>
+    <svg data-hf-id="hf-zoo9" id="f05-cta-cup" viewBox="0 0 300 300" width="300" height="300" style="position:absolute;left:390px;top:400px" fill="none">
+      <path data-hf-id="hf-9ew6" id="f05-cta-fill" d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#FFB020" opacity=".85" />
+      <path data-hf-id="hf-qh32" d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="7" stroke-linejoin="round" />
+      <path data-hf-id="hf-uocs" d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round" />
+      <path data-hf-id="hf-i0eq" d="M40 284 L260 284" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round" opacity=".7" />
+      <path data-hf-id="hf-xiy1" class="f05-cta-steam" d="M115 108 Q100 88 115 68 Q130 48 115 28" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" opacity=".75" stroke-dasharray="100" stroke-dashoffset="100" />
+      <path data-hf-id="hf-l46c" class="f05-cta-steam" d="M150 108 Q135 88 150 68 Q165 48 150 28" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" opacity=".75" stroke-dasharray="100" stroke-dashoffset="100" />
+      <path data-hf-id="hf-tcex" class="f05-cta-steam" d="M185 108 Q170 88 185 68 Q200 48 185 28" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" opacity=".75" stroke-dasharray="100" stroke-dashoffset="100" />
+    </svg>
+    <div data-hf-id="hf-m7i3" class="f05-cta-pill" id="f05-cta-cta" style="left:230px;top:770px;width:620px;justify-content:center;background:rgba(10,240,240,.14);border:2px solid #0AF0F0;color:#F5F1E8">
+      Follow karo <span data-hf-id="hf-cr02" style="color:#0AF0F0">·</span> Samjho with Raj</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f05-cta-stage", { scale: 1.0 }, { scale: 1.04, duration: 5, ease: "none" }, 0);
+  tl.fromTo("#f05-cta-l1 .f05-cta-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f05-cta-l2 .f05-cta-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.90);
+  tl.fromTo("#f05-cta-cup", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 1.8);
+  tl.fromTo("#f05-cta-cup .f05-cta-steam", { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 1.1, ease: "power2.out", stagger: 0.18 }, 2.20);
+  tl.fromTo("#f05-cta-cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 3.2);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["05-cta"] = tl;
+})();
+</script>
+</template>

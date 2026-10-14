@@ -1,0 +1,38 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("../assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("../assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  html, body { margin:0; width:1080px; height:1920px; overflow:hidden; }
+  body { font-family:"DM Sans", system-ui, sans-serif; font-weight:700; color:#F5F1E8; position:relative;
+    background:
+      radial-gradient(80% 40% at 50% 100%, rgba(255,176,32,.42), rgba(255,176,32,0) 70%),
+      radial-gradient(70% 35% at 50% 0%, rgba(10,240,240,.18), rgba(10,240,240,0) 70%), #0E1116; }
+  .grid { position:absolute; inset:0; opacity:.16; background-image:
+      linear-gradient(rgba(245,241,232,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(245,241,232,.12) 2px, transparent 2px);
+      background-size:90px 90px; }
+  .c { color:#0AF0F0; text-shadow:0 0 40px rgba(10,240,240,.65); }
+  .a { color:#FFB020; text-shadow:0 0 40px rgba(255,176,32,.55); }
+  .part { position:absolute; top:120px; left:50%; transform:translateX(-50%); padding:18px 44px; border-radius:9999px;
+    border:4px solid #0AF0F0; background:rgba(10,240,240,.12); font-family:"JetBrains Mono", monospace; font-size:56px; letter-spacing:.12em; }
+  .fn { position:absolute; top:330px; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace; font-size:150px; letter-spacing:-.04em; }
+  .sub { position:absolute; top:540px; left:0; right:0; text-align:center; font-size:150px; line-height:1; letter-spacing:-.03em; }
+  .run { position:absolute; top:760px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:34px; background:#FFB020; color:#0E1116;
+    font-size:130px; padding:28px 84px; border-radius:9999px; box-shadow:0 0 0 18px rgba(255,176,32,.18), 0 30px 90px rgba(255,176,32,.5); }
+  .term { position:absolute; left:110px; right:110px; top:1100px; background:#0A0C10; border:3px solid rgba(245,241,232,.18); border-radius:26px;
+    padding:44px 50px; font-family:"JetBrains Mono", monospace; font-size:60px; line-height:1.5; box-shadow:0 30px 90px rgba(0,0,0,.6); }
+  .term .p { color:#7CF29A; } .term .f { color:#B8F5A0; } .term .o { color:#FFB020; }
+  .badge { position:absolute; left:50%; top:1580px; transform:translateX(-50%) rotate(-3deg); background:#0AF0F0; color:#0E1116;
+    font-size:80px; padding:22px 48px; border-radius:24px; white-space:nowrap; box-shadow:0 20px 60px rgba(10,240,240,.4); }
+  .brand { position:absolute; bottom:60px; left:0; right:0; text-align:center; font-size:46px; color:rgba(245,241,232,.8); letter-spacing:.06em; }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="part">PART 2</div>
+  <div class="fn c">chai_banao()</div>
+  <div class="sub">ko <span class="a">RUN</span> karo!</div>
+  <div class="run"><svg width="96" height="110" viewBox="0 0 46 52"><path d="M4 4 L42 26 L4 48 Z" fill="#0E1116"/></svg>RUN</div>
+  <div class="term"><span class="p">&gt;&gt;&gt;</span> <span class="f">chai_banao</span>()<br><span class="o">Paani ubla</span><br><span class="o">Chai ready!</span></div>
+  <div class="badge">FUNCTION KA MAGIC!</div>
+  <div class="brand">SAMJHO WITH RAJ</div>
+</body></html>

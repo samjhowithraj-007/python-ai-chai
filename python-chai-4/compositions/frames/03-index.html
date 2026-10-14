@@ -1,0 +1,68 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f03-index-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f03-index-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f03-index-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f03-index-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f03-index-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f03-index-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f03-index-w { display:inline-block; }
+  .f03-index-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f03-index-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f03-index-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f03-index-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f03-index-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f03-index-k { color:#0AF0F0; } .f03-index-s { color:#FFB020; } .f03-index-n { color:#FF8FA3; } .f03-index-f { color:#B8F5A0; }
+  .f03-index-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f03-index-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="03-index" data-width="1080" data-height="1080">
+  <div class="clip f03-index-bg" id="f03-index-bg" data-start="0" data-duration="7" data-track-index="0"><div class="f03-index-grid"></div></div>
+  <div class="clip f03-index-stage" id="f03-index-stage" data-start="0" data-duration="7" data-track-index="1">
+    <div class="f03-index-h" id="f03-index-head" style="top:84px;font-size:80px"><span class="f03-index-w">Ginti</span> <span class="f03-index-w f03-index-a">0</span> <span class="f03-index-w">se</span> <span class="f03-index-w">shuru!</span></div>
+    <div id="f03-index-s0" style="position:absolute;left:90px;top:210px;width:290px;height:190px;border-radius:20px;border:3px dashed rgba(245,241,232,.35);box-sizing:border-box"></div><div id="f03-index-c0" style="position:absolute;left:90px;top:210px;width:290px;height:190px;border-radius:20px;background:#181715;border:3px solid #C8782A;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg viewBox="0 0 300 300" width="95" height="95" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#C8782A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div style="font-size:38px;color:#F5F1E8">Masala</div></div><div id="f03-index-s1" style="position:absolute;left:395px;top:210px;width:290px;height:190px;border-radius:20px;border:3px dashed rgba(245,241,232,.35);box-sizing:border-box"></div><div id="f03-index-c1" style="position:absolute;left:395px;top:210px;width:290px;height:190px;border-radius:20px;background:#181715;border:3px solid #E8C26A;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg viewBox="0 0 300 300" width="95" height="95" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#E8C26A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div style="font-size:38px;color:#F5F1E8">Adrak</div></div><div id="f03-index-s2" style="position:absolute;left:700px;top:210px;width:290px;height:190px;border-radius:20px;border:3px dashed rgba(245,241,232,.35);box-sizing:border-box"></div><div id="f03-index-c2" style="position:absolute;left:700px;top:210px;width:290px;height:190px;border-radius:20px;background:#181715;border:3px solid #8CCB7E;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px"><svg viewBox="0 0 300 300" width="95" height="95" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#8CCB7E"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div style="font-size:38px;color:#F5F1E8">Elaichi</div></div>
+    <div id="f03-index-ix0" style="position:absolute;left:195px;top:412px;width:80px;text-align:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:44px;color:#0AF0F0">0</div><div id="f03-index-ix1" style="position:absolute;left:500px;top:412px;width:80px;text-align:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:44px;color:#0AF0F0">1</div><div id="f03-index-ix2" style="position:absolute;left:805px;top:412px;width:80px;text-align:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:44px;color:#0AF0F0">2</div>
+    <div id="f03-index-ring" style="position:absolute;left:80px;top:200px;width:310px;height:210px;border-radius:26px;border:6px solid #0AF0F0;
+         box-shadow:0 0 40px rgba(10,240,240,.6);box-sizing:border-box;opacity:0"></div>
+    <div class="f03-index-card" id="f03-index-card" style="left:90px;top:490px;width:900px;height:236px;font-size:44px"><div class="f03-index-dots"><i></i><i></i><i></i></div><div class="f03-index-file">chai.py</div><span class="f03-index-ln" id="f03-index-l0" data-n="18"><span class="f03-index-k">print</span>(flavours[<span class="f03-index-n">0</span>])</span><span class="f03-index-ln" id="f03-index-l1" data-n="18"><span class="f03-index-k">print</span>(flavours[<span class="f03-index-n">2</span>])</span></div>
+    <div id="f03-index-o0" style="position:absolute;left:90px;top:762px;width:440px;height:96px;border-radius:12px;background:rgba(255,176,32,.12);border:2px solid #FFB020;font-family:'JetBrains Mono',monospace;font-size:46px;color:#FFB020;display:flex;align-items:center;padding-left:30px;box-sizing:border-box">&gt; Masala</div>
+    <div id="f03-index-o1" style="position:absolute;left:550px;top:762px;width:440px;height:96px;border-radius:12px;background:rgba(255,176,32,.12);border:2px solid #FFB020;font-family:'JetBrains Mono',monospace;font-size:46px;color:#FFB020;display:flex;align-items:center;padding-left:30px;box-sizing:border-box">&gt; Elaichi</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f03-index-stage", { scale: 1.0 }, { scale: 1.04, duration: 7, ease: "none" }, 0);
+  tl.fromTo("#f03-index-head .f03-index-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
+  tl.fromTo(["#f03-index-c0", "#f03-index-c1", "#f03-index-c2"], { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.3);
+  tl.set(["#f03-index-s0", "#f03-index-s1", "#f03-index-s2"], { opacity: 0 }, 0);
+  tl.fromTo(["#f03-index-ix0", "#f03-index-ix1", "#f03-index-ix2"], { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "power3.out", stagger: 0.2 }, 0.8);
+  tl.fromTo("#f03-index-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.0);
+  tl.fromTo("#f03-index-l0", { width: "0ch" }, { width: "18ch", duration: 0.80, ease: "steps(18)" }, 1.50);
+  tl.fromTo("#f03-index-ring", { opacity: 0, scale: 1.15 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 2.4);
+  tl.fromTo("#f03-index-o0", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.9);
+  tl.fromTo("#f03-index-l1", { width: "0ch" }, { width: "18ch", duration: 0.80, ease: "steps(18)" }, 4.00);
+  tl.to("#f03-index-ring", { x: 610, duration: 0.6, ease: "power2.inOut" }, 4.9);
+  tl.fromTo("#f03-index-o1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 5.5);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["03-index"] = tl;
+})();
+</script>
+</template>

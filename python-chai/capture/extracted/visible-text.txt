@@ -1,0 +1,5 @@
+Topic: learning Python, for complete beginners, explained as making chai (Hinglish, romanised).
+Concept: Chai = Python program. Ingredients are variables (paani = 1 cup, doodh, chai patti, cheeni).
+The recipe is a function: def chai_banao(). "Jab tak ubaal na aaye" (until it boils) is a while loop.
+Pouring the chai = print / output. Message: "Agar chai bana sakte ho, Python seekh sakte ho."
+Channel: Samjho with Raj. CTA: follow for more.

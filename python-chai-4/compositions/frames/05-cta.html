@@ -1,0 +1,62 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f05-cta-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f05-cta-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f05-cta-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f05-cta-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f05-cta-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f05-cta-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f05-cta-w { display:inline-block; }
+  .f05-cta-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f05-cta-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f05-cta-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f05-cta-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f05-cta-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f05-cta-k { color:#0AF0F0; } .f05-cta-s { color:#FFB020; } .f05-cta-n { color:#FF8FA3; } .f05-cta-f { color:#B8F5A0; }
+  .f05-cta-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f05-cta-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="05-cta" data-width="1080" data-height="1080">
+  <div class="clip f05-cta-bg" id="f05-cta-bg" data-start="0" data-duration="6" data-track-index="0"><div class="f05-cta-grid"></div></div>
+  <div class="clip f05-cta-stage" id="f05-cta-stage" data-start="0" data-duration="6" data-track-index="1">
+    <div class="f05-cta-h" id="f05-cta-l1" style="top:110px;font-size:84px"><span class="f05-cta-w f05-cta-c">list</span> <span class="f05-cta-w">=</span> <span class="f05-cta-w">sab</span> <span class="f05-cta-w">flavours</span></div>
+    <div class="f05-cta-h" id="f05-cta-l2" style="top:215px;font-size:96px"><span class="f05-cta-w f05-cta-a">ek</span> <span class="f05-cta-w f05-cta-a">jagah!</span></div>
+    <div id="f05-cta-teaser" style="position:absolute;left:90px;top:420px;width:900px;height:220px;border-radius:20px;background:#181715;border:2px solid rgba(10,240,240,.5);
+         box-sizing:border-box;padding:34px 44px;box-shadow:0 24px 70px rgba(0,0,0,.5)">
+      <div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:30px;letter-spacing:.16em;color:rgba(245,241,232,.66)">AGLA PART 5</div>
+      <div style="font-size:50px;margin-top:22px;white-space:nowrap"><span class="f05-cta-c" style="font-family:'JetBrains Mono',monospace">for loop</span>: har flavour try karo</div>
+    </div>
+    <div class="f05-cta-pill" id="f05-cta-cta" style="left:230px;top:740px;width:620px;justify-content:center;background:rgba(10,240,240,.14);border:2px solid #0AF0F0;color:#F5F1E8">
+      Follow karo <span style="color:#0AF0F0">·</span> Samjho with Raj</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f05-cta-stage", { scale: 1.0 }, { scale: 1.04, duration: 6, ease: "none" }, 0);
+  tl.fromTo("#f05-cta-l1 .f05-cta-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f05-cta-l2 .f05-cta-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.70);
+  tl.fromTo("#f05-cta-teaser", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 1.7);
+  tl.fromTo("#f05-cta-cta", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.5, ease: "power3.out" }, 3.4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["05-cta"] = tl;
+})();
+</script>
+</template>

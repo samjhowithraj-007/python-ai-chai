@@ -1,0 +1,71 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-crash-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-crash-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-crash-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-crash-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-crash-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-crash-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-crash-w { display:inline-block; }
+  .f02-crash-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f02-crash-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-crash-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-crash-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-crash-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-crash-k { color:#0AF0F0; } .f02-crash-s { color:#FFB020; } .f02-crash-n { color:#FF8FA3; } .f02-crash-f { color:#B8F5A0; }
+  .f02-crash-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-crash-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="02-crash" data-width="1080" data-height="1080" data-duration="7.5">
+  <div class="clip f02-crash-bg" id="f02-crash-bg" data-start="0" data-duration="7.5" data-track-index="0"><div class="f02-crash-grid"></div></div>
+  <div class="clip f02-crash-stage" id="f02-crash-stage" data-start="0" data-duration="7.5" data-track-index="1">
+    <style>.f02-crash-r { color:#FF8FA3; text-shadow:0 0 24px rgba(255,143,163,.45); }</style>
+    <div class="f02-crash-h" id="f02-crash-head" style="top:80px;font-size:84px"><span class="f02-crash-w">Bina</span> <span class="f02-crash-w">try:</span> <span class="f02-crash-w f02-crash-r">crash!</span></div>
+    <div class="f02-crash-card" id="f02-crash-card" style="left:60px;top:200px;width:960px;height:155px;font-size:38px"><div class="f02-crash-dots"><i></i><i></i><i></i></div><div class="f02-crash-file">chai.py</div><span class="f02-crash-ln" id="f02-crash-l0" data-n="32">cups = <span class="f02-crash-k">int</span>(<span class="f02-crash-k">input</span>(<span class="f02-crash-s">"Kitne cup? "</span>))</span></div>
+    <div id="f02-crash-term" style="position:absolute;left:60px;top:400px;width:960px;height:330px;background:#0A0C10;border:1px solid rgba(245,241,232,.16);border-radius:14px;padding:70px 44px 24px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;box-shadow:0 24px 70px rgba(0,0,0,.5)"><div class="f02-crash-dots"><i></i><i></i><i></i></div><div class="f02-crash-file">terminal</div><div id="f02-crash-q" style="font-size:46px;line-height:1.5;color:#F5F1E8">Kitne cup? <span id="f02-crash-u" style="display:inline-block;vertical-align:top;white-space:pre;overflow:hidden;width:0ch;color:#FF8FA3">teen</span><span id="f02-crash-uc" style="display:inline-block;width:.6em;height:1.1em;vertical-align:-.15em;background:#0AF0F0;opacity:0"></span></div><div id="f02-crash-e0" style="font-size:36px;line-height:1.5;color:#FF8FA3;margin-top:10px">ValueError: invalid literal</div><div id="f02-crash-e1" style="font-size:36px;line-height:1.5;color:#FF8FA3">for int(): 'teen'</div></div>
+    <div id="f02-crash-stamp" style="position:absolute;left:620px;top:640px;padding:16px 40px;border-radius:16px;border:6px solid #FF8FA3;color:#FF8FA3;
+         font-size:80px;font-weight:700;letter-spacing:.04em;background:rgba(14,17,22,.9)">CRASH!</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-crash-stage", { scale: 1.0 }, { scale: 1.04, duration: 7, ease: "none" }, 0);
+  tl.fromTo("#f02-crash-head .f02-crash-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
+  tl.fromTo("#f02-crash-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.25);
+  tl.fromTo("#f02-crash-l0", { width: "0ch" }, { width: "32ch", duration: 0.80, ease: "steps(32)" }, 0.50);
+  tl.fromTo("#f02-crash-term", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+  tl.fromTo("#f02-crash-q", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.6);
+  tl.fromTo("#f02-crash-uc", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 2.00);
+  tl.fromTo("#f02-crash-u", { width: "0ch" }, { width: "4ch", duration: 0.70, ease: "steps(4)" }, 2.30);
+  tl.to("#f02-crash-uc", { opacity: 0, duration: 0.05 }, 3.30);
+  tl.fromTo("#f02-crash-e0", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 3.5);
+  tl.fromTo("#f02-crash-e1", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 3.7);
+  tl.to("#f02-crash-term", { x: -18, duration: 0.06, ease: "none" }, 3.90);
+  tl.to("#f02-crash-term", { x: 16, duration: 0.06, ease: "none" }, 3.96);
+  tl.to("#f02-crash-term", { x: -12, duration: 0.06, ease: "none" }, 4.02);
+  tl.to("#f02-crash-term", { x: 8, duration: 0.06, ease: "none" }, 4.08);
+  tl.to("#f02-crash-term", { x: 0, duration: 0.06, ease: "none" }, 4.14);
+  tl.fromTo("#f02-crash-stamp", { opacity: 0, scale: 1.8, rotation: -20 }, { opacity: 1, scale: 1, rotation: -8, duration: 0.35, ease: "power3.out" }, 4.3);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-crash"] = tl;
+})();
+</script>
+</template>

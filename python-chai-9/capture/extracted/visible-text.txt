@@ -1,0 +1,1 @@
+Part 9: try-except. int(input()) with 'teen' -> ValueError crash. try/except ValueError -> print('Number likho!'). Hinglish, beginners. Teaser Part 10: while True keeps the chai shop open.

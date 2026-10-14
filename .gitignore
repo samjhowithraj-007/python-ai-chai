@@ -1,0 +1,12 @@
+# Only the chai Python series lives in this repo
+/*
+!/.gitignore
+!/README.md
+!/python-chai*/
+!/ai-chai-bot*/
+!/_shared/
+
+# tool caches and logs
+.hyperframes/
+node_modules/
+*.log

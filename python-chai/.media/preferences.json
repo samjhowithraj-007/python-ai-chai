@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "instagram-feed",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:29.715Z"
+    },
+    "aspect": {
+      "value": "1080x1080",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:29.929Z"
+    },
+    "language": {
+      "value": "hinglish",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:30.125Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:30.318Z"
+    },
+    "storyboard": {
+      "value": "no",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:30.494Z"
+    },
+    "style_preset.faceless-explainer": {
+      "value": "code-editorial",
+      "confirmed_in": [
+        "python-chai"
+      ],
+      "updated_at": "2026-10-13T18:41:51.692Z"
+    }
+  },
+  "sightings": {}
+}

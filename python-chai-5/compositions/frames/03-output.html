@@ -1,0 +1,64 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f03-output-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f03-output-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f03-output-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f03-output-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f03-output-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f03-output-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f03-output-w { display:inline-block; }
+  .f03-output-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f03-output-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f03-output-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f03-output-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f03-output-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f03-output-k { color:#0AF0F0; } .f03-output-s { color:#FFB020; } .f03-output-n { color:#FF8FA3; } .f03-output-f { color:#B8F5A0; }
+  .f03-output-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f03-output-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="03-output" data-width="1080" data-height="1080">
+  <div class="clip f03-output-bg" id="f03-output-bg" data-start="0" data-duration="7" data-track-index="0"><div class="f03-output-grid"></div></div>
+  <div class="clip f03-output-stage" id="f03-output-stage" data-start="0" data-duration="7" data-track-index="1">
+    <div class="f03-output-h" id="f03-output-head" style="top:84px;font-size:84px"><span class="f03-output-w f03-output-a">Output</span></div>
+    <div id="f03-output-term" style="position:absolute;left:140px;top:210px;width:800px;height:480px;background:#0A0C10;border:1px solid rgba(245,241,232,.16);
+         border-radius:14px;padding:66px 50px 20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;box-shadow:0 24px 70px rgba(0,0,0,.5)">
+      <div class="f03-output-dots"><i></i><i></i><i></i></div><div class="f03-output-file">terminal</div>
+      <div id="f03-output-r0" style="display:flex;align-items:center;gap:22px;height:92px"><svg viewBox="0 0 300 300" width="70" height="70" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#C8782A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><span style="font-size:50px;color:#C8782A">Masala chai</span></div><div id="f03-output-r1" style="display:flex;align-items:center;gap:22px;height:92px"><svg viewBox="0 0 300 300" width="70" height="70" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#E8C26A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><span style="font-size:50px;color:#E8C26A">Adrak chai</span></div><div id="f03-output-r2" style="display:flex;align-items:center;gap:22px;height:92px"><svg viewBox="0 0 300 300" width="70" height="70" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#8CCB7E"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><span style="font-size:50px;color:#8CCB7E">Elaichi chai</span></div><div id="f03-output-r3" style="display:flex;align-items:center;gap:22px;height:92px"><svg viewBox="0 0 300 300" width="70" height="70" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#5FB37A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><span style="font-size:50px;color:#5FB37A">Tulsi chai</span></div>
+    </div>
+    <div id="f03-output-badge" style="position:absolute;left:300px;top:740px;width:480px;height:100px;border-radius:22px;background:#FFB020;color:#0E1116;
+         display:flex;align-items:center;justify-content:center;font-size:58px;font-weight:700;box-shadow:0 18px 50px rgba(255,176,32,.45)">4 baar chala!</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f03-output-stage", { scale: 1.0 }, { scale: 1.04, duration: 7, ease: "none" }, 0);
+  tl.fromTo("#f03-output-head .f03-output-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
+  tl.fromTo("#f03-output-term", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+  tl.fromTo("#f03-output-r0", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 1.00);
+  tl.fromTo("#f03-output-r1", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 2.00);
+  tl.fromTo("#f03-output-r2", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 3.00);
+  tl.fromTo("#f03-output-r3", { opacity: 0, x: -30 }, { opacity: 1, x: 0, duration: 0.4, ease: "power3.out" }, 4.00);
+  tl.fromTo("#f03-output-badge", { opacity: 0, scale: 1.4, rotation: -3 }, { opacity: 1, scale: 1, rotation: -3, duration: 0.4, ease: "power3.out" }, 5.2);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["03-output"] = tl;
+})();
+</script>
+</template>

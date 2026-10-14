@@ -1,0 +1,76 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f04-fork-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f04-fork-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f04-fork-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f04-fork-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f04-fork-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f04-fork-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f04-fork-w { display:inline-block; }
+  .f04-fork-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f04-fork-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f04-fork-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f04-fork-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f04-fork-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f04-fork-k { color:#0AF0F0; } .f04-fork-s { color:#FFB020; } .f04-fork-n { color:#FF8FA3; } .f04-fork-f { color:#B8F5A0; }
+  .f04-fork-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f04-fork-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="04-fork" data-width="1080" data-height="1080">
+  <div class="clip f04-fork-bg" id="f04-fork-bg" data-start="0" data-duration="6" data-track-index="0"><div class="f04-fork-grid"></div></div>
+  <div class="clip f04-fork-stage" id="f04-fork-stage" data-start="0" data-duration="6" data-track-index="1">
+    <div class="f04-fork-h" id="f04-fork-head" style="top:90px;font-size:80px"><span class="f04-fork-w f04-fork-c">if-else</span> <span class="f04-fork-w">=</span> <span class="f04-fork-w f04-fork-a">do</span> <span class="f04-fork-w f04-fork-a">raaste</span></div>
+    <svg id="f04-fork-lines" width="1080" height="1080" viewBox="0 0 1080 1080" style="position:absolute;left:0;top:0" fill="none">
+      <path id="f04-fork-pt" d="M540 380 L270 580" stroke="#0AF0F0" stroke-width="8" stroke-linecap="round" stroke-dasharray="420" stroke-dashoffset="420"/>
+      <path id="f04-fork-pf" d="M540 380 L810 580" stroke="#FF8FA3" stroke-width="8" stroke-linecap="round" stroke-dasharray="420" stroke-dashoffset="420"/>
+    </svg>
+    <div id="f04-fork-node" style="position:absolute;left:340px;top:275px;width:400px;height:110px;border-radius:9999px;background:#181715;
+         border:3px solid rgba(245,241,232,.5);display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:44px">cheeni &gt; 1 ?</div>
+    <div id="f04-fork-lt" style="position:absolute;left:255px;top:450px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:40px;color:#0AF0F0">True</div>
+    <div id="f04-fork-lf" style="position:absolute;left:715px;top:450px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:40px;color:#FF8FA3">False</div>
+    <div id="f04-fork-ct" style="position:absolute;left:80px;top:580px;width:380px;height:140px;border-radius:20px;background:#181715;border:3px solid #0AF0F0;
+         display:flex;align-items:center;justify-content:center;font-size:54px">Meethi chai</div>
+    <div id="f04-fork-cf" style="position:absolute;left:620px;top:580px;width:380px;height:140px;border-radius:20px;background:#181715;border:3px solid #FF8FA3;
+         display:flex;align-items:center;justify-content:center;font-size:54px">Feeki chai</div>
+    <div id="f04-fork-dot" style="position:absolute;left:522px;top:362px;width:36px;height:36px;border-radius:50%;background:#FFB020;box-shadow:0 0 30px #FFB020;opacity:0"></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f04-fork-stage", { scale: 1.0 }, { scale: 1.04, duration: 6, ease: "none" }, 0);
+  tl.fromTo("#f04-fork-head .f04-fork-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f04-fork-node", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }, 0.7);
+  tl.fromTo("#f04-fork-pt", { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, 1.2);
+  tl.fromTo("#f04-fork-pf", { strokeDashoffset: 420 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.out" }, 1.35);
+  tl.fromTo(["#f04-fork-lt", "#f04-fork-lf"], { opacity: 0 }, { opacity: 1, duration: 0.35, stagger: 0.15 }, 1.8);
+  tl.fromTo("#f04-fork-ct", { opacity: 0, y: 40 }, { opacity: 0.55, y: 0, duration: 0.5, ease: "power3.out" }, 2.1);
+  tl.fromTo("#f04-fork-cf", { opacity: 0, y: 40 }, { opacity: 0.55, y: 0, duration: 0.5, ease: "power3.out" }, 2.3);
+  tl.set("#f04-fork-dot", { opacity: 1, x: 0, y: 0 }, 3.0);
+  tl.to("#f04-fork-dot", { x: -270, y: 200, duration: 0.8, ease: "power2.inOut" }, 3.0);
+  tl.to("#f04-fork-ct", { opacity: 1, scale: 1.06, duration: 0.3, ease: "power2.out" }, 3.8);
+  tl.set("#f04-fork-dot", { x: 0, y: 0 }, 4.4);
+  tl.to("#f04-fork-dot", { x: 270, y: 200, duration: 0.8, ease: "power2.inOut" }, 4.4);
+  tl.to("#f04-fork-cf", { opacity: 1, scale: 1.06, duration: 0.3, ease: "power2.out" }, 5.2);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["04-fork"] = tl;
+})();
+</script>
+</template>

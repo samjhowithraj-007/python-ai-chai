@@ -1,0 +1,78 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-loop-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-loop-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-loop-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-loop-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-loop-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-loop-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-loop-w { display:inline-block; }
+  .f02-loop-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-ligatures:none; }
+  .f02-loop-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-loop-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-loop-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-loop-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-loop-k { color:#0AF0F0; } .f02-loop-s { color:#FFB020; } .f02-loop-n { color:#FF8FA3; } .f02-loop-f { color:#B8F5A0; }
+  .f02-loop-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-loop-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="02-loop" data-width="1080" data-height="1080">
+  <div class="clip f02-loop-bg" id="f02-loop-bg" data-start="0" data-duration="8" data-track-index="0"><div class="f02-loop-grid"></div></div>
+  <div class="clip f02-loop-stage" id="f02-loop-stage" data-start="0" data-duration="8" data-track-index="1">
+    <div class="f02-loop-h" id="f02-loop-head" style="top:76px;font-size:76px"><span class="f02-loop-w f02-loop-c">while</span> <span class="f02-loop-w f02-loop-c">True</span> <span class="f02-loop-w">=</span> <span class="f02-loop-w">hamesha</span> <span class="f02-loop-w">chalo</span></div>
+    <div class="f02-loop-card" id="f02-loop-card" style="left:40px;top:180px;width:680px;height:248px;font-size:32px"><div class="f02-loop-dots"><i></i><i></i><i></i></div><div class="f02-loop-file">chai.py</div><span class="f02-loop-ln" id="f02-loop-l0" data-n="11"><span class="f02-loop-k">while True</span>:</span><span class="f02-loop-ln" id="f02-loop-l1" data-n="28">    order = <span class="f02-loop-k">input</span>(<span class="f02-loop-s">"Order? "</span>)</span><span class="f02-loop-ln" id="f02-loop-l2" data-n="26">    <span class="f02-loop-k">print</span>(order, <span class="f02-loop-s">"ready!"</span>)</span></div>
+    <div id="f02-loop-hl" style="position:absolute;left:42px;top:291px;width:676px;height:51px;background:rgba(10,240,240,.14);border-left:6px solid #0AF0F0;opacity:0"></div>
+    <div id="f02-loop-sign" style="position:absolute;left:750px;top:180px;width:290px;height:248px;border-radius:22px;background:#0A0C10;border:4px solid #0AF0F0;box-shadow:0 0 40px rgba(10,240,240,.45), inset 0 0 30px rgba(10,240,240,.15);box-sizing:border-box"><div style="position:absolute;left:0;right:0;top:39px;text-align:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:21px;letter-spacing:.18em;color:rgba(245,241,232,.75)">CHAI DUKAAN</div><div id="f02-loop-open" style="position:absolute;left:0;right:0;top:94px;text-align:center;font-size:72px;color:#0AF0F0;text-shadow:0 0 30px rgba(10,240,240,.9)">KHULA</div><div id="f02-loop-shut" style="position:absolute;left:0;right:0;top:94px;text-align:center;font-size:72px;color:#FF8FA3;text-shadow:0 0 30px rgba(255,143,163,.9);opacity:0">BAND</div></div>
+    <div id="f02-loop-term" style="position:absolute;left:40px;top:460px;width:1000px;height:400px;background:#0A0C10;border:1px solid rgba(245,241,232,.16);border-radius:14px;padding:70px 44px 24px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;box-shadow:0 24px 70px rgba(0,0,0,.5)"><div class="f02-loop-dots"><i></i><i></i><i></i></div><div class="f02-loop-file">terminal</div><div id="f02-loop-q1" style="font-size:38px;line-height:1.45;color:#F5F1E8">Order? <span id="f02-loop-u1" style="display:inline-block;vertical-align:top;white-space:pre;overflow:hidden;width:0ch;color:#0AF0F0">Masala</span><span id="f02-loop-u1c" style="display:inline-block;width:.6em;height:1.1em;vertical-align:-.15em;background:#0AF0F0;opacity:0"></span></div><div id="f02-loop-o1" style="font-size:38px;line-height:1.45;color:#FFB020">Masala ready!</div><div id="f02-loop-q2" style="font-size:38px;line-height:1.45;color:#F5F1E8">Order? <span id="f02-loop-u2" style="display:inline-block;vertical-align:top;white-space:pre;overflow:hidden;width:0ch;color:#0AF0F0">Adrak</span><span id="f02-loop-u2c" style="display:inline-block;width:.6em;height:1.1em;vertical-align:-.15em;background:#0AF0F0;opacity:0"></span></div><div id="f02-loop-o2" style="font-size:38px;line-height:1.45;color:#FFB020">Adrak ready!</div><div id="f02-loop-q3" style="font-size:38px;line-height:1.45;color:#F5F1E8">Order? <span id="f02-loop-c3" style="display:inline-block;width:.6em;height:1.1em;vertical-align:-.15em;background:#0AF0F0;opacity:0"></span></div></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-loop-stage", { scale: 1.0 }, { scale: 1.04, duration: 8, ease: "none" }, 0);
+  tl.fromTo("#f02-loop-head .f02-loop-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f02-loop-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.2);
+  tl.fromTo("#f02-loop-sign", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.4);
+  tl.fromTo("#f02-loop-l0", { width: "0ch" }, { width: "11ch", duration: 0.40, ease: "steps(11)" }, 0.40);
+  tl.fromTo("#f02-loop-l1", { width: "0ch" }, { width: "28ch", duration: 0.40, ease: "steps(28)" }, 0.70);
+  tl.fromTo("#f02-loop-l2", { width: "0ch" }, { width: "26ch", duration: 0.40, ease: "steps(26)" }, 1.00);
+  tl.fromTo("#f02-loop-term", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.4);
+  tl.fromTo("#f02-loop-hl", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 1.7);
+  tl.fromTo("#f02-loop-q1", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 1.80);
+  tl.fromTo("#f02-loop-u1c", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 2.10);
+  tl.fromTo("#f02-loop-u1", { width: "0ch" }, { width: "6ch", duration: 0.60, ease: "steps(6)" }, 2.40);
+  tl.to("#f02-loop-u1c", { opacity: 0, duration: 0.05 }, 3.30);
+  tl.to("#f02-loop-hl", { y: 51, duration: 0.3, ease: "power2.inOut" }, 3.40);
+  tl.fromTo("#f02-loop-o1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.70);
+  tl.to("#f02-loop-hl", { y: 0, duration: 0.3, ease: "power2.inOut" }, 4.40);
+  tl.fromTo("#f02-loop-q2", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 4.60);
+  tl.fromTo("#f02-loop-u2c", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 4.90);
+  tl.fromTo("#f02-loop-u2", { width: "0ch" }, { width: "5ch", duration: 0.60, ease: "steps(5)" }, 5.20);
+  tl.to("#f02-loop-u2c", { opacity: 0, duration: 0.05 }, 6.10);
+  tl.to("#f02-loop-hl", { y: 51, duration: 0.3, ease: "power2.inOut" }, 6.20);
+  tl.fromTo("#f02-loop-o2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 6.50);
+  tl.to("#f02-loop-hl", { y: 0, duration: 0.3, ease: "power2.inOut" }, 7.0);
+  tl.fromTo("#f02-loop-q3", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 7.2);
+  tl.fromTo("#f02-loop-c3", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 7.4);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-loop"] = tl;
+})();
+</script>
+</template>

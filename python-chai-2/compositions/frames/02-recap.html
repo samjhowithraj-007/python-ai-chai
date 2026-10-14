@@ -1,0 +1,61 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-recap-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-recap-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-recap-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-recap-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-recap-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-recap-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-recap-w { display:inline-block; }
+  .f02-recap-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f02-recap-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-recap-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-recap-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-recap-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-recap-k { color:#0AF0F0; } .f02-recap-s { color:#FFB020; } .f02-recap-n { color:#FF8FA3; } .f02-recap-f { color:#B8F5A0; }
+  .f02-recap-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-recap-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div data-hf-id="hf-ds35" id="root" data-composition-id="02-recap" data-width="1080" data-height="1080" data-duration="6.5">
+  <div data-hf-id="hf-bdb9" class="clip f02-recap-bg" id="f02-recap-bg" data-start="0" data-duration="6.5" data-track-index="0"><div data-hf-id="hf-y657" class="f02-recap-grid"></div></div>
+  <div data-hf-id="hf-gpyu" class="clip f02-recap-stage" id="f02-recap-stage" data-start="0" data-duration="6.5" data-track-index="1">
+    <div data-hf-id="hf-nn54" class="f02-recap-h" id="f02-recap-head" style="top:100px;font-size:80px"><span data-hf-id="hf-upwt" class="f02-recap-w">Pehle:</span> <span data-hf-id="hf-gdcb" class="f02-recap-w f02-recap-c">Function</span> <span data-hf-id="hf-bkym" class="f02-recap-w">likho</span></div>
+    <div data-hf-id="hf-yo9t" class="f02-recap-card" id="f02-recap-card" style="left:90px;top:260px;width:900px;height:430px;font-size:48px"><div data-hf-id="hf-q4kr" class="f02-recap-dots"><i data-hf-id="hf-wt6k"></i><i data-hf-id="hf-zeb8"></i><i data-hf-id="hf-y7e5"></i></div><div data-hf-id="hf-q1zp" class="f02-recap-file">chai.py</div><span data-hf-id="hf-4s5s" class="f02-recap-ln" id="f02-recap-l0" data-n="17"><span data-hf-id="hf-q448" class="f02-recap-k">def</span> <span data-hf-id="hf-qcv3" class="f02-recap-f">chai_banao</span>():</span><span data-hf-id="hf-4qx6" class="f02-recap-ln" id="f02-recap-l1" data-n="23">    <span data-hf-id="hf-n7u4" class="f02-recap-k">print</span>(<span data-hf-id="hf-6ltq" class="f02-recap-s">"Paani ubla"</span>)</span><span data-hf-id="hf-s2py" class="f02-recap-ln" id="f02-recap-l2" data-n="24">    <span data-hf-id="hf-xtz8" class="f02-recap-k">print</span>(<span data-hf-id="hf-lyb6" class="f02-recap-s">"Patti daali"</span>)</span><span data-hf-id="hf-92aj" class="f02-recap-ln" id="f02-recap-l3" data-n="24">    <span data-hf-id="hf-wn25" class="f02-recap-k">print</span>(<span data-hf-id="hf-0d1q" class="f02-recap-s">"Doodh daala"</span>)</span></div>
+    <div data-hf-id="hf-bs3g" id="f02-recap-brk" style="position:absolute;left:150px;top:410px;width:8px;height:240px;background:#0AF0F0;border-radius:4px;transform-origin:50% 0%;box-shadow:0 0 18px rgba(10,240,240,.7)"></div>
+    <div data-hf-id="hf-ua9h" class="f02-recap-h" id="f02-recap-lab" style="top:740px;font-size:50px;color:rgba(245,241,232,.85)">andar ke <span data-hf-id="hf-jxr4" class="f02-recap-c">steps</span></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-recap-stage", { scale: 1.0 }, { scale: 1.04, duration: 6, ease: "none" }, 0);
+  tl.fromTo("#f02-recap-head .f02-recap-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f02-recap-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.35);
+  tl.fromTo("#f02-recap-l0", { width: "0ch" }, { width: "17ch", duration: 0.70, ease: "steps(17)" }, 1.00);
+  tl.fromTo("#f02-recap-l1", { width: "0ch" }, { width: "23ch", duration: 0.75, ease: "steps(23)" }, 1.95);
+  tl.fromTo("#f02-recap-l2", { width: "0ch" }, { width: "24ch", duration: 0.75, ease: "steps(24)" }, 2.90);
+  tl.fromTo("#f02-recap-l3", { width: "0ch" }, { width: "24ch", duration: 0.75, ease: "steps(24)" }, 3.85);
+  tl.fromTo("#f02-recap-brk", { scaleY: 0 }, { scaleY: 1, duration: 0.6, ease: "power2.out" }, 4.7);
+  tl.fromTo("#f02-recap-lab", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 5.0);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-recap"] = tl;
+})();
+</script>
+</template>

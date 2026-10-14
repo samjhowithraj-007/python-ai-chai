@@ -1,0 +1,74 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f04-discount-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f04-discount-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f04-discount-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f04-discount-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f04-discount-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f04-discount-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f04-discount-w { display:inline-block; }
+  .f04-discount-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f04-discount-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f04-discount-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f04-discount-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f04-discount-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f04-discount-k { color:#0AF0F0; } .f04-discount-s { color:#FFB020; } .f04-discount-n { color:#FF8FA3; } .f04-discount-f { color:#B8F5A0; }
+  .f04-discount-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f04-discount-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="04-discount" data-width="1080" data-height="1080" data-duration="7.5">
+  <div class="clip f04-discount-bg" id="f04-discount-bg" data-start="0" data-duration="7.5" data-track-index="0"><div class="f04-discount-grid"></div></div>
+  <div class="clip f04-discount-stage" id="f04-discount-stage" data-start="0" data-duration="7.5" data-track-index="1">
+    <div class="f04-discount-h" id="f04-discount-head" style="top:70px;font-size:80px"><span class="f04-discount-w f04-discount-c">if-else:</span> <span class="f04-discount-w f04-discount-a">discount!</span></div>
+    <div class="f04-discount-card" id="f04-discount-card" style="left:60px;top:180px;width:960px;height:286px;font-size:40px"><div class="f04-discount-dots"><i></i><i></i><i></i></div><div class="f04-discount-file">chai.py</div><span class="f04-discount-ln" id="f04-discount-l0" data-n="18">    <span class="f04-discount-k">if</span> total &gt; <span class="f04-discount-n">50</span>:</span><span class="f04-discount-ln" id="f04-discount-l1" data-n="18">        total -= <span class="f04-discount-n">5</span></span><span class="f04-discount-ln" id="f04-discount-l2" data-n="16">    <span class="f04-discount-k">return</span> total</span></div>
+    <div id="f04-discount-big" style="position:absolute;left:300px;top:500px;width:400px;height:240px">
+      <div style="position:absolute;left:0;right:0;top:0;text-align:center;font-family:'JetBrains Mono',monospace;font-size:40px;color:rgba(245,241,232,.75)">total</div>
+      <div style="position:absolute;left:0;right:0;top:50px;height:180px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:160px;color:#FFB020;line-height:180px"><span id="f04-discount-b0" style="position:absolute;left:0;right:0;text-align:center;opacity:1">55</span><span id="f04-discount-b1" style="position:absolute;left:0;right:0;text-align:center;opacity:0">50</span></div>
+    </div>
+    <div id="f04-discount-v" style="position:absolute;left:740px;top:540px;width:250px;padding:18px 0;border-radius:16px;text-align:center;border:3px solid #0AF0F0;
+         background:rgba(14,17,22,.85);color:#0AF0F0;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:38px;line-height:1.35">55 &gt; 50<br>True</div>
+    <div id="f04-discount-stamp" style="position:absolute;left:110px;top:540px;width:170px;height:170px;border-radius:50%;border:6px solid #FF8FA3;color:#FF8FA3;
+         display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:64px;background:rgba(255,143,163,.10)">-5</div>
+    <div style="position:absolute;left:0;right:0;top:790px;display:flex;justify-content:center;gap:22px"><div id="f04-discount-tag0" style="display:inline-flex;align-items:center;gap:12px;height:70px;padding:0 28px;border-radius:9999px;border:3px solid rgba(245,241,232,.35);background:rgba(14,17,22,.6);font-family:'JetBrains Mono',monospace;font-size:32px;color:#F5F1E8"><span id="f04-discount-tk0" style="display:inline-flex;opacity:0"><svg width="30" height="30" viewBox="0 0 30 30" style="flex:none"><circle cx="15" cy="15" r="14" fill="#0AF0F0"/><path d="M8 15.5 L13 20.5 L22 10" stroke="#0E1116" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>if-else</div></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f04-discount-stage", { scale: 1.0 }, { scale: 1.04, duration: 7, ease: "none" }, 0);
+  tl.fromTo("#f04-discount-head .f04-discount-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
+  tl.fromTo("#f04-discount-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+  tl.fromTo("#f04-discount-l0", { width: "0ch" }, { width: "18ch", duration: 0.50, ease: "steps(18)" }, 1.00);
+  tl.fromTo("#f04-discount-l1", { width: "0ch" }, { width: "18ch", duration: 0.50, ease: "steps(18)" }, 1.60);
+  tl.fromTo("#f04-discount-l2", { width: "0ch" }, { width: "16ch", duration: 0.50, ease: "steps(16)" }, 2.20);
+  tl.fromTo("#f04-discount-big", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.45, ease: "power3.out" }, 1.6);
+  tl.fromTo("#f04-discount-v", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 2.6);
+  tl.fromTo("#f04-discount-stamp", { opacity: 0, scale: 1.8, rotation: -30 }, { opacity: 1, scale: 1, rotation: -12, duration: 0.35, ease: "power3.out" }, 3.6);
+  tl.set("#f04-discount-b0", { opacity: 0 }, 4.1);
+  tl.set("#f04-discount-b1", { opacity: 1 }, 4.1);
+  tl.fromTo("#f04-discount-big", { scale: 1.12 }, { scale: 1, duration: 0.4, ease: "power2.out", immediateRender: false }, 4.1);
+  tl.fromTo("#f04-discount-tag0", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 5.00);
+  tl.fromTo("#f04-discount-tk0", { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.3, ease: "power3.out" }, 5.35);
+  tl.fromTo("#f04-discount-tag0", { borderColor: "rgba(245,241,232,.35)" }, { borderColor: "rgba(10,240,240,.9)", duration: 0.3, immediateRender: false }, 5.35);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["04-discount"] = tl;
+})();
+</script>
+</template>

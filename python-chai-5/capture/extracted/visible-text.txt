@@ -1,0 +1,1 @@
+Part 5: for loop over flavours list (Masala, Adrak, Elaichi, Tulsi). Each item printed as '<flavour> chai'. Loop saves lines. Hinglish, beginners. Teaser Part 6: dictionary (chai ka menu card).

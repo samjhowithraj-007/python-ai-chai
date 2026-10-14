@@ -1,0 +1,44 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("../assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("../assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  html, body { margin:0; width:1080px; height:1920px; overflow:hidden; }
+  body { font-family:"DM Sans", system-ui, sans-serif; font-weight:700; color:#F5F1E8; position:relative;
+    background:
+      radial-gradient(80% 40% at 50% 100%, rgba(255,176,32,.42), rgba(255,176,32,0) 70%),
+      radial-gradient(70% 35% at 50% 0%, rgba(10,240,240,.18), rgba(10,240,240,0) 70%), #0E1116; }
+  .grid { position:absolute; inset:0; opacity:.16; background-image:
+      linear-gradient(rgba(245,241,232,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(245,241,232,.12) 2px, transparent 2px);
+      background-size:90px 90px; }
+  .c { color:#0AF0F0; text-shadow:0 0 40px rgba(10,240,240,.65); }
+  .a { color:#FFB020; text-shadow:0 0 40px rgba(255,176,32,.55); }
+  .part { position:absolute; top:110px; left:50%; transform:translateX(-50%); padding:18px 44px; border-radius:9999px;
+    border:4px solid #0AF0F0; background:rgba(10,240,240,.12); font-family:"JetBrains Mono", monospace; font-size:56px; letter-spacing:.12em; }
+  .t1 { position:absolute; top:280px; left:0; right:0; text-align:center; font-size:120px; line-height:1; letter-spacing:-.03em; }
+  .t2 { position:absolute; top:410px; left:0; right:0; text-align:center; font-size:190px; line-height:1; letter-spacing:-.04em; }
+  .tray { position:absolute; left:60px; right:60px; top:720px; height:400px; border-radius:40px; border:5px solid #0AF0F0;
+    box-shadow:0 0 60px rgba(10,240,240,.35); display:flex; gap:24px; padding:34px; box-sizing:border-box; }
+  .slot { flex:1; border-radius:26px; background:#181715; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; }
+  .slot .n { font-size:46px; }
+  .ix { position:absolute; top:1140px; font-family:"JetBrains Mono", monospace; font-size:64px; color:#0AF0F0; width:200px; text-align:center; }
+  .code { position:absolute; top:1270px; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace; font-size:58px; }
+  .badge { position:absolute; left:50%; top:1470px; transform:translateX(-50%) rotate(-3deg); background:#FFB020; color:#0E1116;
+    font-size:80px; padding:22px 48px; border-radius:24px; white-space:nowrap; box-shadow:0 20px 60px rgba(255,176,32,.45); }
+  .brand { position:absolute; bottom:60px; left:0; right:0; text-align:center; font-size:46px; color:rgba(245,241,232,.8); letter-spacing:.06em; }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="part">PART 4</div>
+  <div class="t1">Chai ke kitne</div>
+  <div class="t2 a">flavours?</div>
+  <div class="tray">
+    <div class="slot" style="border:4px solid #C8782A"><svg viewBox="0 0 300 300" width="150" height="150" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#C8782A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div class="n">Masala</div></div>
+    <div class="slot" style="border:4px solid #E8C26A"><svg viewBox="0 0 300 300" width="150" height="150" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#E8C26A"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div class="n">Adrak</div></div>
+    <div class="slot" style="border:4px solid #8CCB7E"><svg viewBox="0 0 300 300" width="150" height="150" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#8CCB7E"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="12" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="12" stroke-linecap="round"/></svg><div class="n">Elaichi</div></div>
+  </div>
+  <div class="ix" style="left:115px">0</div><div class="ix" style="left:440px">1</div><div class="ix" style="left:765px">2</div>
+  <div class="code">flavours[<span class="a">0</span>] = <span class="a">"Masala"</span></div>
+  <div class="badge">PYTHON LIST SAMJHO!</div>
+  <div class="brand">SAMJHO WITH RAJ</div>
+</body></html>

@@ -1,0 +1,69 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f04-why-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f04-why-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f04-why-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f04-why-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f04-why-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f04-why-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f04-why-w { display:inline-block; }
+  .f04-why-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f04-why-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f04-why-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f04-why-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f04-why-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f04-why-k { color:#0AF0F0; } .f04-why-s { color:#FFB020; } .f04-why-n { color:#FF8FA3; } .f04-why-f { color:#B8F5A0; }
+  .f04-why-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f04-why-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="04-why" data-width="1080" data-height="1080">
+  <div class="clip f04-why-bg" id="f04-why-bg" data-start="0" data-duration="5" data-track-index="0"><div class="f04-why-grid"></div></div>
+  <div class="clip f04-why-stage" id="f04-why-stage" data-start="0" data-duration="5" data-track-index="1">
+    <div class="f04-why-h" id="f04-why-head" style="top:84px;font-size:84px"><span class="f04-why-w">Loop</span> <span class="f04-why-w">=</span> <span class="f04-why-w f04-why-a">kam</span> <span class="f04-why-w f04-why-a">code</span></div>
+    <div class="f04-why-card" id="f04-why-card" style="left:40px;top:250px;width:490px;height:330px;font-size:28px"><div class="f04-why-dots"><i></i><i></i><i></i></div><div class="f04-why-file">bina loop</div><span class="f04-why-ln" id="f04-why-l0" data-n="20"><span class="f04-why-k">print</span>(<span class="f04-why-s">"Masala chai"</span>)</span><span class="f04-why-ln" id="f04-why-l1" data-n="19"><span class="f04-why-k">print</span>(<span class="f04-why-s">"Adrak chai"</span>)</span><span class="f04-why-ln" id="f04-why-l2" data-n="21"><span class="f04-why-k">print</span>(<span class="f04-why-s">"Elaichi chai"</span>)</span><span class="f04-why-ln" id="f04-why-l3" data-n="19"><span class="f04-why-k">print</span>(<span class="f04-why-s">"Tulsi chai"</span>)</span></div>
+    <div class="f04-why-card" id="f04-why-card2" style="left:550px;top:250px;width:490px;height:330px;font-size:30px"><div class="f04-why-dots"><i></i><i></i><i></i></div><div class="f04-why-file">loop ke saath</div><span class="f04-why-ln" id="f04-why-m0" data-n="18"><span class="f04-why-k">for</span> f <span class="f04-why-k">in</span> flavours:</span><span class="f04-why-ln" id="f04-why-m1" data-n="20">    <span class="f04-why-k">print</span>(f+<span class="f04-why-s">" chai"</span>)</span></div>
+    <div class="f04-why-h" id="f04-why-n1" style="top:600px;left:40px;right:auto;width:490px;font-size:46px;color:rgba(245,241,232,.6)">4 lines</div>
+    <div class="f04-why-h f04-why-c" id="f04-why-n2" style="top:600px;left:550px;right:auto;width:490px;font-size:46px">2 lines</div>
+    <div class="f04-why-h" id="f04-why-cap" style="top:760px;font-size:56px">100 flavours? Phir bhi <span class="f04-why-a">2 lines!</span></div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f04-why-stage", { scale: 1.0 }, { scale: 1.04, duration: 5, ease: "none" }, 0);
+  tl.fromTo("#f04-why-head .f04-why-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f04-why-card", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.3);
+  tl.set("#f04-why-l0", { width: "20ch" }, 0.3);
+  tl.set("#f04-why-l1", { width: "19ch" }, 0.3);
+  tl.set("#f04-why-l2", { width: "21ch" }, 0.3);
+  tl.set("#f04-why-l3", { width: "19ch" }, 0.3);
+  tl.fromTo("#f04-why-n1", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.8);
+  tl.fromTo("#f04-why-card2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.2);
+  tl.set("#f04-why-m0", { width: "18ch" }, 1.2);
+  tl.set("#f04-why-m1", { width: "20ch" }, 1.2);
+  tl.fromTo("#f04-why-card2", { boxShadow: "0 0 0 rgba(10,240,240,0)", borderColor: "rgba(245,241,232,.14)" }, { boxShadow: "0 0 50px rgba(10,240,240,.5)", borderColor: "rgba(10,240,240,.9)", duration: 0.5, immediateRender: false }, 1.8);
+  tl.to("#f04-why-card", { opacity: 0.45, duration: 0.5 }, 1.8);
+  tl.fromTo("#f04-why-n2", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 1.9);
+  tl.fromTo("#f04-why-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.8);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["04-why"] = tl;
+})();
+</script>
+</template>

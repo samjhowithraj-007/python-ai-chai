@@ -1,0 +1,1 @@
+Part 8: input() asks the user (Naam? Raj -> Namaste Raj), int(input()) for cups (3 -> Bill: 60), why int: '3'*20 is 333.. vs 3*20 = 60. Hinglish, beginners. Teaser Part 9: try-except.

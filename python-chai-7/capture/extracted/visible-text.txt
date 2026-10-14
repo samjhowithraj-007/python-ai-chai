@@ -1,0 +1,1 @@
+Part 7 finale: chai bill program. menu dict (Masala 20, Adrak 15), order list (Masala, Adrak, Masala), def bill with for loop total 55, if total > 50 discount 5 -> 50. Receipt. Hinglish, beginners.

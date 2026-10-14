@@ -1,0 +1,66 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-dict-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-dict-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-dict-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-dict-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-dict-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-dict-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-dict-w { display:inline-block; }
+  .f02-dict-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; }
+  .f02-dict-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-dict-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-dict-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-dict-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-dict-k { color:#0AF0F0; } .f02-dict-s { color:#FFB020; } .f02-dict-n { color:#FF8FA3; } .f02-dict-f { color:#B8F5A0; }
+  .f02-dict-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-dict-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="02-dict" data-width="1080" data-height="1080">
+  <div class="clip f02-dict-bg" id="f02-dict-bg" data-start="0" data-duration="8" data-track-index="0"><div class="f02-dict-grid"></div></div>
+  <div class="clip f02-dict-stage" id="f02-dict-stage" data-start="0" data-duration="8" data-track-index="1">
+    <div class="f02-dict-h" id="f02-dict-head" style="top:84px;font-size:84px"><span class="f02-dict-w f02-dict-c">key</span> <span class="f02-dict-w">:</span> <span class="f02-dict-w f02-dict-a">value</span></div>
+    <div class="f02-dict-card" id="f02-dict-card" style="left:40px;top:220px;width:540px;height:340px;font-size:38px"><div class="f02-dict-dots"><i></i><i></i><i></i></div><div class="f02-dict-file">chai.py</div><span class="f02-dict-ln" id="f02-dict-l0" data-n="8">menu = {</span><span class="f02-dict-ln" id="f02-dict-l1" data-n="15">  <span class="f02-dict-k">"Masala"</span>: <span class="f02-dict-s">20</span>,</span><span class="f02-dict-ln" id="f02-dict-l2" data-n="14">  <span class="f02-dict-k">"Adrak"</span>: <span class="f02-dict-s">15</span>,</span><span class="f02-dict-ln" id="f02-dict-l3" data-n="17">  <span class="f02-dict-k">"Elaichi"</span>: <span class="f02-dict-s">25</span> }</span></div>
+    <div id="f02-dict-menu" style="position:absolute;left:610px;top:220px;width:430px;height:340px;background:#181715;border:2px solid rgba(245,241,232,.22);border-radius:18px;padding:22px 34px;box-sizing:border-box;box-shadow:0 24px 70px rgba(0,0,0,.5)"><div style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:23px;letter-spacing:.2em;color:rgba(245,241,232,.66);height:44px">CHAI MENU</div><div id="f02-dict-row0" style="display:flex;align-items:center;gap:16px;height:82px"><span style="width:15px;height:15px;border-radius:50%;background:#C8782A;flex:none"></span><span style="font-size:38px;color:#F5F1E8">Masala</span><span style="flex:1;border-bottom:3px dotted rgba(245,241,232,.3);margin:0 6px;transform:translateY(9px)"></span><span style="position:relative;width:129px;height:47px;font-family:'JetBrains Mono',monospace;font-size:36px;color:#FFB020;line-height:47px"><span id="f02-dict-p0" style="position:absolute;right:0;top:0">Rs 20</span></span></div><div id="f02-dict-row1" style="display:flex;align-items:center;gap:16px;height:82px"><span style="width:15px;height:15px;border-radius:50%;background:#E8C26A;flex:none"></span><span style="font-size:38px;color:#F5F1E8">Adrak</span><span style="flex:1;border-bottom:3px dotted rgba(245,241,232,.3);margin:0 6px;transform:translateY(9px)"></span><span style="position:relative;width:129px;height:47px;font-family:'JetBrains Mono',monospace;font-size:36px;color:#FFB020;line-height:47px"><span id="f02-dict-p1" style="position:absolute;right:0;top:0">Rs 15</span></span></div><div id="f02-dict-row2" style="display:flex;align-items:center;gap:16px;height:82px"><span style="width:15px;height:15px;border-radius:50%;background:#8CCB7E;flex:none"></span><span style="font-size:38px;color:#F5F1E8">Elaichi</span><span style="flex:1;border-bottom:3px dotted rgba(245,241,232,.3);margin:0 6px;transform:translateY(9px)"></span><span style="position:relative;width:129px;height:47px;font-family:'JetBrains Mono',monospace;font-size:36px;color:#FFB020;line-height:47px"><span id="f02-dict-p2" style="position:absolute;right:0;top:0">Rs 25</span></span></div></div>
+    <div class="f02-dict-pill" id="f02-dict-ck" style="left:110px;top:640px;height:88px;background:rgba(10,240,240,.12);border:3px solid #0AF0F0;color:#0AF0F0;font-size:44px">key = naam</div>
+    <div class="f02-dict-pill" id="f02-dict-cv" style="left:560px;top:640px;height:88px;background:rgba(255,176,32,.12);border:3px solid #FFB020;color:#FFB020;font-size:44px">value = daam</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-dict-stage", { scale: 1.0 }, { scale: 1.04, duration: 8, ease: "none" }, 0);
+  tl.fromTo("#f02-dict-head .f02-dict-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
+  tl.fromTo("#f02-dict-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.3);
+  tl.fromTo("#f02-dict-menu", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.45);
+  tl.fromTo("#f02-dict-l0", { width: "0ch" }, { width: "8ch", duration: 0.50, ease: "steps(8)" }, 1.00);
+  tl.fromTo("#f02-dict-l1", { width: "0ch" }, { width: "15ch", duration: 0.70, ease: "steps(15)" }, 1.70);
+  tl.fromTo("#f02-dict-row0", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.20);
+  tl.fromTo("#f02-dict-l2", { width: "0ch" }, { width: "14ch", duration: 0.70, ease: "steps(14)" }, 2.90);
+  tl.fromTo("#f02-dict-row1", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.40);
+  tl.fromTo("#f02-dict-l3", { width: "0ch" }, { width: "17ch", duration: 0.70, ease: "steps(17)" }, 4.10);
+  tl.fromTo("#f02-dict-row2", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 4.60);
+  tl.fromTo("#f02-dict-ck", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 5.5);
+  tl.fromTo("#f02-dict-cv", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.4, ease: "power3.out" }, 6.0);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-dict"] = tl;
+})();
+</script>
+</template>
