@@ -385,11 +385,13 @@ body = f"""    <div class="{f}-h" id="{f}-head" style="top:90px;font-size:84px">
     </svg>
     {sh}
     <div id="{f}-dot" style="position:absolute;left:102px;top:260px;width:36px;height:36px;border-radius:50%;background:{AMBER};box-shadow:0 0 30px {AMBER};opacity:0"></div>
-    <div id="{f}-teaser" style="position:absolute;left:90px;top:500px;width:900px;height:200px;border-radius:20px;background:{NAVY};border:2px solid rgba(10,240,240,.5);
+    <div id="{f}-teaser" style="position:absolute;left:90px;top:430px;width:900px;height:190px;border-radius:20px;background:{NAVY};border:2px solid rgba(10,240,240,.5);
          box-sizing:border-box;padding:30px 44px;box-shadow:0 24px 70px rgba(0,0,0,.5)">
       <div style="{MONO};font-weight:700;font-size:30px;letter-spacing:.16em;color:rgba(245,241,232,.66)">AGLA PART 2</div>
       <div style="font-size:54px;margin-top:20px;white-space:nowrap"><span class="{f}-c" style="{MONO}">if-else</span>: bot ko jawab sikhao</div>
     </div>
+    <div id="{f}-web" style="position:absolute;left:0;right:0;top:648px;text-align:center;font-size:40px;font-weight:700;white-space:nowrap">
+      Free notes + code: <span class="{f}-c" style="{MONO}">samjhowithraj.online</span></div>
     <div id="{f}-sb" style="position:absolute;left:50%;transform:translateX(-50%);top:745px;height:132px;padding:0 22px 0 18px;border-radius:9999px;
          background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.22);box-shadow:0 24px 80px rgba(0,0,0,.5);
          display:flex;align-items:center;gap:22px;white-space:nowrap;box-sizing:border-box">
@@ -405,7 +407,8 @@ for i in range(5):
 js += [f'  tl.set("#{f}-dot", {{ opacity: 1 }}, 0.4);',
        f'  tl.to("#{f}-dot", {{ x: 840, duration: 1.6, ease: "none" }}, 0.4);',
        f'  tl.to("#{f}-dot", {{ backgroundColor: "{CYAN}", boxShadow: "0 0 40px {CYAN}", duration: 0.3 }}, 1.8);',
-       fade_up(f"#{f}-teaser", 2.0, 0.6, 70),
+       fade_up(f"#{f}-teaser", 1.9, 0.6, 70),
+       fade_up(f"#{f}-web", 2.5, 0.5, 30),
        f'  tl.fromTo("#{f}-sb", {{ opacity: 0, y: 40 }}, {{ opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }}, 3.0);',
        f'  tl.fromTo("#{f}-btn", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.22, yoyo: true, repeat: 5, ease: "power1.inOut" }}, 3.6);']
 write(f, 6, body, js)

@@ -17,6 +17,8 @@ while True/break). No other coding background assumed.
 - New recurring prop: the **chat window** (customer bubbles right/cream, Chai Bot bubbles left/cyan with a bot face).
 - 5 frames: Hook (4 s) → idea (6–8 s) → code + terminal/chat demo (7–8 s) → visual metaphor (5–6 s) → payoff + next-part teaser + channel bar (6 s).
 - End card channel bar (same as the Agentic AI series): round raj-mark logo + "Samjho with Raj" + tagline + pulsing button.
+- End card also shows "Free notes + code: samjhowithraj.online" above the channel bar; thumbnail footer and both captions carry the site link
+  (Instagram: "link in bio"; YouTube description: https://www.samjhowithraj.online/#chatbot-N).
   `python build-frames.py yt` → red Subscribe, `python build-frames.py ig` → blue Follow; render both as `renders/chai-bot-NN-yt.mp4` / `-ig.mp4`. Format stays square 1080×1080 like the python-chai series.
 - Parts 13–50 show real API / library code; check the `claude-api` skill for current SDK syntax and model IDs before building them.
 

@@ -14,6 +14,7 @@ Humara Chai Bot abhi thoda buddhu hai 😅 har baat pe "Chai ready!" bolta hai.
 
 Agla Part 2: if-else se bot ko jawab sikhao 👉 Follow karo, miss mat karna!
 💾 Save karo, baad mein code try karna.
+📘 Free notes + code: samjhowithraj.online (link in bio)
 💬 Comment mein likho "BOT" agar Part 2 chahiye!
 
 #python #pythonhindi #chatbot #ai #learnpython #codinginhindi #pythonforbeginners #samjhowithraj #aipython #chaibot
@@ -39,6 +40,8 @@ while True:
     if msg == "bye": break
     print("Bot: Chai ready!")
 
+📘 Free notes + code (copy karo, khud chalao): https://www.samjhowithraj.online/#chatbot-1
+
 ▶️ Agla Part 2: if-else se bot ko jawab sikhao
 🔔 Subscribe karo — har hafte naya part!
 💬 Comment karo: aapka bot kya bolega?
@@ -46,4 +49,4 @@ while True:
 #python #chatbot #pythonhindi
 
 ### Tags (paste in the Tags box, comma separated)
-python chatbot, python chatbot in hindi, chatbot kaise banaye, python for beginners, python in hindi, learn python hindi, python tutorial hindi, ai chatbot python, ai python, coding in hindi, python shorts, chatbot banana sikhe, python while loop, python input print, samjho with raj, chai bot
+python chatbot, python chatbot in hindi, chatbot kaise banaye, python for beginners, python in hindi, learn python hindi, python tutorial hindi, ai chatbot python, ai python, coding in hindi, python shorts, chatbot banana sikhe, python while loop, python input print, samjho with raj, chai bot, samjhowithraj.online
