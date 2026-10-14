@@ -101,6 +101,7 @@ while True/break). No other coding background assumed.
 3. `npx --yes hyperframes@0.8.153 check` → build + render each platform variant (yt, ig).
 4. Thumbnail 1080×1920 from `thumbnail/thumb.html`.
 5. `CAPTION.md`: Instagram caption + hashtags, and YouTube Shorts title (#shorts), description (with the code) and tags.
+6. Commit and push to github.com/samjhowithraj-007/python-ai-chai (repo root is `videos/`).
 
 ## Status
 - [x] Part 1 — built, 50-part roadmap, square YT + IG versions (see `../ai-chai-bot-01`)
