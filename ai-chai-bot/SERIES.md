@@ -104,7 +104,7 @@ while True/break). No other coding background assumed.
 6. Commit and push the part to github.com/samjhowithraj-007/python-ai-chai (repo root is `videos/`).
 7. Update the website (github.com/samjhowithraj-007/samjhowithrajwebsite, local `C:\samjhowithraj\samjhowithrajwebsite`):
    copy `renders/chai-bot-NN-yt.mp4` to `media/chatbot-N.mp4`, add a poster `media/chatbot-N.jpg`, turn the matching
-   "coming soon" lesson in `index.html` (COURSES list) into a full lesson with notes, code, output, practice and takeaway,
+   "coming soon" lesson in `index.html` (COURSES list) into a full lesson with notes, code, output, practice and takeaway (all website text in English; code stays as in the video),
    then commit and push. www.samjhowithraj.online updates by itself.
 
 ## Status
