@@ -15,3 +15,4 @@ node_modules/
 /ai-chai-bot*/raw/
 /ai-chai-bot*/cam/
 .transcode-cache/
+/ai-chai-bot*/cam2/

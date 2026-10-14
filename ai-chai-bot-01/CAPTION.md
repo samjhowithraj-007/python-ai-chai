@@ -16,6 +16,7 @@ Agla Part 2: if-else se bot ko jawab sikhao 👉 Follow karo, miss mat karna!
 💾 Save karo, baad mein code try karna.
 📘 Free notes + code: samjhowithraj.online (link in bio)
 💬 Comment mein likho "BOT" agar Part 2 chahiye!
+▶️ YouTube pe bhi: youtube.com/@SamjhowithRaj
 
 #python #pythonhindi #chatbot #ai #learnpython #codinginhindi #pythonforbeginners #samjhowithraj #aipython #chaibot
 
@@ -44,9 +45,35 @@ while True:
 
 ▶️ Agla Part 2: if-else se bot ko jawab sikhao
 🔔 Subscribe karo — har hafte naya part!
+
+📸 Instagram: https://www.instagram.com/samjhowithraj/
+👍 Facebook: https://www.facebook.com/profile.php?id=61595088790170
 💬 Comment karo: aapka bot kya bolega?
 
 #python #chatbot #pythonhindi
 
 ### Tags (paste in the Tags box, comma separated)
 python chatbot, python chatbot in hindi, chatbot kaise banaye, python for beginners, python in hindi, learn python hindi, python tutorial hindi, ai chatbot python, ai python, coding in hindi, python shorts, chatbot banana sikhe, python while loop, python input print, samjho with raj, chai bot, samjhowithraj.online
+
+---
+
+## Facebook (use the Instagram video, chai-bot-01-ig.mp4)
+
+🤖 AI + Python: chai ka chatbot banao — PART 1/50
+
+Chatbot banana mushkil lagta hai? Bas 3 cheezein chahiye:
+👂 input() = suno
+💬 print() = jawab do
+🔁 while True = chalte raho
+
+Humara Chai Bot abhi thoda buddhu hai 😅 har baat pe "Chai ready!" bolta hai.
+50 parts mein isko asli AI agent banayenge!
+
+📘 Free notes + code: https://www.samjhowithraj.online/#chatbot-1
+▶️ Agla Part 2: if-else se bot ko jawab sikhao. Follow karo!
+💬 Comment mein likho "BOT" agar Part 2 chahiye!
+
+▶️ YouTube: https://www.youtube.com/@SamjhowithRaj
+📸 Instagram: https://www.instagram.com/samjhowithraj/
+
+#python #chatbot #learnpython #samjhowithraj

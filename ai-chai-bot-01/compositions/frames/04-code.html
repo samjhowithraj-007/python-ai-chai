@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="04-code" data-width="1080" data-height="1080">
-  <div class="clip f04-code-bg" id="f04-code-bg" data-start="0" data-duration="10.3" data-track-index="0"><div class="f04-code-grid"></div></div>
-  <div class="clip f04-code-stage" id="f04-code-stage" data-start="0" data-duration="10.3" data-track-index="1">
+  <div class="clip f04-code-bg" id="f04-code-bg" data-start="0" data-duration="9.4" data-track-index="0"><div class="f04-code-grid"></div></div>
+  <div class="clip f04-code-stage" id="f04-code-stage" data-start="0" data-duration="9.4" data-track-index="1">
     <style>.f04-code-r { color:#FF8FA3; text-shadow:0 0 24px rgba(255,143,163,.45); }</style>
     <div class="f04-code-h" id="f04-code-head" style="top:66px;font-size:80px"><span class="f04-code-w">Pehla</span> <span class="f04-code-w">Chai</span> <span class="f04-code-w f04-code-c">Bot</span></div>
     <div class="f04-code-card" id="f04-code-card" style="left:40px;top:170px;width:720px;height:312px;font-size:32px"><div class="f04-code-dots"><i></i><i></i><i></i></div><div class="f04-code-file">chai_bot.py</div><span class="f04-code-ln" id="f04-code-l0" data-n="11"><span class="f04-code-k">while True</span>:</span><span class="f04-code-ln" id="f04-code-l1" data-n="24">    msg = <span class="f04-code-k">input</span>(<span class="f04-code-s">"Aap: "</span>)</span><span class="f04-code-ln" id="f04-code-l2" data-n="26">    <span class="f04-code-k">if</span> msg == <span class="f04-code-s">"bye"</span>: <span class="f04-code-k">break</span></span><span class="f04-code-ln" id="f04-code-l3" data-n="29">    <span class="f04-code-k">print</span>(<span class="f04-code-s">"Bot: Chai ready!"</span>)</span></div>
@@ -50,7 +50,7 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f04-code-stage", { scale: 1.0 }, { scale: 1.04, duration: 10.3, ease: "none" }, 0);
+  tl.fromTo("#f04-code-stage", { scale: 1.0 }, { scale: 1.04, duration: 9.4, ease: "none" }, 0);
   tl.fromTo("#f04-code-head .f04-code-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
   tl.fromTo("#f04-code-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.20);
   tl.fromTo("#f04-code-bot", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, 0.40);
@@ -59,14 +59,14 @@
   tl.fromTo("#f04-code-l1", { width: "0ch" }, { width: "24ch", duration: 0.35, ease: "steps(24)" }, 0.65);
   tl.fromTo("#f04-code-l2", { width: "0ch" }, { width: "26ch", duration: 0.35, ease: "steps(26)" }, 0.90);
   tl.fromTo("#f04-code-l3", { width: "0ch" }, { width: "29ch", duration: 0.35, ease: "steps(29)" }, 1.15);
-  tl.fromTo("#f04-code-term", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.40);
-  tl.fromTo("#f04-code-hl", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 2.8);
-  tl.fromTo("#f04-code-q1", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 3.20);
-  tl.fromTo("#f04-code-u1c", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 3.30);
-  tl.fromTo("#f04-code-u1", { width: "0ch" }, { width: "4ch", duration: 0.50, ease: "steps(4)" }, 3.60);
-  tl.to("#f04-code-u1c", { opacity: 0, duration: 0.05 }, 4.40);
-  tl.to("#f04-code-hl", { y: 102, duration: 0.3, ease: "power2.inOut" }, 4.40);
-  tl.fromTo("#f04-code-o1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 4.60);
+  tl.fromTo("#f04-code-term", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.20);
+  tl.fromTo("#f04-code-hl", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 2.6);
+  tl.fromTo("#f04-code-q1", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 3.60);
+  tl.fromTo("#f04-code-u1c", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 3.70);
+  tl.fromTo("#f04-code-u1", { width: "0ch" }, { width: "4ch", duration: 0.50, ease: "steps(4)" }, 4.00);
+  tl.to("#f04-code-u1c", { opacity: 0, duration: 0.05 }, 4.80);
+  tl.to("#f04-code-hl", { y: 102, duration: 0.3, ease: "power2.inOut" }, 4.80);
+  tl.fromTo("#f04-code-o1", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 5.00);
   tl.to("#f04-code-hl", { y: 0, duration: 0.3, ease: "power2.inOut" }, 5.20);
   tl.fromTo("#f04-code-q2", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 5.40);
   tl.fromTo("#f04-code-u2c", { opacity: 0 }, { opacity: 1, duration: 0.05 }, 5.50);
@@ -74,13 +74,13 @@
   tl.to("#f04-code-u2c", { opacity: 0, duration: 0.05 }, 6.60);
   tl.to("#f04-code-hl", { y: 102, duration: 0.3, ease: "power2.inOut" }, 6.60);
   tl.fromTo("#f04-code-o2", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 6.80);
-  tl.fromTo("#f04-code-stamp", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "power4.in" }, 8.4);
-  tl.to("#f04-code-bot", { rotation: -10, duration: 0.25, ease: "power2.out", transformOrigin: "50% 50%" }, 8.7);
-  tl.to("#f04-code-bot", { rotation: 0, duration: 0.4, ease: "back.out(2)", transformOrigin: "50% 50%" }, 8.95);
+  tl.fromTo("#f04-code-stamp", { opacity: 0, scale: 1.6, rotation: -6 }, { opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "power4.in" }, 7.4);
+  tl.to("#f04-code-bot", { rotation: -10, duration: 0.25, ease: "power2.out", transformOrigin: "50% 50%" }, 7.7);
+  tl.to("#f04-code-bot", { rotation: 0, duration: 0.4, ease: "back.out(2)", transformOrigin: "50% 50%" }, 7.95);
   tl.to("#f04-code-bot .f04-code-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 1.20);
   tl.to("#f04-code-bot .f04-code-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 1.30);
-  tl.to("#f04-code-bot .f04-code-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 8.60);
-  tl.to("#f04-code-bot .f04-code-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 8.70);
+  tl.to("#f04-code-bot .f04-code-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 7.60);
+  tl.to("#f04-code-bot .f04-code-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 7.70);
   window.__timelines = window.__timelines || {};
   window.__timelines["04-code"] = tl;
 })();

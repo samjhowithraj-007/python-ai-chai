@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="02-chat" data-width="1080" data-height="1080">
-  <div class="clip f02-chat-bg" id="f02-chat-bg" data-start="0" data-duration="9.6" data-track-index="0"><div class="f02-chat-grid"></div></div>
-  <div class="clip f02-chat-stage" id="f02-chat-stage" data-start="0" data-duration="9.6" data-track-index="1">
+  <div class="clip f02-chat-bg" id="f02-chat-bg" data-start="0" data-duration="6.8" data-track-index="0"><div class="f02-chat-grid"></div></div>
+  <div class="clip f02-chat-stage" id="f02-chat-stage" data-start="0" data-duration="6.8" data-track-index="1">
     <div class="f02-chat-h" id="f02-chat-head" style="top:66px;font-size:80px"><span class="f02-chat-w f02-chat-c">Chatbot</span> <span class="f02-chat-w">kya</span> <span class="f02-chat-w">hai?</span></div>
     <div id="f02-chat-win" style="position:absolute;left:90px;top:180px;width:900px;height:690px;border-radius:24px;background:#0A0C10;
          border:1px solid rgba(245,241,232,.16);box-shadow:0 24px 70px rgba(0,0,0,.5);overflow:hidden">
@@ -50,22 +50,22 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f02-chat-stage", { scale: 1.0 }, { scale: 1.04, duration: 9.6, ease: "none" }, 0);
+  tl.fromTo("#f02-chat-stage", { scale: 1.0 }, { scale: 1.04, duration: 6.8, ease: "none" }, 0);
   tl.fromTo("#f02-chat-head .f02-chat-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
   tl.fromTo("#f02-chat-win", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.25);
-  tl.fromTo("#f02-chat-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.20);
-  tl.fromTo("#f02-chat-m1", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 4.3);
-  tl.fromTo("#f02-chat-tya", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 4.9);
-  tl.fromTo("#f02-chat-ty", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 4.9);
-  tl.fromTo("#f02-chat-ty .f02-chat-dot", { y: 0 }, { y: -10, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }, 5.0);
-  tl.to("#f02-chat-ty .f02-chat-dot", { y: 0, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }, 5.2);
-  tl.set("#f02-chat-ty", { opacity: 0 }, 5.8);
-  tl.fromTo("#f02-chat-m2a", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 5.8);
-  tl.set("#f02-chat-tya", { opacity: 0 }, 5.81);
-  tl.fromTo("#f02-chat-m2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 5.8);
-  tl.fromTo("#f02-chat-m3", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 7.3);
-  tl.fromTo("#f02-chat-m4a", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 8.0);
-  tl.fromTo("#f02-chat-m4", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 8.0);
+  tl.fromTo("#f02-chat-cap", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 1.00);
+  tl.fromTo("#f02-chat-m1", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 2.4);
+  tl.fromTo("#f02-chat-tya", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 2.9);
+  tl.fromTo("#f02-chat-ty", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 2.9);
+  tl.fromTo("#f02-chat-ty .f02-chat-dot", { y: 0 }, { y: -10, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }, 3.0);
+  tl.to("#f02-chat-ty .f02-chat-dot", { y: 0, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }, 3.2);
+  tl.set("#f02-chat-ty", { opacity: 0 }, 3.5);
+  tl.fromTo("#f02-chat-m2a", { opacity: 0 }, { opacity: 1, duration: 0.01 }, 3.5);
+  tl.set("#f02-chat-tya", { opacity: 0 }, 3.51);
+  tl.fromTo("#f02-chat-m2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.5);
+  tl.fromTo("#f02-chat-m3", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 4.7);
+  tl.fromTo("#f02-chat-m4a", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 5.3);
+  tl.fromTo("#f02-chat-m4", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 5.3);
   tl.to("#f02-chat-hb .f02-chat-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 3.00);
   tl.to("#f02-chat-hb .f02-chat-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 3.10);
   window.__timelines = window.__timelines || {};

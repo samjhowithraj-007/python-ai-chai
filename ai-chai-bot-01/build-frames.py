@@ -266,7 +266,7 @@ js = [f'  tl.fromTo("#{f}-kick", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5 
       f'  tl.fromTo("#{f}-bot", {{ opacity: 0, scale: 0.4, rotation: -12 }}, {{ opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.8)", transformOrigin: "50% 50%" }}, 1.2);']
 js += blink(f, "bot", 2.3) + blink(f, "bot", 3.2)
 js.append(fade_up(f"#{f}-sub", 2.6, 0.45, 30))
-write(f, 3.9, body, js)
+write(f, 3.95, body, js)
 
 # ---- Frame 2: chatbot kya hai? (7s) ----
 f = "02-chat"
@@ -286,21 +286,21 @@ body = f"""    <div class="{f}-h" id="{f}-head" style="top:66px;font-size:80px">
       <div class="{f}-h {f}-a" id="{f}-cap" style="top:580px;font-size:46px">Program jo aapse baat kare</div>
     </div>"""
 js = [rise(f"#{f}-head .{f}-w", 0.05, 0.08), fade_up(f"#{f}-win", 0.25, 0.6, 60),
-      fade_up(f"#{f}-cap", 1.2, 0.5, 30),
-      f'  tl.fromTo("#{f}-m1", {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 4.3);',
-      f'  tl.fromTo("#{f}-tya", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 4.9);',
-      f'  tl.fromTo("#{f}-ty", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 4.9);',
-      f'  tl.fromTo("#{f}-ty .{f}-dot", {{ y: 0 }}, {{ y: -10, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }}, 5.0);',
-      f'  tl.to("#{f}-ty .{f}-dot", {{ y: 0, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }}, 5.2);',
-      f'  tl.set("#{f}-ty", {{ opacity: 0 }}, 5.8);',
-      f'  tl.fromTo("#{f}-m2a", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.01 }}, 5.8);',
-      f'  tl.set("#{f}-tya", {{ opacity: 0 }}, 5.81);',
-      f'  tl.fromTo("#{f}-m2", {{ opacity: 0, x: -40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 5.8);',
-      f'  tl.fromTo("#{f}-m3", {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 7.3);',
-      f'  tl.fromTo("#{f}-m4a", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 8.0);',
-      f'  tl.fromTo("#{f}-m4", {{ opacity: 0, x: -40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 8.0);']
+      fade_up(f"#{f}-cap", 1.0, 0.5, 30),
+      f'  tl.fromTo("#{f}-m1", {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 2.4);',
+      f'  tl.fromTo("#{f}-tya", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 2.9);',
+      f'  tl.fromTo("#{f}-ty", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 2.9);',
+      f'  tl.fromTo("#{f}-ty .{f}-dot", {{ y: 0 }}, {{ y: -10, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }}, 3.0);',
+      f'  tl.to("#{f}-ty .{f}-dot", {{ y: 0, duration: 0.18, ease: "sine.inOut", stagger: 0.12 }}, 3.2);',
+      f'  tl.set("#{f}-ty", {{ opacity: 0 }}, 3.5);',
+      f'  tl.fromTo("#{f}-m2a", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.01 }}, 3.5);',
+      f'  tl.set("#{f}-tya", {{ opacity: 0 }}, 3.51);',
+      f'  tl.fromTo("#{f}-m2", {{ opacity: 0, x: -40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 3.5);',
+      f'  tl.fromTo("#{f}-m3", {{ opacity: 0, x: 40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 4.7);',
+      f'  tl.fromTo("#{f}-m4a", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.2 }}, 5.3);',
+      f'  tl.fromTo("#{f}-m4", {{ opacity: 0, x: -40 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, 5.3);']
 js += blink(f, "hb", 3.0)
-write(f, 9.6, body, js)
+write(f, 6.8, body, js)
 
 # ---- Frame 3: bas 3 cheezein (5s) ----
 f = "03-three"
@@ -319,9 +319,9 @@ body = f"""    <div class="{f}-h" id="{f}-head" style="top:90px;font-size:88px">
     <div class="{f}-h" id="{f}-foot" style="top:770px;left:90px;right:auto;text-align:left;font-size:42px;color:rgba(245,241,232,.8)">Sab aap Part 1–10 mein seekh chuke ho!</div>"""
 js = [rise(f"#{f}-head .{f}-w", 0.05, 0.1)]
 for i in range(3):
-    js.append(f'  tl.fromTo("#{f}-r{i}", {{ opacity: 0, x: -60 }}, {{ opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }}, {[2.6, 4.3, 6.5][i]:.2f});')
-js.append(fade_up(f"#{f}-foot", 7.4, 0.5, 30))
-write(f, 9.45, body, js)
+    js.append(f'  tl.fromTo("#{f}-r{i}", {{ opacity: 0, x: -60 }}, {{ opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }}, {[1.3, 2.4, 4.0][i]:.2f});')
+js.append(fade_up(f"#{f}-foot", 4.8, 0.5, 30))
+write(f, 5.95, body, js)
 
 # ---- Frame 4: pehla chai bot (8s) ----
 f = "04-code"
@@ -350,8 +350,8 @@ js = [rise(f"#{f}-head .{f}-w", 0.05, 0.08),
       f'  tl.fromTo("#{f}-v1", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 0.7);']
 for i in range(4):
     js.append(type_line(f, i, ns[i], 0.4 + i * 0.25, 0.35))
-js += [fade_up(f"#{f}-term", 2.4, 0.5), f'  tl.fromTo("#{f}-hl", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25 }}, 2.8);']
-for k, (txt, t0) in enumerate([("menu", 3.2), ("kaise ho?", 5.4)]):
+js += [fade_up(f"#{f}-term", 2.2, 0.5), f'  tl.fromTo("#{f}-hl", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.25 }}, 2.6);']
+for k, (txt, t0) in enumerate([("menu", 3.6), ("kaise ho?", 5.4)]):
     q, u, o = f"q{k + 1}", f"u{k + 1}", f"o{k + 1}"
     if k:
         js.append(f'  tl.to("#{f}-hl", {{ y: 0, duration: 0.3, ease: "power2.inOut" }}, {t0 - 0.2:.2f});')
@@ -359,11 +359,11 @@ for k, (txt, t0) in enumerate([("menu", 3.2), ("kaise ho?", 5.4)]):
     js += type_user(f, u, len(txt), t0 + 0.4, 0.5)
     js.append(f'  tl.to("#{f}-hl", {{ y: {y(3) - y(1)}, duration: 0.3, ease: "power2.inOut" }}, {t0 + 1.2:.2f});')
     js.append(f'  tl.fromTo("#{f}-{o}", {{ opacity: 0, x: -20 }}, {{ opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }}, {t0 + 1.4:.2f});')
-js += [f'  tl.fromTo("#{f}-stamp", {{ opacity: 0, scale: 1.6, rotation: -6 }}, {{ opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "power4.in" }}, 8.4);',
-       f'  tl.to("#{f}-bot", {{ rotation: -10, duration: 0.25, ease: "power2.out", transformOrigin: "50% 50%" }}, 8.7);',
-       f'  tl.to("#{f}-bot", {{ rotation: 0, duration: 0.4, ease: "back.out(2)", transformOrigin: "50% 50%" }}, 8.95);']
-js += blink(f, "bot", 1.2) + blink(f, "bot", 8.6)
-write(f, 10.3, body, js)
+js += [f'  tl.fromTo("#{f}-stamp", {{ opacity: 0, scale: 1.6, rotation: -6 }}, {{ opacity: 1, scale: 1, rotation: -6, duration: 0.35, ease: "power4.in" }}, 7.4);',
+       f'  tl.to("#{f}-bot", {{ rotation: -10, duration: 0.25, ease: "power2.out", transformOrigin: "50% 50%" }}, 7.7);',
+       f'  tl.to("#{f}-bot", {{ rotation: 0, duration: 0.4, ease: "back.out(2)", transformOrigin: "50% 50%" }}, 7.95);']
+js += blink(f, "bot", 1.2) + blink(f, "bot", 7.6)
+write(f, 9.4, body, js)
 
 import sys
 PLATFORM = sys.argv[1] if len(sys.argv) > 1 else "yt"
@@ -407,9 +407,9 @@ for i in range(5):
 js += [f'  tl.set("#{f}-dot", {{ opacity: 1 }}, 0.4);',
        f'  tl.to("#{f}-dot", {{ x: 840, duration: 1.6, ease: "none" }}, 0.4);',
        f'  tl.to("#{f}-dot", {{ backgroundColor: "{CYAN}", boxShadow: "0 0 40px {CYAN}", duration: 0.3 }}, 1.8);',
-       fade_up(f"#{f}-web", 4.0, 0.5, 30),
-       fade_up(f"#{f}-teaser", 7.6, 0.6, 70),
-       f'  tl.fromTo("#{f}-sb", {{ opacity: 0, y: 40 }}, {{ opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }}, 9.7);',
-       f'  tl.fromTo("#{f}-btn", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.22, yoyo: true, repeat: 5, ease: "power1.inOut" }}, 10.1);']
-write(f, 11.75, body, js)
+       fade_up(f"#{f}-web", 7.6, 0.5, 30),
+       fade_up(f"#{f}-teaser", 9.6, 0.6, 70),
+       f'  tl.fromTo("#{f}-sb", {{ opacity: 0, y: 40 }}, {{ opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }}, 12.7);',
+       f'  tl.fromTo("#{f}-btn", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.22, yoyo: true, repeat: 5, ease: "power1.inOut" }}, 13.1);']
+write(f, 14.9, body, js)
 print("wrote", sorted(os.listdir(OUT)))

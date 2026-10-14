@@ -102,7 +102,7 @@ while True/break). No other coding background assumed.
 2. Write `build-frames.py`, run it, write `index.html` (5 scenes, 0.5 s crossfades, bgm).
 3. `npx --yes hyperframes@0.8.153 check` → build + render each platform variant (yt, ig).
 4. Thumbnail 1080×1920 from `thumbnail/thumb.html`.
-5. `CAPTION.md`: Instagram caption + hashtags, and YouTube Shorts title (#shorts), description (with the code) and tags.
+5. `CAPTION.md`: Instagram caption + hashtags, Facebook caption (Instagram video, clickable site link, 3–5 hashtags), and YouTube Shorts title (#shorts), description (with the code) and tags.
 6. Commit and push the part to github.com/samjhowithraj-007/python-ai-chai (repo root is `videos/`).
 7. Update the website (github.com/samjhowithraj-007/samjhowithrajwebsite, local `C:\samjhowithraj\samjhowithrajwebsite`):
    copy `renders/chai-bot-NN-yt.mp4` to `media/chatbot-N.mp4`, add a poster `media/chatbot-N.jpg`, turn the matching
