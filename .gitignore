@@ -5,6 +5,8 @@
 !/python-chai*/
 !/ai-chai-bot*/
 !/_shared/
+!/website/
+!/website-src/
 
 # tool caches and logs
 .hyperframes/
