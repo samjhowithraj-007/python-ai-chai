@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="01-hook" data-width="1080" data-height="1080">
-  <div class="clip f01-hook-bg" id="f01-hook-bg" data-start="0" data-duration="4" data-track-index="0"><div class="f01-hook-grid"></div></div>
-  <div class="clip f01-hook-stage" id="f01-hook-stage" data-start="0" data-duration="4" data-track-index="1">
+  <div class="clip f01-hook-bg" id="f01-hook-bg" data-start="0" data-duration="3.9" data-track-index="0"><div class="f01-hook-grid"></div></div>
+  <div class="clip f01-hook-stage" id="f01-hook-stage" data-start="0" data-duration="3.9" data-track-index="1">
     <div class="f01-hook-kick" id="f01-hook-kick" style="top:90px">AI + PYTHON · PART 1</div>
     <div class="f01-hook-h" id="f01-hook-t1" style="top:160px;font-size:104px"><span class="f01-hook-w">Chai</span> <span class="f01-hook-w">ka</span></div>
     <div class="f01-hook-h" id="f01-hook-t2" style="top:275px;font-size:104px"><span class="f01-hook-w f01-hook-a">chatbot</span> <span class="f01-hook-w">banao!</span></div>
@@ -46,15 +46,15 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f01-hook-stage", { scale: 1.0 }, { scale: 1.04, duration: 4, ease: "none" }, 0);
+  tl.fromTo("#f01-hook-stage", { scale: 1.0 }, { scale: 1.04, duration: 3.9, ease: "none" }, 0);
   tl.fromTo("#f01-hook-kick", { opacity: 0 }, { opacity: 1, duration: 0.5 }, 0.05);
   tl.fromTo("#f01-hook-t1 .f01-hook-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.20);
   tl.fromTo("#f01-hook-t2 .f01-hook-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.50);
   tl.fromTo("#f01-hook-bot", { opacity: 0, scale: 0.4, rotation: -12 }, { opacity: 1, scale: 1, rotation: 0, duration: 0.7, ease: "back.out(1.8)", transformOrigin: "50% 50%" }, 1.2);
   tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 2.30);
   tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 2.40);
-  tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 3.40);
-  tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 3.50);
+  tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 3.20);
+  tl.to("#f01-hook-bot .f01-hook-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 3.30);
   tl.fromTo("#f01-hook-sub", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 2.60);
   window.__timelines = window.__timelines || {};
   window.__timelines["01-hook"] = tl;

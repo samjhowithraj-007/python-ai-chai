@@ -32,11 +32,11 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="03-three" data-width="1080" data-height="1080">
-  <div class="clip f03-three-bg" id="f03-three-bg" data-start="0" data-duration="5" data-track-index="0"><div class="f03-three-grid"></div></div>
-  <div class="clip f03-three-stage" id="f03-three-stage" data-start="0" data-duration="5" data-track-index="1">
+  <div class="clip f03-three-bg" id="f03-three-bg" data-start="0" data-duration="9.45" data-track-index="0"><div class="f03-three-grid"></div></div>
+  <div class="clip f03-three-stage" id="f03-three-stage" data-start="0" data-duration="9.45" data-track-index="1">
     <div class="f03-three-h" id="f03-three-head" style="top:90px;font-size:88px"><span class="f03-three-w">Bas</span> <span class="f03-three-w f03-three-a">3</span> <span class="f03-three-w">cheezein!</span></div>
     <div id="f03-three-r0" style="position:absolute;left:90px;top:250px;width:900px;height:130px"><div style="position:absolute;left:0;top:0;width:420px;height:130px;border-radius:18px;background:#181715;border:3px solid #0AF0F0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:54px;color:#0AF0F0">input()</div><svg width="90" height="40" viewBox="0 0 90 40" style="position:absolute;left:440px;top:45px" fill="none"><path d="M4 20 L74 20 M58 6 L78 20 L58 34" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="f03-three-a" style="position:absolute;left:550px;top:0;height:130px;display:flex;align-items:center;font-size:72px;font-weight:700;white-space:nowrap">suno</div></div><div id="f03-three-r1" style="position:absolute;left:90px;top:415px;width:900px;height:130px"><div style="position:absolute;left:0;top:0;width:420px;height:130px;border-radius:18px;background:#181715;border:3px solid #0AF0F0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:54px;color:#0AF0F0">print()</div><svg width="90" height="40" viewBox="0 0 90 40" style="position:absolute;left:440px;top:45px" fill="none"><path d="M4 20 L74 20 M58 6 L78 20 L58 34" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="f03-three-a" style="position:absolute;left:550px;top:0;height:130px;display:flex;align-items:center;font-size:72px;font-weight:700;white-space:nowrap">jawab do</div></div><div id="f03-three-r2" style="position:absolute;left:90px;top:580px;width:900px;height:130px"><div style="position:absolute;left:0;top:0;width:420px;height:130px;border-radius:18px;background:#181715;border:3px solid #0AF0F0;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:54px;color:#0AF0F0">while True</div><svg width="90" height="40" viewBox="0 0 90 40" style="position:absolute;left:440px;top:45px" fill="none"><path d="M4 20 L74 20 M58 6 L78 20 L58 34" stroke="#F5F1E8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg><div class="f03-three-a" style="position:absolute;left:550px;top:0;height:130px;display:flex;align-items:center;font-size:72px;font-weight:700;white-space:nowrap">chalte raho</div></div>
-    <div class="f03-three-h" id="f03-three-foot" style="top:770px;font-size:46px;color:rgba(245,241,232,.8)">Sab aap Part 1–10 mein seekh chuke ho!</div>
+    <div class="f03-three-h" id="f03-three-foot" style="top:770px;left:90px;right:auto;text-align:left;font-size:42px;color:rgba(245,241,232,.8)">Sab aap Part 1–10 mein seekh chuke ho!</div>
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
@@ -44,12 +44,12 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f03-three-stage", { scale: 1.0 }, { scale: 1.04, duration: 5, ease: "none" }, 0);
+  tl.fromTo("#f03-three-stage", { scale: 1.0 }, { scale: 1.04, duration: 9.45, ease: "none" }, 0);
   tl.fromTo("#f03-three-head .f03-three-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.1 }, 0.05);
-  tl.fromTo("#f03-three-r0", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.60);
-  tl.fromTo("#f03-three-r1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 1.30);
-  tl.fromTo("#f03-three-r2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.00);
-  tl.fromTo("#f03-three-foot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 3.00);
+  tl.fromTo("#f03-three-r0", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 2.60);
+  tl.fromTo("#f03-three-r1", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 4.30);
+  tl.fromTo("#f03-three-r2", { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 6.50);
+  tl.fromTo("#f03-three-foot", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 7.40);
   window.__timelines = window.__timelines || {};
   window.__timelines["03-three"] = tl;
 })();

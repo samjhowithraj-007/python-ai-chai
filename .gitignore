@@ -10,3 +10,8 @@
 .hyperframes/
 node_modules/
 *.log
+
+# raw camera files and working copies are too big for GitHub
+/ai-chai-bot*/raw/
+/ai-chai-bot*/cam/
+.transcode-cache/
