@@ -97,7 +97,7 @@ while True/break). No other coding background assumed.
 | 49 | Customer ki raay | feedback = bot sudharo | save ratings, review weak answers |
 | 50 | GRAND FINALE: Chai Dukaan AI Agent | 50 parts: buddhu se AI agent | full recap + next learning path |
 
-Parts 1–3 say "PART N/20" on screen; from Part 4 on, every video, caption and title says "PART N/50" (Raj, 2026-10-16).
+Parts 1–3 say "PART N/20" on screen by mistake (the 20-part plan was meant for the beginner python-chai series, whose Part 20 will hand viewers over to this one). From Part 4 on, every video, caption and title says "PART N/50" (Raj, 2026-10-16).
 
 ## Production checklist per part
 1. Copy the previous part's folder skeleton (no renders/frames), write `BRIEF.md` + `STORYBOARD.md`.
