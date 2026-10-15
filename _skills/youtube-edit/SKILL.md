@@ -68,7 +68,8 @@ and win over the general long-form rules where they clash. The series plan and p
 - **Open:** a 2 to 3 s hook visual (B-roll or a number), then a short disclaimer card (2 s: "Educational example ·
   financial advice nahi"), then the face. In the first minute, a name lower-third: a cyan bar, "RAJ" over "Samjho with
   Raj", left of the body, 4 s.
-- **Studio:** Raj records standing, full body, in a CapCut studio room (virtual set). He sits in the left third; the
+- **Studio:** the set is built in the edit (brand wash, grid, a studio screen); Raj is placed by the rule below.
+  (Planned first as a full-body CapCut room; the Part 1 recording came head-and-shoulders on black.) He sits in the left third; the
   set's right side is a **studio screen** (`#screen` in `videos/ep01/build-draft.py`) where every animation and
   explanation cutaway plays, so he is never covered or cropped in the long video (Part 1 rule; ask before reusing).
 - **Explain = show:** when Raj explains a real-world thing (rent, Diwali shopping, a school desk, a flat for sale,
@@ -89,6 +90,21 @@ and win over the general long-form rules where they clash. The series plan and p
 - **Hand-made feel:** a list Raj wants viewers to write goes on paper (the `marker-checklist-card` block, or a cream
   paper card), not on glass.
 - **Sound:** the lo-fi bed under everything; cha-ching only on money landing; nothing on keyword labels.
+
+**Placing Raj in the frame (learned on Part 1, Oct 2026).** Raj records head-and-shoulders on a black background
+(CapCut Remove BG), cut out with `matte-black.py`. What the references do: Pranjal and Harry sit big, bottom-anchored,
+eyes about a third down, shoulders 45 to 55% of the width; nobody floats small in a corner. So:
+- **Natural size, bottom-anchored.** Scale 1.0 (no upscale of 1080p), the source's bottom edge on the frame's bottom
+  edge so the chest cut reads as the frame edge. Body centre at x 700 (`RAJ_X = 700 - 979` in `build-draft.py`).
+- **Measure his reach first, on every new recording:** a union mask of every non-black pixel at 2 fps over the whole
+  take (`place/union.npy`, kept at 0.2% of frames). Part 1: hands from 2.5% to 93% of the source width, head top at
+  28% height; to the right of his shoulder the hands never rise above ~74% height.
+- **Nothing he does may cover a graphic, and no graphic may cover him.** The studio screen (all animations, data cards
+  and the Verma characters) sits wholly outside the reach mask: `#panel` scaled .85 at translate(157px,-63px), the
+  screen at x 1080 to 1896, y 50 to 730. Lower lines sit just under the screen (top 912 in panel units), the name strip
+  top-left (60, 150), keyword labels left of his head (60, 270), all outside the mask.
+- **Check it every time:** overlay the reach mask in red on a snapshot of every beat (`place/reach-check.png`); any
+  graphic touching red moves before rendering.
 
 **HyperFrames registry blocks that fit finance** (`npx hyperframes add <name>`): `chart-story` (donut, bars, line,
 progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping counter for lakh/crore), `marker-checklist-card`,
