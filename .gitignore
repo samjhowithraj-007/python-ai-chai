@@ -6,6 +6,7 @@
 !/ai-chai-bot*/
 !/_shared/
 !/_skills/
+!/_tools/
 
 # tool caches and logs
 .hyperframes/

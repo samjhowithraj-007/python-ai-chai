@@ -1,0 +1,186 @@
+<title>Samjho Prompter</title>
+<style>
+/* Layout: one narrow reading column pinned to the top of the screen, right under the webcam; controls in a bottom bar.
+   Deliberately single-theme dark: a prompter must be light text on black in every room. */
+:root{
+  --bg:#07090c; --ink:#f5f1e8; --dim:#7d8590; --cue:#ffb020; --key:#0af0f0; --bar:#12161c; --line:rgba(245,241,232,.14);
+  --display:"DM Sans","Segoe UI",system-ui,sans-serif; --mono:"Cascadia Code",Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);overflow:hidden}
+#stage{position:absolute;inset:0 0 calc(64px + env(safe-area-inset-bottom,0px)) 0;overflow:hidden;padding-inline:16px}
+#scroller{max-width:var(--col,640px);margin:0 auto;padding-top:var(--eye,70px);will-change:transform}
+#scroller.mirror{transform:scaleX(-1)}
+.sec{font:700 .38em var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--cue);margin:1.4em 0 .3em}
+.pt{font-weight:700;line-height:1.28;margin:0 0 .5em;text-wrap:pretty}
+.pt b{color:var(--key);font-weight:700}
+#eye{position:absolute;left:0;right:0;top:calc(var(--eye,70px) - 8px);height:3px;background:linear-gradient(90deg,transparent,var(--cue),transparent);opacity:.55;pointer-events:none}
+#fade{position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+#count{position:absolute;inset:0;display:grid;place-items:center;font:700 22vmin var(--display);color:var(--cue);background:rgba(7,9,12,.75)}
+#bar{position:fixed;left:0;right:0;bottom:0;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:var(--bar);
+  border-top:1px solid var(--line);display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:14px}
+#bar button,#bar select{background:#1c222b;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 12px;font:inherit;cursor:pointer}
+#bar button:hover{border-color:var(--dim)}
+#bar button.on{background:var(--cue);color:#111;border-color:var(--cue);font-weight:700}
+#bar .val{min-width:3.2em;text-align:center;font-variant-numeric:tabular-nums;color:var(--dim)}
+#bar .keys{margin-left:auto;color:var(--dim);font-size:12px}
+@media (max-width:700px){#bar .keys{display:none}}
+:focus-visible{outline:2px solid var(--key);outline-offset:2px}
+#editor{position:fixed;inset:0;background:var(--bg);padding:16px;display:flex;flex-direction:column;gap:10px;z-index:5}
+#editor textarea{flex:1;width:100%;background:#0f1318;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:14px;font:16px/1.5 var(--mono);resize:none}
+#editor p{margin:0;color:var(--dim);font-size:14px;max-width:70ch}
+#editor .row{display:flex;gap:8px;flex-wrap:wrap}
+#editor button{background:#1c222b;color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:10px 16px;font:inherit;cursor:pointer}
+#editor button.primary{background:var(--cue);color:#111;border-color:var(--cue);font-weight:700}
+@media (prefers-reduced-motion:reduce){#count{transition:none}}
+</style>
+
+<div id="stage" aria-live="off">
+  <div id="scroller"></div>
+  <div id="eye" aria-hidden="true"></div>
+  <div id="fade" aria-hidden="true"></div>
+  <div id="count" hidden></div>
+</div>
+
+<div id="bar" role="toolbar" aria-label="Prompter controls">
+  <select id="script" aria-label="Script"></select>
+  <button id="play" type="button">▶ Start</button>
+  <button id="top" type="button">⟲ Top</button>
+  <span>Speed</span><button id="slow" type="button" aria-label="Slower">−</button><span class="val" id="speedv"></span><button id="fast" type="button" aria-label="Faster">+</button>
+  <span>Text</span><button id="small" type="button" aria-label="Smaller text">A−</button><span class="val" id="sizev"></span><button id="big" type="button" aria-label="Bigger text">A+</button>
+  <button id="narrow" type="button">Narrow</button>
+  <button id="mirror" type="button">Mirror</button>
+  <button id="edit" type="button">Edit script</button>
+  <span class="keys">Space start/pause · ↑↓ speed · +/− text · Home top · E edit</span>
+</div>
+
+<div id="editor" hidden>
+  <p>One talking point per line. A line starting with <b>#</b> is a scene label. Wrap a word in <b>*stars*</b> to colour it.
+     Saved in this browser only.</p>
+  <textarea id="text" aria-label="Script text" spellcheck="false"></textarea>
+  <div class="row"><button id="save" class="primary" type="button">Save &amp; show</button><button id="reset" type="button">Restore original</button><button id="cancel" type="button">Cancel</button></div>
+</div>
+
+<script>
+const SCRIPTS = {
+  "Part 2 — if-else": `# 1 · Hook
+Part 2! Aaj *Chai Bot* ko jawab dena sikhayenge…
+…*if-else* se!
+# 2 · Problem
+Abhi bot buddhu hai.
+"menu?" poocho → "Chai ready!"
+"price?" poocho → phir "Chai ready!" 😄
+# 3 · Idea
+*if-else* = bot ka dimaag.
+Agar "menu" → flavours batao.
+Agar "price" → 20 rupaye.
+Warna → "samjha nahi".
+# 4 · Code
+Yeh raha naya code.
+"menu" likho → Masala, Adrak.
+"price" → Rs 20. Kuch aur → "samjha nahi".
+Ab bot *samajhdaar* hai!
+# 5 · End
+if-else matlab bot ka dimaag.
+Notes aur code → *samjhowithraj.online*
+Part 3: 50 if-else? Nahi! *Dictionary*.
+Follow karo!`,
+  "Part 1 — Chatbot banao": `# 1 · Hook
+Chai ka *chatbot* banate hain!
+Milo *Chai Bot* se.
+# 2 · Chat
+Chatbot = program jo aapse baat kare.
+Aap bolo "menu" → bot: Masala, Adrak, Elaichi!
+# 3 · 3 cheezein
+*input* se suno, *print* se jawab do,
+*while True* se chalte raho.
+# 4 · Code
+Pehla Chai Bot, sirf 4 lines.
+Par kuch bhi poocho → "Chai ready!"
+Abhi buddhu hai!
+# 5 · End
+50 parts mein AI agent banayenge.
+Notes aur code → *samjhowithraj.online*
+Part 2 mein *if-else*. Follow karo!`
+};
+
+const $ = id => document.getElementById(id);
+const store = {
+  get(k, d){ try { const v = localStorage.getItem("prompter:" + k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
+  set(k, v){ try { localStorage.setItem("prompter:" + k, JSON.stringify(v)); } catch (e) {} }
+};
+let state = { script: store.get("script", Object.keys(SCRIPTS)[0]), speed: store.get("speed", 40), size: store.get("size", 56),
+              narrow: store.get("narrow", true), mirror: store.get("mirror", false), custom: store.get("custom", {}) };
+let running = false, y = 0, last = 0, raf = 0;
+
+function textFor(name){ return state.custom[name] ?? SCRIPTS[name]; }
+function esc(s){ return s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]); }
+function render(){
+  const lines = textFor(state.script).split("\n").filter(l => l.trim());
+  $("scroller").innerHTML = lines.map(l => l.startsWith("#")
+    ? `<div class="sec">${esc(l.replace(/^#\s*/, ""))}</div>`
+    : `<p class="pt">${esc(l).replace(/\*(.+?)\*/g, "<b>$1</b>")}</p>`).join("") + '<div style="height:70vh"></div>';
+  apply();
+}
+function apply(){
+  const sc = $("scroller");
+  sc.style.fontSize = state.size + "px";
+  document.documentElement.style.setProperty("--col", state.narrow ? "min(640px, 100%)" : "min(1100px, 100%)");
+  sc.classList.toggle("mirror", state.mirror);
+  sc.style.transform = (state.mirror ? "scaleX(-1) " : "") + `translateY(${-y}px)`;
+  $("speedv").textContent = state.speed; $("sizev").textContent = state.size;
+  $("narrow").classList.toggle("on", state.narrow); $("mirror").classList.toggle("on", state.mirror);
+  $("play").textContent = running ? "❚❚ Pause" : "▶ Start"; $("play").classList.toggle("on", running);
+}
+function tick(ts){
+  if (!running) return;
+  const dt = last ? (ts - last) / 1000 : 0; last = ts;
+  const max = $("scroller").scrollHeight - $("stage").clientHeight * 0.3;
+  y = Math.min(max, y + state.speed * dt);
+  apply();
+  if (y >= max) { running = false; apply(); return; }
+  raf = requestAnimationFrame(tick);
+}
+function start(){
+  if (running) { running = false; cancelAnimationFrame(raf); apply(); return; }
+  const c = $("count"); let n = 3; c.hidden = false; c.textContent = n;
+  const iv = setInterval(() => {
+    n -= 1;
+    if (n > 0) { c.textContent = n; return; }
+    clearInterval(iv); c.hidden = true; running = true; last = 0; apply(); raf = requestAnimationFrame(tick);
+  }, 700);
+}
+function toTop(){ y = 0; running = false; cancelAnimationFrame(raf); apply(); }
+function save(){ ["script", "speed", "size", "narrow", "mirror", "custom"].forEach(k => store.set(k, state[k])); }
+function bump(k, d, lo, hi){ state[k] = Math.max(lo, Math.min(hi, state[k] + d)); save(); apply(); }
+
+const sel = $("script");
+sel.innerHTML = Object.keys(SCRIPTS).map(k => `<option>${k}</option>`).join("");
+sel.value = SCRIPTS[state.script] ? state.script : Object.keys(SCRIPTS)[0];
+sel.onchange = () => { state.script = sel.value; save(); toTop(); render(); };
+$("play").onclick = start; $("top").onclick = toTop;
+$("slow").onclick = () => bump("speed", -5, 5, 200); $("fast").onclick = () => bump("speed", 5, 5, 200);
+$("small").onclick = () => bump("size", -4, 24, 120); $("big").onclick = () => bump("size", 4, 24, 120);
+$("narrow").onclick = () => { state.narrow = !state.narrow; save(); apply(); };
+$("mirror").onclick = () => { state.mirror = !state.mirror; save(); apply(); };
+function openEditor(){ running = false; apply(); $("text").value = textFor(state.script); $("editor").hidden = false; $("text").focus(); }
+$("edit").onclick = openEditor;
+$("cancel").onclick = () => { $("editor").hidden = true; };
+$("save").onclick = () => { state.custom[state.script] = $("text").value; save(); $("editor").hidden = true; toTop(); render(); };
+$("reset").onclick = () => { delete state.custom[state.script]; save(); $("text").value = SCRIPTS[state.script]; };
+document.addEventListener("keydown", e => {
+  if (!$("editor").hidden) return;
+  if (e.target.tagName === "SELECT") return;
+  if (e.code === "Space") { e.preventDefault(); start(); }
+  else if (e.key === "ArrowUp") { e.preventDefault(); bump("speed", 5, 5, 200); }
+  else if (e.key === "ArrowDown") { e.preventDefault(); bump("speed", -5, 5, 200); }
+  else if (e.key === "+" || e.key === "=") bump("size", 4, 24, 120);
+  else if (e.key === "-") bump("size", -4, 24, 120);
+  else if (e.key === "Home") toTop();
+  else if (e.key.toLowerCase() === "e") openEditor();
+});
+$("stage").addEventListener("wheel", e => { y = Math.max(0, y + e.deltaY * 0.5); apply(); }, { passive: true });
+render();
+</script>

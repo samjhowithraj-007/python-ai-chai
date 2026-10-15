@@ -62,6 +62,10 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 - Write a 30 s script per frame into `RECORDING.md`, but give Raj **talking points**, not lines to read (reading sounds
   robotic): glance, look at the lens, say it like explaining to a friend over chai; any wording is fine, scenes are
   re-timed to his speech. 2-3 full takes in one go; the later ones sound most natural. Aim for 30-40 s.
+- **Teleprompter:** Raj's free prompter is `videos/_tools/teleprompter.html`, published at
+  https://claude.ai/artifact/T3fZH9kvCKB4NxEjnGajKi. For each new part add its talking points to `SCRIPTS` (newest first,
+  `# n · Scene` labels, `*word*` highlights) and republish the same file path. Tell Raj to place the window at the top of
+  the screen under the webcam, Narrow on.
 - He says **"cut this line"** after a fluffed line and restarts: drop the marker, the line before it, and every earlier
   take; keep the last clean take of each line. Also drop off-camera remarks (talking to someone in the room).
 - Background, fastest first: (a) CapCut **Remove BG + solid black or green** background exported 1080p/30 fps (no

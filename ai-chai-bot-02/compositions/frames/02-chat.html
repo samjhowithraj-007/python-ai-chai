@@ -1,0 +1,71 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-chat-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-chat-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-chat-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-chat-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-chat-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-chat-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-chat-w { display:inline-block; }
+  .f02-chat-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-ligatures:none; }
+  .f02-chat-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-chat-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-chat-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-chat-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-chat-k { color:#0AF0F0; } .f02-chat-s { color:#FFB020; } .f02-chat-n { color:#FF8FA3; } .f02-chat-f { color:#B8F5A0; }
+  .f02-chat-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-chat-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="02-chat" data-width="1080" data-height="1080">
+  <div class="clip f02-chat-bg" id="f02-chat-bg" data-start="0" data-duration="7.5" data-track-index="0"><div class="f02-chat-grid"></div></div>
+  <div class="clip f02-chat-stage" id="f02-chat-stage" data-start="0" data-duration="7.5" data-track-index="1">
+    <style>.f02-chat-r { color:#FF8FA3; text-shadow:0 0 24px rgba(255,143,163,.45); }</style>
+    <div class="f02-chat-h" id="f02-chat-head" style="top:66px;font-size:80px"><span class="f02-chat-w">Abhi</span> <span class="f02-chat-w">bot</span> <span class="f02-chat-w f02-chat-r">buddhu</span> <span class="f02-chat-w">hai</span></div>
+    <div id="f02-chat-win" style="position:absolute;left:90px;top:180px;width:900px;height:690px;border-radius:24px;background:#0A0C10;
+         border:1px solid rgba(245,241,232,.16);box-shadow:0 24px 70px rgba(0,0,0,.5);overflow:hidden">
+      <div style="position:absolute;left:0;right:0;top:0;height:76px;background:#181715;border-bottom:1px solid rgba(245,241,232,.12)"></div>
+      <svg id="f02-chat-hb" viewBox="0 0 200 200" width="52" height="52" fill="none" style="position:absolute;left:24px;top:12px;filter:drop-shadow(0 0 26px rgba(10,240,240,.45))"><path d="M100 22 L100 42" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/><circle cx="100" cy="16" r="11" fill="#FFB020"/><rect x="14" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="170" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="30" y="42" width="140" height="128" rx="36" fill="#181715" stroke="#0AF0F0" stroke-width="7"/><ellipse class="f02-chat-eye" cx="74" cy="100" rx="14" ry="17" fill="#0AF0F0"/><ellipse class="f02-chat-eye" cx="126" cy="100" rx="14" ry="17" fill="#0AF0F0"/><path d="M72 135 Q100 156 128 135" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/></svg>
+      <div style="position:absolute;left:92px;top:18px;font-size:34px;font-weight:700">Chai Bot <span style="color:#7CE38B;font-size:26px">● online</span></div>
+      <div style="position:absolute;left:0;right:0;top:0;height:690px"><div id="f02-chat-m1" style="position:absolute;right:30px;top:110px;padding:14px 30px;border-radius:28px 8px 28px 28px;background:#F5F1E8;border:3px solid #F5F1E8;color:#0E1116;font-size:40px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:14px">Bhaiya, menu?</div><div id="f02-chat-b1a" style="position:absolute;left:26px;top:214px;width:64px;height:64px"><svg id="f02-chat-b1f" viewBox="0 0 200 200" width="64" height="64" fill="none" style="position:absolute;left:0;top:0;filter:drop-shadow(0 0 26px rgba(10,240,240,.45))"><path d="M100 22 L100 42" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/><circle cx="100" cy="16" r="11" fill="#FFB020"/><rect x="14" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="170" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="30" y="42" width="140" height="128" rx="36" fill="#181715" stroke="#0AF0F0" stroke-width="7"/><ellipse class="f02-chat-eye" cx="74" cy="100" rx="14" ry="17" fill="#0AF0F0"/><ellipse class="f02-chat-eye" cx="126" cy="100" rx="14" ry="17" fill="#0AF0F0"/><path d="M72 135 Q100 156 128 135" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/></svg></div><div id="f02-chat-b1" style="position:absolute;left:110px;top:210px;padding:14px 30px;border-radius:8px 28px 28px 28px;background:rgba(10,240,240,.12);border:3px solid #0AF0F0;color:#F5F1E8;font-size:40px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:14px">Chai ready!</div><div id="f02-chat-m2" style="position:absolute;right:30px;top:320px;padding:14px 30px;border-radius:28px 8px 28px 28px;background:#F5F1E8;border:3px solid #F5F1E8;color:#0E1116;font-size:40px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:14px">Price kya hai?</div><div id="f02-chat-b2a" style="position:absolute;left:26px;top:424px;width:64px;height:64px"><svg id="f02-chat-b2f" viewBox="0 0 200 200" width="64" height="64" fill="none" style="position:absolute;left:0;top:0;filter:drop-shadow(0 0 26px rgba(10,240,240,.45))"><path d="M100 22 L100 42" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/><circle cx="100" cy="16" r="11" fill="#FFB020"/><rect x="14" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="170" y="88" width="16" height="40" rx="6" fill="#0AF0F0" opacity=".7"/><rect x="30" y="42" width="140" height="128" rx="36" fill="#181715" stroke="#0AF0F0" stroke-width="7"/><ellipse class="f02-chat-eye" cx="74" cy="100" rx="14" ry="17" fill="#0AF0F0"/><ellipse class="f02-chat-eye" cx="126" cy="100" rx="14" ry="17" fill="#0AF0F0"/><path d="M72 135 Q100 156 128 135" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round"/></svg></div><div id="f02-chat-b2" style="position:absolute;left:110px;top:420px;padding:14px 30px;border-radius:8px 28px 28px 28px;background:rgba(10,240,240,.12);border:3px solid #0AF0F0;color:#F5F1E8;font-size:40px;font-weight:700;white-space:nowrap;display:flex;align-items:center;gap:14px">Chai ready!</div></div>
+    </div>
+    <div id="f02-chat-stamp" class="f02-chat-r" style="position:absolute;left:120px;top:775px;padding:12px 28px;border:5px solid #FF8FA3;border-radius:16px;
+         background:rgba(14,17,22,.92);font-size:46px;font-weight:700;white-space:nowrap;transform:rotate(-4deg)">Har baat pe same jawab!</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-chat-stage", { scale: 1.0 }, { scale: 1.04, duration: 7.5, ease: "none" }, 0);
+  tl.fromTo("#f02-chat-head .f02-chat-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f02-chat-win", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.25);
+  tl.fromTo("#f02-chat-m1", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 0.9);
+  tl.fromTo("#f02-chat-b1a", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.6);
+  tl.fromTo("#f02-chat-b1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 1.6);
+  tl.fromTo("#f02-chat-m2", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.0);
+  tl.fromTo("#f02-chat-b2a", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 3.7);
+  tl.fromTo("#f02-chat-b2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.35, ease: "power3.out" }, 3.7);
+  tl.fromTo("#f02-chat-stamp", { opacity: 0, scale: 1.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "power4.in" }, 5.0);
+  tl.to("#f02-chat-hb .f02-chat-eye", { scaleY: 0.1, transformOrigin: "50% 50%", duration: 0.07 }, 2.40);
+  tl.to("#f02-chat-hb .f02-chat-eye", { scaleY: 1, transformOrigin: "50% 50%", duration: 0.09 }, 2.50);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-chat"] = tl;
+})();
+</script>
+</template>
