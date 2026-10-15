@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="05-cta" data-width="1080" data-height="1080">
-  <div class="clip f05-cta-bg" id="f05-cta-bg" data-start="0" data-duration="12.0" data-track-index="0"><div class="f05-cta-grid"></div></div>
-  <div class="clip f05-cta-stage" id="f05-cta-stage" data-start="0" data-duration="12.0" data-track-index="1">
+  <div class="clip f05-cta-bg" id="f05-cta-bg" data-start="0" data-duration="15.02" data-track-index="0"><div class="f05-cta-grid"></div></div>
+  <div class="clip f05-cta-stage" id="f05-cta-stage" data-start="0" data-duration="15.02" data-track-index="1">
     <div class="f05-cta-h" id="f05-cta-l1" style="top:90px;font-size:84px"><span class="f05-cta-w f05-cta-c">if-else</span> <span class="f05-cta-w">=</span> <span class="f05-cta-w">bot</span> <span class="f05-cta-w f05-cta-a">ka</span> <span class="f05-cta-w">dimaag</span></div>
     <div id="f05-cta-pill" style="position:absolute;left:50%;transform:translateX(-50%);top:215px;padding:12px 30px;border-radius:9999px;border:3px solid #7CE38B;
          color:#7CE38B;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:34px;white-space:nowrap">✓ PART 2 / 50</div>
@@ -59,13 +59,13 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f05-cta-stage", { scale: 1.0 }, { scale: 1.04, duration: 12.0, ease: "none" }, 0);
+  tl.fromTo("#f05-cta-stage", { scale: 1.0 }, { scale: 1.04, duration: 15.02, ease: "none" }, 0);
   tl.fromTo("#f05-cta-l1 .f05-cta-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
   tl.fromTo("#f05-cta-pill", { opacity: 0 }, { opacity: 1, duration: 0.4 }, 0.7);
-  tl.fromTo("#f05-cta-web", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 4.50);
-  tl.fromTo("#f05-cta-teaser", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 6.50);
-  tl.fromTo("#f05-cta-sb", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 9.0);
-  tl.fromTo("#f05-cta-btn", { scale: 1 }, { scale: 1.08, duration: 0.22, yoyo: true, repeat: 5, ease: "power1.inOut" }, 9.4);
+  tl.fromTo("#f05-cta-web", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 6.44);
+  tl.fromTo("#f05-cta-teaser", { opacity: 0, y: 70 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 9.44);
+  tl.fromTo("#f05-cta-sb", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 12.32);
+  tl.fromTo("#f05-cta-btn", { scale: 1 }, { scale: 1.08, duration: 0.22, yoyo: true, repeat: 5, ease: "power1.inOut" }, 12.72);
   window.__timelines = window.__timelines || {};
   window.__timelines["05-cta"] = tl;
 })();

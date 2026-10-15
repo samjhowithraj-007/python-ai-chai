@@ -269,6 +269,9 @@ T = {
     "code": dict(len=9.5, term=1.9, q=[2.4, 4.1, 5.8], stamp=7.6),
     "cta":  dict(len=12.0, pill=0.7, web=4.5, teaser=6.5, sb=9.0, btn=9.4),
 }
+import json as _json
+if os.path.exists(os.path.join(HERE, "timing.json")):
+    T.update(_json.load(open(os.path.join(HERE, "timing.json")))["T"])   # re-timed to Raj's voice
 
 # ---- Frame 1: hook ----
 f = "01-hook"; t = T["hook"]
@@ -328,7 +331,7 @@ for i, ((cond, ans), yy) in enumerate(zip(rows, ys)):
     rh += (f'<div id="{f}-r{i}" style="position:absolute;left:400px;top:{yy}px;height:80px;display:flex;align-items:center;gap:22px;white-space:nowrap">'
            f'<div style="height:80px;padding:0 24px;border-radius:16px;background:{NAVY};border:3px solid {col};display:flex;align-items:center;gap:14px;'
            f'{MONO};font-size:38px"><span style="color:{col}">{label}</span><span style="color:{CREAM}">{cond}</span></div>'
-           f'<div class="{f}-a" style="font-size:44px;font-weight:700">→ {ans}</div></div>')
+           f'<div class="{f}-a" style="font-size:40px;font-weight:700">→ {ans}</div></div>')
 body = f"""    <div class="{f}-h" id="{f}-head" style="top:76px;font-size:80px">{words(f, "if-else = bot ka dimaag", {0: f + "-c", 3: f + "-a"})}</div>
     <svg width="1080" height="1080" viewBox="0 0 1080 1080" style="position:absolute;left:0;top:0" fill="none">{paths}</svg>
     <div id="{f}-node" style="position:absolute;left:{NX - 110}px;top:{NY}px;width:220px;height:80px;border-radius:9999px;background:{NAVY};
@@ -358,7 +361,7 @@ body = f"""    <div class="{f}-h" id="{f}-head" style="top:66px;font-size:80px">
 {cardh}
     <div id="{f}-hl" style="position:absolute;left:42px;top:{y(0)}px;width:996px;height:{int(LH)}px;background:rgba(10,240,240,.14);border-left:6px solid {CYAN};opacity:0"></div>
     {terminal(f, inner, 40, 500, 1000, 380)}
-    <div id="{f}-stamp" style="position:absolute;left:470px;top:600px;padding:12px 26px;border:5px solid {GREEN};border-radius:16px;color:{GREEN};
+    <div id="{f}-stamp" style="position:absolute;left:560px;top:650px;padding:12px 26px;border:5px solid {GREEN};border-radius:16px;color:{GREEN};
          background:rgba(14,17,22,.92);font-size:40px;font-weight:700;white-space:nowrap;transform:rotate(-5deg)">Ab bot samajhdaar hai!</div>"""
 js = [rise(f"#{f}-head .{f}-w", 0.05, 0.08), fade_up(f"#{f}-card", 0.2, 0.6, 60)]
 for i in range(4):
