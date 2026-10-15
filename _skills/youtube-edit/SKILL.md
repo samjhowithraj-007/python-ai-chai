@@ -119,6 +119,17 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   - Instagram and Facebook **reject automated file picks**: Raj clicks "Select from computer" / "Add video" in the
     Claude tab group and picks the -ig file; Claude fills caption, cover (Facebook: thumbnail editor range input set to
     the hook frame, then the Save **inside** that dialog; the outer Save makes a draft) and posts Public.
+  - **Facebook reel, the reliable order (learned on Part 2):** in Create reel, after Raj adds the file, click Next until
+    Reel settings and save it as a **draft straight away** (any Save in the Create flow, the thumbnail editor's
+    included, makes a draft; drafts also lose the description's line breaks). Then Content Library → Drafts (the draft
+    can take ~1 min to appear) → open it ("Edit reel") → click the description, Ctrl+A, Delete, type it with
+    `computer.type` (line breaks survive; `execCommand insertText` does not keep them) → "Choose a thumbnail": set
+    the range input to ~45/1000 (the hook frame at 0:02), click that dialog's **Save** by coordinate → **Post**.
+    Confirm: gone from Drafts, "Your reel is published" 1m, newest in the Reels tab with the right duration.
+  - The Chrome window must be **visible** (not minimized or fully covered): a hidden tab reports innerHeight 0,
+    screenshots time out and typing is dropped. Ask Raj to snap Chrome right / Claude left (Win+→ / Win+←).
+  - Instagram accepts the **cover image** through its `image/jpeg,image/png` file input (the video still needs
+    Raj's click); set crop to Original; the caption goes in with `execCommand('insertText')`.
   - **Never trust Facebook's "Your reel is published" notification alone** (one turned out to be another post while
     ours sat in Drafts). Verify in Professional dashboard → Content Library (`/professional_dashboard/content/
     content_library/`): the post text must be under **Published**, not **Drafts**. A reel stuck in Drafts: open it

@@ -111,4 +111,5 @@ while True/break). No other coding background assumed.
 
 ## Status
 - [x] Part 1 — built, 50-part roadmap, square YT + IG versions (see `../ai-chai-bot-01`)
-- [ ] Parts 2–50
+- [x] Part 2 — if-else, face-cam, live on YouTube (shorts/jWicQhnSwek), Instagram, Facebook (reel/2071250410195088) + Story
+- [ ] Parts 3–50
