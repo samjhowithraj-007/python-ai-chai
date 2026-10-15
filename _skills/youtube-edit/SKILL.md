@@ -46,6 +46,55 @@ Saved from the first hook (Oct 2026). These win over the general rules below.
   open that folder in Explorer and launch CapCut (`%LOCALAPPDATA%\CapCut\Apps\CapCut.exe`) so you can drag it in.
 - **Keep waits in the background** and give short progress lines; you see a time estimate before a long render.
 
+## Finance long form (Money Plan series)
+
+Saved Oct 2026 from a teardown of Pranjal Kamra ("Term Insurance vs Mutual Fund SIP", "Investment Plan for ₹5000/month")
+and CodeWithHarry ("Learn Coding & Get a Job (in 2026)", "Stop Vibe Coding Apps"); measurements and contact sheets in
+`C:\samjhowithraj\financial planning\videos\_teardown\` (COMPARE.md). These rules apply to the Money Plan long videos
+and win over the general long-form rules where they clash. The series plan and per-part rules live in
+`C:\samjhowithraj\financial planning\` (`Financial-Planning-Project.md`, `videos/epNN/RECORDING.md`).
+
+**What the references do (measured):**
+| | Pranjal Kamra (finance) | CodeWithHarry (explainer) | CodeWithHarry (screen tutorial) |
+|---|---|---|---|
+| Hard cuts / min | 3.2 to 4.2 | 15.8 | 0.5 |
+| Mean shot | 14 to 18 s | 3.8 s | 102 s |
+| Face on screen | ~85%, seated mid shot, real room | ~50%; the rest full-frame B-roll | small; the screen is the video |
+| Graphics | few and small: white keyword labels, one data card at a time | full-frame charts, news pages, numbered section cards, B-roll with a caption | the screen recording |
+
+**The Money Plan recipe** (between the two: calm and trustworthy like Pranjal, visual like Harry):
+- **Pace:** something changes every 6 to 10 s: a cut, a label, a card or a cutaway. Never 20 s of the same frame in the
+  body; never Harry's 4 s machine-gun pace either.
+- **Open:** a 2 to 3 s hook visual (B-roll or a number), then a short disclaimer card (2 s: "Educational example ·
+  financial advice nahi"), then the face. In the first minute, a name lower-third: a cyan bar, "RAJ" over "Samjho with
+  Raj", left of the body, 4 s.
+- **Studio:** Raj records standing, full body, in a CapCut studio room (virtual set). He sits in the left third; the
+  set's right side is a **studio screen** (`#screen` in `videos/ep01/build-draft.py`) where every animation and
+  explanation cutaway plays, so he is never covered or cropped in the long video (Part 1 rule; ask before reusing).
+- **Explain = show:** when Raj explains a real-world thing (rent, Diwali shopping, a school desk, a flat for sale,
+  writing a list), an AI or stock clip of exactly that plays on the studio screen for 2 to 5 s, on his words. A
+  full-frame cutaway (Harry style) is allowed for at most 4 s at a section start; Raj is not shown in it, so nothing
+  is cropped. Every slot is listed in `BROLL.md` and needs Raj's yes (and the cost, for AI) before anything is made.
+- **Keyword labels (Pranjal):** a white rounded label with black 700 text near Raj's head for the one word that
+  matters ("0 Return"), and "X not Y" as a red strikethrough over the wrong word. One at a time, 2 to 4 s.
+- **Data card (Pranjal):** tables and calculators as a clean white card on the studio screen, one row highlighted with
+  a yellow marker (`#FFE14D` block behind the row) as Raj says it. Real or clearly illustrative numbers only, rupee
+  amounts in Indian digit grouping (`₹12,00,000`).
+- **Charts (Harry):** full-height bar or donut on the studio screen, an uppercase title top-left, bars growing on their
+  words, value labels on top. The HyperFrames `chart-story` block does donuts and bars (set `--brand:#0AF0F0` on the
+  stage; give the installed copy a longer `data-duration` or it vanishes after 5 s).
+- **Section cards (Harry):** "#1", "#2"... a large number and the section question on a light card, 2 s, at each
+  section start, together with the progress tag.
+- **One serious beat per video** may go black-and-white (Pranjal): a warning ("guaranteed return jaisa kuch nahi").
+- **Hand-made feel:** a list Raj wants viewers to write goes on paper (the `marker-checklist-card` block, or a cream
+  paper card), not on glass.
+- **Sound:** the lo-fi bed under everything; cha-ching only on money landing; nothing on keyword labels.
+
+**HyperFrames registry blocks that fit finance** (`npx hyperframes add <name>`): `chart-story` (donut, bars, line,
+progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping counter for lakh/crore), `marker-checklist-card`,
+`mk-specs-list` (clean checklist rows), `comparison-split` (before/after), `success-check`, `yt-screen-warp` and
+`filmed-screen` (make a clip read as playing on a real screen), `data-chart`, `apple-money-count` (USD only as shipped).
+
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
@@ -57,6 +106,7 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 | Faceless series short (python-chai, ai-chai-bot) | `videos/<series>-NN/` | `build-frames.py` (5 frames, 1080x1080 square) → HyperFrames render; plan in `videos/<series>/SERIES.md` |
 | Series short with Raj on camera | same folder + `raw/`, `cam*/` | the faceless build + Raj as a cut-out bottom-right (below) |
 | Talking-head YouTube episode (agentic-ai) | `videos/agentic-ai/sNNeNN/` | the Cut stage + Pipeline in this skill, 1080p |
+| Finance long form (Money Plan) | `C:\samjhowithrajinancial planningideos\epNN\` | "Finance long form" above: studio screen, cutaways, data cards; repo samjhowithraj-007/financial-planning |
 
 **1. Script and recording**
 - Write a 30 s script per frame into `RECORDING.md`, but give Raj **talking points**, not lines to read (reading sounds
