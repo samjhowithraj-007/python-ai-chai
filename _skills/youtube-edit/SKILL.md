@@ -106,7 +106,7 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 | Faceless series short (python-chai, ai-chai-bot) | `videos/<series>-NN/` | `build-frames.py` (5 frames, 1080x1080 square) → HyperFrames render; plan in `videos/<series>/SERIES.md` |
 | Series short with Raj on camera | same folder + `raw/`, `cam*/` | the faceless build + Raj as a cut-out bottom-right (below) |
 | Talking-head YouTube episode (agentic-ai) | `videos/agentic-ai/sNNeNN/` | the Cut stage + Pipeline in this skill, 1080p |
-| Finance long form (Money Plan) | `C:\samjhowithrajinancial planningideos\epNN\` | "Finance long form" above: studio screen, cutaways, data cards; repo samjhowithraj-007/financial-planning |
+| Finance long form (Money Plan) | `C:\samjhowithraj\financial planning\videos\epNN\` | "Finance long form" above: studio screen, cutaways, data cards; repo samjhowithraj-007/financial-planning |
 
 **1. Script and recording**
 - Write a 30 s script per frame into `RECORDING.md`, but give Raj **talking points**, not lines to read (reading sounds
