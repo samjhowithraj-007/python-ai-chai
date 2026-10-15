@@ -1,0 +1,66 @@
+<template>
+
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:400; src:url("assets/fonts/DMSans-400.woff2") format("woff2"); }
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("assets/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:400; src:url("assets/fonts/JetBrainsMono-400.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("assets/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  #root { position:absolute; inset:0; width:1080px; height:1080px; overflow:hidden; color:#F5F1E8;
+          font-family:"DM Sans", ui-sans-serif, system-ui, sans-serif; }
+  .f02-pile-bg { position:absolute; inset:0; background:
+      radial-gradient(70% 45% at 50% 108%, rgba(255,176,32,.30), rgba(255,176,32,0) 70%),
+      radial-gradient(60% 50% at 15% 0%, rgba(10,240,240,.10), rgba(10,240,240,0) 70%), #0E1116; }
+  .f02-pile-grid { position:absolute; inset:0; opacity:.18; background-image:
+      linear-gradient(rgba(245,241,232,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.10) 1px, transparent 1px);
+      background-size:72px 72px; }
+  .f02-pile-stage { position:absolute; inset:0; transform-origin:50% 40%; }
+  .f02-pile-h { position:absolute; left:0; right:0; text-align:center; font-weight:700; letter-spacing:-.02em; line-height:1.05; }
+  .f02-pile-c { color:#0AF0F0; text-shadow:0 0 24px rgba(10,240,240,.45); }
+  .f02-pile-a { color:#FFB020; text-shadow:0 0 24px rgba(255,176,32,.35); }
+  .f02-pile-w { display:inline-block; }
+  .f02-pile-card { position:absolute; background:#181715; border:1px solid rgba(245,241,232,.14); border-radius:12px;
+      box-shadow:0 24px 70px rgba(0,0,0,.45); padding:64px 40px 30px; box-sizing:border-box;
+      font-family:"JetBrains Mono", ui-monospace, monospace; font-variant-ligatures:none; }
+  .f02-pile-dots { position:absolute; left:22px; top:22px; display:flex; gap:9px; }
+  .f02-pile-dots i { width:13px; height:13px; border-radius:50%; background:rgba(245,241,232,.22); display:block; }
+  .f02-pile-file { position:absolute; right:24px; top:16px; font-size:22px; color:rgba(245,241,232,.66); }
+  .f02-pile-ln { display:block; white-space:pre; overflow:hidden; width:0ch; line-height:1.6; }
+  .f02-pile-k { color:#0AF0F0; } .f02-pile-s { color:#FFB020; } .f02-pile-n { color:#FF8FA3; } .f02-pile-f { color:#B8F5A0; }
+  .f02-pile-kick { position:absolute; left:0; right:0; text-align:center; font-family:"JetBrains Mono", monospace;
+      font-weight:700; font-size:26px; letter-spacing:.18em; color:rgba(245,241,232,.62); }
+  .f02-pile-pill { position:absolute; display:flex; align-items:center; gap:14px; padding:0 30px; height:76px; border-radius:9999px;
+      font-weight:700; font-size:34px; box-sizing:border-box; }
+</style>
+<div id="root" data-composition-id="02-pile" data-width="1080" data-height="1080">
+  <div class="clip f02-pile-bg" id="f02-pile-bg" data-start="0" data-duration="8.0" data-track-index="0"><div class="f02-pile-grid"></div></div>
+  <div class="clip f02-pile-stage" id="f02-pile-stage" data-start="0" data-duration="8.0" data-track-index="1">
+    <style>.f02-pile-r { color:#FF8FA3; text-shadow:0 0 24px rgba(255,143,163,.45); }</style>
+    <div class="f02-pile-h" id="f02-pile-head" style="top:76px;font-size:80px"><span class="f02-pile-w">Har</span> <span class="f02-pile-w">sawaal</span> <span class="f02-pile-w">=</span> <span class="f02-pile-w f02-pile-c">naya</span> <span class="f02-pile-w">elif</span></div>
+    <div id="f02-pile-c0" style="position:absolute;left:90px;top:200px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">if</span> msg == <span style="color:#FFB020">"menu"</span></span></div><div id="f02-pile-c1" style="position:absolute;left:550px;top:200px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"price"</span></span></div><div id="f02-pile-c2" style="position:absolute;left:90px;top:308px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"timing"</span></span></div><div id="f02-pile-c3" style="position:absolute;left:550px;top:308px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"masala"</span></span></div><div id="f02-pile-c4" style="position:absolute;left:90px;top:416px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"adrak"</span></span></div><div id="f02-pile-c5" style="position:absolute;left:550px;top:416px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"elaichi"</span></span></div><div id="f02-pile-c6" style="position:absolute;left:90px;top:524px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"tulsi"</span></span></div><div id="f02-pile-c7" style="position:absolute;left:550px;top:524px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"bill"</span></span></div>
+    <div id="f02-pile-count" class="f02-pile-r" style="position:absolute;left:90px;top:650px;font-size:64px;font-weight:700;white-space:nowrap">… 50 if-else 😵</div>
+    <div id="f02-pile-stamp" class="f02-pile-r" style="position:absolute;left:120px;top:770px;padding:12px 28px;border:5px solid #FF8FA3;border-radius:16px;
+         background:rgba(14,17,22,.92);font-size:46px;font-weight:700;white-space:nowrap;transform:rotate(-4deg)">Lamba aur messy!</div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const q = (s) => document.querySelector(s);
+  tl.fromTo("#f02-pile-stage", { scale: 1.0 }, { scale: 1.04, duration: 8.0, ease: "none" }, 0);
+  tl.fromTo("#f02-pile-head .f02-pile-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
+  tl.fromTo("#f02-pile-c0", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.80);
+  tl.fromTo("#f02-pile-c1", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.60);
+  tl.fromTo("#f02-pile-c2", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.40);
+  tl.fromTo("#f02-pile-c3", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.00);
+  tl.fromTo("#f02-pile-c4", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.50);
+  tl.fromTo("#f02-pile-c5", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.90);
+  tl.fromTo("#f02-pile-c6", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 4.20);
+  tl.fromTo("#f02-pile-c7", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 4.50);
+  tl.fromTo("#f02-pile-count", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 5.00);
+  tl.fromTo("#f02-pile-stamp", { opacity: 0, scale: 1.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "power4.in" }, 6.2);
+  window.__timelines = window.__timelines || {};
+  window.__timelines["02-pile"] = tl;
+})();
+</script>
+</template>
