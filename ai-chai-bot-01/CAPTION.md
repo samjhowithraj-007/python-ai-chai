@@ -47,7 +47,7 @@ while True:
 🔔 Subscribe karo — har hafte naya part!
 
 📸 Instagram: https://www.instagram.com/samjhowithraj/
-👍 Facebook: https://www.facebook.com/profile.php?id=61595088790170
+👍 Facebook: https://www.facebook.com/profile.php?id=61595088790170&sk=reels_tab
 💬 Comment karo: aapka bot kya bolega?
 
 #python #chatbot #pythonhindi
