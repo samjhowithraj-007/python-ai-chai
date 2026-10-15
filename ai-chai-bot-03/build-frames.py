@@ -374,7 +374,7 @@ write(f, t["len"], body, js)
 f = "05-cta"; t = T["cta"]
 body = f"""    <div class="{f}-h" id="{f}-l1" style="top:90px;font-size:80px">{words(f, "dictionary = bot ki diary", {0: f + "-c", 3: f + "-a"})}</div>
     <div id="{f}-pill" style="position:absolute;left:50%;transform:translateX(-50%);top:215px;padding:12px 30px;border-radius:9999px;border:3px solid {GREEN};
-         color:{GREEN};{MONO};font-weight:700;font-size:34px;white-space:nowrap">✓ PART 3 / 50</div>
+         color:{GREEN};{MONO};font-weight:700;font-size:34px;white-space:nowrap">✓ PART 3 / 20</div>
     <div id="{f}-teaser" style="position:absolute;left:90px;top:330px;width:900px;height:200px;border-radius:20px;background:{NAVY};border:2px solid rgba(10,240,240,.5);
          box-sizing:border-box;padding:30px 44px;box-shadow:0 24px 70px rgba(0,0,0,.5)">
       <div style="{MONO};font-weight:700;font-size:30px;letter-spacing:.16em;color:rgba(245,241,232,.66)">AGLA PART 4</div>

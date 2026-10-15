@@ -1,4 +1,4 @@
-# 🤖 AI + Python: chai ka chatbot banao — 50-part series (5 seasons × 10)
+# 🤖 AI + Python: chai ka chatbot banao — 20-part series (2 seasons × 10)
 
 Sequel to the 10-part python-chai Instagram series (`videos/python-chai`, `python-chai-2` … `-10`).
 Same world, same look, same pipeline: 30 s, 1080×1080 square, faceless, on-screen Hinglish text, no voiceover,
@@ -50,52 +50,9 @@ while True/break). No other coding background assumed.
 | 17 | AI chat loop | while True + API = asli chatbot | loop + history + `break` |
 | 18 | AI ko menu do | tools = AI tumhara function chalaye | tool use: `get_price()` |
 | 19 | Paisa aur galti bachao | max_tokens + try-except = safe bot | limits, error handling |
-| 20 | SEASON 2 FINALE: AI Chai Bot ready! | Sab milake: aap AI developer ho | full bot recap + Season 3 teaser |
+| 20 | SERIES FINALE: AI Chai Bot ready! | Sab milake: aap AI developer ho | full bot recap |
 
-## Season 3 — Bot ki superpowers
-
-| # | Title (hook) | Message | Python idea |
-|---|---|---|---|
-| 21 | Jawab type hote dikhe | streaming = live typing | streamed response |
-| 22 | AI ko saaf bolo | achha prompt = achha jawab | prompt basics: role, task, format |
-| 23 | Examples do, AI seekhe | few-shot = dikhao, phir poocho | example messages |
-| 24 | AI se order form bharwao | JSON = AI ka form | structured JSON output |
-| 25 | JSON ko Python mein lo | `json.loads` = text se dict | parse into dict |
-| 26 | Hindi, English, Hinglish | AI har bhasha samjhe | language instruction in system prompt |
-| 27 | Ek se zyada tools | menu + price + stock tools | multiple tool definitions |
-| 28 | AI khud tools chalaye | tool loop = jab tak kaam pura na ho | loop until no tool call |
-| 29 | Chat file mein save | `json.dump` = chat ki diary | save history to file |
-| 30 | Purana customer, yaad hai! | file se memory load | load history, greet by name |
-
-## Season 4 — Bot ko app banao
-
-| # | Title (hook) | Message | Python idea |
-|---|---|---|---|
-| 31 | Code ke kamre banao | modules = alag files, saaf project | split into files, `import` |
-| 32 | Bot ki website 10 lines mein | Streamlit = Python se web app | `pip install streamlit`, first page |
-| 33 | Asli chat screen | `st.chat_input` + `st.chat_message` | chat UI |
-| 34 | Page refresh, chat gayab? | `session_state` = app ki yaad | keep history across reruns |
-| 35 | Menu sidebar mein | sidebar = side ka counter | `st.sidebar`, price list |
-| 36 | Menu ki photo dikhao | AI photo bhi padhe | image input (vision) |
-| 37 | Dukaan ki jaankari do | knowledge = AI ki kitaab | add a text file to the prompt |
-| 38 | Sahi page dhundo | search phir jawab (RAG intro) | keyword search over notes |
-| 39 | Duniya ko dikhao | deploy = online, free | Streamlit Community Cloud |
-| 40 | Key online bhi safe | secrets = deploy ki tijori | `st.secrets` |
-
-## Season 5 — Chai Dukaan AI Agent
-
-| # | Title (hook) | Message | Python idea |
-|---|---|---|---|
-| 41 | Telegram pe Chai Bot | bot ab phone pe | Telegram bot basics |
-| 42 | Telegram + AI | phone se AI chai order | connect the AI reply function |
-| 43 | Order aaya, ping! | notification = dukaandaar ko khabar | send order message to owner |
-| 44 | Bot ko test karo | `assert` = bot ka exam | simple tests for reply/bill |
-| 45 | Kitna kharcha hua? | tokens = AI ka meter | log usage, cost per chat |
-| 46 | Sasta aur tez | sahi model, caching = bachat | model choice, prompt caching |
-| 47 | AI plan banaye | agent = soche, kare, check kare | multi-step task: order → bill → time |
-| 48 | Bot topic pe rahe | guardrails = dukaan ki seema | off-topic refusal in system prompt |
-| 49 | Customer ki raay | feedback = bot sudharo | save ratings, review weak answers |
-| 50 | GRAND FINALE: Chai Dukaan AI Agent | 50 parts: buddhu se AI agent | full recap + next learning path |
+Seasons 3–5 (Parts 21–50) are parked; revisit after Part 20.
 
 ## Production checklist per part
 1. Copy the previous part's folder skeleton (no renders/frames), write `BRIEF.md` + `STORYBOARD.md`.
@@ -112,4 +69,5 @@ while True/break). No other coding background assumed.
 ## Status
 - [x] Part 1 — built, 50-part roadmap, square YT + IG versions (see `../ai-chai-bot-01`)
 - [x] Part 2 — if-else, face-cam, live on YouTube (shorts/jWicQhnSwek), Instagram, Facebook (reel/2071250410195088) + Story
-- [ ] Parts 3–50
+- [x] Part 3 — dictionary, faceless, renders + captions pushed, website lesson live (not yet posted)
+- [ ] Parts 4–20 (faceless unless Raj sends a recording)
