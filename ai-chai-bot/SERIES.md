@@ -2,7 +2,7 @@
 
 Sequel to the 10-part python-chai Instagram series (`videos/python-chai`, `python-chai-2` … `-10`).
 Same world, same look, same pipeline: 1080×1080 square, Raj on camera bottom-right (CapCut black background + matte-black.py), his Hinglish voice, low lo-fi bed,
-low lo-fi bed, built with `build-frames.py` → HyperFrames render. Projects live in `videos/ai-chai-bot-NN/`.
+built with `build-frames.py` → HyperFrames render. Projects live in `videos/ai-chai-bot-NN/`.
 
 **Story:** the chai dukaan gets a chatbot, "Chai Bot". It starts buddhu (same reply to everything), learns rules
 (S1), gets a real AI brain via the Claude API (S2), gains superpowers like memory files and multiple tools (S3),
