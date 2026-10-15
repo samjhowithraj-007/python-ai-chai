@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="02-pile" data-width="1080" data-height="1080">
-  <div class="clip f02-pile-bg" id="f02-pile-bg" data-start="0" data-duration="8.0" data-track-index="0"><div class="f02-pile-grid"></div></div>
-  <div class="clip f02-pile-stage" id="f02-pile-stage" data-start="0" data-duration="8.0" data-track-index="1">
+  <div class="clip f02-pile-bg" id="f02-pile-bg" data-start="0" data-duration="11.74" data-track-index="0"><div class="f02-pile-grid"></div></div>
+  <div class="clip f02-pile-stage" id="f02-pile-stage" data-start="0" data-duration="11.74" data-track-index="1">
     <style>.f02-pile-r { color:#FF8FA3; text-shadow:0 0 24px rgba(255,143,163,.45); }</style>
     <div class="f02-pile-h" id="f02-pile-head" style="top:76px;font-size:80px"><span class="f02-pile-w">Har</span> <span class="f02-pile-w">sawaal</span> <span class="f02-pile-w">=</span> <span class="f02-pile-w f02-pile-c">naya</span> <span class="f02-pile-w">elif</span></div>
     <div id="f02-pile-c0" style="position:absolute;left:90px;top:200px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">if</span> msg == <span style="color:#FFB020">"menu"</span></span></div><div id="f02-pile-c1" style="position:absolute;left:550px;top:200px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"price"</span></span></div><div id="f02-pile-c2" style="position:absolute;left:90px;top:308px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"timing"</span></span></div><div id="f02-pile-c3" style="position:absolute;left:550px;top:308px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"masala"</span></span></div><div id="f02-pile-c4" style="position:absolute;left:90px;top:416px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"adrak"</span></span></div><div id="f02-pile-c5" style="position:absolute;left:550px;top:416px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"elaichi"</span></span></div><div id="f02-pile-c6" style="position:absolute;left:90px;top:524px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"tulsi"</span></span></div><div id="f02-pile-c7" style="position:absolute;left:550px;top:524px;width:430px;height:84px;border-radius:14px;background:#181715;border:2px solid rgba(10,240,240,.45);display:flex;align-items:center;padding-left:20px;box-sizing:border-box;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;white-space:pre"><span><span style="color:#0AF0F0">elif</span> msg == <span style="color:#FFB020">"bill"</span></span></div>
@@ -47,18 +47,18 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f02-pile-stage", { scale: 1.0 }, { scale: 1.04, duration: 8.0, ease: "none" }, 0);
+  tl.fromTo("#f02-pile-stage", { scale: 1.0 }, { scale: 1.04, duration: 11.74, ease: "none" }, 0);
   tl.fromTo("#f02-pile-head .f02-pile-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
-  tl.fromTo("#f02-pile-c0", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.80);
-  tl.fromTo("#f02-pile-c1", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.60);
-  tl.fromTo("#f02-pile-c2", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.40);
-  tl.fromTo("#f02-pile-c3", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.00);
-  tl.fromTo("#f02-pile-c4", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.50);
-  tl.fromTo("#f02-pile-c5", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.90);
-  tl.fromTo("#f02-pile-c6", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 4.20);
-  tl.fromTo("#f02-pile-c7", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 4.50);
-  tl.fromTo("#f02-pile-count", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 5.00);
-  tl.fromTo("#f02-pile-stamp", { opacity: 0, scale: 1.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "power4.in" }, 6.2);
+  tl.fromTo("#f02-pile-c0", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.72);
+  tl.fromTo("#f02-pile-c1", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.72);
+  tl.fromTo("#f02-pile-c2", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.52);
+  tl.fromTo("#f02-pile-c3", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.48);
+  tl.fromTo("#f02-pile-c4", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 4.58);
+  tl.fromTo("#f02-pile-c5", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 5.58);
+  tl.fromTo("#f02-pile-c6", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 6.38);
+  tl.fromTo("#f02-pile-c7", { opacity: 0, scale: 0.7 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 7.18);
+  tl.fromTo("#f02-pile-count", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, 7.88);
+  tl.fromTo("#f02-pile-stamp", { opacity: 0, scale: 1.6, rotation: -4 }, { opacity: 1, scale: 1, rotation: -4, duration: 0.35, ease: "power4.in" }, 9.4);
   window.__timelines = window.__timelines || {};
   window.__timelines["02-pile"] = tl;
 })();

@@ -18,3 +18,4 @@ node_modules/
 /ai-chai-bot*/cam/
 .transcode-cache/
 /ai-chai-bot*/cam2/
+/ai-chai-bot*/renders/upload-*.mp4

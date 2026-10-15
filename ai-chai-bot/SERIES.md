@@ -69,5 +69,5 @@ Seasons 3–5 (Parts 21–50) are parked; revisit after Part 20.
 ## Status
 - [x] Part 1 — built, 50-part roadmap, square YT + IG versions (see `../ai-chai-bot-01`)
 - [x] Part 2 — if-else, face-cam, live on YouTube (shorts/jWicQhnSwek), Instagram, Facebook (reel/2071250410195088) + Story
-- [ ] Part 3 — dictionary: scenes built; faceless draft rejected, waiting for Raj's recording (face-cam like Part 2)
+- [x] Part 3 — dictionary, face-cam (wide cut-out, hands in frame), 67 s, website lesson live (not yet posted)
 - [ ] Parts 4–20 (face-cam, same format as Part 2)

@@ -32,8 +32,8 @@
       font-weight:700; font-size:34px; box-sizing:border-box; }
 </style>
 <div id="root" data-composition-id="03-diary" data-width="1080" data-height="1080">
-  <div class="clip f03-diary-bg" id="f03-diary-bg" data-start="0" data-duration="8.0" data-track-index="0"><div class="f03-diary-grid"></div></div>
-  <div class="clip f03-diary-stage" id="f03-diary-stage" data-start="0" data-duration="8.0" data-track-index="1">
+  <div class="clip f03-diary-bg" id="f03-diary-bg" data-start="0" data-duration="17.08" data-track-index="0"><div class="f03-diary-grid"></div></div>
+  <div class="clip f03-diary-stage" id="f03-diary-stage" data-start="0" data-duration="17.08" data-track-index="1">
     <div class="f03-diary-h" id="f03-diary-head" style="top:76px;font-size:78px"><span class="f03-diary-w f03-diary-c">dictionary</span> <span class="f03-diary-w">=</span> <span class="f03-diary-w">jawab</span> <span class="f03-diary-w f03-diary-a">ki</span> <span class="f03-diary-w">diary</span></div>
     <div id="f03-diary-book" style="position:absolute;left:110px;top:210px;width:860px;height:470px;border-radius:22px;background:#1b1914;
          border:3px solid #FFB020;box-shadow:0 24px 70px rgba(0,0,0,.55);padding:34px 50px 30px 90px;box-sizing:border-box">
@@ -49,12 +49,12 @@
 (function () {
   const tl = gsap.timeline({ paused: true });
   const q = (s) => document.querySelector(s);
-  tl.fromTo("#f03-diary-stage", { scale: 1.0 }, { scale: 1.04, duration: 8.0, ease: "none" }, 0);
+  tl.fromTo("#f03-diary-stage", { scale: 1.0 }, { scale: 1.04, duration: 17.08, ease: "none" }, 0);
   tl.fromTo("#f03-diary-head .f03-diary-w", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out", stagger: 0.08 }, 0.05);
   tl.fromTo("#f03-diary-book", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 0.50);
-  tl.fromTo("#f03-diary-r0", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 2.00);
-  tl.fromTo("#f03-diary-r1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 3.60);
-  tl.fromTo("#f03-diary-r2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 5.20);
+  tl.fromTo("#f03-diary-r0", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 8.78);
+  tl.fromTo("#f03-diary-r1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 11.26);
+  tl.fromTo("#f03-diary-r2", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.45, ease: "power3.out" }, 13.42);
   window.__timelines = window.__timelines || {};
   window.__timelines["03-diary"] = tl;
 })();

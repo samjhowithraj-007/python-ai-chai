@@ -134,6 +134,11 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   keywords, amber output, rose for errors; Chai Bot face and chat-window props; ≤ 4 code lines, nothing below y 896.
 - Re-time every frame to the speech: frame starts = line starts in the flat cut; each card/bubble/stamp lands on its
   word. Total length = speech + ~0.7 s.
+- **Never cut Raj's hands** (his note on Part 3): before matting, measure where non-black pixels go across the whole
+  clip (fps=2 grey frames > 16; union bbox and columns used > 2% of frames) and crop to that, not to the head. For his
+  usual framing that is `crop=1300:860:320:216,scale=780:516` → `#cam` 520x344 at left 560, top 736 (a wide rectangle).
+  Keep x ≥ 560, y ≥ 736 free in every frame: bottom texts left-aligned, stamps/tips above y 730, the end card's website
+  line at top 500 and channel bar at top 575.
 - Face-cam: `<video id="cam" class="clip" src="assets/cam/face-cut.webm">` at left 770, top 770, 320x320, z 50, cyan
   drop-shadow glow; slides up at 0.15 s, fades out 0.4 s after the last word. Voice as `<audio>` at volume 1. Keep the
   bottom-right clear in every frame (footers left-aligned, the channel bar at left 40).

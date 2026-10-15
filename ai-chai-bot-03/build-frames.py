@@ -285,7 +285,7 @@ body = f"""    {rose_style(f)}
          background:rgba(24,23,21,.7);border:1px solid rgba(245,241,232,.12);padding:18px 28px;box-sizing:border-box">{ghost}</div>
     <svg id="{f}-x" width="300" height="300" viewBox="0 0 100 100" style="position:absolute;left:390px;top:435px" fill="none">
       <path d="M18 18 L82 82 M82 18 L18 82" stroke="{ROSE}" stroke-width="10" stroke-linecap="round" stroke-dasharray="91" stroke-dashoffset="91"/></svg>
-    <div class="{f}-h {f}-c" id="{f}-sub" style="top:780px;font-size:76px;{MONO}">dictionary se!</div>"""
+    <div class="{f}-h {f}-c" id="{f}-sub" style="top:770px;left:60px;right:auto;text-align:left;font-size:70px;{MONO}">dictionary se!</div>"""
 js = [f'  tl.fromTo("#{f}-kick", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.5 }}, 0.05);',
       rise(f"#{f}-t1 .{f}-w", 0.2, 0.1), rise(f"#{f}-t2 .{f}-w", 0.7, 0.1),
       fade_up(f"#{f}-ghost", 0.5, 0.5, 40),
@@ -354,9 +354,9 @@ body = f"""    <div class="{f}-h" id="{f}-head" style="top:66px;font-size:80px">
 {cardh}
     <div id="{f}-hl" style="position:absolute;left:42px;top:{y(3)}px;width:996px;height:{int(LH)}px;background:rgba(10,240,240,.14);border-left:6px solid {CYAN};opacity:0"></div>
     {terminal(f, inner, 40, 500, 1000, 380)}
-    <div id="{f}-tip" style="position:absolute;left:560px;top:560px;width:440px;padding:14px 22px;border-radius:14px;background:rgba(10,240,240,.1);
+    <div id="{f}-tip" style="position:absolute;left:560px;top:545px;width:440px;padding:12px 20px;border-radius:14px;background:rgba(10,240,240,.1);
          border:2px solid {CYAN};box-sizing:border-box;font-size:30px;line-height:1.35"><span style="{MONO};color:{CYAN}">.get(msg, ...)</span><br>na mile toh "Samjha nahi!"</div>
-    <div id="{f}-stamp" style="position:absolute;left:560px;top:690px;padding:12px 26px;border:5px solid {GREEN};border-radius:16px;color:{GREEN};
+    <div id="{f}-stamp" style="position:absolute;left:560px;top:655px;padding:10px 24px;border:5px solid {GREEN};border-radius:16px;color:{GREEN};
          background:rgba(14,17,22,.92);font-size:40px;font-weight:700;white-space:nowrap;transform:rotate(-5deg)">Naya sawaal = 1 line!</div>"""
 js = [rise(f"#{f}-head .{f}-w", 0.05, 0.08), fade_up(f"#{f}-card", 0.2, 0.6, 60)]
 for i in range(4):
@@ -373,16 +373,16 @@ write(f, t["len"], body, js)
 # ---- Frame 5: payoff + Part 4 teaser + website + channel bar ----
 f = "05-cta"; t = T["cta"]
 body = f"""    <div class="{f}-h" id="{f}-l1" style="top:90px;font-size:80px">{words(f, "dictionary = bot ki diary", {0: f + "-c", 3: f + "-a"})}</div>
-    <div id="{f}-pill" style="position:absolute;left:50%;transform:translateX(-50%);top:215px;padding:12px 30px;border-radius:9999px;border:3px solid {GREEN};
+    <div id="{f}-pill" style="position:absolute;left:50%;transform:translateX(-50%);top:200px;padding:10px 28px;border-radius:9999px;border:3px solid {GREEN};
          color:{GREEN};{MONO};font-weight:700;font-size:34px;white-space:nowrap">✓ PART 3 / 20</div>
-    <div id="{f}-teaser" style="position:absolute;left:90px;top:330px;width:900px;height:200px;border-radius:20px;background:{NAVY};border:2px solid rgba(10,240,240,.5);
-         box-sizing:border-box;padding:30px 44px;box-shadow:0 24px 70px rgba(0,0,0,.5)">
+    <div id="{f}-teaser" style="position:absolute;left:90px;top:290px;width:900px;height:180px;border-radius:20px;background:{NAVY};border:2px solid rgba(10,240,240,.5);
+         box-sizing:border-box;padding:24px 44px;box-shadow:0 24px 70px rgba(0,0,0,.5)">
       <div style="{MONO};font-weight:700;font-size:30px;letter-spacing:.16em;color:rgba(245,241,232,.66)">AGLA PART 4</div>
       <div style="font-size:52px;margin-top:20px;white-space:nowrap">"MENU" ya "menu"? <span class="{f}-c" style="{MONO}">.lower()</span></div>
     </div>
-    <div id="{f}-web" style="position:absolute;left:0;right:0;top:600px;text-align:center;font-size:40px;font-weight:700;white-space:nowrap">
+    <div id="{f}-web" style="position:absolute;left:0;right:0;top:500px;text-align:center;font-size:40px;font-weight:700;white-space:nowrap">
       Free notes + code: <span class="{f}-c" style="{MONO}">samjhowithraj.online</span></div>
-    <div id="{f}-sb" style="position:absolute;left:40px;top:745px;height:132px;padding:0 22px 0 18px;border-radius:9999px;
+    <div id="{f}-sb" style="position:absolute;left:40px;top:575px;height:132px;padding:0 22px 0 18px;border-radius:9999px;
          background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.22);box-shadow:0 24px 80px rgba(0,0,0,.5);
          display:flex;align-items:center;gap:22px;white-space:nowrap;box-sizing:border-box">
       <div style="width:100px;height:100px;border-radius:50%;overflow:hidden;background:#111;flex:none"><img src="assets/img/raj-mark.png" alt="" style="width:100px;height:100px;display:block"></div>
