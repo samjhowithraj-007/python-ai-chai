@@ -184,7 +184,8 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   - The Chrome window must be **visible** (not minimized or fully covered): a hidden tab reports innerHeight 0,
     screenshots time out and typing is dropped. Ask Raj to snap Chrome right / Claude left (Win+→ / Win+←).
   - Instagram accepts the **cover image** through its `image/jpeg,image/png` file input (the video still needs
-    Raj's click); set crop to Original; the caption goes in with `execCommand('insertText')`.
+    Raj's click); set crop to Original; type the caption with `computer.type` (click the box, Ctrl+A, Delete, type).
+    Since Part 3, `execCommand('insertText')` drops Instagram's line breaks too; check the caption keeps its `\n`s before Share.
   - **Never trust Facebook's "Your reel is published" notification alone** (one turned out to be another post while
     ours sat in Drafts). Verify in Professional dashboard → Content Library (`/professional_dashboard/content/
     content_library/`): the post text must be under **Published**, not **Drafts**. A reel stuck in Drafts: open it
