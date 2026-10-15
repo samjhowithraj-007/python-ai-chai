@@ -186,6 +186,9 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   - Instagram accepts the **cover image** through its `image/jpeg,image/png` file input (the video still needs
     Raj's click); set crop to Original; type the caption with `computer.type` (click the box, Ctrl+A, Delete, type).
     Since Part 3, `execCommand('insertText')` drops Instagram's line breaks too; check the caption keeps its `\n`s before Share.
+    Part 3 still went live with an **empty caption**, so always verify after Share:
+    `curl -A "facebookexternalhit/1.1" instagram.com/reel/<code>/` and check that `og:description` shows the caption. If it's empty,
+    open the reel → ⋯ → Edit → type the caption with `computer.type` → **Done** (a real click).
   - **Never trust Facebook's "Your reel is published" notification alone** (one turned out to be another post while
     ours sat in Drafts). Verify in Professional dashboard → Content Library (`/professional_dashboard/content/
     content_library/`): the post text must be under **Published**, not **Drafts**. A reel stuck in Drafts: open it
