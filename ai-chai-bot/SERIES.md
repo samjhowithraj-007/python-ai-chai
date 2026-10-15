@@ -1,7 +1,7 @@
 # 🤖 AI + Python: chai ka chatbot banao — 20-part series (2 seasons × 10)
 
 Sequel to the 10-part python-chai Instagram series (`videos/python-chai`, `python-chai-2` … `-10`).
-Same world, same look, same pipeline: 30 s, 1080×1080 square, faceless, on-screen Hinglish text, no voiceover,
+Same world, same look, same pipeline: 1080×1080 square, Raj on camera bottom-right (CapCut black background + matte-black.py), his Hinglish voice, low lo-fi bed,
 low lo-fi bed, built with `build-frames.py` → HyperFrames render. Projects live in `videos/ai-chai-bot-NN/`.
 
 **Story:** the chai dukaan gets a chatbot, "Chai Bot". It starts buddhu (same reply to everything), learns rules
@@ -69,5 +69,5 @@ Seasons 3–5 (Parts 21–50) are parked; revisit after Part 20.
 ## Status
 - [x] Part 1 — built, 50-part roadmap, square YT + IG versions (see `../ai-chai-bot-01`)
 - [x] Part 2 — if-else, face-cam, live on YouTube (shorts/jWicQhnSwek), Instagram, Facebook (reel/2071250410195088) + Story
-- [x] Part 3 — dictionary, faceless, renders + captions pushed, website lesson live (not yet posted)
-- [ ] Parts 4–20 (faceless unless Raj sends a recording)
+- [ ] Part 3 — dictionary: scenes built; faceless draft rejected, waiting for Raj's recording (face-cam like Part 2)
+- [ ] Parts 4–20 (face-cam, same format as Part 2)
