@@ -2,7 +2,7 @@
 
 ## Instagram (Reel / post caption)
 
-🤖 AI + Python: chai ka chatbot banao — PART 3/20
+🤖 AI + Python: chai ka chatbot banao — PART 3/50
 
 Bot ko 50 sawaal sikhane hain… 50 if-else? Nahi! 😵
 Dictionary = jawab ki diary 📒
@@ -24,7 +24,7 @@ Agla Part 4: "MENU" ya "menu"? .lower() 👉 Follow karo, miss mat karna!
 ## YouTube Shorts
 
 ### Title (max 100 characters)
-50 if-else? Nahi! Python dictionary se smart Chai Bot 🤖 | AI + Python Part 3/20 #shorts
+50 if-else? Nahi! Python dictionary se smart Chai Bot 🤖 | AI + Python Part 3/50 #shorts
 
 ### Description
 Chai Bot ko har naye sawaal pe naya elif? Code lamba aur messy 😵 Dictionary se sab ek diary mein! ☕🤖
@@ -36,7 +36,7 @@ msg = input("Aap: ")
 print(replies.get(msg, "Samjha nahi!"))
 
 📘 Free notes + code (copy karo, khud chalao): https://www.samjhowithraj.online/#chatbot-3
-▶️ Playlist: AI + Python 🤖: Chai ka Chatbot banao (20 Parts)
+▶️ Playlist: AI + Python 🤖: Chai ka Chatbot banao (50 Parts)
 ▶️ Agla Part 4: "MENU" ya "menu"? .lower()
 🔔 Subscribe karo — har hafte naya part!
 
@@ -53,7 +53,7 @@ python dictionary, python dictionary in hindi, dict get python, python chatbot, 
 
 ## Facebook (use the Instagram video, chai-bot-03-ig.mp4)
 
-🤖 AI + Python: chai ka chatbot banao — PART 3/20
+🤖 AI + Python: chai ka chatbot banao — PART 3/50
 
 50 if-else? Nahi! 😵 Dictionary = Chai Bot ki diary 📒
 ✅ "menu" → Masala, Adrak!
