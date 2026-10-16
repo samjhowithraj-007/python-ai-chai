@@ -143,6 +143,13 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Visibility:** stop and ask Raj ("Publish as Public now?", or schedule 7 PM IST); publish only on his yes. Confirm with
   `youtube.com/oembed?url=<link>` (title + author), record the link in `CAPTION.md` and memory, close the Chrome tab.
 
+**Viewer feedback on Part 1 v1 (set to Private, reshoot):** energy too low, and the thumbnail showed Raj mid-word with
+his mouth open. So: (1) recording notes ask for standing, about 20% louder and faster delivery, scene-by-scene takes
+(2-3 each) and a punch-word gesture; target about 6 minutes; (2) thumbnails use a **closed-mouth** frame (confident
+half-smile, or eyebrows up with lips together), ideally dedicated photos shot at the recording session, never a frame
+pulled mid-sentence; (3) explanation cutaways become **AI video clips** (Abracadabrax / Clipwave plugins): check the credits
+and quote the cost per clip before generating anything.
+
 **Free promotion after every upload (YouTube's "Promote" button is paid Google Ads: skip unless Raj asks):**
 1. Upload the Part's Short with **"Related video" = the long video**, in the same playlist.
 2. **Pin a comment** with the episode's question + the tracker link; reply to the first comments quickly.
