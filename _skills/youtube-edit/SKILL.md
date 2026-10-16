@@ -123,6 +123,23 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
   studio (instant); `matte-black.py` on 8 minutes ran at ~2 fps here.
 
+**Raj's rules from the Part 1 reshoot (16 Oct 2026):**
+- **The studio screen is never blank.** Before any full render, scan it: build a copy of the draft with every `<video>`
+  swapped for a grey block (keeps timing, snapshots in ~2 min instead of an hour), snapshot every 1 s, and flag frames
+  whose screen crop is dark with <2% busy pixels (`videos/ep01/screen-scan.py`). Fill every gap from what he says there
+  (`transcript-flat.json`): an AI family clip on story lines, the family picture (push-in clip) on "ye kahani aapki
+  bhi hai", or a money animation. Clips overlap 0.25 s at hand-overs so nothing flashes empty between them.
+- **Examples get money animations** (`videos/ep01/explain_art.py`): buckets filling with coins, piggy bank, growth
+  chart, shield (insurance/emergency), dream house, wallet with ₹ notes flying out to spends, graduation cap, calendar
+  flip. `low=True` sits them under a title or bar. Make them big: a 300 px wallet read as tiny on the screen.
+- **No cartoons once there is an AI family**: the Vermas are the CapCut AI family everywhere (clips + the reference
+  picture with name tags for all four).
+- **Raj's reshoot framing is closer (head and shoulders)**: measure the reach mask, then scale him (64%, body centre
+  x 480) so hands stay left of the screen; the screen grows to ~950x850 (`#panel` scale .99, translate 30,-72).
+- **He reads the teleprompter's scene labels aloud** ("Scene number 3…", "6. Goals"): drop them by pattern before
+  cutting (`reshoot-cut.py`), plus the slate before the first line.
+- **The website is a small browser window** (680x540) on a solid backdrop, not the whole screen.
+
 **Publishing a Money Plan long video (learned on Part 1, 16 Oct 2026; do this for every part):**
 - **Ready before upload:** the final `money-plan-NN-yt.mp4`, the 1280x720 thumbnail (`videos/epNN/thumbnail/`, built from
   `thumb.html` + `shot.cjs`: pick a frame where Raj looks into the lens, check it at 320x180), and `CAPTION.md` (title,
