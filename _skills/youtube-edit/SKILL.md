@@ -1157,6 +1157,15 @@ you would rather approve a shortlist first, say so and note it here.
   `broll-conform.py --size 1422x1182 --grade` (948x788 at 1.5x; portrait clips centre-crop fine). In `build-draft.py`
   `USE_STOCK`/`STOCK` swap a `broll()` slot to a muted `<video>` at the slot's box with the white caption kept; list
   every clip in `STOCK.md` (page, licence, seconds). Real people, so "altered or synthetic content" stays No.
+- **One family for the whole Money Plan series (Raj, 16 Oct 2026):** the Vermas are always played by the same Pexels
+  family (Anna Pou's shoot: father, mother, son; no Pihu, so the drawn characters cover her). The library is
+  `financial planning/videos/_shared/verma-family/` (`raw/`, `screen/` conformed 1422x1182, README catalogue with a
+  "Used in" column). Pick family moments from it first, once or twice per episode, never the previous part's clips, no
+  flag-bunting clips in festival or tax episodes; topic moments use faceless stock or animation. Other people (a worried
+  man in shadow, grandparents) are fine where the Vermas are not meant to be on screen. To find a one-family series:
+  run several searches through `fetch('/search/videos/<q>/')` on pexels.com and parse `__NEXT_DATA__`
+  (`props.pageProps.initialData.data[].attributes.user.username`, `video.video_files[]`), then group by creator;
+  sequential ids (9346214..9347909) mark one shoot.
 - **Pick the window by measured sharpness** (one clip breathed out of focus mid-window): the mean neighbour-pixel
   difference per 0.5 s on a 640x360 grey frame; take the steadiest high stretch. Snapshot every slot before rendering.
 
