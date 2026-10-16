@@ -129,6 +129,10 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
   whose screen crop is dark with <2% busy pixels (`videos/ep01/screen-scan.py`). Fill every gap from what he says there
   (`transcript-flat.json`): an AI family clip on story lines, the family picture (push-in clip) on "ye kahani aapki
   bhi hai", or a money animation. Clips overlap 0.25 s at hand-overs so nothing flashes empty between them.
+- **A video that runs out leaves the screen blank** (the grey-block scan cannot see it). After re-timing, every clip
+  must be at least as long as its slot: `fit-clips.py` reads each slot from the built page and writes
+  `broll/fit/<slot>.mp4` from the clean take: trim, slow up to 1.5x, or forward-then-backward ping-pong. Check
+  slot vs clip length for the long video and the Short before rendering.
 - **Examples get money animations** (`videos/ep01/explain_art.py`): buckets filling with coins, piggy bank, growth
   chart, shield (insurance/emergency), dream house, wallet with ₹ notes flying out to spends, graduation cap, calendar
   flip. `low=True` sits them under a title or bar. Make them big: a 300 px wallet read as tiny on the screen.
