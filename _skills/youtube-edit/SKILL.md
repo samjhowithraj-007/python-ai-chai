@@ -114,6 +114,11 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Studio screen 960x860** (panel units) for breathing room; chips and cards stay inside it.
 - **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on samjhowithraj.online, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
   @SamjhowithRaj (red Subscribe), Instagram @samjhowithraj and Facebook Samjho with Raj (blue Follow), the website line.
+- **Music for Money Plan: "Every Dawn" (David Celeste, Epidemic Sound)**, not the punchy lo-fi bed, which Raj found
+  distracting under speech. Chosen by measurement: pick tracks with little energy in the voice band (300-3400 Hz) AND small
+  loudness jumps (Every Dawn: 9% voice band, 6 dB; All of the Things: 9%, 20.5 dB, its drum hits pull attention). Loop it with
+  4 s crossfades; bed at -17 dB ducked (ratio 6) under speech, about -13 dB while the website is on screen, about -4 dB in the
+  tracker outro. The file is in `financial planning/videos/_shared/music/`.
 - **No AI clips by default (cost):** explanation cutaways are animated scenes (`scenes_art.py`); AI video only on request.
 - **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
   studio (instant); `matte-black.py` on 8 minutes ran at ~2 fps here.
