@@ -112,7 +112,7 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Section cards (#1, #2...) last exactly 2 s on the final clock** (fade .25 s), whatever the re-timing does to the
   rest, so the scene's content never appears under a card.
 - **Studio screen 960x860** (panel units) for breathing room; chips and cards stay inside it.
-- **Every Money Plan episode ends with the shared outro** `C:\samjhowithrajinancial planningideos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on samjhowithraj.online, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
+- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on samjhowithraj.online, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
   @SamjhowithRaj (red Subscribe), Instagram @samjhowithraj and Facebook Samjho with Raj (blue Follow), the website line.
 - **No AI clips by default (cost):** explanation cutaways are animated scenes (`scenes_art.py`); AI video only on request.
 - **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
