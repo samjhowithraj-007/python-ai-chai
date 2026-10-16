@@ -123,6 +123,34 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
   studio (instant); `matte-black.py` on 8 minutes ran at ~2 fps here.
 
+**Publishing a Money Plan long video (learned on Part 1, 16 Oct 2026; do this for every part):**
+- **Ready before upload:** the final `money-plan-NN-yt.mp4`, the 1280x720 thumbnail (`videos/epNN/thumbnail/`, built from
+  `thumb.html` + `shot.cjs`: pick a frame where Raj looks into the lens, check it at 320x180), and `CAPTION.md` (title,
+  description with chapters, tags). Chapters come from the warp table (each section's start, mapped to the final cut),
+  plus a last chapter for the tracker walkthrough.
+- **Upload in Claude in Chrome** on `studio.youtube.com/channel/UCMcwMtuOjp39M0JtLpbwvZg/videos/upload?d=ud`. The video
+  is over the 10 MB file_upload limit, so **Raj clicks "Select files"** and picks it (give him the full path). The Chrome
+  window must be visible and big (a 600x250 window froze typing and hid menus); ask Raj first.
+- **Details:** title (≤100 chars, the hook + "| Money Plan Part N"); description typed with `computer.type` (line breaks
+  survive): hook lines, the Verma story line, 🧮 Financial Tracker link first, notes, Instagram, Facebook (Reels page),
+  chapters, a comment question, a subscribe line, the educational disclaimer, 3 hashtags. Thumbnail through the image file
+  input (upload it from the project folder; the Videos folder is outside the session's readable paths).
+- **Playlist:** "Middle-Class Family Ka Money Plan 💰 | Personal Finance in Hindi (50 Parts)" (public, created on Part 1);
+  tick it for every part and its Short.
+- **Settings:** Not made for kids; altered/synthetic content **No** (animations only, no realistic AI); Show more →
+  14 tags, video language **Hindi**, category **Education**, automatic chapters on.
+- **Video elements → End screen → template "1 video, 1 subscribe"** over the last 20 s (the tracker outro), Save.
+- **Visibility:** stop and ask Raj ("Publish as Public now?", or schedule 7 PM IST); publish only on his yes. Confirm with
+  `youtube.com/oembed?url=<link>` (title + author), record the link in `CAPTION.md` and memory, close the Chrome tab.
+
+**Free promotion after every upload (YouTube's "Promote" button is paid Google Ads: skip unless Raj asks):**
+1. Upload the Part's Short with **"Related video" = the long video**, in the same playlist.
+2. **Pin a comment** with the episode's question + the tracker link; reply to the first comments quickly.
+3. **Community post**: the thumbnail + a poll tied to the episode.
+4. **Instagram + Facebook Reels** of the Short ("Full video on YouTube", tracker link in bio / caption).
+5. Share the link on WhatsApp; embed the video on the website's tracker page.
+6. Keep a fixed weekly posting day.
+
 **HyperFrames registry blocks that fit finance** (`npx hyperframes add <name>`): `chart-story` (donut, bars, line,
 progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping counter for lakh/crore), `marker-checklist-card`,
 `mk-specs-list` (clean checklist rows), `comparison-split` (before/after), `success-check`, `yt-screen-warp` and
