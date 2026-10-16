@@ -1149,6 +1149,14 @@ you would rather approve a shortlist first, say so and note it here.
   `python3 "$SK/scripts/broll-conform.py" --4k --in "$W/broll/raw/<file>" --out "$W/public/broll/<job>.mp4" --start
   <s> --dur <slot + 1>`. Blur anything readable with `--vf "split[a][b];[b]crop=W:H:X:Y,boxblur=8[bb];[a][bb]overlay=X:Y"` in SOURCE
   pixels (find X and Y with ffmpeg's `drawgrid`); a crop rarely clears a label without wrecking the framing.
+- **Money Plan studio screen (learned on Part 1's reshoot, 16 Oct 2026):** when the Pexels API key is paused, search
+  pexels.com in the built-in browser and read each video page for its file links; download with `curl -L -A
+  "Mozilla/5.0"` from `videos.pexels.com/video-files/<id>/...` (HD 1920 entry; check sizes with a HEAD request and ask
+  Raj once for the whole set). Search words that find Indian scenes: "indian family dinner", "indian city rooftops",
+  "kirana store", "diwali street", "indian college campus". Conform to the screen slot, not 16:9:
+  `broll-conform.py --size 1422x1182 --grade` (948x788 at 1.5x; portrait clips centre-crop fine). In `build-draft.py`
+  `USE_STOCK`/`STOCK` swap a `broll()` slot to a muted `<video>` at the slot's box with the white caption kept; list
+  every clip in `STOCK.md` (page, licence, seconds). Real people, so "altered or synthetic content" stays No.
 - **Pick the window by measured sharpness** (one clip breathed out of focus mid-window): the mean neighbour-pixel
   difference per 0.5 s on a 640x360 grey frame; take the steadiest high stretch. Snapshot every slot before rendering.
 

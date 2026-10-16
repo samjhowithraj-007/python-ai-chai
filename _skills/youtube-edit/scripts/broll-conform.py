@@ -10,6 +10,7 @@ Usage:
   python3 broll-conform.py --in gen/desk.png --out videos/<p>/public/broll/desk.mp4 --dur 4 [--push 1.08]
   add --4k to write 3840x2160 (the composition is 1920x1080 and renders at 2x, so 1080p is the default; 4K stock
   keeps its detail only with --4k)
+  add --size 1422x1182 to fill a non-16:9 slot (a studio screen); portrait stock is cropped, so set the crop with --vf
   add --vf "<ffmpeg filters>" to clean a stock clip first, in source pixels: crop a readable logo out
   ("crop=3490:1964:175:0") or soften a browser bar ("split[a][b];[b]crop=1480:170:1080:600,boxblur=18[bb];[a][bb]overlay=1080:600")
 Writes the clip, <out>.sheet.png (first, middle, last frame) and prints the storyboard beat to paste.
@@ -24,10 +25,13 @@ ap.add_argument("--dur", type=float, help="seconds to keep (default: the rest of
 ap.add_argument("--push", type=float, default=1.08, help="still only: end scale of the push-in (1.00 = none)")
 ap.add_argument("--grade", action="store_true", help="a light grade toward camera footage: contrast +3%%, saturation -8%%")
 ap.add_argument("--4k", dest="uhd", action="store_true")
+ap.add_argument("--size", help="WxH output instead of 16:9, e.g. 1422x1182 for a studio-screen slot (948x788 at 1.5x)")
 ap.add_argument("--vf", default="", help="ffmpeg filters applied first, in source pixels (crop a logo out, blur a browser bar)")
 args = ap.parse_args()
 
 W, H = (3840, 2160) if args.uhd else (1920, 1080)
+if args.size:
+    W, H = (int(v) for v in args.size.lower().split("x"))
 still = os.path.splitext(args.src)[1].lower() in (".png", ".jpg", ".jpeg", ".webp")
 if still and not args.dur:
     sys.exit("a still needs --dur (seconds of push-in)")
