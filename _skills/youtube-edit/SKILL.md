@@ -1166,6 +1166,15 @@ you would rather approve a shortlist first, say so and note it here.
   run several searches through `fetch('/search/videos/<q>/')` on pexels.com and parse `__NEXT_DATA__`
   (`props.pageProps.initialData.data[].attributes.user.username`, `video.video_files[]`), then group by creator;
   sequential ids (9346214..9347909) mark one shoot.
+- **CapCut AI clips (Money Plan Part 1, 16 Oct 2026):** Raj makes them with Image to video from the family reference
+  (`_shared/verma-family/ai-reference/family.png`). Every export starts on that picture: either a hard cut in the first
+  0.4–0.8 s or a slow dissolve lasting up to 5.5 s, with a faint ghost face or window frame. Find it with
+  `select='gt(scene,0.3)'` plus a 2 fps tiled sheet with timestamps, then check single frames around the end of the
+  dissolve before picking the in point. Exports are 10 s with a steady push-in, which can push a face off the frame by
+  the end: cut before that. Crop per clip for the 1.2:1 screen (`--vf crop=1299:1080:X:0`). When two faces sit at opposite
+  edges, fit it full-width on a blurred, darkened copy instead of cropping. Keep a `NN-clean-16x9.mp4` of each take
+  for CapCut, record each trim in `BROLL-AI.md`, and set "Altered or synthetic content" to Yes on upload. CapCut keeps
+  the newest export open, so it can't be renamed until the next one is exported.
 - **Pick the window by measured sharpness** (one clip breathed out of focus mid-window): the mean neighbour-pixel
   difference per 0.5 s on a 640x360 grey frame; take the steadiest high stretch. Snapshot every slot before rendering.
 
