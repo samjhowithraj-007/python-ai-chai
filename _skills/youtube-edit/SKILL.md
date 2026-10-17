@@ -123,6 +123,14 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
   studio (instant); `matte-black.py` on 8 minutes ran at ~2 fps here.
 
+**Money Plan series goal: traffic to www.paisasamjhoraj.com (Raj, 17 Oct 2026).** The site is his finance home (Learn,
+Calculators, Money Planner at `#planner`, Money Plan Series); his courses and iOS/Android apps will sell there later.
+Every script names the site mid-episode (tied to that topic's calculator or lesson) and in the ending; the studio
+screen shows the real page when he says it (capture with `videos/_shared/outro/capture/capture-planner.cjs`, 1440 wide,
+2x, dark, Verma example loaded); the outro walks through the Money Planner; the Short ends on the site; descriptions,
+pinned comments and Reels captions lead with it. The old samjhowithraj.online tracker is retired; never show it.
+If Raj's recorded voice still says the old domain, the on-screen text and captions show the new one.
+
 **Raj's rules from the Part 1 reshoot (16 Oct 2026):**
 - **The studio screen is never blank.** Before any full render, scan it: build a copy of the draft with every `<video>`
   swapped for a grey block (keeps timing, snapshots in ~2 min instead of an hour), snapshot every 1 s, and flag frames
