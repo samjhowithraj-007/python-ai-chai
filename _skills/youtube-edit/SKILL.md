@@ -112,7 +112,7 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Section cards (#1, #2...) last exactly 2 s on the final clock** (fade .25 s), whatever the re-timing does to the
   rest, so the scene's content never appears under a card.
 - **Studio screen 960x860** (panel units) for breathing room; chips and cards stay inside it.
-- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on techsamjhoraj.com, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
+- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker (now the Money Planner on www.paisasamjhoraj.com/#planner; finance content lives on paisasamjhoraj.com, tech on techsamjhoraj.com), then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
   @SamjhowithRaj (red Subscribe), Instagram @samjhowithraj and Facebook Samjho with Raj (blue Follow), the website line.
 - **Music for Money Plan: "Every Dawn" (David Celeste, Epidemic Sound)**, not the punchy lo-fi bed, which Raj found
   distracting under speech. Chosen by measurement: pick tracks with little energy in the voice band (300-3400 Hz) AND small
@@ -168,7 +168,7 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
   is over the 10 MB file_upload limit, so **Raj clicks "Select files"** and picks it (give him the full path). The Chrome
   window must be visible and big (a 600x250 window froze typing and hid menus); ask Raj first.
 - **Details:** title (≤100 chars, the hook + "| Money Plan Part N"); description typed with `computer.type` (line breaks
-  survive): hook lines, the Verma story line, 🧮 Financial Tracker link first, notes, Instagram, Facebook (Reels page),
+  survive): hook lines, the Verma story line, 🧮 Money Planner link first (https://www.paisasamjhoraj.com/#planner), notes, Instagram, Facebook (Reels page),
   chapters, a comment question, a subscribe line, the educational disclaimer, 3 hashtags. Thumbnail through the image file
   input (upload it from the project folder; the Videos folder is outside the session's readable paths).
 - **Playlist:** "Middle-Class Family Ka Money Plan 💰 | Personal Finance in Hindi (50 Parts)" (public, created on Part 1);
