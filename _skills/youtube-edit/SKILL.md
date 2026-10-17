@@ -44,6 +44,11 @@ Saved from the first hook (Oct 2026). These win over the general rules below.
 - **Render 1080p, not 4K** (`--resolution 1080p --video-bitrate 16M --workers 2`; about 8 minutes for 48 s here).
 - **You check the edit in CapCut** before uploading: deliver to `C:\Users\rajpr\Videos\YouTube Renders\<project>\`,
   open that folder in Explorer and launch CapCut (`%LOCALAPPDATA%\CapCut\Apps\CapCut.exe`) so you can drag it in.
+- **Archive, never overwrite (same rule as Money Plan).** One folder per part in `YouTube Renders\<series>-NN\`
+  (`money-plan-01`, `agentic-ai-s1e01`). The newest file has no version suffix (`<series>-NN-yt.mp4`, `-short-yt.mp4`,
+  `-short-ig.mp4`, `-thumbnail.png`); before a new version lands, rename the current one to the next free `-v1`, `-v2`...
+  in the same folder (`money-plan-01-yt-v1.mp4`). Drafts and sheets stay there too (`-draft2-sample.mp4`,
+  `contact-sheet-*.jpg`). Raw footage and work files stay in the project folder.
 - **Keep waits in the background** and give short progress lines; you see a time estimate before a long render.
 
 ## Finance long form (Money Plan series)
