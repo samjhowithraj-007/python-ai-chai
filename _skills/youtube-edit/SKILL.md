@@ -112,7 +112,7 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Section cards (#1, #2...) last exactly 2 s on the final clock** (fade .25 s), whatever the re-timing does to the
   rest, so the scene's content never appears under a card.
 - **Studio screen 960x860** (panel units) for breathing room; chips and cards stay inside it.
-- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on samjhowithraj.online, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
+- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker on techsamjhoraj.com, then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
   @SamjhowithRaj (red Subscribe), Instagram @samjhowithraj and Facebook Samjho with Raj (blue Follow), the website line.
 - **Music for Money Plan: "Every Dawn" (David Celeste, Epidemic Sound)**, not the punchy lo-fi bed, which Raj found
   distracting under speech. Chosen by measurement: pick tracks with little energy in the voice band (300-3400 Hz) AND small
@@ -246,7 +246,7 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 - Face-cam: `<video id="cam" class="clip" src="assets/cam/face-cut.webm">` at left 770, top 770, 320x320, z 50, cyan
   drop-shadow glow; slides up at 0.15 s, fades out 0.4 s after the last word. Voice as `<audio>` at volume 1. Keep the
   bottom-right clear in every frame (footers left-aligned, the channel bar at left 40).
-- End card: 50-part roadmap, next-part teaser, "Free notes + code: samjhowithraj.online", and the Agentic-style channel
+- End card: 50-part roadmap, next-part teaser, "Free notes + code: techsamjhoraj.com", and the Agentic-style channel
   bar (raj-mark logo, "Samjho with Raj", tagline, pulsing button). `python build-frames.py yt` = red **Subscribe**,
   `ig` = blue **Follow** (Instagram + Facebook).
 - Render YouTube in full, then render **only the end frame** for Instagram (a one-scene index with the cam at
@@ -259,7 +259,7 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 - `renders/<name>-yt.mp4` and `-ig.mp4` + `thumbnail/thumbnail-1080x1920.png` (website footer on it) into
   `C:\Users\rajpr\Videos\YouTube Renders\<project>\`, open the folder in Explorer.
 - `CAPTION.md`: Instagram caption (website "link in bio", YouTube handle), YouTube title (#shorts) + description (code,
-  `https://www.samjhowithraj.online/#<lesson-id>`, Instagram + Facebook links) + tags, Facebook text (clickable site,
+  `https://www.techsamjhoraj.com/#<lesson-id>`, Instagram + Facebook links) + tags, Facebook text (clickable site,
   YouTube, Instagram links, 3-5 hashtags). Website text is English; videos stay Hinglish. Every Facebook link
   (captions, website, YouTube channel links) goes to the Reels page: `profile.php?id=61595088790170&sk=reels_tab`.
 
@@ -268,7 +268,7 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   ignored). Identity samjhowithraj-007 <pragya.bigdata@gmail.com>, never the global Richa login.
 - Website (github.com/samjhowithraj-007/samjhowithrajwebsite, `C:\samjhowithraj\samjhowithrajwebsite`): copy the yt
   render to `media/<id>.mp4` (< 25 MB), poster `media/<id>.jpg`, fill the lesson in `index.html` COURSES (English
-  notes, code as in the video), push; GitHub Pages publishes www.samjhowithraj.online (if a deploy fails "due to in
+  notes, code as in the video), push; GitHub Pages publishes www.techsamjhoraj.com (if a deploy fails "due to in
   progress deployment", Raj clicks Re-run jobs).
 - Posting through **Claude in Chrome** (Raj is signed in; upload copies re-encoded at CRF 20 so they stay < 10 MB):
   - YouTube Studio: open `studio.youtube.com/channel/<id>/videos/upload?d=ud`, find the file input through shadow DOM,
