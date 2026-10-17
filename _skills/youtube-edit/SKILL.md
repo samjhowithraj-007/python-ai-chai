@@ -190,6 +190,8 @@ ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old ve
 - Instagram Reel (crop Original, cover = the closed-mouth cover, caption from `CAPTION.md`), Facebook Reel (cover,
   description, Public, as the Samjho With Raj page), and a Facebook page post (thumbnail image + YouTube and Money
   Planner links + a comment question). Record every link in `CAPTION.md` and memory.
+- X (Twitter) post of the Short (x.com/compose/post): ≤280 chars, hook, "Money Plan · Part N/50", the Short link,
+  "Free Money Planner: paisasamjhoraj.com", #PersonalFinance #MoneyPlan #Hindi; Raj clicks Post.
 - Claude never deletes posts or videos; Raj does it in Studio.
 
 **10. After publishing**: pin a comment (episode question + Money Planner link), set the Short's Related video to the
