@@ -136,6 +136,12 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
 - **Background life on the screen**: `explain_art.idle()` floats faint ₹ coins behind everything inside the studio
   screen for the whole video, so even a 1 s hand-over between beats moves (Raj: "to cover the frame just put some
   animation"). GSAP positions on the warped timeline must be >= 10000 (flat); anything below is read as plan time.
+- **Opening disclaimer, every Money Plan part** (Raj, 17 Oct 2026): first ~8 s, top-left card: "Financial education
+  video · Financial advice nahi · … Verma family aur sabhi characters kaalpanik (fictional) hain, AI se banaye gaye.
+  Kisi asli vyakti ya parivaar se milaan sirf sanyog hai." Same line in the YouTube description and Short captions.
+- **Coins only where the screen is empty**: `screen-scan.py --windows` writes `idle-windows.json`; the idle coins fade
+  in only there (they looked messy floating over the diary and the tables).
+- **Clip backdrops sit above section cards** (z 8), or a light card shows through under the clip caption.
 - **Never drop short transcript chunks as noise**: a 0.3 s chunk was "Aarav". Drop only labels, slates and "cut" lines.
 - **Check number beats against the words** (12 lakh / 39 lakh came in after he said them): the transcript alignment can
   slip by 10+ s in a dense section; pin those plan beats by hand to the reshoot second (MANUAL in `reshoot-cut.py`).
