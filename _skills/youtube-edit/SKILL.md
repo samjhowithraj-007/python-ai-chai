@@ -129,7 +129,7 @@ Every script names the site mid-episode (tied to that topic's calculator or less
 screen shows the real page when he says it (capture with `videos/_shared/outro/capture/capture-planner.cjs`, 1440 wide,
 2x, dark, Verma example loaded); the outro walks through the Money Planner; the Short ends on the site; descriptions,
 pinned comments and Reels captions lead with it. The old samjhowithraj.online tracker is retired; never show it.
-If Raj's recorded voice still says the old domain, the on-screen text and captions show the new one.
+If Raj's recorded voice still says the old domain, show a correction card at that exact moment (old name struck through in red, "paisasamjhoraj.com ✓" popping in; `o-fix` in ep01 `build-draft.py`, `fixs` in `build-short.py`).
 
 **Raj's rules from the Part 1 reshoot (16 Oct 2026):**
 - **The studio screen is never blank.** Before any full render, scan it: build a copy of the draft with every `<video>`
