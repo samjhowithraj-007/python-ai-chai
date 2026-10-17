@@ -278,6 +278,9 @@ the per-type differences are in the table. Raj's links, repos and series plans a
   render to `media/<id>.mp4` (< 25 MB), poster `media/<id>.jpg`, fill the lesson in `index.html` COURSES (English
   notes, code as in the video), push; GitHub Pages publishes www.techsamjhoraj.com (if a deploy fails "due to in
   progress deployment", Raj clicks Re-run jobs).
+  Money Plan / finance lessons go to paisasamjhoraj.com (`C:\samjhowithraj\paisasamjhorajwebsite`) instead. For anything
+  about the sites themselves (new site, domain, DNS, HTTPS, install-as-app, Search Console, profile links) use the
+  **website-app** skill. If a lesson change touches a precached file, bump `VERSION` in that site's `sw.js`.
 - Posting through **Claude in Chrome** (Raj is signed in; upload copies re-encoded at CRF 20 so they stay < 10 MB):
   - YouTube Studio: open `studio.youtube.com/channel/<id>/videos/upload?d=ud`, find the file input through shadow DOM,
     `file_upload`, title/description/tags, thumbnail via the image file input, "Not made for kids", Public, Publish;

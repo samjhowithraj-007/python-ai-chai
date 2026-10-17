@@ -1,0 +1,70 @@
+{
+  "id": "./",
+  "name": "Paisa Samjho Raj",
+  "short_name": "Paisa Samjho",
+  "description": "Money made simple for Indian families: lessons, SIP, goal and EMI calculators and a private family Money Planner. Educational, not advice.",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "start_url": "./#home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#1d6b4f",
+  "theme_color": "#1d6b4f",
+  "categories": [
+    "finance",
+    "education"
+  ],
+  "icons": [
+    {
+      "src": "img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "SIP calculator",
+      "url": "./#calculators/sip",
+      "icons": [
+        {
+          "src": "img/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Money Planner",
+      "url": "./#planner",
+      "icons": [
+        {
+          "src": "img/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Learn",
+      "url": "./#learn",
+      "icons": [
+        {
+          "src": "img/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}
