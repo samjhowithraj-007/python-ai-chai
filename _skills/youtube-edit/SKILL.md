@@ -253,7 +253,10 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 
 **4. Deliver**
 - `renders/<name>-yt.mp4` and `-ig.mp4` + `thumbnail/thumbnail-1080x1920.png` (website footer on it) into
-  `C:\Users\rajpr\Videos\YouTube Renders\<project>\`, open the folder in Explorer.
+  `C:\Users\rajpr\Videos\YouTube Renders\<series>-NN\`. Use one folder per part (`ai-chai-bot-03`, `python-chai-07`,
+  `money-plan-01`), never a shared series folder. Open the folder in Explorer and copy `CAPTION.md` there too.
+  **After posting**, add the part's row (YouTube, Instagram and Facebook links) to `YouTube Renders\INDEX.md`, so the
+  archive always shows what went live where.
 - `CAPTION.md`: Instagram caption (website "link in bio", YouTube handle), YouTube title (#shorts) + description (code,
   `https://www.techsamjhoraj.com/#<lesson-id>`, Instagram + Facebook links) + tags, Facebook text (clickable site,
   YouTube, Instagram links, 3-5 hashtags). Website text is English; videos stay Hinglish. Every Facebook link
