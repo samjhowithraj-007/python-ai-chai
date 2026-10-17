@@ -110,6 +110,12 @@ captions and the FB post lead with it. The old samjhowithraj.online tracker is r
 voice says an old domain, show a correction card at that exact moment (old name struck through in red,
 "paisasamjhoraj.com ✓" popping in; `o-fix` in `build-draft.py`, `fixs` in `build-short.py`).
 
+**Footage in, archive out (from Part 2):** Raj shoots on iPhone; clips land in `OneDrive\Samjhowithraj video\Finance
+video\` (also `Tech video\`, `General video\`). Copy the newest into `epNN/raw/` (copying downloads online-only files),
+ffprobe it, and convert iPhone HEVC/HDR/60 fps to SDR BT.709 H.264 30 fps before the cut. After publishing, zip with a
+timestamp (`money-plan-NN-yyyymmdd-hhmm.zip`), verify, put it in `OneDrive\Samjho with Raj Archive\money-plan\` marked
+online-only, and recycle local copies only after the upload shows done (C: Recycle Bin holds 26 GB).
+
 **1. Before recording**
 - Script to the teleprompter (https://claude.ai/artifact/T3fZH9kvCKB4NxEjnGajKi) with an energy cue per scene. Raj
   stands, ~20% louder and faster, one gesture per punch word, 2–3 takes per scene, "cut this line" after a fluff.
@@ -187,8 +193,8 @@ ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old ve
 - Claude never deletes posts or videos; Raj does it in Studio.
 
 **10. After publishing**: pin a comment (episode question + Money Planner link), set the Short's Related video to the
-long one, community post with the thumbnail and a poll, archive the part (raw, AI clips, finals) to
-`C:\samjhowithraj\old posted video\money-plan-NN\` and send the rebuildable files to the Recycle Bin.
+long one, community post with the thumbnail and a poll, archive the part as above (timestamped zip in OneDrive `Samjho with Raj Archive`) and send the
+rebuildable files to the Recycle Bin.
 
 **HyperFrames registry blocks that fit finance** (`npx hyperframes add <name>`): `chart-story` (donut, bars, line,
 progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping counter for lakh/crore), `marker-checklist-card`,
