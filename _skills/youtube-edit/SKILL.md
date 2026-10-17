@@ -73,9 +73,7 @@ and win over the general long-form rules where they clash. The series plan and p
   set's right side is a **studio screen** (`#screen` in `videos/ep01/build-draft.py`) where every animation and
   explanation cutaway plays, so he is never covered or cropped in the long video (Part 1 rule; ask before reusing).
 - **Explain = show:** when Raj explains a real-world thing (rent, Diwali shopping, a school desk, a flat for sale,
-  writing a list), an AI or stock clip of exactly that plays on the studio screen for 2 to 5 s, on his words. A
-  full-frame cutaway (Harry style) is allowed for at most 4 s at a section start; Raj is not shown in it, so nothing
-  is cropped. Every slot is listed in `BROLL.md` and needs Raj's yes (and the cost, for AI) before anything is made.
+  writing a list), an AI family clip of exactly that plays on the studio screen, on his words (playbook step 5).
 - **Keyword labels (Pranjal):** a white rounded label with black 700 text near Raj's head for the one word that
   matters ("0 Return"), and "X not Y" as a red strikethrough over the wrong word. One at a time, 2 to 4 s.
 - **Data card (Pranjal):** tables and calculators as a clean white card on the studio screen, one row highlighted with
@@ -89,118 +87,103 @@ and win over the general long-form rules where they clash. The series plan and p
 - **One serious beat per video** may go black-and-white (Pranjal): a warning ("guaranteed return jaisa kuch nahi").
 - **Hand-made feel:** a list Raj wants viewers to write goes on paper (the `marker-checklist-card` block, or a cream
   paper card), not on glass.
-- **Sound:** the lo-fi bed under everything; cha-ching only on money landing; nothing on keyword labels.
+- **Sound:** Every Dawn (David Celeste, `_shared/music/`) ducked under speech, louder in the outro; cha-ching only on money landing.
 
-**Placing Raj in the frame (learned on Part 1, Oct 2026).** Raj records head-and-shoulders on a black background
-(CapCut Remove BG), cut out with `matte-black.py`. What the references do: Pranjal and Harry sit big, bottom-anchored,
-eyes about a third down, shoulders 45 to 55% of the width; nobody floats small in a corner. So:
-- **Natural size, bottom-anchored.** Scale 1.0 (no upscale of 1080p), the source's bottom edge on the frame's bottom
-  edge so the chest cut reads as the frame edge. Body centre at x 700 (`RAJ_X = 700 - 979` in `build-draft.py`).
-- **Measure his reach first, on every new recording:** a union mask of every non-black pixel at 2 fps over the whole
-  take (`place/union.npy`, kept at 0.2% of frames). Part 1: hands from 2.5% to 93% of the source width, head top at
-  28% height; to the right of his shoulder the hands never rise above ~74% height.
-- **Nothing he does may cover a graphic, and no graphic may cover him.** The studio screen (all animations, data cards
-  and the Verma characters) sits wholly outside the reach mask: `#panel` scaled .85 at translate(157px,-63px), the
-  screen at x 1080 to 1896, y 50 to 730. Lower lines sit just under the screen (top 912 in panel units), the name strip
-  top-left (60, 150), keyword labels left of his head (60, 270), all outside the mask.
-- **Check it every time:** overlay the reach mask in red on a snapshot of every beat (`place/reach-check.png`); any
-  graphic touching red moves before rendering.
+### Money Plan playbook (long video + Short), every part
 
-**Raj's notes on Part 1 v1 (Oct 2026):**
-- **Captions (the Hinglish lines) sit above Raj's head**, frame-level at (60, 168), 980 px wide, never inside or under the
-  studio screen, so they never overlap an animation.
-- **Section cards (#1, #2...) last exactly 2 s on the final clock** (fade .25 s), whatever the re-timing does to the
-  rest, so the scene's content never appears under a card.
-- **Studio screen 960x860** (panel units) for breathing room; chips and cards stay inside it.
-- **Every Money Plan episode ends with the shared outro** `C:\samjhowithraj\financial planning\videos\_shared\outro\outro.mp4` (README there): a 24 s walkthrough of the Financial Tracker (now the Money Planner on www.paisasamjhoraj.com/#planner; finance content lives on paisasamjhoraj.com, tech on techsamjhoraj.com), then the 6 s Subscribe + Follow screen. During Raj's "visit karo hamara website" line the studio screen shows the tracker page. The end screen itself: "Video pasand aaya?", YouTube
-  @SamjhowithRaj (red Subscribe), Instagram @samjhowithraj and Facebook Samjho with Raj (blue Follow), the website line.
-- **Music for Money Plan: "Every Dawn" (David Celeste, Epidemic Sound)**, not the punchy lo-fi bed, which Raj found
-  distracting under speech. Chosen by measurement: pick tracks with little energy in the voice band (300-3400 Hz) AND small
-  loudness jumps (Every Dawn: 9% voice band, 6 dB; All of the Things: 9%, 20.5 dB, its drum hits pull attention). Loop it with
-  4 s crossfades; bed at -17 dB ducked (ratio 6) under speech, about -13 dB while the website is on screen, about -4 dB in the
-  tracker outro. The file is in `financial planning/videos/_shared/music/`.
-- **No AI clips by default (cost):** explanation cutaways are animated scenes (`scenes_art.py`); AI video only on request.
-- **Blend, don't matte, on a dark set:** a black-background recording goes in with `mix-blend-mode: screen` over the dark
-  studio (instant); `matte-black.py` on 8 minutes ran at ~2 fps here.
+Learned on Part 1 (15–17 Oct 2026: v1, viewer feedback, reshoot, Raj's three review rounds, publishing). The working
+code is in `C:\samjhowithraj\financial planning\videos\ep01\` (copy the folder to `epNN` and change the content):
+`build-draft.py` (long), `build-short.py` (Short), `explain_art.py` (money animations), `reshoot-cut.py` (takes, labels,
+anchors), `fit-clips.py`, `screen-scan.py`, `finish.sh` / `short-finish.sh`. Shared, reused every part:
+`videos/_shared/` (outro, music, `verma-family/` library and AI reference, `thumbnail/raj-cutout.png`).
 
-**Money Plan series goal: traffic to www.paisasamjhoraj.com (Raj, 17 Oct 2026).** The site is his finance home (Learn,
-Calculators, Money Planner at `#planner`, Money Plan Series); his courses and iOS/Android apps will sell there later.
-Every script names the site mid-episode (tied to that topic's calculator or lesson) and in the ending; the studio
-screen shows the real page when he says it (capture with `videos/_shared/outro/capture/capture-planner.cjs`, 1440 wide,
-2x, dark, Verma example loaded); the outro walks through the Money Planner; the Short ends on the site; descriptions,
-pinned comments and Reels captions lead with it. The old samjhowithraj.online tracker is retired; never show it.
-If Raj's recorded voice still says the old domain, show a correction card at that exact moment (old name struck through in red, "paisasamjhoraj.com ✓" popping in; `o-fix` in ep01 `build-draft.py`, `fixs` in `build-short.py`).
+**0. The goal of every part: traffic to www.paisasamjhoraj.com.** It is Raj's finance home (Learn, Calculators,
+Money Planner `#planner`, Money Plan Series); his courses and iOS/Android apps will sell there later. Every script names
+the site mid-episode (tied to that topic's calculator or lesson) and at the end; the studio screen shows the real page
+when he says it; the outro walks through the Money Planner; the Short ends on it; descriptions, pinned comments, Reels
+captions and the FB post lead with it. The old samjhowithraj.online tracker is retired: never show it. If his recorded
+voice says an old domain, show a correction card at that exact moment (old name struck through in red,
+"paisasamjhoraj.com ✓" popping in; `o-fix` in `build-draft.py`, `fixs` in `build-short.py`).
 
-**Raj's rules from the Part 1 reshoot (16 Oct 2026):**
-- **The studio screen is never blank.** Before any full render, scan it: build a copy of the draft with every `<video>`
-  swapped for a grey block (keeps timing, snapshots in ~2 min instead of an hour), snapshot every 1 s, and flag frames
-  whose screen crop is dark with <2% busy pixels (`videos/ep01/screen-scan.py`). Fill every gap from what he says there
-  (`transcript-flat.json`): an AI family clip on story lines, the family picture (push-in clip) on "ye kahani aapki
-  bhi hai", or a money animation. Clips overlap 0.25 s at hand-overs so nothing flashes empty between them.
-- **A video that runs out leaves the screen blank** (the grey-block scan cannot see it). After re-timing, every clip
-  must be at least as long as its slot: `fit-clips.py` reads each slot from the built page and writes
-  `broll/fit/<slot>.mp4` from the clean take: trim, slow up to 1.5x, or forward-then-backward ping-pong. Check
-  slot vs clip length for the long video and the Short before rendering.
-- **Background life on the screen**: `explain_art.idle()` floats faint ₹ coins behind everything inside the studio
-  screen for the whole video, so even a 1 s hand-over between beats moves (Raj: "to cover the frame just put some
-  animation"). GSAP positions on the warped timeline must be >= 10000 (flat); anything below is read as plan time.
-- **Opening disclaimer, every Money Plan part** (Raj, 17 Oct 2026): first ~8 s, top-left card: "Financial education
-  video · Financial advice nahi · … Verma family aur sabhi characters kaalpanik (fictional) hain, AI se banaye gaye.
-  Kisi asli vyakti ya parivaar se milaan sirf sanyog hai." Same line in the YouTube description and Short captions.
-- **Coins only where the screen is empty**: `screen-scan.py --windows` writes `idle-windows.json`; the idle coins fade
-  in only there (they looked messy floating over the diary and the tables).
-- **Clip backdrops sit above section cards** (z 8), or a light card shows through under the clip caption.
-- **Never drop short transcript chunks as noise**: a 0.3 s chunk was "Aarav". Drop only labels, slates and "cut" lines.
-- **Check number beats against the words** (12 lakh / 39 lakh came in after he said them): the transcript alignment can
-  slip by 10+ s in a dense section; pin those plan beats by hand to the reshoot second (MANUAL in `reshoot-cut.py`).
-- **Section tags live top-left in the empty space** (never on the screen's top edge, where clips cover them).
-- **Short: Raj in a 484x500 box, head to chest** (not a face-only crop), numbered POINT n/5 badges beside it, and a red
-  "Full episode dekho" button plus an end card that sends viewers to the long video.
-- **Examples get money animations** (`videos/ep01/explain_art.py`): buckets filling with coins, piggy bank, growth
-  chart, shield (insurance/emergency), dream house, wallet with ₹ notes flying out to spends, graduation cap, calendar
-  flip. `low=True` sits them under a title or bar. Make them big: a 300 px wallet read as tiny on the screen.
-- **No cartoons once there is an AI family**: the Vermas are the CapCut AI family everywhere (clips + the reference
-  picture with name tags for all four).
-- **Raj's reshoot framing is closer (head and shoulders)**: measure the reach mask, then scale him (64%, body centre
-  x 480) so hands stay left of the screen; the screen grows to ~950x850 (`#panel` scale .99, translate 30,-72).
-- **He reads the teleprompter's scene labels aloud** ("Scene number 3…", "6. Goals"): drop them by pattern before
-  cutting (`reshoot-cut.py`), plus the slate before the first line.
-- **The website is a small browser window** (680x540) on a solid backdrop, not the whole screen.
+**1. Before recording**
+- Script to the teleprompter (https://claude.ai/artifact/T3fZH9kvCKB4NxEjnGajKi) with an energy cue per scene. Raj
+  stands, ~20% louder and faster, one gesture per punch word, 2–3 takes per scene, "cut this line" after a fluff.
+- He reads the scene labels aloud ("Scene number 3…", "6. Goals"): fine, the cut drops them (step 3).
+- Thumbnail: never a video frame. Every part uses the same closed-mouth photo, cut out once
+  (`_shared/thumbnail/raj-cutout.png`, README there has the placement); change only the words and numbers.
+- AI family clips are made by Raj in CapCut (Image to video from `_shared/verma-family/ai-reference/family.png`) with
+  the prompt pattern in `ep01/BROLL-AI.md` (character text repeated word for word in every prompt; Amit has a moustache,
+  no beard). One family source per episode: these AI Vermas (all four, incl. Pihu) or the Pexels family, never both.
 
-**Publishing a Money Plan long video (learned on Part 1, 16 Oct 2026; do this for every part):**
-- **Ready before upload:** the final `money-plan-NN-yt.mp4`, the 1280x720 thumbnail (`videos/epNN/thumbnail/`, built from
-  `thumb.html` + `shot.cjs`: pick a frame where Raj looks into the lens, check it at 320x180), and `CAPTION.md` (title,
-  description with chapters, tags). Chapters come from the warp table (each section's start, mapped to the final cut),
-  plus a last chapter for the tracker walkthrough.
-- **Upload in Claude in Chrome** on `studio.youtube.com/channel/UCMcwMtuOjp39M0JtLpbwvZg/videos/upload?d=ud`. The video
-  is over the 10 MB file_upload limit, so **Raj clicks "Select files"** and picks it (give him the full path). The Chrome
-  window must be visible and big (a 600x250 window froze typing and hid menus); ask Raj first.
-- **Details:** title (≤100 chars, the hook + "| Money Plan Part N"); description typed with `computer.type` (line breaks
-  survive): hook lines, the Verma story line, 🧮 Money Planner link first (https://www.paisasamjhoraj.com/#planner), notes, Instagram, Facebook (Reels page),
-  chapters, a comment question, a subscribe line, the educational disclaimer, 3 hashtags. Thumbnail through the image file
-  input (upload it from the project folder; the Videos folder is outside the session's readable paths).
-- **Playlist:** "Middle-Class Family Ka Money Plan 💰 | Personal Finance in Hindi (50 Parts)" (public, created on Part 1);
-  tick it for every part and its Short.
-- **Settings:** Not made for kids; altered/synthetic content **No** (animations only, no realistic AI); Show more →
-  14 tags, video language **Hindi**, category **Education**, automatic chapters on.
-- **Video elements → End screen → template "1 video, 1 subscribe"** over the last 20 s (the tracker outro), Save.
-- **Visibility:** stop and ask Raj ("Publish as Public now?", or schedule 7 PM IST); publish only on his yes. Confirm with
-  `youtube.com/oembed?url=<link>` (title + author), record the link in `CAPTION.md` and memory, close the Chrome tab.
+**2. Trim each CapCut clip** (it always starts on the family picture: a hard cut at 0.4–0.8 s or a dissolve up to 5.5 s
+with a ghost face). Find it with `select='gt(scene,0.3)'` + a 2 fps tiled sheet with timestamps, check single frames
+at the dissolve's end, cut after it; cut before the push-in loses a face. Crop per clip for the 1.2:1 screen
+(`broll-conform.py --size 1422x1182 --vf crop=1299:1080:X:0`); two faces at opposite edges: full width on a blurred copy.
+Keep `broll/ai/NN-clean-16x9.mp4`, log every trim in `BROLL-AI.md`. CapCut holds the newest export open (rename later).
 
-**Viewer feedback on Part 1 v1 (set to Private, reshoot):** energy too low, and the thumbnail showed Raj mid-word with
-his mouth open. So: (1) recording notes ask for standing, about 20% louder and faster delivery, scene-by-scene takes
-(2-3 each) and a punch-word gesture; target about 6 minutes; (2) thumbnails use a **closed-mouth** frame (confident
-half-smile, or eyebrows up with lips together), ideally dedicated photos shot at the recording session, never a frame
-pulled mid-sentence; (3) explanation cutaways become **AI video clips** (Abracadabrax / Clipwave plugins): check the credits
-and quote the cost per clip before generating anything.
+**3. Cut** (`reshoot-cut.py`): faster-whisper `small`, run as two processes on halves of the audio, then merge.
+Drop the slate, read-out scene labels and "cut" lines; never drop short chunks as noise (a 0.3 s chunk was "Aarav").
+Keep the more energetic take of a repeated line. Map the storyboard onto the new voice by aligning transcripts, then
+**check every number beat against the words** and pin slipped beats by hand (`MANUAL`; ₹12/39 lakh were 10 s late).
 
-**Free promotion after every upload (YouTube's "Promote" button is paid Google Ads: skip unless Raj asks):**
-1. Upload the Part's Short with **"Related video" = the long video**, in the same playlist.
-2. **Pin a comment** with the episode's question + the tracker link; reply to the first comments quickly.
-3. **Community post**: the thumbnail + a poll tied to the episode.
-4. **Instagram + Facebook Reels** of the Short ("Full video on YouTube", tracker link in bio / caption).
-5. Share the link on WhatsApp; embed the video on the website's tracker page.
-6. Keep a fixed weekly posting day.
+**4. Layout (long, 1920x1080)**
+- Raj on black, `mix-blend-mode: screen` over the dark set (no matte), bottom-anchored on the left. Measure his reach
+  over the whole take first (union mask) and scale him so his widest gesture stays in frame and left of the screen:
+  0.58 at body centre x 520 for the head-and-shoulders reshoot (0.64 cut his fingers at "gayab kahan").
+- Studio screen on the right, big: ~950x850 (`#panel` scale .99, translate 30,-72). Every clip, card and animation
+  plays inside it; nothing covers Raj and he covers nothing.
+- Empty-space text only: Hinglish caption lines above his head (wrap within 860 px), section tag top-left, keyword
+  labels left of his head, disclaimer and correction cards top-left.
+- Opening disclaimer, first ~8 s, top-left: "Financial education video · Financial advice nahi · … Verma family aur
+  sabhi characters kaalpanik (fictional) hain, AI se banaye gaye. Kisi asli vyakti ya parivaar se milaan sirf sanyog hai."
+- Section cards #1… exactly 2 s on the final clock.
+
+**5. Fill the screen**
+- Story lines → AI family clips on his words; the family picture with name tags for all four in the family intro.
+  No cartoon characters once there is an AI family.
+- Examples → a money animation of exactly that (`explain_art.py`): diary with the spends written in ("purani diary
+  nikaali"), wallet with ₹ notes flying out ("salary gayab"), buckets, piggy bank, growth chart, shield, house,
+  graduation cap, calendar. Make them big.
+- Timelines and lists build item by item as he names each one, never all at once.
+- Transitions between related clips (parents' care → apna ghar): start the first on its own words, hold it, 1 s
+  crossfade (`stock(..., fade=1.0)`).
+- Website moment: a small browser window (680x540) of the real page on a solid backdrop; capture it fresh with
+  `_shared/outro/capture/capture-planner.cjs` (live site, 1440 wide, 2x, dark, Verma example loaded).
+
+**6. Never blank (check before every full render)**
+1. `rm -rf broll/fit draft/assets/broll/fit; python build-draft.py; python fit-clips.py; python build-draft.py`, so
+   every clip is exactly its slot's length (trim, slow up to 1.5x, or ping-pong). A clip that runs out leaves the
+   screen blank, and the grey-block scan cannot see it: also compare slot vs clip length for long and Short.
+2. Grey-block scan copy (videos → grey divs, ~2 min), snapshot every 0.5–1 s, `screen-scan.py --windows`.
+3. Fill real gaps with a clip or animation; the faint floating ₹ coins (`explain_art.idle`) appear only in the
+   `idle-windows.json` moments, never over other content. Clip backdrops sit above section cards (z 8).
+4. GSAP positions on the warped timeline must be ≥ 10000 (flat seconds); below that they are plan seconds.
+
+**7. Short (1080x1920, ~70 s)**: the 5 strongest lines from the same take (pick the energetic take). Raj in a 484x500
+rounded box bottom-right, head to chest (`#cam video` left −235, top 28, 840x473), never a face-only crop. Top area: the
+AI clip or family picture for that point. "POINT n/5" badges beside his box; the caption above. Last beat: the Money
+Planner window + a red "Full episode dekho 👆" button, then an end card sending viewers to the long video (yt:
+Subscribe, ig/fb: Follow). Same disclaimer line in the captions.
+
+**8. Finish**: `finish.sh` (render segmented 1080p, BT.709, append the shared outro, voice −15 LUFS with Every Dawn
+ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old versions kept as `-v1`), then
+`short-finish.sh` (yt + ig). Long ≈ 1 h 10 min render on this laptop, Shorts ≈ 8 min each. Send a 60 s sample first.
+
+**9. Publish** (ask before each public click; Raj clicks Public/Share himself when the safety check blocks it):
+- YouTube Short first, then the long video. Raj picks the file (over the 10 MB upload limit); Claude fills title (hook +
+  "| Money Plan Part N", Short adds "#shorts"), description from `CAPTION.md` (Money Planner link first, chapters from the
+  new cut, the Short link in the long one), thumbnail (Short: the 1080x1920 cover), playlist "Middle-Class Family Ka
+  Money Plan 💰 | Personal Finance in Hindi (50 Parts)", not for kids, **AI used: Yes** (AI family clips), Hindi,
+  Education, ~14 tags. End screen "1 video, 1 subscribe" only over the Subscribe/Follow card after the Money Planner
+  demo (e.g. 7:40–7:46), never over the demo. Confirm with `youtube.com/oembed`.
+- Instagram Reel (crop Original, cover = the closed-mouth cover, caption from `CAPTION.md`), Facebook Reel (cover,
+  description, Public, as the Samjho With Raj page), and a Facebook page post (thumbnail image + YouTube and Money
+  Planner links + a comment question). Record every link in `CAPTION.md` and memory.
+- Claude never deletes posts or videos; Raj does it in Studio.
+
+**10. After publishing**: pin a comment (episode question + Money Planner link), set the Short's Related video to the
+long one, community post with the thumbnail and a poll, archive the part (raw, AI clips, finals) to
+`C:\samjhowithraj\old posted video\money-plan-NN\` and send the rebuildable files to the Recycle Bin.
 
 **HyperFrames registry blocks that fit finance** (`npx hyperframes add <name>`): `chart-story` (donut, bars, line,
 progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping counter for lakh/crore), `marker-checklist-card`,
@@ -1204,7 +1187,7 @@ you would rather approve a shortlist first, say so and note it here.
   `broll-conform.py --size 1422x1182 --grade` (948x788 at 1.5x; portrait clips centre-crop fine). In `build-draft.py`
   `USE_STOCK`/`STOCK` swap a `broll()` slot to a muted `<video>` at the slot's box with the white caption kept; list
   every clip in `STOCK.md` (page, licence, seconds). Real people, so "altered or synthetic content" stays No.
-- **One family for the whole Money Plan series (Raj, 16 Oct 2026):** the Vermas are always played by the same Pexels
+- **Pexels Verma family (fallback; Part 1 itself uses the AI family, see the playbook):** the Vermas can be played by one Pexels
   family (Anna Pou's shoot: father, mother, son; no Pihu, so the drawn characters cover her). The library is
   `financial planning/videos/_shared/verma-family/` (`raw/`, `screen/` conformed 1422x1182, README catalogue with a
   "Used in" column). Pick family moments from it first, once or twice per episode, never the previous part's clips, no
@@ -1419,7 +1402,7 @@ second), not in the number of cards; keep the read-in-under-2-seconds rule anywa
 
 ## Shorts (9:16)
 
-Not the default routine. If you make one: a separate 1080x1920 composition (never a centre crop of the 16:9), hero type
+Money Plan Shorts: follow the playbook's step 7 (Finance long form section). Otherwise not the default routine. If you make one: a separate 1080x1920 composition (never a centre crop of the 16:9), hero type
 88 to 110 px, cards full width minus 48 px, the caption chip ~280 px from the bottom, word-exact captions on the kept
 words, a specific reason to stay in the first three seconds that the video pays off, one main open loop.
 
