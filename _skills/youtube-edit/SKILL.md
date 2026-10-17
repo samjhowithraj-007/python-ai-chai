@@ -133,6 +133,15 @@ eyes about a third down, shoulders 45 to 55% of the width; nobody floats small i
   must be at least as long as its slot: `fit-clips.py` reads each slot from the built page and writes
   `broll/fit/<slot>.mp4` from the clean take: trim, slow up to 1.5x, or forward-then-backward ping-pong. Check
   slot vs clip length for the long video and the Short before rendering.
+- **Background life on the screen**: `explain_art.idle()` floats faint ₹ coins behind everything inside the studio
+  screen for the whole video, so even a 1 s hand-over between beats moves (Raj: "to cover the frame just put some
+  animation"). GSAP positions on the warped timeline must be >= 10000 (flat); anything below is read as plan time.
+- **Never drop short transcript chunks as noise**: a 0.3 s chunk was "Aarav". Drop only labels, slates and "cut" lines.
+- **Check number beats against the words** (12 lakh / 39 lakh came in after he said them): the transcript alignment can
+  slip by 10+ s in a dense section; pin those plan beats by hand to the reshoot second (MANUAL in `reshoot-cut.py`).
+- **Section tags live top-left in the empty space** (never on the screen's top edge, where clips cover them).
+- **Short: Raj in a 484x500 box, head to chest** (not a face-only crop), numbered POINT n/5 badges beside it, and a red
+  "Full episode dekho" button plus an end card that sends viewers to the long video.
 - **Examples get money animations** (`videos/ep01/explain_art.py`): buckets filling with coins, piggy bank, growth
   chart, shield (insurance/emergency), dream house, wallet with ₹ notes flying out to spends, graduation cap, calendar
   flip. `low=True` sits them under a title or bar. Make them big: a 300 px wallet read as tiny on the screen.
