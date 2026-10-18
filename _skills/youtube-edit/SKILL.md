@@ -270,6 +270,35 @@ folder for Part N. Raj reviewed this part over many rounds; these are his notes 
 - A sci-fi FUTURE beat (portal video + Rohan cut-out) near the end, teaser pills between points, one-line captions;
   drop a scene's caption when the scene already has its own title/sign-up line (they collide).
 
+**Publishing (done for Part 1 through Claude in Chrome, 18 Oct 2026)**
+- Files over 10 MB can't be attached by Claude: Raj clicks "Select files" / "Select from computer" / "Add video" / X's
+  picture icon and picks the file; Claude fills everything else. Use project copies (thumbnail/, cover) for images,
+  since files outside the session folders can't be attached.
+- **YouTube long:** title/description set with `document.execCommand('insertText')` into `#textbox[contenteditable]`
+  (keeps line breaks); thumbnail via the file input; playlist **"AI Explained in Hindi 🤖 | Tech Explainers (AI, LLM, RAG,
+  MCP)"** (public, oldest first); not for kids; **AI used: Yes** (the disclosure is only a label, it does not affect
+  monetisation; not disclosing realistic AI people is the risk); Hindi; Education; tags; end screen template "1 video,
+  1 subscribe" timed to the outro's end card only (measure when the card starts; ~7 s); stop at Visibility, Raj clicks
+  Public + Publish. Then pin the roadmap comment (watch page → comment → ⋮ → Pin).
+- **YouTube Short:** same, plus Related video = the long (only appears in the video's Studio page after publishing);
+  add the Short link to the long description afterwards.
+- **Instagram:** crop **Original**, cover via the cover file input, caption typed with real Enter keys (insertText loses
+  line breaks there), **Add AI label** on, Share; wait for "Your reel has been shared", read the link from the profile.
+- **Facebook Reel:** Add video → Next → Next, description, Edit thumbnail (file input) → Save, **Add AI label** on, Post.
+  The panel shifts while it saves: re-find the Post button (a stale coordinate opened the remix dialog instead).
+- **X:** text first, Raj attaches the video, flag icon → **Made with AI** on, Post via `[data-testid=tweetButton]` once
+  the upload finishes; check the profile so it posted once; links go in a self-reply.
+- Log every link in `YouTube Renders\INDEX.md` and the CAPTION.md "Posted" list.
+
+**Archive + free space (after posting)**
+- `scripts/archive-part.py` (adapt the paths): one zip `<part>-<yyyymmdd-hhmm>.zip` with numbered folders
+  (1-raw-recordings, 2-ai-clips, 3-assets-pexels-rohan, 4-animations-src, 5-source-captures, 6-final-posted,
+  7-project-code) + CONTENTS.txt with the published links; render scratch (renders/, public/, snaps, review, reel) is
+  left out as rebuildable. Verify with `testzip()`.
+- Move both into `OneDrive\Samjho with Raj Archive\<part>\`, `attrib +U -P` (online-only); OneDrive frees the local copy
+  only after the upload, so the RecallOnDataAccess bit (0x400000) = uploaded. Only then send the local project folder,
+  render scratch and `YouTube Renders\<part>\old\` to the Recycle Bin (never a permanent delete).
+
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
