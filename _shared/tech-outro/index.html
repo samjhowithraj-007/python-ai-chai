@@ -1,0 +1,140 @@
+<!doctype html>
+<!-- Tech Explainer outro (every episode): a 31 s walkthrough of www.techsamjhoraj.com (Classroom → a lesson: video,
+     notes, code, practice → Upcoming → Install app → email sign-up box), then 6 s of Subscribe + Follow (YouTube, Instagram, Facebook, X).
+     Real 2x captures from capture/capture-site.cjs and capture-views.cjs; re-capture when the site changes (README.md). -->
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<script src="vendor/gsap.min.js"></script>
+<style>
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-500.woff2) format("woff2");font-weight:500}
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-700.woff2) format("woff2");font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1920px;height:1080px;overflow:hidden;background:#0a0d14}
+body{font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;color:#fff}
+#stage{position:relative;width:1920px;height:1080px;overflow:hidden;
+  background:radial-gradient(900px 700px at 78% 22%,rgba(10,240,240,.10),transparent 70%),
+             radial-gradient(1100px 800px at 100% 100%,rgba(0,5,238,.22),transparent 70%),#0a0d14}
+.h{opacity:0}
+#title{position:absolute;left:0;right:0;top:34px;text-align:center;font-size:44px;font-weight:700}
+#title b{color:#0AF0F0}
+#win{position:absolute;left:210px;top:118px;width:1500px;height:800px;border-radius:18px;overflow:hidden;background:#141414;
+  box-shadow:0 0 0 3px rgba(255,255,255,.14),0 40px 120px rgba(0,0,0,.6);transform-origin:50% 40%}
+#bar{position:absolute;left:0;top:0;right:0;height:62px;background:#24262b;display:flex;align-items:center;gap:12px;padding:0 22px;z-index:2}
+#bar i{width:14px;height:14px;border-radius:50%;display:inline-block}
+#url{margin-left:24px;height:36px;padding:0 22px;border-radius:18px;background:#15171b;display:flex;align-items:center;font-size:21px;color:rgba(255,255,255,.85)}
+#url b{color:#fff}
+#url .hs{display:none}
+#view{position:absolute;left:0;top:62px;right:0;bottom:0;overflow:hidden}
+.shot{position:absolute;left:0;top:0;width:1500px}
+#cur{position:absolute;left:0;top:0;width:58px;height:58px;z-index:5;filter:drop-shadow(0 6px 10px rgba(0,0,0,.5))}
+#ring{position:absolute;left:0;top:0;width:70px;height:70px;margin:-35px 0 0 -35px;border-radius:50%;border:5px solid #0AF0F0;z-index:4;opacity:0}
+.cap{position:absolute;left:0;right:0;top:952px;text-align:center;font-size:46px;font-weight:700;text-shadow:0 4px 18px rgba(0,0,0,.7)}
+.cap .n{display:inline-block;width:58px;height:58px;line-height:58px;border-radius:50%;background:#0AF0F0;color:#0a0d14;margin-right:16px;font-size:34px}
+#cta{position:absolute;left:460px;top:330px;width:1000px;padding:44px 50px;border-radius:30px;background:rgba(10,13,20,.94);
+  border:3px solid rgba(10,240,240,.6);text-align:center;box-shadow:0 30px 90px rgba(0,0,0,.6)}
+#cta .a{font-size:62px;font-weight:700}
+#cta .b{font-size:44px;color:#0AF0F0;font-weight:700;margin-top:16px}
+#cta .c{font-size:28px;color:rgba(255,255,255,.75);margin-top:14px}
+.endc{position:absolute;inset:0;z-index:40;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:46px;
+  background:radial-gradient(900px 600px at 50% 40%,rgba(10,240,240,.12),transparent 70%),#0a0d14}
+.endt{font-size:84px;font-weight:700}
+.endrow{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;max-width:1840px}
+.endb{display:flex;align-items:center;gap:16px;padding:20px 22px;border-radius:28px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.3)}
+.endb .ico{width:70px;height:70px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:38px;font-weight:700;background:#FF0000;color:#fff}
+.endb .ico.ig{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)}
+.endb .ico.fb{background:#1877F2;font-size:48px}
+.endb .ico.x{background:#000;border:2px solid rgba(255,255,255,.5);font-size:40px}
+.endk{font-size:24px;color:rgba(255,255,255,.75)}
+.endh{font-size:32px;font-weight:700}
+.btn{font-size:28px;font-weight:700;padding:12px 22px;border-radius:9999px;color:#fff}
+.btn.red{background:#FF0000}.btn.blue{background:#0095F6}
+.endw{font-size:40px;color:rgba(255,255,255,.88)}.endw b{color:#0AF0F0}
+</style></head>
+<body>
+<div id="stage" data-composition-id="outro" data-start="0" data-duration="37" data-fps="30" data-width="1920" data-height="1080">
+  <div id="title" class="h">Free <b>Python + AI</b> notes · techsamjhoraj.com</div>
+  <div id="win" class="h">
+    <div id="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i>
+      <div id="url">🔒&nbsp;<b>techsamjhoraj.com</b><span id="h1" class="hs">/#python-1</span><span id="h2" class="hs">/#upcoming</span></div></div>
+    <div id="view"><img id="s-home" class="shot" src="assets/home.jpg" alt="">
+      <img id="s-lesson" class="shot" src="assets/lesson.jpg" alt="" style="opacity:0">
+      <img id="s-up" class="shot" src="assets/upcoming.jpg" alt="" style="opacity:0">
+      <div id="s-mail" style="position:absolute;left:0;top:0;width:1500px;opacity:0"><img class="shot" src="assets/home.jpg" alt="" style="position:static">
+        <div id="mk" style="position:absolute;left:180px;top:912px;width:525px;height:40px;background:#FFE14D;mix-blend-mode:multiply;border-radius:6px;transform-origin:0 50%;transform:scaleX(0)"></div>
+        <div id="mbox" style="position:absolute;left:715px;top:900px;width:607px;height:62px;border:4px solid #0AF0F0;border-radius:12px;opacity:0;box-shadow:0 0 24px rgba(10,240,240,.7)"></div></div></div>
+  </div>
+  <div id="ring"></div>
+  <svg id="cur" class="h" viewBox="0 0 24 24"><path d="M4 2 L4 20 L9 15 L12.5 22 L15.5 20.6 L12 13.8 L19 13.8 Z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>
+  <div id="c1" class="cap h"><span class="n">1</span>techsamjhoraj.com pe <b style="color:#0AF0F0">free Classroom</b></div>
+  <div id="c2" class="cap h"><span class="n">2</span>Har lesson: <b style="color:#0AF0F0">chhota video</b> + simple notes</div>
+  <div id="c3" class="cap h"><span class="n">3</span>Code <b style="color:#FFB904">copy karo</b>, khud chalao</div>
+  <div id="c4" class="cap h"><span class="n">4</span>Practice task + aapki progress save</div>
+  <div id="c5" class="cap h"><span class="n">5</span><b style="color:#0AF0F0">Upcoming</b>: agle lessons pehle se dekho</div>
+  <div id="c6" class="cap h"><span class="n">6</span>Phone pe <b style="color:#0AF0F0">app install</b> karo</div>
+  <div id="c7" class="cap h"><span class="n">7</span><b style="color:#FFE14D">Email sign up</b>: course updates + discount offers</div>
+  <div id="cta" class="h"><div class="a">Bilkul free · email pe updates</div><div class="b">techsamjhoraj.com</div>
+    <div class="c">Email sign up: naye lessons, course updates + discount offers sabse pehle</div></div>
+  <div id="end" class="endc">
+    <div class="endt">Video pasand aaya?</div>
+    <div class="endrow">
+      <div id="e-yt" class="endb"><span class="ico">▶</span><div><div class="endk">YouTube</div><div class="endh">@SamjhowithRaj</div></div><span class="btn red">Subscribe</span></div>
+      <div id="e-ig" class="endb"><span class="ico ig">◎</span><div><div class="endk">Instagram</div><div class="endh">@samjhowithraj</div></div><span class="btn blue">Follow</span></div>
+      <div id="e-fb" class="endb"><span class="ico fb">f</span><div><div class="endk">Facebook</div><div class="endh">Samjho with Raj</div></div><span class="btn blue">Follow</span></div>
+      <div id="e-x" class="endb"><span class="ico x">X</span><div><div class="endk">X</div><div class="endh">@samjhowithraj</div></div><span class="btn blue">Follow</span></div>
+    </div>
+    <div class="endw">Email sign up + free notes: <b>techsamjhoraj.com</b> · Agla video jaldi!</div>
+  </div>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+const K = 1500 / 1440, WX = 210, WY = 118 + 62;              // page css px -> screen px
+const at = (cx, cy, s) => ({ x: WX + cx * K, y: WY + (cy - s) * K });
+function rise(sel, t){ tl.fromTo(sel, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: .4, ease: 'power2.out' }, t); }
+function out(sel, t){ tl.to(sel, { opacity: 0, duration: .35, ease: 'power2.in' }, t); }
+function move(p, t, d){ tl.to('#cur', { x: p.x, y: p.y, duration: d || .9, ease: 'power2.inOut' }, t); }
+function click(p, t){ tl.set('#ring', { x: p.x, y: p.y }, t);
+  tl.fromTo('#ring', { opacity: .9, scale: .4 }, { opacity: 0, scale: 1.3, duration: .45, ease: 'power2.out' }, t);
+  tl.to('#cur', { scale: .85, duration: .08, yoyo: true, repeat: 1 }, t); }
+function scroll(id, s, t, d){ tl.to(id, { y: -s * K, duration: d || 1.2, ease: 'power2.inOut' }, t); }
+function swap(a, b, t){ tl.to(a, { opacity: 0, duration: .35 }, t); tl.to(b, { opacity: 1, duration: .35 }, t); }
+
+rise('#title', .2); rise('#win', .3);
+tl.fromTo('#cur', { opacity: 0, x: 1300, y: 760 }, { opacity: 1, duration: .3 }, .8);
+rise('#c1', .6);
+const card = at(335, 520, 0); move(card, 1.2, 1.1); click(card, 2.6); out('#c1', 3.2);
+swap('#s-home', '#s-lesson', 2.9); tl.set('#h1', { display: 'inline' }, 2.9);
+rise('#c2', 3.4); scroll('#s-lesson', 120, 3.6, 1.2);
+const vid = at(894, 520, 120); move(vid, 4.2, 1.0); click(vid, 5.4);
+scroll('#s-lesson', 760, 6.6, 1.3); out('#c2', 7.6);
+rise('#c3', 7.9); scroll('#s-lesson', 1000, 8.0, 1.0);
+const copy = at(1248, 1128, 1000); move(copy, 8.9, 1.0); click(copy, 10.1); out('#c3', 11.4);
+rise('#c4', 11.7); scroll('#s-lesson', 1360, 11.8, 1.3);
+const done = at(578, 1791, 1360); move(done, 12.9, 1.0); click(done, 14.1); out('#c4', 15.3);
+scroll('#s-lesson', 0, 15.3, 0.6);
+const upTab = at(462, 82, 0); move(upTab, 15.6, 1.0); click(upTab, 16.7);
+swap('#s-lesson', '#s-up', 16.9); tl.set('#h1', { display: 'none' }, 16.9); tl.set('#h2', { display: 'inline' }, 16.9);
+rise('#c5', 17.1); scroll('#s-up', 230, 17.6, 1.3); out('#c5', 20.2);
+scroll('#s-up', 0, 20.3, 0.6);
+const inst = at(1226, 34, 0); move(inst, 20.4, 1.0); rise('#c6', 20.5); click(inst, 21.6); out('#c6', 23.2);
+// 7: the email sign-up box (home page, scrolled), highlighter + click on Notify me
+swap('#s-up', '#s-mail', 23.3); tl.set('#h2', { display: 'none' }, 23.3);
+tl.to('#s-mail', { y: -480 * K, duration: 1.0, ease: 'power2.inOut' }, 23.4);
+rise('#c7', 23.6);
+tl.fromTo('#mk', { scaleX: 0 }, { scaleX: 1, duration: .6, ease: 'power1.inOut' }, 24.5);
+tl.fromTo('#mbox', { opacity: 0 }, { opacity: 1, duration: .3, yoyo: true, repeat: 3 }, 25.0);
+const mail = at(925, 895, 480); move(mail, 24.6, 0.9);
+const notify = at(1212, 895, 480); move(notify, 26.0, 0.7); click(notify, 26.8); out('#c7', 28.1);
+tl.to('#cur', { opacity: 0, duration: .3 }, 28.2);
+tl.to('#win', { scale: .9, opacity: .35, duration: .7, ease: 'power2.inOut' }, 28.4);
+rise('#cta', 28.8);
+tl.fromTo('#end', { opacity: 0 }, { opacity: 1, duration: .5 }, 31.0);
+tl.fromTo('#end .endt', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .45, ease: 'power2.out' }, 31.3);
+['#e-yt', '#e-ig', '#e-fb', '#e-x'].forEach((s, i) => tl.fromTo(s, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .45, ease: 'power2.out' }, 31.7 + i * .35));
+tl.fromTo('#end .endw', { opacity: 0 }, { opacity: 1, duration: .4 }, 33.2);
+tl.fromTo('#e-yt .btn', { scale: 1 }, { scale: 1.1, duration: .22, yoyo: true, repeat: 5, ease: 'power1.inOut' }, 32.6);
+tl.fromTo('#e-ig .btn,#e-fb .btn,#e-x .btn', { scale: 1 }, { scale: 1.08, duration: .22, yoyo: true, repeat: 3, ease: 'power1.inOut' }, 34.2);
+tl.to({}, { duration: 37 }, 0);
+window.__timelines["outro"] = tl;
+</script>
+</body></html>

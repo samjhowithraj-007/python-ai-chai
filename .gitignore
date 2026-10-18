@@ -19,3 +19,7 @@ node_modules/
 .transcode-cache/
 /ai-chai-bot*/cam2/
 /ai-chai-bot*/renders/upload-*.mp4
+
+# review snapshots and platform upload copies are scratch
+/python-chai*/snap*/
+/python-chai*/renders/upload-*.mp4

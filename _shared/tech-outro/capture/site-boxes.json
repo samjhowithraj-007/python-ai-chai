@@ -1,0 +1,165 @@
+{
+ "title": "Samjho with Raj Classroom",
+ "page": {
+  "w": 1440,
+  "h": 1118
+ },
+ "nav": [
+  {
+   "t": "Samjho\nwith\nRaj",
+   "href": "#classroom",
+   "x": 154,
+   "y": 14,
+   "w": 217,
+   "h": 40
+  },
+  {
+   "t": "",
+   "href": "https://www.youtube.com/@SamjhowithRaj",
+   "x": 945,
+   "y": 16,
+   "w": 36,
+   "h": 36
+  },
+  {
+   "t": "",
+   "href": "https://www.instagram.com/samjhowithraj/",
+   "x": 989,
+   "y": 16,
+   "w": 36,
+   "h": 36
+  },
+  {
+   "t": "",
+   "href": "https://www.facebook.com/profile.php?id=61595088790170&sk=reels_tab",
+   "x": 1033,
+   "y": 16,
+   "w": 36,
+   "h": 36
+  },
+  {
+   "t": "",
+   "href": "https://x.com/samjhowithraj",
+   "x": 1077,
+   "y": 16,
+   "w": 36,
+   "h": 36
+  },
+  {
+   "t": "",
+   "href": "https://www.paisasamjhoraj.com",
+   "x": 1121,
+   "y": 16,
+   "w": 36,
+   "h": 36
+  },
+  {
+   "t": "Classroom",
+   "href": "#classroom",
+   "x": 154,
+   "y": 68,
+   "w": 105,
+   "h": 51
+  },
+  {
+   "t": "Money lessons ↗",
+   "href": "https://www.paisasamjhoraj.com",
+   "x": 263,
+   "y": 68,
+   "w": 145,
+   "h": 51
+  },
+  {
+   "t": "Upcoming",
+   "href": "#upcoming",
+   "x": 412,
+   "y": 68,
+   "w": 101,
+   "h": 51
+  },
+  {
+   "t": "Community",
+   "href": "#community",
+   "x": 517,
+   "y": 68,
+   "w": 109,
+   "h": 51
+  },
+  {
+   "t": "About",
+   "href": "#about",
+   "x": 629,
+   "y": 68,
+   "w": 73,
+   "h": 51
+  }
+ ],
+ "heads": [
+  {
+   "tag": "H1",
+   "t": "Understand it, learn it, try it yourself.",
+   "x": 154,
+   "y": 181,
+   "w": 808,
+   "h": 56
+  },
+  {
+   "tag": "H3",
+   "t": "Python with Chai",
+   "x": 175,
+   "y": 585,
+   "w": 321,
+   "h": 29
+  },
+  {
+   "tag": "H3",
+   "t": "AI + Python: Build a Chai Chatbot",
+   "x": 560,
+   "y": 585,
+   "w": 321,
+   "h": 29
+  },
+  {
+   "tag": "H3",
+   "t": "Agentic AI with Bunty",
+   "x": 944,
+   "y": 585,
+   "w": 321,
+   "h": 29
+  },
+  {
+   "tag": "H3",
+   "t": "Get new lessons by email",
+   "x": 177,
+   "y": 881,
+   "w": 493,
+   "h": 30
+  }
+ ],
+ "cards": [
+  {
+   "t": "10 lessons · live Python with Chai Learn Python basics while making ch",
+   "href": "#python-1",
+   "x": 154,
+   "y": 363,
+   "w": 363,
+   "h": 413
+  },
+  {
+   "t": "50 lessons · Part 1 live AI + Python: Build a Chai Chatbot Build your ",
+   "href": "#chatbot-1",
+   "x": 539,
+   "y": 363,
+   "w": 363,
+   "h": 413
+  },
+  {
+   "t": "Season 1 · Episode 1 live Agentic AI with Bunty AI agents without the ",
+   "href": "#agentic-1",
+   "x": 923,
+   "y": 363,
+   "w": 363,
+   "h": 413
+  }
+ ]
+}
