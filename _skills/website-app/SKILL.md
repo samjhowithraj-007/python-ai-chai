@@ -159,7 +159,14 @@ Raj chose sign-up boxes, **not** a login wall: a login wall would block Google i
 
 On paisasamjhoraj.com `#series`, `EP_LIVE = { "01": "https://youtu.be/GyPQ-RxBRi8" }` drives it: live parts get a linked title and a green "▶ Watch" chip; the first not-live part says "Coming next". When a new part goes public, add its long-video link (check it with `https://www.youtube.com/oembed?url=…`), bump sw, commit, ask Raj, push. This is also step 7 of the publish checklist in memory.
 
-## 14. Editing and shipping checklist
+## 14. Featured slot, sponsors and books (monetising)
+
+- Raj chose his own ad space over AdSense (AdSense: tiny earnings at his traffic, approval risk for a script-rendered single page, tracking cookies + consent banner, and loan/trading/crypto ads next to the money site's "not advice" message).
+- `PROMOS = [{ label, title, text, image, link, cta }]` and `promo(here)` render one card (`.promo`) on the home/classroom page (first promo) and at the end of every lesson (rotates, never promotes the page you're on), just above the email box. `label` is "From Raj" for his own things and **"Sponsored"** for a paid sponsor (external sponsored links get `rel="noopener sponsored"`). To run a sponsor: add an entry at the top with label "Sponsored", bump sw, ask, push.
+- Money-site sponsors: education-friendly only, no loan apps, trading tips, crypto or anything that reads like advice (stated on the About page). The privacy pages say featured spots are plain links, not an ad network.
+- Tech site "Recommended books" (`books()`, `BOOKS`, `id="books"`, on the classroom page): Amazon India search links; set `AMAZON_TAG` to Raj's Amazon Associates ID (he signs up himself) and the links and the disclosure line switch to affiliate wording automatically. No cover images (copyright); emoji tiles instead. Ask Raj answers "books".
+
+## 15. Editing and shipping checklist
 
 - Raj approves every push ("Push both sites live?"). Commit each repo separately with the samjhowithraj-007 identity.
 - `index.html` on both sites uses **CRLF** line endings. Patch with Python in binary mode and keep the file's newline (Git Bash `sed -i` and text-mode Python rewrote whole files once). Long Python heredocs can break in Git Bash: write the script to the scratchpad and run it.
