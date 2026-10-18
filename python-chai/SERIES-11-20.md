@@ -24,4 +24,5 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 - [x] Part 12 — live 2026-10-18: YouTube shorts/RldEdMI_Nak, Instagram reel/DeowJJcy07-, Facebook reel/2120544428832638 + Story, X status/2111808259829178424, site #python-12
 - [x] Part 13 — live 2026-10-18: YouTube shorts/J4NKlBToNDE, Instagram reel/Deoz7E1SinK, Facebook reel/28791060330516783 + Story, X status/2111816104603713963, site #python-13
 - [x] Part 14 — live 2026-10-18: YouTube shorts/wnio0LRNiRk, Instagram reel/Deo3rF_SbdJ, Facebook reel/1592885865313336 + Story, X status/2111824189233778735, site #python-14
-- [ ] Part 15 — 10 cup ek saath: range()
+- [x] Part 15 — live 2026-10-18: YouTube shorts/N1696XD-G3Y, Instagram reel/Deo6TwdSEPz, Facebook reel/1914341109533052 + Story, X status/2111829937133064663, site #python-15
+- [ ] Part 16 — Kam cheeni wali chai: default args
