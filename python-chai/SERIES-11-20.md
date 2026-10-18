@@ -29,4 +29,4 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 - [x] Part 17 — live 2026-10-18: YouTube shorts/JvxTW-VUz2Q, Instagram reel/Deo-7i9S4hW, Facebook reel/1410611154576706 + Story, X status/2111840133272027560, site #python-17
 - [x] Part 18 — live 2026-10-18: YouTube shorts/8BYJfEgB8xE, Instagram reel/DepFcpLySQa, Facebook reel/2338031176948806 + Story, X status/2111854382405030099, site #python-18
 - [x] Part 19 — live 2026-10-18: YouTube shorts/MYd57roKxmw, Instagram reel/DepHjMMS5Bj, Facebook reel/1643535137468779 + Story, X status/2111859296057086213, site #python-19
-- [ ] Part 20 — FINALE: Python aa gayi! Ab AI ki baari (recap + bridge to AI + Python 50)
+- [~] Part 20 — FINALE live 2026-10-18 on YouTube shorts/2LMZmFdC_AE, X status/2111863605725364232, site #python-20; Instagram + Facebook pending (Instagram human check)
