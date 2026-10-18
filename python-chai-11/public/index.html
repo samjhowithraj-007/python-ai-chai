@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=1080, height=1920">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+<style>
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-500.woff2) format("woff2");font-weight:500}
+@font-face{font-family:"DM Sans";src:url(fonts/DMSans-700.woff2) format("woff2");font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#0a0d14}
+body{font-family:"DM Sans",ui-sans-serif,system-ui,sans-serif;color:#fff}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;
+  background:radial-gradient(800px 700px at 70% 18%,rgba(10,240,240,.10),transparent 70%),
+             radial-gradient(900px 800px at 100% 100%,rgba(0,5,238,.22),transparent 70%),#0a0d14}
+.scene{position:absolute;inset:0}.scene>*{position:absolute}
+.h{opacity:0}.cyan{color:#0AF0F0}.amber{color:#FFB904}.mag{color:#CD00EE}
+#tag{position:absolute;left:0;right:0;top:110px;display:flex;justify-content:center}
+#tag span{padding:14px 30px;border-radius:9999px;background:rgba(255,255,255,.1);border:3px solid rgba(255,255,255,.4);font-size:32px;font-weight:700;letter-spacing:.06em}
+.hook{left:60px;right:60px;top:230px;text-align:center;font-size:72px;font-weight:700;line-height:1.1}
+.big{font-size:84px;font-weight:700;line-height:1.1}
+.card{background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.4);border-radius:30px}
+.sms{width:520px;padding:24px 30px;border-radius:28px;background:#f4f6fa;color:#111;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.smsh{font-size:24px;font-weight:700;color:#667;letter-spacing:.06em;margin-bottom:6px}
+.sms .amber{color:#b37400}
+.bub{padding:24px 32px;border-radius:30px;background:#fff;color:#111;font-size:50px;font-weight:700;line-height:1.2;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.bub b{color:#0005EE}
+.sbar{display:flex;gap:6px;height:70px;border-radius:16px;overflow:hidden}.sbar i{display:block;height:70px}
+.slab{display:flex;justify-content:space-between;font-size:36px;font-weight:700;margin-top:14px}
+.chip2{display:inline-block;margin-top:18px;padding:16px 28px;border-radius:16px;background:rgba(17,17,17,.6);border:2px solid rgba(255,255,255,.25);font-size:44px;font-weight:700}
+.note{left:60px;right:60px;top:860px;text-align:center;font-size:32px;color:rgba(255,255,255,.75)}
+.strike{left:60px;right:60px;top:470px;text-align:center;font-size:56px;font-weight:700;color:rgba(255,255,255,.75);
+  text-decoration:line-through;text-decoration-color:#E0242E;text-decoration-thickness:7px}
+.pillx{padding:16px 26px;border-radius:9999px;background:rgba(224,36,46,.16);border:3px solid rgba(224,36,46,.7);font-size:40px;font-weight:700}
+.paper{width:960px;padding:40px 46px;border-radius:22px;background:#F5F1E8;color:#1b1a17;box-shadow:0 30px 90px rgba(0,0,0,.55)}
+.phead{font-size:60px;font-weight:700;border-bottom:6px solid #FFB904;display:inline-block;margin-bottom:20px}
+.prow{position:relative;display:grid;grid-template-columns:1.6fr .9fr .8fr;font-size:42px;font-weight:700;padding:18px 0;border-bottom:2px solid rgba(27,26,23,.15)}
+.pcols{font-size:30px;color:rgba(27,26,23,.6)}
+.paper .amber{color:#9a6400}
+.pmask{position:absolute;inset:0;background:#F5F1E8;transform-origin:100% 50%}
+.webwin{width:960px;height:760px;border-radius:22px;overflow:hidden;background:#141414;box-shadow:0 0 0 3px rgba(255,255,255,.14),0 30px 90px rgba(0,0,0,.6)}
+.wbar{position:absolute;left:0;top:0;right:0;height:64px;background:#24262b;display:flex;align-items:center;gap:10px;padding:0 22px;z-index:2}
+.wbar i{width:14px;height:14px;border-radius:50%;display:inline-block}
+.wurl{margin-left:18px;height:38px;padding:0 20px;border-radius:19px;background:#15171b;display:flex;align-items:center;font-size:24px;color:rgba(255,255,255,.85)}
+#g-img{position:absolute;left:0;top:64px;width:960px}
+.cap{position:absolute;left:40px;right:40px;top:1270px;text-align:center;font-size:0;z-index:6}
+.cap span{display:inline-block;font-size:62px;font-weight:700;margin:0 .14em;opacity:0;text-shadow:0 4px 18px rgba(0,0,0,.8)}
+.fixs{position:absolute;left:90px;top:960px;width:900px;padding:20px 28px;z-index:12;opacity:0;background:rgba(10,13,20,.94);
+  border:4px solid #FFB904;border-radius:26px;text-align:center}
+.fixs .fx1{font-size:34px;font-weight:700;color:#FFB904}
+.fixs .fx2{position:relative;display:inline-block;margin-top:6px;font-size:48px;font-weight:700;color:rgba(255,255,255,.6);--strike:0}
+.fixs .fx2::after{content:"";position:absolute;left:-6px;top:52%;height:7px;width:calc((100% + 12px) * var(--strike));background:#E0242E;border-radius:3px}
+.fixs .fx3{font-size:66px;font-weight:700;color:#0AF0F0;opacity:0}
+#cam{position:absolute;left:556px;top:1380px;width:484px;height:500px;border-radius:40px;overflow:hidden;z-index:7;background:#000;
+  box-shadow:0 0 0 4px rgba(10,240,240,.55),0 0 40px rgba(10,240,240,.35)}
+#cam video{position:absolute;left:@@CAMX@@px;top:28px;width:840px;height:473px}
+.aiv{position:absolute;object-fit:cover;border-radius:28px;opacity:0;z-index:4;box-shadow:0 24px 70px rgba(0,0,0,.55)}
+#foot{position:absolute;left:48px;top:1790px;width:480px;font-size:24px;line-height:1.35;color:rgba(255,255,255,.65)}
+.pt{position:absolute;left:48px;top:1390px;width:480px;padding:22px 26px;border-radius:26px;background:rgba(255,255,255,.07);border:3px solid rgba(10,240,240,.55);z-index:6;opacity:0}
+.pt .pn{font-size:30px;font-weight:700;color:#0AF0F0;letter-spacing:.06em}
+.pt .px{font-size:46px;font-weight:700;line-height:1.12;margin-top:8px}
+.pt .px b{color:#FFB904}
+.cta{position:absolute;left:48px;top:1390px;width:480px;padding:22px 26px;border-radius:26px;background:#FF0000;z-index:6;opacity:0;font-size:40px;font-weight:700;line-height:1.15}
+.cta small{display:block;font-size:26px;font-weight:500;opacity:.9;margin-top:6px}
+#foot b{color:#fff}
+.endc{position:absolute;inset:0;z-index:20;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:60px;
+  background:radial-gradient(800px 700px at 50% 40%,rgba(10,240,240,.14),transparent 70%),#0a0d14}
+.endt{font-size:96px;font-weight:700;text-align:center;line-height:1.1}
+.endb{display:flex;align-items:center;gap:22px;padding:28px 32px;border-radius:32px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.3)}
+.endb .ico{width:96px;height:96px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:50px;font-weight:700;background:#FF0000;color:#fff}
+.endb .ico.ig{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF)}
+.endk{font-size:30px;color:rgba(255,255,255,.75)}.endh{font-size:46px;font-weight:700}
+.btn{font-size:38px;font-weight:700;padding:18px 32px;border-radius:9999px;color:#fff}.btn.red{background:#FF0000}.btn.blue{background:#0095F6}
+.endw{font-size:46px;color:rgba(255,255,255,.88)}.endw b{color:#0AF0F0}
+
+/* Tech Explainer additions: the AI-theme background under Money Plan's gradient wash, highlighter on the site */
+#bgv{position:absolute;left:0;top:0;width:1080px;height:1920px;z-index:0;opacity:.55}
+#wash{position:absolute;inset:0;z-index:0;background:radial-gradient(800px 700px at 70% 18%,rgba(10,240,240,.08),transparent 70%),
+  radial-gradient(900px 800px at 100% 100%,rgba(0,5,238,.18),transparent 70%),linear-gradient(180deg,rgba(10,13,20,.35),rgba(10,13,20,.78) 55%,rgba(10,13,20,.9))}
+#tag{z-index:2}.scene{z-index:3}
+.mk{position:absolute;background:#FFE14D;mix-blend-mode:multiply;border-radius:5px;transform-origin:0 50%;transform:scaleX(0)}
+.mbox{position:absolute;border:4px solid #0AF0F0;border-radius:10px;box-shadow:0 0 22px rgba(10,240,240,.8);opacity:0}
+.webwin img{display:block}
+
+@font-face{font-family:"JetBrains Mono";src:url(fonts/JetBrainsMono-400.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"JetBrains Mono";src:url(fonts/JetBrainsMono-700.woff2) format("woff2");font-weight:700}
+#cam{background:#0e1116}</style></head><body>
+<div id="stage" data-composition-id="short" data-start="0" data-duration="44.24" data-fps="30" data-width="1080" data-height="1920">
+<div id="tag"><span>PYTHON CHAI · <b class="cyan">Part 11</b></span></div>
+<div id="sA" class="clip scene" data-start="0.00" data-duration="5.00" data-track-index="1"><div class="hook">Bill <b class="mag">gayab?</b></div><div class="paper" id="a-bill" style="left:60px;top:400px"><div class="phead">CHAI BILL</div><div class="prow" style="grid-template-columns:2fr 1fr"><span>Masala x2</span><span>Rs 40</span></div><div class="prow" style="grid-template-columns:2fr 1fr"><span>Adrak x1</span><span>Rs 15</span></div><div class="prow" style="grid-template-columns:2fr 1fr"><span>Discount</span><span style="color:#b0263a">-Rs 5</span></div><div class="prow" style="grid-template-columns:2fr 1fr;border:0;font-size:56px"><span>TOTAL</span><span class="amber">Rs 50</span></div><div class="pmask" id="a-mask" style="transform:scaleX(0)"></div></div><div id="a-q" class="h big" style="left:0;right:0;top:640px;text-align:center;font-size:220px;color:#CD00EE">?</div></div>
+<div id="sB" class="clip scene" data-start="5.00" data-duration="7.00" data-track-index="2"><div class="hook">Variable = <b class="amber">kacchi</b> yaad</div><div id="b-card" class="card h" style="left:90px;top:420px;width:900px;padding:40px 50px"><div style="font-size:30px;color:rgba(255,255,255,.7);letter-spacing:.08em">RAM (computer ki kacchi yaad)</div><div id="b-v" style="font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:72px;margin-top:18px">total = <span class="amber">50</span></div></div><div id="b-x" class="h pillx" style="left:270px;top:760px">Program band &#215;</div><div id="b-gone" class="h" style="left:90px;top:900px;width:900px;text-align:center;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:64px;color:rgba(255,255,255,.7)">total = <span style="color:#E0242E">???</span></div></div>
+<div id="sC" class="clip scene" data-start="12.00" data-duration="7.00" data-track-index="1"><div class="hook">File = <b class="cyan">pakki</b> yaad</div><div id="c-book" class="paper h" style="left:160px;top:400px;width:760px;transform:rotate(-2deg)"><div style="display:flex;justify-content:space-between;align-items:center"><span class="phead">bill.txt</span><span style="font-size:30px;color:rgba(27,26,23,.6)">dukaan ka register</span></div><div style="height:62px;border-bottom:3px solid rgba(27,26,23,.18)"></div><div style="height:62px;border-bottom:3px solid rgba(27,26,23,.18)"></div><div style="height:62px;border-bottom:3px solid rgba(27,26,23,.18)"></div><div style="height:62px;border-bottom:3px solid rgba(27,26,23,.18)"></div><div id="c-w" style="position:absolute;left:46px;top:150px;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:46px;color:#1b1a17">Total: Rs 50</div></div><div id="c-chip" class="h chip2" style="left:170px;top:930px">Band karo, phir bhi <span class="cyan">rehti hai</span></div></div>
+<div id="sD" class="clip scene" data-start="19.00" data-duration="9.50" data-track-index="2"><div class="hook">2 line ka <b class="cyan">code</b></div><div id="d-code" class="h" style="left:60px;top:400px;width:960px;padding:34px 40px;border-radius:24px;background:#181715;box-shadow:0 0 0 3px rgba(255,255,255,.14),0 30px 90px rgba(0,0,0,.6);font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:44px;line-height:1.6"><div id="d-l0"><span class="cyan">with</span> <span class="cyan">open</span>(<span class="amber">"bill.txt"</span>, <span id="d-w" class="amber">"w"</span>) <span class="cyan">as</span> f:</div><div id="d-l1">&#160;&#160;&#160;&#160;f.<span class="cyan">write</span>(<span class="amber">"Total: Rs 50"</span>)</div></div><div id="d-file" class="h" style="left:300px;top:720px;width:480px;padding:30px;border-radius:24px;background:#F5F1E8;color:#1b1a17;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.55)"><div style="font-size:34px;font-weight:700">&#128196; bill.txt</div><div style="font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:42px;margin-top:12px">Total: Rs 50</div></div></div>
+<div id="sE" class="clip scene" data-start="28.50" data-duration="6.50" data-track-index="1"><div class="hook">Kal bhi <b class="cyan">milega!</b></div><div id="e-win" class="webwin h" style="left:60px;top:400px;height:520px"><div class="wbar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="wurl">C:\chai-dukaan\</span></div><div style="position:absolute;left:50px;top:110px;right:50px;font-size:40px;line-height:2.1"><div style="color:rgba(255,255,255,.55)">&#128193; recipes</div><div id="e-row" style="border-radius:12px;padding:0 16px;margin-left:-16px">&#128196; <b>bill.txt</b> <span style="font-size:28px;color:rgba(255,255,255,.55)">· kal raat 10:05</span></div><div style="color:rgba(255,255,255,.55)">&#128196; menu.txt</div></div></div><div id="e-open" class="paper h" style="left:200px;top:820px;width:680px;padding:28px 36px"><div style="font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:46px;text-align:center">Total: <span class="amber">Rs 50</span></div></div></div>
+<div id="sF" class="clip scene" data-start="35.00" data-duration="6.00" data-track-index="2"><div class="hook">Variable bhoole,<br><b class="cyan">file yaad rakhe</b></div><div id="f-t" class="card h" style="left:90px;top:520px;width:900px;padding:34px 44px"><div style="font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:30px;letter-spacing:.16em;color:rgba(255,255,255,.66);font-weight:700">AGLA PART 12</div><div style="font-size:54px;font-weight:700;margin-top:16px">File padho: <span class="cyan">bill wapas lo</span></div></div><div id="f-w" class="h" style="left:0;right:0;top:820px;text-align:center;font-size:42px;font-weight:700">Free notes + code: <span class="cyan">techsamjhoraj.com</span></div></div>
+<div id="c0" class="clip cap" data-start="0.50" data-duration="4.50" data-track-index="6"><span class="w">Dukaan</span><span class="w">band…</span><span class="w mag">bill</span><span class="w">gayab!</span></div>
+<div id="c1" class="clip cap" data-start="5.50" data-duration="6.50" data-track-index="6"><span class="w">Program</span><span class="w">band,</span><span class="w">variable</span><span class="w mag">khatam</span></div>
+<div id="c2" class="clip cap" data-start="12.50" data-duration="6.50" data-track-index="6"><span class="w cyan">File</span><span class="w">=</span><span class="w">dukaan</span><span class="w">ka</span><span class="w">register</span></div>
+<div id="c3" class="clip cap" data-start="19.50" data-duration="9.00" data-track-index="6"><span class="w cyan">open,</span><span class="w cyan">with,</span><span class="w cyan">write:</span><span class="w">bas!</span></div>
+<div id="c4" class="clip cap" data-start="29.00" data-duration="6.00" data-track-index="6"><span class="w">Program</span><span class="w">band,</span><span class="w">bill</span><span class="w cyan">safe!</span></div>
+<div id="c5" class="clip cap" data-start="35.50" data-duration="5.50" data-track-index="6"><span class="w amber">Part</span><span class="w amber">12:</span><span class="w">bill</span><span class="w">wapas</span><span class="w">padho</span></div>
+<div id="p1" class="clip pt" data-start="6.00" data-duration="6.00" data-track-index="9"><div class="pn">POINT 1 / 5</div><div class="px">Variable = <b>kacchi</b> yaad</div></div>
+<div id="p2" class="clip pt" data-start="13.00" data-duration="6.00" data-track-index="9"><div class="pn">POINT 2 / 5</div><div class="px">File = <b>pakki</b> yaad</div></div>
+<div id="p3" class="clip pt" data-start="21.80" data-duration="2.80" data-track-index="9"><div class="pn">POINT 3 / 5</div><div class="px"><b>"w"</b> = likhne ke liye</div></div>
+<div id="p4" class="clip pt" data-start="24.60" data-duration="3.90" data-track-index="9"><div class="pn">POINT 4 / 5</div><div class="px"><b>with</b> = file khud band</div></div>
+<div id="p5" class="clip pt" data-start="29.50" data-duration="5.50" data-track-index="9"><div class="pn">POINT 5 / 5</div><div class="px">Band karo, <b>bill safe</b></div></div>
+<div id="p6" class="clip cta" data-start="36.00" data-duration="5.00" data-track-index="9" style="background:#0095F6">Python Chai series<small>Samjho with Raj · Part 1 se shuru karo</small></div>
+<div id="sH" class="clip endc" data-start="41.00" data-duration="3.24" data-track-index="8"><div class="endt">Python <b class="cyan">Chai</b><br>Part 11 &#10003;</div><div id="h-b" class="endb"><span class="ico ig">&#9673;</span><div><div class="endk">Instagram · Facebook · X</div><div class="endh">@samjhowithraj</div></div><span class="btn blue">Follow</span></div><div class="endw">Free notes: <b>techsamjhoraj.com</b></div></div>
+<div id="cam" class="clip" data-start="0" data-duration="41.00" data-track-index="3"><svg viewBox="0 0 300 300" width="300" height="300" style="position:absolute;left:92px;top:40px" fill="none"><path d="M78 150 L222 150 L210 252 Q208 262 198 262 L102 262 Q92 262 90 252 Z" fill="#FFB904"/><path d="M70 128 L230 128 L212 254 Q209 270 194 270 L106 270 Q91 270 88 254 Z" stroke="#F5F1E8" stroke-width="8" stroke-linejoin="round"/><path d="M228 160 Q268 160 266 196 Q264 228 220 230" stroke="#F5F1E8" stroke-width="8" stroke-linecap="round"/><path class="stm" d="M115 108 Q100 88 115 68 Q130 48 115 28" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round" opacity=".75"/><path class="stm" d="M150 108 Q135 88 150 68 Q165 48 150 28" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round" opacity=".75"/><path class="stm" d="M185 108 Q170 88 185 68 Q200 48 185 28" stroke="#F5F1E8" stroke-width="7" stroke-linecap="round" opacity=".75"/></svg><div style="position:absolute;left:0;right:0;top:350px;text-align:center"><span id="prop-tag" style="display:inline-block;padding:12px 26px;border-radius:16px;background:#F5F1E8;color:#1b1a17;font-family:'JetBrains Mono',monospace;font-variant-ligatures:none;font-size:34px;font-weight:700">bill.txt</span></div><div style="position:absolute;left:0;right:0;top:430px;text-align:center;font-size:26px;font-weight:700;letter-spacing:.12em;color:rgba(255,255,255,.7)">PYTHON CHAI</div></div>
+<div id="foot">Faceless series · <b>Hinglish + code</b></div>
+<audio id="bed" src="assets/bed.mp3" data-start="0" data-duration="44.24" data-track-index="10" data-volume="0.9"></audio>
+</div>
+<script>
+window.__timelines = window.__timelines || {};
+const tl = gsap.timeline({ paused: true });
+function rise(s,t){ tl.fromTo(s,{opacity:0,y:26},{opacity:1,y:0,duration:.4,ease:'power2.out'},t); }
+tl.fromTo('#cam',{opacity:0,y:40},{opacity:1,y:0,duration:.4,ease:'power2.out'},.1);
+tl.to('#cam',{opacity:0,duration:.3},40.80);
+tl.to('#foot',{opacity:0,duration:.3},40.80);
+tl.fromTo('#sA',{opacity:0},{opacity:1,duration:.3},0.00);
+tl.to('#sA',{opacity:0,duration:.3},4.70);
+rise('#a-bill',0.30);
+tl.fromTo('#a-mask',{scaleX:0},{scaleX:1,duration:.7,ease:'power2.inOut'},2.40);
+tl.fromTo('#a-q',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.4,ease:'back.out(2)'},3.20);
+tl.fromTo('#sB',{opacity:0},{opacity:1,duration:.3},5.00);
+tl.to('#sB',{opacity:0,duration:.3},11.70);
+rise('#b-card',5.40);
+rise('#b-x',7.40);
+tl.to('#b-v',{opacity:.15,filter:'blur(6px)',duration:.6},8.00);
+rise('#b-gone',8.60);
+tl.fromTo('#sC',{opacity:0},{opacity:1,duration:.3},12.00);
+tl.to('#sC',{opacity:0,duration:.3},18.70);
+rise('#c-book',12.40);
+tl.fromTo('#c-w',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.9,ease:'steps(12)'},13.60);
+rise('#c-chip',15.20);
+tl.fromTo('#sD',{opacity:0},{opacity:1,duration:.3},19.00);
+tl.to('#sD',{opacity:0,duration:.3},28.20);
+rise('#d-code',19.30);
+tl.fromTo('#d-l0',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.8,ease:'steps(20)'},19.70);
+tl.fromTo('#d-l1',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.8,ease:'steps(20)'},20.50);
+tl.fromTo('#d-w',{backgroundColor:'rgba(255,185,4,0)'},{backgroundColor:'rgba(255,185,4,.35)',duration:.3},22.00);
+tl.fromTo('#d-file',{opacity:0,y:40,scale:.9},{opacity:1,y:0,scale:1,duration:.5,ease:'back.out(1.6)'},24.20);
+tl.fromTo('#sE',{opacity:0},{opacity:1,duration:.3},28.50);
+tl.to('#sE',{opacity:0,duration:.3},34.70);
+rise('#e-win',28.80);
+tl.fromTo('#e-row',{backgroundColor:'rgba(10,240,240,0)'},{backgroundColor:'rgba(10,240,240,.22)',duration:.3},30.10);
+tl.fromTo('#e-open',{opacity:0,scale:.85},{opacity:1,scale:1,duration:.45,ease:'back.out(1.6)'},31.10);
+tl.fromTo('#sF',{opacity:0},{opacity:1,duration:.3},35.00);
+tl.to('#sF',{opacity:0,duration:.3},40.70);
+rise('#f-t',35.80);
+rise('#f-w',37.00);
+tl.fromTo('#c0 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},0.50);
+tl.to('#c0',{opacity:0,duration:.25},4.75);
+tl.fromTo('#c1 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},5.50);
+tl.to('#c1',{opacity:0,duration:.25},11.75);
+tl.fromTo('#c2 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},12.50);
+tl.to('#c2',{opacity:0,duration:.25},18.75);
+tl.fromTo('#c3 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},19.50);
+tl.to('#c3',{opacity:0,duration:.25},28.25);
+tl.fromTo('#c4 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},29.00);
+tl.to('#c4',{opacity:0,duration:.25},34.75);
+tl.fromTo('#c5 .w',{opacity:0,y:20},{opacity:1,y:0,duration:.35,ease:'power2.out',stagger:.05},35.50);
+tl.to('#c5',{opacity:0,duration:.25},40.75);
+tl.fromTo('#p1',{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:'power2.out'},6.10);
+tl.to('#p1',{opacity:0,duration:.25},11.75);
+tl.fromTo('#p2',{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:'power2.out'},13.10);
+tl.to('#p2',{opacity:0,duration:.25},18.75);
+tl.fromTo('#p3',{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:'power2.out'},21.90);
+tl.to('#p3',{opacity:0,duration:.25},24.35);
+tl.fromTo('#p4',{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:'power2.out'},24.70);
+tl.to('#p4',{opacity:0,duration:.25},28.25);
+tl.fromTo('#p5',{opacity:0,x:-30},{opacity:1,x:0,duration:.35,ease:'power2.out'},29.60);
+tl.to('#p5',{opacity:0,duration:.25},34.75);
+tl.fromTo('#p6',{opacity:0,scale:.9},{opacity:1,scale:1,duration:.35,ease:'back.out(1.6)'},36.10);
+tl.fromTo('#p6',{scale:1},{scale:1.05,duration:.3,yoyo:true,repeat:3,ease:'power1.inOut'},37.20);
+tl.fromTo('#sH',{opacity:0},{opacity:1,duration:.35},41.00);
+rise('#h-b',41.35);
+tl.fromTo('#h-b .btn',{scale:1},{scale:1.1,duration:.22,yoyo:true,repeat:5,ease:'power1.inOut'},41.85);
+tl.fromTo('#cam .stm',{y:0,opacity:.2},{y:-18,opacity:.8,duration:1.4,ease:'sine.inOut',stagger:.25,yoyo:true,repeat:13},.4);
+tl.fromTo('#prop-tag',{rotation:0},{rotation:-4,duration:.5,yoyo:true,repeat:1,ease:'power1.inOut'},24.20);
+tl.to({}, { duration: 44.24 }, 0);
+window.__timelines["short"] = tl;
+</script></body></html>
