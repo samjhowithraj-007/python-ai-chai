@@ -20,5 +20,5 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 | 20 | Python aa gayi! Ab AI ki baari | bridge | recap → AI + Python Part 1 (50 parts) |
 
 ## Status
-- [x] Part 11 — file write, faceless, Money Plan Short frame, yt + ig + thumbnail + CAPTION.md delivered (not posted)
+- [x] Part 11 — live 2026-10-18: YouTube shorts/EyDvdtNI5NY, Instagram reel/DeoryoPyge3, Facebook reel/1399228388992217 + Story, X status/2111798526510612726, site #python-11
 - [ ] Part 12 — file padho

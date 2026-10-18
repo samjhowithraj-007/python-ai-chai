@@ -15,10 +15,13 @@ with open("bill.txt", "w") as f:
 
 "w" = likhne ke liye kholo · with = file khud band ho jaati hai
 
-📘 Free notes + code: https://www.techsamjhoraj.com
-▶️ Playlist: Python Chai (Part 1 se shuru karo)
+📘 Free notes + code: https://www.techsamjhoraj.com/#python-11
+▶️ Playlist: Chai + Python ☕🐍: Zero se Coder tak (Part 1 se shuru karo)
 ⏭️ Agla Part 12: file padho, bill wapas lo!
 🔔 Subscribe karo, har hafte naya part!
+
+📸 Instagram: https://www.instagram.com/samjhowithraj/
+👍 Facebook: https://www.facebook.com/profile.php?id=61595088790170&sk=reels_tab
 
 #python #pythonhindi #shorts
 
@@ -43,6 +46,7 @@ Dukaan band hui… aur saara bill gayab! Kyun? 👇
 💬 Comment karo: aap file mein sabse pehle kya save karoge?
 📌 Save karo, coding seekhte waqt kaam aayega
 📘 Free notes + code: techsamjhoraj.com (link in bio)
+▶️ YouTube pe bhi: youtube.com/@SamjhowithRaj
 
 .
 .
@@ -57,6 +61,10 @@ Bill gayab? 😱 Python Chai · Part 11
 Variable = kacchi yaad, File = pakki yaad 📒
 with open("bill.txt", "w") as f → bill safe, kal bhi milega!
 
-📘 Free notes + code: https://www.techsamjhoraj.com
+📘 Free notes + code: https://www.techsamjhoraj.com/#python-11
 ⏭️ Part 12: file padho, bill wapas lo!
+
+▶️ YouTube: https://www.youtube.com/@SamjhowithRaj
+📸 Instagram: https://www.instagram.com/samjhowithraj/
+
 #python #learnpython #samjhowithraj

@@ -220,7 +220,7 @@ progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping c
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
-the per-type differences are in the table. Raj's links, repos and series plans are also in Claude's memory
+the per-type differences are in the table. X (Twitter): post the -ig video with a < 280-character text, then click "Add post" ONLY after the video shows Ready and put the links in that second thread post (before Ready the click is ignored and the links land in the first post). Raj's links, repos and series plans are also in Claude's memory
 (`github-repo`, `reference-socials`, `ai-chai-bot-series`).
 
 | Video type | Where it lives | How it is made |
@@ -299,8 +299,9 @@ the per-type differences are in the table. Raj's links, repos and series plans a
     `file_upload`, title/description/tags, thumbnail via the image file input, "Not made for kids", Public, Publish;
     add to the series playlist ("AI + Python 🤖: Chai ka Chatbot banao (50 Parts)", oldest first). Clicking the Create
     menu's "Upload videos" opens a native picker that freezes the tab: use the URL instead.
-  - Instagram and Facebook **reject automated file picks**: Raj clicks "Select from computer" / "Add video" in the
-    Claude tab group and picks the -ig file; Claude fills caption, cover (Facebook: thumbnail editor range input set to
+  - Instagram and Facebook **may** reject automated file picks: try `file_upload` on their file input first (it worked on
+    both for Python Chai Part 11, 18 Oct 2026, with a < 10 MB `upload-ig.mp4`); only if refused, Raj clicks "Select from
+    computer" / "Add video" in the Claude tab group and picks the -ig file; Claude fills caption, cover (Facebook: thumbnail editor range input set to
     the hook frame, then the Save **inside** that dialog; the outer Save makes a draft) and posts Public.
   - **Facebook reel, the reliable order (learned on Part 2):** in Create reel, after Raj adds the file, click Next until
     Reel settings and save it as a **draft straight away** (any Save in the Create flow, the thumbnail editor's
