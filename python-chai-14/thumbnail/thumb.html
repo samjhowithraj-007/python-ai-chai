@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+  @font-face { font-family:"DM Sans"; font-weight:700; src:url("../public/fonts/DMSans-700.woff2") format("woff2"); }
+  @font-face { font-family:"JetBrains Mono"; font-weight:700; src:url("../public/fonts/JetBrainsMono-700.woff2") format("woff2"); }
+  html, body { margin:0; width:1080px; height:1920px; overflow:hidden; }
+  body { font-family:"DM Sans", system-ui, sans-serif; font-weight:700; color:#F5F1E8; position:relative;
+    background:
+      radial-gradient(80% 40% at 50% 100%, rgba(255,176,32,.42), rgba(255,176,32,0) 70%),
+      radial-gradient(70% 35% at 50% 0%, rgba(10,240,240,.18), rgba(10,240,240,0) 70%), #0E1116; }
+  .grid { position:absolute; inset:0; opacity:.16; background-image:
+      linear-gradient(rgba(245,241,232,.12) 2px, transparent 2px), linear-gradient(90deg, rgba(245,241,232,.12) 2px, transparent 2px);
+      background-size:90px 90px; }
+  .c { color:#0AF0F0; text-shadow:0 0 40px rgba(10,240,240,.65); }
+  .a { color:#FFB020; text-shadow:0 0 40px rgba(255,176,32,.55); }
+  .m { color:#E04CF0; text-shadow:0 0 40px rgba(205,0,238,.5); }
+  .part { position:absolute; top:100px; left:50%; transform:translateX(-50%); padding:18px 44px; border-radius:9999px; white-space:nowrap;
+    border:4px solid #0AF0F0; background:rgba(10,240,240,.12); font-family:"JetBrains Mono", monospace; font-size:52px; letter-spacing:.12em; }
+  .t1 { position:absolute; top:250px; left:0; right:0; text-align:center; font-size:150px; line-height:1; letter-spacing:-.03em; }
+  .t2 { position:absolute; top:400px; left:0; right:0; text-align:center; font-size:200px; line-height:1; letter-spacing:-.04em; }
+  .file { position:absolute; left:50px; width:520px; top:690px; z-index:3; background:#F5F1E8; color:#0E1116; border-radius:22px; padding:44px 56px;
+    box-shadow:0 30px 90px rgba(0,0,0,.6); transform:rotate(-3deg); font-family:"JetBrains Mono", monospace; }
+  .file .h { font-size:52px; border-bottom:8px solid #FFB020; display:inline-block; margin-bottom:26px; }
+  .file .r { font-size:46px; }
+  .file .r b { color:#B86E00; }
+  .code { position:absolute; top:1110px; left:60px; width:520px; font-family:"JetBrains Mono", monospace; font-size:44px; line-height:1.4; z-index:3; text-shadow:0 4px 18px rgba(0,0,0,.9); }
+  #raj { position:absolute; left:-200px; top:820px; width:2048px; height:1152px; z-index:2; filter:drop-shadow(0 0 40px rgba(10,240,240,.35)) brightness(1.05) contrast(1.06); }
+  .badge { position:absolute; left:40px; top:1500px; transform:rotate(-4deg); z-index:4; background:#FFB020; color:#0E1116;
+    font-size:62px; padding:20px 40px; border-radius:24px; white-space:nowrap; box-shadow:0 20px 60px rgba(255,176,32,.45); }
+  .brand { position:absolute; z-index:5; bottom:60px; left:0; right:0; text-align:center; font-size:46px; color:rgba(245,241,232,.8); letter-spacing:.06em; }
+</style></head>
+<body>
+  <div class="grid"></div>
+  <div class="part">PYTHON CHAI · 14</div>
+  <div class="t1">Bill mein</div>
+  <div class="t2 m">error?</div>
+  <div class="file"><div class="h">f-string</div><div class="r">f"Rs {total}"</div><div class="r"><b>Rs 50 &#10003;</b></div></div>
+  <img id="raj" src="img/raj-cutout.png">
+  <div class="code"><span class="c">print</span>(<span class="a">f</span>"Rs<br>{total}")</div>
+  <div class="badge">f LAGAO,<br>{ } BHARO!</div>
+  <div class="brand">SAMJHO WITH RAJ · techsamjhoraj.com</div>
+</body></html>
