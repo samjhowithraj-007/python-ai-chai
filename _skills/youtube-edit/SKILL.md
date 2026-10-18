@@ -220,15 +220,41 @@ progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping c
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
-the per-type differences are in the table. X (Twitter): post the -ig video with a < 280-character text, then click "Add post" ONLY after the video shows Ready and put the links in that second thread post (before Ready the click is ignored and the links land in the first post). Raj's links, repos and series plans are also in Claude's memory
+the per-type differences are in the table. Raj's links, repos and series plans are also in Claude's memory
 (`github-repo`, `reference-socials`, `ai-chai-bot-series`).
 
 | Video type | Where it lives | How it is made |
 |---|---|---|
-| Faceless series short (python-chai, ai-chai-bot) | `videos/<series>-NN/` | `build-frames.py` (5 frames, 1080x1080 square) → HyperFrames render; plan in `videos/<series>/SERIES.md` |
+| Faceless series Short (python-chai from Part 11; the whole series is faceless, never record Raj) | `videos/python-chai-NN/` | `build-short.py yt|ig` on the **approved Money Plan Short frame** (1080x1920; copy `python-chai-11/build-short.py`, change content only): tag pill, hook line, floating panel, one-line captions, POINT cards, an animated prop in Raj's cam slot, lo-fi bed, website glimpse, Money Plan end card. Plan in `videos/python-chai/SERIES-11-20.md` |
+| Older square faceless parts (python-chai 1–10, ai-chai-bot 1–3) | `videos/<series>-NN/` | `build-frames.py` (5 frames, 1080x1080): legacy, don't start new parts this way |
 | Series short with Raj on camera | same folder + `raw/`, `cam*/` | the faceless build + Raj as a cut-out bottom-right (below) |
 | Talking-head YouTube episode (agentic-ai) | `videos/agentic-ai/sNNeNN/` | the Cut stage + Pipeline in this skill, 1080p |
 | Finance long form (Money Plan) | `C:\samjhowithraj\financial planning\videos\epNN\` | "Finance long form" above: studio screen, cutaways, data cards; repo samjhowithraj-007/financial-planning |
+
+**The Short checklist ("do all the things for the post"; first done for Python Chai Part 11, 18 Oct 2026):**
+1. `SHORT-SCRIPT.md` + the plan row → `python build-short.py yt` → `npx --yes hyperframes@0.8.154 check` (warnings OK) →
+   ONE `snapshot --at t1,t2,...` contact sheet → fix → render yt + ig in the background (`public/` → `renders/<name>-yt|ig.mp4`).
+2. Thumbnail `thumbnail/thumb.html` → 1080x1920 PNG (see "Thumbnail").
+3. `CAPTION.md`: YouTube title/description/tags/category Education, Instagram caption, Facebook text, all with
+   `https://www.techsamjhoraj.com/#<lesson-id>` and the series playlist name.
+4. Deliver: `bash videos/_tools/deliver.sh "C:/Users/rajpr/Videos/YouTube Renders/<series>-NN" <files>` (never
+   overwrites: the old file becomes `-v1`, `-v2`); open the folder in Explorer.
+5. Website lesson + push both repos (step 5 below), then post YouTube → Instagram → Facebook (+ Story) → X, verify
+   each, and log every link in `YouTube Renders\INDEX.md` and the series plan's Status.
+
+**Website glimpse (every Short from Python Chai Part 12, Raj 18 Oct 2026):** a 3–4 s scene just before the end card
+showing the REAL lesson page on techsamjhoraj.com: publish the lesson first, capture `https://www.techsamjhoraj.com/#<lesson-id>`
+with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwin` browser window (URL pill
+`techsamjhoraj.com/#<lesson-id>`), a slow 1.00 → 1.05 drift with a short scroll, and the yellow `.mk` highlighter
+sweeping "Free notes + code" (or the lesson title) on the word. Caption: "Free notes + code: techsamjhoraj.com". Never a
+mock-up; re-capture if the page changed.
+
+**Thumbnail (every Short):** dark ink + amber/cyan glow + grid, series/part pill at top, huge two-line hook (second line
+coloured), a LEFT column with one hero card, one code line and a rotated yellow badge, and **Raj's photo bottom-right**
+(`financial planning/videos/_shared/thumbnail/raj-cutout.png`, 2560x1440 placed at left -200, top 820, 2048x1152, cyan
+drop-shadow), footer "SAMJHO WITH RAJ · techsamjhoraj.com". Render with the hyperframes headless Chrome
+(`~/.cache/hyperframes/chrome/chrome-headless-shell/*/chrome-headless-shell-win64/chrome-headless-shell.exe --headless
+--window-size=1080,1920 --screenshot=...`); check a 360 px preview with his face clear. Upload copy: JPEG q3 (~200 KB).
 
 **1. Script and recording**
 - Write a 30 s script per frame into `RECORDING.md`, but give Raj **talking points**, not lines to read (reading sounds
@@ -275,7 +301,7 @@ the per-type differences are in the table. X (Twitter): post the -ig video with 
 
 **4. Deliver**
 - `renders/<name>-yt.mp4` and `-ig.mp4` + `thumbnail/thumbnail-1080x1920.png` (website footer on it) into
-  `C:\Users\rajpr\Videos\YouTube Renders\<series>-NN\`. Use one folder per part (`ai-chai-bot-03`, `python-chai-07`,
+  `C:\Users\rajpr\Videos\YouTube Renders\<series>-NN\` with `videos/_tools/deliver.sh` (old versions kept as `-vN`). Use one folder per part (`ai-chai-bot-03`, `python-chai-07`,
   `money-plan-01`), never a shared series folder. Open the folder in Explorer and copy `CAPTION.md` there too.
   **After posting**, add the part's row (YouTube, Instagram and Facebook links) to `YouTube Renders\INDEX.md`, so the
   archive always shows what went live where.
@@ -289,13 +315,16 @@ the per-type differences are in the table. X (Twitter): post the -ig video with 
   ignored). Identity samjhowithraj-007 <pragya.bigdata@gmail.com>, never the global Richa login.
 - Website (github.com/samjhowithraj-007/samjhowithrajwebsite, `C:\samjhowithraj\samjhowithrajwebsite`): copy the yt
   render to `media/<id>.mp4` (< 25 MB), poster `media/<id>.jpg`, fill the lesson in `index.html` COURSES (English
-  notes, code as in the video), push; GitHub Pages publishes www.techsamjhoraj.com (if a deploy fails "due to in
+  notes, code as in the video; bump the course `tag` count and `sw.js` VERSION; check the COURSES block still parses
+  with `node -e` + `new Function(...)`, since a raw line break inside a JS string breaks the page; the video is a CRF 23
+  re-encode < 25 MB, the poster a 720x720 frame), push; GitHub Pages publishes www.techsamjhoraj.com (if a deploy fails "due to in
   progress deployment", Raj clicks Re-run jobs).
   Money Plan / finance lessons go to paisasamjhoraj.com (`C:\samjhowithraj\paisasamjhorajwebsite`) instead. For anything
   about the sites themselves (new site, domain, DNS, HTTPS, install-as-app, Search Console, profile links) use the
   **website-app** skill. If a lesson change touches a precached file, bump `VERSION` in that site's `sw.js`.
 - Posting through **Claude in Chrome** (Raj is signed in; upload copies re-encoded at CRF 20 so they stay < 10 MB):
-  - YouTube Studio: open `studio.youtube.com/channel/<id>/videos/upload?d=ud`, find the file input through shadow DOM,
+  - Order: YouTube → Instagram → Facebook (+ Story) → X, then INDEX.md. Close the tab you opened when done.
+  - YouTube Studio (channel id UCMcwMtuOjp39M0JtLpbwvZg): open `studio.youtube.com/channel/<id>/videos/upload?d=ud`, find the file input through shadow DOM,
     `file_upload`, title/description/tags, thumbnail via the image file input, "Not made for kids", Public, Publish;
     add to the series playlist ("AI + Python 🤖: Chai ka Chatbot banao (50 Parts)", oldest first). Clicking the Create
     menu's "Upload videos" opens a native picker that freezes the tab: use the URL instead.
@@ -323,6 +352,13 @@ the per-type differences are in the table. X (Twitter): post the -ig video with 
     content_library/`): the post text must be under **Published**, not **Drafts**. A reel stuck in Drafts: open it
     there ("Edit reel") → "Choose a thumbnail" (range input to ~0.075 = the hook frame, the Save inside that dialog)
     → Post. It then appears first in the profile's Reels tab (`&sk=reels_tab`); report its `facebook.com/reel/<id>` URL.
+  - **X:** `x.com/compose/post`, `file_upload` the -ig video into the dialog's file input, type a < 280-character post
+    (hook, the idea, the code, 3 hashtags), wait until the video shows **Ready**, THEN click "Add post" and type the
+    links (site `#lesson-id`, YouTube channel, next part) in the second post; "Post all". Before Ready the Add-post
+    click is ignored and the links land in the first post (over the limit). X's mention autocomplete may lowercase
+    `@SamjhowithRaj` inside a URL; it still works. Take the status URL from the newest article on `x.com/samjhowithraj`.
+  - **Facebook link:** the reel id is not in Content Library links; after posting, open the profile Reels tab
+    (`&sk=reels_tab`) and pick the newest reel whose text matches the hook.
   - Facebook **Story**: on the reel page, Share → "Share to" → **Your story** (shows "Posting…"); confirm on
     `facebook.com/stories/<profile id>` ("Your Story" instead of "Add to your story"). **Groups** appear in that share
     list only when the page is a member: ask Raj which groups; never pick groups on your own.
