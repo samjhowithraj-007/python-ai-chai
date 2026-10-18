@@ -117,7 +117,7 @@ invent a new layout (see the reuse-approved-templates rule).
 - **Discount codes:**
   - **LAUNCH**: ₹100 off all products, ends 15 Nov 2026. It's built into the buy links (`/l/<slug>/LAUNCH` applies it and
     shows "₹100 off will be applied at checkout").
-  - **RAJTECH84**: 10% off, PRIVATE (only for people Raj chooses). Never put it on the site, in ads or captions.
+  - **A private 10% code** (its name is ONLY in Claude's local memory file book-project.md, never in this skill, git, the site, ads or captions).
   - Validity gotcha: untick **"No end date"**, then set the date with the native value setter + input event. Check that
     the list shows "Oct 18 – Nov 15".
 - **Pricing strategy (Raj said "use the clever marketing one"):**
