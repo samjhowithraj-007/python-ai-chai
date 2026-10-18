@@ -217,6 +217,59 @@ progress), `count-up` / `number-wheel` (counters; keep our own Indian-grouping c
 `mk-specs-list` (clean checklist rows), `comparison-split` (before/after), `success-check`, `yt-screen-warp` and
 `filmed-screen` (make a clip read as playing on a real screen), `data-chart`, `apple-money-count` (USD only as shipped).
 
+## Tech Explainer playbook (learned on Part 1, 17–18 Oct 2026)
+
+The worked example is `vlog1/videos/tech-explainer-01/` (`handcut.py`, `apply_chunked.py`, `build.py`, `build-mpshort.py`,
+`finish2.sh` / `finish-final.sh`, `finish-shortA.sh`, `clean-audio.py`, `anim-reel.sh`, `find-claps.py`, `check-labels.py`). Copy the
+folder for Part N. Raj reviewed this part over many rounds; these are his notes as rules.
+
+**Order and review loop**
+- **Long first, then the Short from it** (reuse its scenes and clips). One Short, from his Short take (Short A); a Short
+  cut from the long take (B) was rejected.
+- Before any full render, render a **review reel** of only the new animation windows with his voice
+  (`anim-reel.sh`, ~1.5 min, ~25 min to render) and let him approve it. Full render after his OK.
+- Deliver every re-edit under a **new name** while he is watching the current file (Media Player locks it); at the end
+  keep ONE `<series>-NN-FINAL.mp4` and move everything older into `YouTube Renders\<part>\old\` (delete only when he says).
+- Send short A/B samples (12–48 s, `SendUserFile`) instead of long explanations; give full paths when he asks "where".
+
+**Cut**
+- After every recut, re-check the FINAL audio for spoken labels (`check-labels.py`, medium model) AND for claps:
+  `find-claps.py` (sudden ≥14 dB, treble-heavy burst that dies in ~80 ms); he claps at take boundaries. Cut a label or
+  clap by ending/starting the KEEP range at the neighbouring word, never mid-word.
+
+**Studio screen: always a scene of the line he is saying**
+- No generic AI-loop filler where he is saying something specific. Map every line to a scene and build it from Pexels
+  photos/videos + 2D motion (Ken Burns, parallax, chips popping on his words, counters, pins, a 2D balance scale).
+- **Story characters (Rohan):** cut the AI character out of his photo (`npx hyperframes remove-background img.png -o cut.png`),
+  crop slivers of other people, place him in a good Pexels scene (blurred, dimmed, slow parallax), add chips/props popping
+  on his words. When Raj says "Rohan", show Rohan, never a stock stranger. Crop his photo to the face in small thumbnails.
+- **Hinglish lines on scenes are plain bold text** (white, cyan key words, dark text-shadow) in the scene's free space,
+  never a white plate/bubble, and never over chips or faces; a line that would cover the animation goes above Raj's head
+  (x 930–1910, y ~400, wrap ≤ 2 lines) or at the bottom of the studio. Badges/chips must be in front of the cut-out (z-index).
+- **Curiosity:** for "darr → curiosity / aage kya" use a moving Pexels sci-fi video (portal, tunnel) behind the cut-out,
+  "DARR" morphing to "CURIOSITY", floating "?"; plus "AAGE DEKHO" teaser pills before each section.
+- **Self-intro** ("Main hoon Raj… tech ko chai ki tarah garam aur simple"): AI/robot/HUD Pexels videos on his name and
+  "tech", the chai pour exactly on "chai"; the chai line above his head, not on a card.
+- Bright scenes for comparisons (degree vs skill): light background, never a dark overlay that makes it look blurred.
+- **Cover real screens** in stock photos (phones/laptops showing real headlines or outlet logos) with our own generic UI
+  locked to the photo's motion (put photo + screen in one wrapper and animate the wrapper).
+- Concrete places: tech-park photos (Hyderabad/Gurugram/Bengaluru) with city pins for "Indore ho ya Patna"; label photos
+  generically ("tech parks in India") when the city in the photo is not the city he names.
+- AI clips: start each on the look the line needs (clip 03 starts on the tense face, not the smile); his "papa ki
+  kahani" = Papa cropped from his clip as an old photo on a period background (clerk's office, not a steam engine).
+
+**Sound (see "Background noise" under Sound)**
+- Voice rebuilt from the raw with `scripts/clean-voice.py` and muxed under the picture; never the render's audio, never a
+  dynamic loudnorm. One soft bed (Mindscape, lowpassed ~6.5 kHz, ~-16 dB, ducked under the voice, a bit louder in the
+  outro), one continuous track (never two copies overlapping). **No whoosh / SFX at all.** No bright synth (Cyberline).
+
+**Short (on the Money Plan template; see "7. Short")**
+- Hook bubble and reply bubble in their own clip layer above the video (else a white strip shows under the clip).
+- Push his playlists (a playlist-cards scene on his playlist line) and the website + email sign-up; the government
+  course gets one line only.
+- A sci-fi FUTURE beat (portal video + Rohan cut-out) near the end, teaser pills between points, one-line captions;
+  drop a scene's caption when the scene already has its own title/sign-up line (they collide).
+
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
