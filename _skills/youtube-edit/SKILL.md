@@ -324,6 +324,11 @@ the per-type differences are in the table. Raj's links, repos and series plans a
 5. Website lesson + push both repos (step 5 below), then post YouTube → Instagram → Facebook (+ Story) → X, verify
    each, and log every link in `YouTube Renders\INDEX.md` and the series plan's Status.
 
+**Two traps (learned on Python Chai 13–18):** an element with class `h` starts at opacity 0, so a line that only
+has the typing tween (`typeon`, clipPath) stays invisible: always `rise()` it first (Part 13's `import random` line never
+showed). YouTube descriptions may not contain `<` or `>`: reword code such as `if 8 <= hour < 22` there (Instagram,
+Facebook and X accept it). On X avoid `word.word` text like `f.read` or `datetime.now` (it becomes a link).
+
 **Website glimpse (every Short from Python Chai Part 12, Raj 18 Oct 2026):** a 3–4 s scene just before the end card
 showing the REAL lesson page on techsamjhoraj.com: publish the lesson first, capture `https://www.techsamjhoraj.com/#<lesson-id>`
 with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwin` browser window (URL pill
