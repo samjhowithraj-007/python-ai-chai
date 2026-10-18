@@ -23,4 +23,5 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 - [x] Part 11 — live 2026-10-18: YouTube shorts/EyDvdtNI5NY, Instagram reel/DeoryoPyge3, Facebook reel/1399228388992217 + Story, X status/2111798526510612726, site #python-11
 - [x] Part 12 — live 2026-10-18: YouTube shorts/RldEdMI_Nak, Instagram reel/DeowJJcy07-, Facebook reel/2120544428832638 + Story, X status/2111808259829178424, site #python-12
 - [x] Part 13 — live 2026-10-18: YouTube shorts/J4NKlBToNDE, Instagram reel/Deoz7E1SinK, Facebook reel/28791060330516783 + Story, X status/2111816104603713963, site #python-13
-- [ ] Part 14 — Bill sundar banao: f-string
+- [x] Part 14 — live 2026-10-18: YouTube shorts/wnio0LRNiRk, Instagram reel/Deo3rF_SbdJ, Facebook reel/1592885865313336 + Story, X status/2111824189233778735, site #python-14
+- [ ] Part 15 — 10 cup ek saath: range()
