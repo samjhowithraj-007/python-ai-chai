@@ -32,7 +32,8 @@ invent a new layout (see the reuse-approved-templates rule).
   - Baloo 2 display font on a purple→pink→orange gradient (`book.py` COVER_CSS).
 - Bio: "AI expert, Azure & Claude certified AI architect, coder and engineer, 20 years in tech, working at a tech
   company in Amsterdam, the Netherlands".
-- Pricing (Indian market, 300-page illustrated e-book): ₹299 list, ₹199 launch, ₹399 for both editions.
+- Pricing (Indian market, 300-page illustrated e-book): ₹299 list, ₹199 launch, ₹399 for both editions (₹299 during the launch).
+- Formats: PDF + EPUB in every purchase, at the same price. Store: Gumroad (later maybe Amazon/Flipkart and a UPI gateway).
 
 ## Build pipeline (python-chai-book)
 - **Content.** `content_NN.py` / `content_A_B.py` are chapter dicts. Every text field is an `(en, hi)` tuple. The schema
@@ -51,9 +52,7 @@ invent a new layout (see the reuse-approved-templates rule).
   - Per-chapter PDFs: `out/notes/python-N-{en,hi}.pdf`
   - Teasers: `out/notes/python-N-{en,hi}-preview.pdf`
   - Covers: `out/cover-{en,hi}.png`
-  - Ads live OUTSIDE the book folder: `videos/book-ads/ads.py` (reads the book's fonts and cover only) gives
-    `book-ads/out/book-ad-{wide,post,story}.jpg` + CAPTIONS.md. Check the wide one by eye before using it as the
-    site's `media/book-promo.jpg`.
+  - EPUBs: `videos/book-epub/out/` (see "EPUB" below). Ads and Gumroad images: `videos/book-ads/out/` (see "Ads").
 - **Gotchas.**
   - Build any edit to a content file with an editor or a script file, not a bash heredoc: heredocs turn `\n` into
     real newlines. After editing, run an `ast.parse` check.
@@ -79,16 +78,99 @@ invent a new layout (see the reuse-approved-templates rule).
   - Teasers are copied to `notes/book-chN-{en,hi}-preview.pdf`. Covers go to `media/book-cover-{en,hi}.jpg` and the
     banner to `media/book-promo.jpg`.
   - Bump `sw.js` VERSION, run the node parse check, push.
-- Payments:
-  - **Raj creates the seller account himself** (Gumroad, Instamojo or Razorpay Payment Pages, with KYC and bank
-    details). Claude never does this.
-  - Raj uploads the full PDFs there and sends Claude the product links. Claude pastes them into `BOOK.buy` and
-    then makes the ad post.
 - Legal: it's his own original text and code, so selling is fine. Fonts are OFL (licence files are in `fonts/`).
   Add a "Python is a PSF trademark, not affiliated" line. Indian GST applies above the threshold, and the platform
-  handles invoices.
-- Launch ad: post the banner and a short caption to YouTube (Community), Instagram, Facebook and X, linking to
-  techsamjhoraj.com/#book. After Meta flags, post to Meta slowly, or let Raj post there by hand.
+  handles invoices. Raj lives in the Netherlands, so the income is likely taxed there: tell him to ask his tax adviser.
+
+## EPUB for e-readers (included in every purchase, same price)
+- `videos/book-epub/build_epub.py` builds a **reflowable EPUB 3** from the finished `out/python-with-chai-{en,hi}-full.html`
+  (read only). Output is `book-epub/out/python-with-chai-{en,hi}.epub`, about 0.5 MB each. The folder has a `*` .gitignore
+  because it's paid content.
+- What it keeps and drops:
+  - Kept: cover, front matter, 30 chapters (one XHTML each, Chotu on the chapter opener), answers, about the author.
+  - Dropped: the contents pages (the reader's own TOC replaces them), the index (there are no page numbers), footers and
+    per-page mascot bubbles.
+  - Fonts: DM Sans, Caveat and JetBrains Mono are embedded (OFL allows it).
+- XHTML gotchas: strip inline SVG, self-close `<br>` and `<img>`, turn `&nbsp;` into `&#160;`, escape bare `&`, and escape `<`
+  not followed by a letter (e.g. `<__main__.Cup object>`). Check every file with `minidom`.
+- Validate with **W3C epubcheck** (Java: `winget install Microsoft.OpenJDK.21`; the jar is from the w3c/epubcheck GitHub
+  release). The target is 0 errors / 0 warnings. The nav must sit in the spine as a normal (linear) page.
+- Tell buyers: the PDF is the designed print layout; the EPUB resizes for Kindle, Kobo and phones. **Same price**, both
+  formats in every product. The Kindle (KDP) store can take this EPUB later.
+
+## Gumroad shop (what was actually set up, Oct 2026)
+- **Account and money (Raj only):**
+  - Raj creates the account, enters bank/ID/KYC details himself, and clicks **Publish**. The safety check blocks Claude
+    from publishing because it's a payments action.
+  - Claude may fill product listings, upload files, create discount codes, and change settings Raj asks for (username,
+    time zone, country).
+- **Store and products:** samjhowithraj.gumroad.com, time zone Amsterdam. Three **E-book** products, currency **₹ (INR)**:
+  - `/l/python-with-chai-en` ₹299
+  - `/l/python-with-chai-hinglish` ₹299
+  - `/l/python-with-chai-both` ₹399
+- **Each product has:**
+  - Cover 1280×720 and thumbnail 600×600 (`python book-ads/gumroad.py`).
+  - A description: what's inside, who it's for, the author bio, the free preview link, the PSF line.
+  - A summary, plus details "Pages 336 · Format PDF (A5) + EPUB".
+  - Content tab: the PDF + EPUB, uploaded one file at a time and confirmed listed before **Save**.
+  - Receipt: button "Download your book" and a thank-you message (Hinglish for the Hinglish edition).
+- **Discount codes:**
+  - **LAUNCH**: ₹100 off all products, ends 15 Nov 2026. It's built into the buy links (`/l/<slug>/LAUNCH` applies it and
+    shows "₹100 off will be applied at checkout").
+  - **RAJTECH84**: 10% off, PRIVATE (only for people Raj chooses). Never put it on the site, in ads or captions.
+  - Validity gotcha: untick **"No end date"**, then set the date with the native value setter + input event. Check that
+    the list shows "Oct 18 – Nov 15".
+- **Pricing strategy (Raj said "use the clever marketing one"):**
+  - Keep the ₹299 list price as an anchor and run a time-boxed launch: ₹199, bundle ₹299.
+  - The deadline is real (the code expires).
+  - The bundle is the obvious best value, which also beats Gumroad's fixed per-sale fees.
+- **Fees** (Gumroad direct sales): 10% + 50¢, plus 2.9% + 30¢ processing. Discover sales cost 30%. At ₹199 Raj keeps
+  about half, at ₹299 about 64%, at ₹399 about 70%.
+- **Payouts:**
+  - With the account country set to **India** it's **PayPal only** ("new bank payout accounts cannot be set up in India"),
+    with a $100 minimum.
+  - Raj chose country **Netherlands**: the **Bank account (IBAN)** option appears, still with a $100 minimum, paid weekly.
+  - The Country select sits far down the Payments page. Changing it asks to confirm and clears saved payout details.
+- **Cheaper India option for later:** Instamojo or Razorpay (about 2%, UPI) need an Indian phone and KYC in Raj's name.
+  It could be added as a second "Pay with UPI" button.
+- **Website wiring** (owned by the website session):
+  - `BOOK.buy` holds the plain product URLs.
+  - The site works out `launchOn` from the date, appends `/LAUNCH` until 16 Nov 00:00 IST, and shows
+    ~~₹299~~ ₹199 and Both ~~₹399~~ ₹299 with "Launch offer · ends 15 Nov".
+  - After that it drops the code and hides the banner by itself.
+  - The FAQ says "PDF + EPUB in every purchase".
+
+## Ads and launch posts
+- All scripts live in `videos/book-ads/` (outside the book folder):
+  - `ads.py`: wide, post and story banners
+  - `carousel.py`: the 5-slide pre-launch carousel
+  - `carousel_live.py`: the "OUT NOW / ₹199 till 15 Nov" version
+  - `gumroad.py`: product images
+  - `CAPTIONS.md`: captions and the log of every post link
+- Carousel slides (1080×1350):
+  1. Hook: "Python boring lagta hai? 😴 Ab seekho chai ke saath", cover, badge, Chotu, price
+  2. The chai-shop story page
+  3. "Real code. Real output." with the example page
+  4. "Galtiyan bhi sikhati hain" with the mistakes page
+  5. The CTA: price, link, "Save karo / dost ko bhejo"
+  
+  Slides use **real book pages** captured with headless Chrome at 2× (each page is about 1587 px tall).
+- Flow: pre-launch teaser ("coming", free preview) → after the products are published and the site's Buy buttons are
+  verified live, the "Now available" carousel on YouTube Community, Instagram, Facebook page and X.
+- Raj also announced "coming soon on Amazon, Flipkart and other online stores". That's his plan, not an error.
+- **One session posts book ads** (this payments/ads session). Check the platforms for existing posts before posting.
+- Posting gotchas (Claude in Chrome):
+  - **X:** click **Post by the dialog's `[data-testid=tweetButton]`**. A coordinate miss once sent the post without its
+    images, and another "Post" ref was the wrong button. Check `[data-testid=tweetPhoto]` count = 4 on the status page,
+    then clear any media left in the home composer.
+  - **YouTube Community:** upload images, wait about 8 s, type, then click Post. The first try often silently does nothing.
+    Re-check the Posts tab before retrying, so there's no duplicate.
+  - **Facebook page:** Photo/video file input → text → Next → Post (Boost stays off) → "Not now" on "Add a Call Now
+    button". Verify in Content Library → **Published**. One silent failure happened; check Drafts before retrying.
+  - **Instagram:** a Meta "Choose if we process your data for ads" consent screen can block it. That's Raj's choice, so
+    never click it. Crop **Original** (4:5). Type the caption with `computer.type`, check the line count, Share, then
+    verify `og:description` with curl.
+  - The site's service worker can show a stale page: call `registration.update()` and reload before judging the live site.
 
 ## Training course (next product, same assets)
 - Plan:
@@ -99,3 +181,7 @@ invent a new layout (see the reuse-approved-templates rule).
 - Tiers: book (₹199–399) → self-paced course (videos + book + quizzes) → live cohort / doubt sessions.
 - Host on Graphy, TagMango or Teachable, or on the website's classroom tab with paid unlock links. Payments and
   accounts are Raj's to set up.
+
+## Script backups
+`scripts/` holds copies of the ad, carousel, Gumroad-image and EPUB builders (no book text). The working copies live in
+`videos/book-ads/` and `videos/book-epub/`; copy them back from here if those folders are lost.
