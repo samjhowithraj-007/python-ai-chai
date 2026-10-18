@@ -1,11 +1,11 @@
 ---
 name: website-app
-description: Create, move or update a Samjho with Raj website and its installable app. Covers a single-page site on GitHub Pages with a Namecheap domain, moving a domain (with an old-domain redirect that keeps https and #links working), DNS (A + AAAA + www CNAME), HTTPS enforcement, PWA install (manifest, offline service worker, icons, an "Install app" button with iPhone Safari / iPhone Chrome / in-app-browser guides), Google Search Console, profile links on YouTube / Instagram / Facebook, and the later App Store / Google Play path. Use when Raj says "new website", "move the website", "new domain", "make it an app", "install app not showing", "site not opening on phone", "add to Google", or "update links on social media".
+description: Create, move or update a Samjho with Raj website and its installable app. Covers a single-page site on GitHub Pages with a Namecheap domain, moving a domain (with an old-domain redirect that keeps https and #links working), DNS (A + AAAA + www CNAME), HTTPS enforcement, PWA install (manifest, offline service worker, icons, an "Install app" button with the app icon and colour, desktop and iPhone / in-app-browser guides), Google Search Console, social icons (YouTube / Instagram / Facebook / X), email sign-up with Brevo (lists, double opt-in forms, privacy page, sending-domain DNS and senders), the "Ask Raj" rule-based chat helper, the Series page's live-episode list, profile links, and the later App Store / Google Play path. Use when Raj says "new website", "move the website", "new domain", "make it an app", "install app not showing", "site flickers", "add icons", "email sign-up / notify subscribers", "Brevo", "chatbot", "episode is live", "site not opening on phone", "add to Google", or "update links on social media".
 ---
 
 # Website + app routine (Samjho with Raj)
 
-Raj's live setup, as of 2026-10-17. Copy this pattern for any new site.
+Raj's live setup, as of 2026-10-18. Copy this pattern for any new site.
 
 | Site | Repo (github.com/samjhowithraj-007/…) | Local folder | Icon bg |
 |---|---|---|---|
@@ -45,7 +45,7 @@ How to make the changes:
 - **Removing records:** use Chrome at `ap.www.namecheap.com/Domains/DomainControlPanel/<domain>/advancedns`:
   - Make the Chrome window large first (resize to 1100×850); a tiny window freezes typing.
   - Rows: Add New Record → type dropdown → Host → Value → ✓. Do one record per batch with a screenshot; chaining two rows broke once.
-- **Don't touch:** other existing TXT records, such as `_cf-custom-hostname` and `_openai-site-verification`.
+- **Don't touch:** other existing TXT records, such as `_cf-custom-hostname` and `_openai-site-verification`, the Brevo records (§10: `brevo-code` TXT on `@`, `brevo1/2._domainkey` CNAMEs, `_dmarc` TXT), and the `v=spf1 include:spf.efwd.registrar-servers.com` SPF that Namecheap's email forwarding adds (it doesn't show in the connector's record list, only in public DNS).
 
 Once GitHub's DNS check passes: Settings → Pages → tick **Enforce HTTPS** (on every repo). Then verify:
 ```bash
@@ -71,8 +71,14 @@ Every form must end at `https://www.<d>/`.
    - **iPhone Safari:** numbered steps at the top, with a bouncing "Share is down here ⬇".
    - **iPhone Chrome:** "⬆ Share is up here" (Share is in the address bar; needs iOS 16.4+).
    - **WhatsApp, Instagram or Facebook in-app browsers:** "open in Chrome or Safari first".
+   - **Desktop (since 2026-10-18):** always shown. Chrome/Edge with a prompt install in one click; otherwise it opens browser steps (Chrome: install icon in the address bar or ⋮ → Cast, save and share → Install page as app; Edge: ⋯ → Apps → Install this site as an app; Safari: File → Add to Dock; Firefox: can't, use Chrome/Edge). Before this it only appeared when Chrome fired `beforeinstallprompt`, so Raj "didn't see it".
    - **Hidden** when the site is already running as an installed app.
-6. **Testing:**
+6. **How the button looks (Raj's choices):**
+   - The app icon (`img/icon-192.png`, 28 px round) + "Install app"; on ≤420 px the label shortens to "Install" (`<span class="install-x"> app</span>`).
+   - Background = the site's app colour (tech `#202321`, paisa `#1d6b4f`), white text, faint white outline in dark mode. Never `var(--ink)`: that turns white in dark mode.
+   - A pop + accent ring, **3 times** after load (`animation: … 3`), then still; pauses on hover; off for reduced-motion. Raj first asked for it to "keep popping", then said the site flickered, so don't make it infinite.
+   - **No `hidden` attribute in the HTML.** It is visible from the first paint and hidden only by `@media (display-mode:standalone){.install{display:none!important}}`. Showing it from JS after load shifted the header on every page load (the "flicker").
+7. **Testing:**
    - The Claude browser pane can't register service workers, so test the PWA in Raj's Chrome on localhost (`python -m http.server <port>`), then unregister and clear caches.
    - For the iPhone dialogs, use a throwaway copy with `isIOS = true ||` or a fake CriOS `ua`. Delete it before committing, and check it returns 404 on the live site.
    - Use the browser pane's `mobile` preset for the Android path (reload after switching).
@@ -110,7 +116,51 @@ Every form must end at `https://www.<d>/`.
 - iOS builds go through a cloud Mac (Codemagic), since Raj is on Windows.
 - Apple guideline 4.2 rejects plain web wrappers. The app needs offline use, notifications for new lessons and episodes, saved progress, and native share.
 - Play's **financial features declaration** for Paisa: education and calculators only, no loans, trading or advice.
-- Each site hosts a privacy policy page; there's no data collection.
+- Each site hosts a privacy page at `#privacy` (§10). The only data collected is an email address a visitor chooses to give, stored in Brevo.
+
+## 9. Social icons
+
+- `SOCIAL` entries have `icon` (key into an `ICONS` map of 24×24 SVG paths) and an optional `color`. `fillSocial()` renders round icon buttons with `aria-label` + `title`; entries without `icon` stay text pills.
+- Icons: YouTube `#ff0000`, Instagram `#e1306c`, Facebook `#1877f2`, X (no colour, follows the theme, `https://x.com/samjhowithraj`). The cross-site link is an icon too: tech site → ₹ coin (`money`, `var(--green)`), money site → violet AI sparkle (`tech`, `#8b5cf6`), with the site name in the title.
+- Pass the colour as `--sb`, **not `--brand`**: the money site already defines `--brand` on `:root`, which turned the X icon green.
+- The header hides `.social` under 700 px (the Install button needs the room); the footer and About page still show them.
+
+## 10. Email sign-up (Brevo)
+
+Raj chose sign-up boxes, **not** a login wall: a login wall would block Google indexing and video viewers. MailerLite was dropped because its free plan shrank to about 250 subscribers (2026). Brevo's free plan: 300 emails a day, large contact limit, "Sent by Brevo" footer.
+- **Account:** Brevo org "techsamjhoraj", Raj's login, used for both sites. Lists: **Paisa lessons** (#3), **Tech lessons** (#4). Forms: "Paisa lessons sign-up" and "Tech lessons sign-up" (Marketing → Forms), Full page/embedded, **double confirmation email** with the default DOI template.
+- **On the site:** `const SIGNUP = { action: "<sibforms URL>" }` and `signup(lead)` returns the box (empty string while `action` is empty, so the box can ship switched off). The submit handler posts `FormData` with `EMAIL`, `email_address_check` (empty honeypot), `locale=en`, `html_type=simple` via `fetch(..., { mode: "no-cors" })`, then shows "check your inbox". The action URL comes from the form's Share → Simple HTML code (`action="https://b84d134c.sibforms.com/serve/…"`).
+- **Where the box sits:** home/classroom page, inside `<article class="lesson">` at the end of every lesson (outside the article it lands in the page grid under the sidebar), and the Series/Upcoming list.
+- **Privacy page `#privacy`** on both sites, linked in the footer: no account needed, progress stays in local storage, email only if you sign up, stored by Brevo, opens/clicks may be counted, unsubscribe link, deletion via samjhowithraj@gmail.com, no analytics/cookies, GitHub Pages logs. Footer wording changed from "No sign-up" to "No tracking · Privacy".
+- **Never put a Brevo API key in the site** (anyone could read the list or send mail). Raj once pasted one in chat; it wasn't in the account, but if one appears, have it deleted (Settings → SMTP & API → API keys). Forms don't need a key.
+- Seeing subscribers: Brevo → Contacts → Lists (count per list), or the form's stats.
+
+## 11. Brevo sending domains and senders
+
+- Settings → Senders, domains, IPs → Domains → Add a domain → skip the branded subdomain → **Manual** (not Automatic, which wants Namecheap access). Brevo shows 4 records; read the values with JS from the page's inputs (the DMARC value is masked in tool output: swap `=@:;` for words to read it).
+- Add them with the Namecheap connector `dns_records_save` (it only adds): TXT `@` `brevo-code:8294604a05e2c479ad174e3ddcf0afed` (same code for both domains), CNAME `brevo1._domainkey` → `b1.<domain-with-dash>-com.dkim.brevo.com`, CNAME `brevo2._domainkey` → `b2.…`, TXT `_dmarc` `v=DMARC1; p=none; rua=mailto:rua@dmarc.brevo.com`. Public DNS (`https://dns.google/resolve?name=…&type=…`) showed them in about 40 s; then click **Authenticate domain** (the records page text stays stale; check the Domains list). Both domains are Authenticated.
+- Senders (all Verified): **techsamjhoraj** <updates@techsamjhoraj.com>, **Paisa Samjho Raj** <updates@paisasamjhoraj.com>, **Samjho with Raj** <samjhowithraj@gmail.com> (Brevo's default; Raj asked for these names). The updates@ addresses have no inbox: set reply-to samjhowithraj@gmail.com on campaigns. Brevo warns that freemail senders go to spam; use the updates@ senders for announcements.
+- Brevo's Add sender page often freezes when typing with `computer.type`; use `form_input` for the fields, and reload if a screenshot times out. Skip the "Brand your domain" pop-up.
+
+## 12. "Ask Raj" chat helper
+
+- Raj chose a **rule-based** helper (no AI, no keys, nothing sent anywhere) on both sites, named **Ask Raj** with the ☕ icon (earlier "SamjhoBot"). The header says "Automated helper" and the greeting says it is not Raj himself; keep that.
+- Code: `askRaj(BOT)` builds a floating button (`.cb-fab`, app colour, "☕ Ask Raj" on phones too) and a chat panel (`.cb-panel`; bottom sheet under 480 px; tapping an internal link closes it on phones). `BOT = { tagline, foot, hello, chips, rules: [[keywords[], reply | fn(t)]], fallback }`; replies may be `{ text, chips }`. Matching lowercases the text; the **first matching rule wins**.
+- Tech brain: chai shop (menu, order masala/adrak/elaichi/tulsi, bill with the Lesson 7 ₹5 discount over ₹50) plus course guide (Python, chatbot, Agentic AI, Upcoming, install, email, contact; "how are you built" → dictionary + if-else, chatbot Parts 2–3; "bye" → Lesson 10 break).
+- Money brain: maps topics to `L(id)` lesson and `C(id)` calculator links; the **advice rule comes first** ("which fund", "best stock", "recommend", "tips", "crypto"…) and refuses (not SEBI-registered, points to the costs/index/allocation lessons). Every topic reply ends with "Educational only, not advice."
+- Rule-order gotchas found in testing: "where do i start" matched the order rule via "do" (removed "do", "one", "ek", "give"; start rule placed before order/bill); "expense ratio" matched budget via "expense" (fees rule placed before budget). Test new keywords with a quick script that sends messages and reads the last bot reply.
+
+## 13. Series page: mark an episode live
+
+On paisasamjhoraj.com `#series`, `EP_LIVE = { "01": "https://youtu.be/GyPQ-RxBRi8" }` drives it: live parts get a linked title and a green "▶ Watch" chip; the first not-live part says "Coming next". When a new part goes public, add its long-video link (check it with `https://www.youtube.com/oembed?url=…`), bump sw, commit, ask Raj, push. This is also step 7 of the publish checklist in memory.
+
+## 14. Editing and shipping checklist
+
+- Raj approves every push ("Push both sites live?"). Commit each repo separately with the samjhowithraj-007 identity.
+- `index.html` on both sites uses **CRLF** line endings. Patch with Python in binary mode and keep the file's newline (Git Bash `sed -i` and text-mode Python rewrote whole files once). Long Python heredocs can break in Git Bash: write the script to the scratchpad and run it.
+- Bump `VERSION` in each `sw.js` for every change to `index.html`.
+- Test locally with `python -m http.server` via a temporary `.claude/launch.json` in the working folder (delete it after), at desktop and the `mobile` preset, light and dark. A hidden browser pane can't screenshot: read computed styles with JS instead. The browser caches `index.html`; add `?v=N` to the URL.
+- After pushing, poll the live page for a string from the change (`curl -s "https://www.<d>/?nc=$RANDOM" | grep -q …`); deploys take 10–40 s. Tell Raj to press Ctrl + Shift + R if he still sees the old version.
 
 ## Backup
 
