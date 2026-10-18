@@ -22,4 +22,5 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 ## Status
 - [x] Part 11 — live 2026-10-18: YouTube shorts/EyDvdtNI5NY, Instagram reel/DeoryoPyge3, Facebook reel/1399228388992217 + Story, X status/2111798526510612726, site #python-11
 - [x] Part 12 — live 2026-10-18: YouTube shorts/RldEdMI_Nak, Instagram reel/DeowJJcy07-, Facebook reel/2120544428832638 + Story, X status/2111808259829178424, site #python-12
-- [ ] Part 13 — Lucky chai: import random
+- [x] Part 13 — live 2026-10-18: YouTube shorts/J4NKlBToNDE, Instagram reel/Deoz7E1SinK, Facebook reel/28791060330516783 + Story, X status/2111816104603713963, site #python-13
+- [ ] Part 14 — Bill sundar banao: f-string
