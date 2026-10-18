@@ -177,6 +177,19 @@ AI clip or family picture for that point. "POINT n/5" badges beside his box; the
 Planner window + a red "Full episode dekho 👆" button, then an end card sending viewers to the long video (yt:
 Subscribe, ig/fb: Follow). Same disclaimer line in the captions.
 
+**This Short layout is THE Short layout for every series** (Raj rejected a newly invented Tech Explainer Short as
+"ugly, two frames", 18 Oct 2026). Copy `build-short.py`'s CSS verbatim and change only content; the Tech Explainer
+version is `vlog1/videos/tech-explainer-01/build-mpshort.py` + `mpshort.css` (same template, a dimmed blurred AI loop
+under a gradient wash as the only change, because Raj asked for an AI-theme background). Rules learned there:
+- Frame 0 is a curiosity question as the hook line ("AI se naukri jayegi?"), never a title or a greeting.
+- One line each: hook ≤ ~24 characters at 62 px, caption ≤ ~30 characters; a wrapped caption hides behind the cam box.
+- Anything that must sit over a clip (a reply bubble) goes in its own `clip` div with z-index above `.aiv` (4); inside a
+  `.scene` (z 3) it is hidden under the video.
+- After the flat cut, run `check-labels.py <final.mp4>` (medium model on the FINAL audio, flags scene/cut/take/number);
+  map flagged flat times back to raw with cut-map.json and drop those kept ranges. False hits: मसीन, टेक्नोलॉजी.
+- Snapshot 8–10 moments and compare with the Money Plan Short sheet before rendering; Raj can pick between two Shorts
+  (A: the Short take, B: lines cut from the long take) when one is unsure.
+
 **8. Finish**: `finish.sh` (render segmented 1080p, BT.709, append the shared outro, voice −15 LUFS with Every Dawn
 ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old versions kept as `-v1`), then
 `short-finish.sh` (yt + ig). Long ≈ 1 h 10 min render on this laptop, Shorts ≈ 8 min each. Send a 60 s sample first.
