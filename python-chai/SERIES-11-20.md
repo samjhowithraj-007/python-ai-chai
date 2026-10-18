@@ -26,4 +26,5 @@ Deliver to `Videos/YouTube Renders/python-chai-NN/` with `_tools/deliver.sh` (ol
 - [x] Part 14 — live 2026-10-18: YouTube shorts/wnio0LRNiRk, Instagram reel/Deo3rF_SbdJ, Facebook reel/1592885865313336 + Story, X status/2111824189233778735, site #python-14
 - [x] Part 15 — live 2026-10-18: YouTube shorts/N1696XD-G3Y, Instagram reel/Deo6TwdSEPz, Facebook reel/1914341109533052 + Story, X status/2111829937133064663, site #python-15
 - [x] Part 16 — live 2026-10-18: YouTube shorts/sGATSvBF0Ow, Instagram reel/Deo87Q6ydp0, Facebook reel/1262797539357255 + Story, X status/2111835689381929347, site #python-16
-- [ ] Part 17 — Naye customer kitne? set
+- [x] Part 17 — live 2026-10-18: YouTube shorts/JvxTW-VUz2Q, Instagram reel/Deo-7i9S4hW, Facebook reel/1410611154576706 + Story, X status/2111840133272027560, site #python-17
+- [ ] Part 18 — Dukaan ka time: datetime
