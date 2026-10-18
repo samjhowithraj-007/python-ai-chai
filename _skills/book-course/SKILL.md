@@ -1,9 +1,9 @@
 ---
 name: book-course
-description: Raj's (Samjho with Raj) workflow for making an illustrated programming e-book (English + Hinglish editions, Chotu chai-cup mascot, every code output really run) and selling it with free teasers on techsamjhoraj.com, plus the plan for turning a series into a training course. Use when Raj asks for a book, notes PDF, e-book, workbook, course, training material, or "put my book on the site / sell it".
+description: Raj's (Tech Samjho Raj) workflow for making an illustrated programming e-book (English + Hinglish editions, Chotu chai-cup mascot, every code output really run) and selling it with free teasers on techsamjhoraj.com, plus the plan for turning a series into a training course. Use when Raj asks for a book, notes PDF, e-book, workbook, course, training material, or "put my book on the site / sell it".
 ---
 
-# Books and training courses (Samjho with Raj)
+# Books and training courses (Tech Samjho Raj)
 
 The reference build is `C:\samjhowithraj\vlog1\videos\python-chai-book\` ("Python with Chai: From Basic to Expert",
 30 chapters × 10 A5 pages ≈ 330 pages). **Copy that folder for a new book and change only the content files.** Don't
@@ -51,12 +51,20 @@ invent a new layout (see the reuse-approved-templates rule).
   - Per-chapter PDFs: `out/notes/python-N-{en,hi}.pdf`
   - Teasers: `out/notes/python-N-{en,hi}-preview.pdf`
   - Covers: `out/cover-{en,hi}.png`
-  - Banner: `python promo.py` gives `out/book-promo.jpg` (1280×720, used for the ad panel and social posts).
+  - Ads live OUTSIDE the book folder: `videos/book-ads/ads.py` (reads the book's fonts and cover only) gives
+    `book-ads/out/book-ad-{wide,post,story}.jpg` + CAPTIONS.md. Check the wide one by eye before using it as the
+    site's `media/book-promo.jpg`.
 - **Gotchas.**
   - Build any edit to a content file with an editor or a script file, not a bash heredoc: heredocs turn `\n` into
     real newlines. After editing, run an `ast.parse` check.
   - Fix seeds for `random`. Give each chapter its own data file names.
   - pytest runs from `.venv-tools`.
+  - Fonts must be the **Latin** subset woff2 (DM Sans was once a 7 KB wrong subset, so all body text fell back to serif).
+  - Overflow fixes: answers are packed by size (~40 lines a page). The contents page is split over 2 pages.
+    `ex3_on_p7=True` gives a long ex4 page 8 to itself. `data-overflow` holds the overflow in pixels, so a 2px
+    overflow just needs a shorter explanation.
+  - The website's index.html is CRLF: after editing it with Python, check `git diff --stat` is small.
+  - One session per book: never let two sessions edit python-chai-book at once.
 
 ## Selling: what goes public and what doesn't
 - **Never** put a full-book or full-chapter PDF on the website or in a public repo. Only the `*-preview.pdf` teasers
