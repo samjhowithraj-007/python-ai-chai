@@ -1122,6 +1122,28 @@ ffmpeg -i master.mp4 -stream_loop -1 -i bed.mp3 -filter_complex \
  -map 0:v -map "[a]" -c:v copy -c:a aac -b:a 256k -shortest master-music.mp4
 ```
 
+### Background noise / "whoosh" under the voice (learned on Tech Explainer 01, 18 Oct 2026)
+
+**Symptom:** Raj hears a swelling "whoosh" under his voice (he thought it came from the looping AI background; no
+animation has any audio). **Cause:** quiet room tone in the raw (fan/AC, ~-67 dB, bass-heavy) is inaudible at raw
+level, but becomes audible once the voice is boosted ~12 dB to YouTube level. The HyperFrames render's own audio
+processing, the 1.05x speed-up and a *dynamic* `loudnorm` (it raises the volume in every pause) turn it into swells.
+**Fix (no re-render):** never ship the render's audio. Rebuild the voice from the RAW take and mux it under the picture:
+
+```bash
+python scripts/clean-voice.py --raw raw/long-raw.mp4 --cut-list cut-list.json --out renders/voice-clean.wav --speed 1.05 --lufs -15
+ffmpeg -i renders/render.mp4 -i renders/voice-clean.wav -map 0:v -map 1:a -c:v copy -c:a aac -b:a 256k -shortest body.mp4
+```
+
+It high-passes at 110 Hz, learns a noise profile from the quietest 0.75 s gap (`afftdn` + `sample_noise`), gates the
+gaps between words, applies the same cuts (20 ms fades) and speed-up, then ONE fixed gain (no dynamic loudnorm).
+Between-word noise drops from about -52 dB to -83 dB at the same voice level. Check sync with a cross-correlation at
+three points (within a frame), then add the music bed (above) under the clean voice: one continuous bed, a little
+louder in the outro, never two copies of the track.
+**Debug order when Raj hears a sound:** send 12 s A/B samples, one pipeline step each (raw → raw louder → cut → speed →
+cut+speed → after render → gain), and let his ears pick the first one that has it. Ffmpeg filter paths can't contain
+`C:` (use relative paths), and ffmpeg 7+ replaced `-filter_complex_script` with `-/filter_complex <file>`.
+
 ## Animating glass (read before writing any entrance)
 
 **Never fade a glass element through an ancestor's `opacity`:** Chrome drops `backdrop-filter` while any ancestor is
