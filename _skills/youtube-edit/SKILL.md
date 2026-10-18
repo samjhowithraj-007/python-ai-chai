@@ -106,7 +106,8 @@ anchors), `fit-clips.py`, `screen-scan.py`, `finish.sh` / `short-finish.sh`. Sha
 Money Planner `#planner`, Money Plan Series); his courses and iOS/Android apps will sell there later. Every script names
 the site mid-episode (tied to that topic's calculator or lesson) and at the end; the studio screen shows the real page
 when he says it; the outro walks through the Money Planner; the Short ends on it; descriptions, pinned comments, Reels
-captions and the FB post lead with it. The old samjhowithraj.online tracker is retired: never show it. If his recorded
+captions and the FB post lead with it. The outro (step 6 highlights the homepage "Get new lessons by email" box) and the
+end of every script ask viewers to sign up for email updates (course updates and discount offers) at paisasamjhoraj.com. The old samjhowithraj.online tracker is retired: never show it. If his recorded
 voice says an old domain, show a correction card at that exact moment (old name struck through in red,
 "paisasamjhoraj.com ✓" popping in; `o-fix` in `build-draft.py`, `fixs` in `build-short.py`).
 
