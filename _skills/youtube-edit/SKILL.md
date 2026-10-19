@@ -1676,3 +1676,12 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   date → time. Re-`find` the Schedule button after the panel opens: an old Post ref does nothing, and navigating away silently
   drops the draft. The default "tomorrow 00:00 local" is already a valid future time, so never click Schedule before setting
   all three. Check the Scheduled tab ("Scheduled for … (local time)"; 07:30 CEST = 11:00 IST).
+- **Scheduling via Claude in Chrome (19 Oct, promo set):** the Meta Business Suite *reel* composer works: Raj picks the file
+  in the native window, then "Customize post for Facebook and Instagram" gives separate captions, and Share → Schedule
+  uses the account time zone (Europe/Vienna: 21:00 IST = 17:30 CEST). The Meta *Create post* (photo carousel) page
+  froze Chrome every time something was typed into it, and a frozen business.facebook.com tab blocks the whole
+  extension. Don't retry more than twice. Hand the carousel and Story to Raj (caption from the review page) or try the
+  next day after a Chrome restart. X: the toolbar "Schedule post" icon and the final Schedule button often need a second
+  click, and a video must finish processing before Schedule works. Confirm in x.com/compose/post/unsent/scheduled.
+  Scheduled replies don't exist on X, so put the links in the main post. Mind DST: on 25 Oct Europe is on CET
+  (11:00 IST = 06:30 CET).
