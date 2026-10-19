@@ -225,5 +225,15 @@ invent a new layout (see the reuse-approved-templates rule).
   the file exists. Sandboxed checks may not see it; check with a command outside the sandbox.
 - **Track every PDF:** `python C:\samjhowithraj\tools\pdf_catalog.py` rebuilds the PDF Library page
   (https://claude.ai/artifact/Hks2tq4VEAJNeRMQCb1XT5). Add a PRODUCTS rule when a new book or pack is made or goes on sale.
+- **Sales numbers:** read Gumroad → Sales (read only); its prices are in ₹ (the Products list shows $). Count real buyers
+  only: leave out Raj's own test purchases and refunds. A Sunday task (gumroad-weekly-sales) writes
+  `reports/pdf-sales.json` and republishes the PDF Library.
+- **Listing text comes from the real file:** write the Gumroad description from the maker session's hand-over (tabs,
+  formula counts, what's really inside), never ahead of the file. A draft written before the sheets existed promised a
+  PDF how-to and progress bars that weren't there.
+- **Google Sheets copy link:** Raj uploads the .xlsx to his Drive, saves it as a Google Sheet, shares it as Viewer, and
+  ends the link with `/copy`. It goes only in the receipt message, so only buyers see it.
+- **Free gifts stay off Gumroad:** the Python with Chai cheat sheets are a free gift for email subscribers (status
+  "subscriber gift" in the PDF Library), not part of the paid download.
 - **Hand-offs:** files + description + price → 💳 Payments & Gumroad (Raj publishes); teasers → the website session; ads →
   📢 Book ads & sales. Every review or Raj step also goes as one line to the Content Planner.
