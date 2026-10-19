@@ -175,7 +175,8 @@ On paisasamjhoraj.com `#series`, `EP_LIVE = { "01": "https://youtu.be/GyPQ-RxBRi
 ## 15. Editing and shipping checklist
 
 - Raj approves every push ("Push both sites live?"). Commit each repo separately with the samjhowithraj-007 identity.
-- `index.html` on both sites uses **CRLF** line endings. Patch with Python in binary mode and keep the file's newline (Git Bash `sed -i` and text-mode Python rewrote whole files once). Long Python heredocs can break in Git Bash: write the script to the scratchpad and run it.
+- **Before every push:** `node ~/.claude/skills/website-app/scripts/check-inline-js.mjs index.html` must print ✓ (see "Lessons from 19 Oct 2026 (paisasamjhoraj.com session)").
+- **Line endings differ by repo and can change** (paisasamjhoraj.com `index.html` was LF on 19 Oct 2026, techsamjhoraj.com CRLF; check with `git ls-files --eol index.html`). Patch with Python in binary mode, detect the newline (`"\r\n" if b.count(b"\r\n") > 100 else "\n"`) and keep the file's newline (Git Bash `sed -i` and text-mode Python rewrote whole files once). Long Python heredocs can break in Git Bash: write the script to the scratchpad and run it.
 - Bump `VERSION` in each `sw.js` for every change to `index.html`.
 - Test locally with `python -m http.server` via a temporary `.claude/launch.json` in the working folder (delete it after), at desktop and the `mobile` preset, light and dark. A hidden browser pane can't screenshot: read computed styles with JS instead. The browser caches `index.html`; add `?v=N` to the URL.
 - After pushing, poll the live page for a string from the change (`curl -s "https://www.<d>/?nc=$RANDOM" | grep -q …`); deploys take 10–40 s. Tell Raj to press Ctrl + Shift + R if he still sees the old version.
@@ -228,3 +229,19 @@ After any change to this skill, copy it to `C:\samjhowithraj\vlog1\.claude\skill
   processes can keep port 8787: stop them by command line before restarting.
 - **Patching index.html (CRLF):** write patch scripts to files with raw strings. Inline Python in a bash heredoc once
   turned the regex word boundary (backslash + b) into a backspace character; after a patch, search the file for byte 0x08.
+
+## Lessons from 19 Oct 2026 (paisasamjhoraj.com session)
+- **Syntax-check before EVERY push (paisasamjhoraj.com was broken for about 3 minutes).** A `// comment` pasted into the
+  middle of a one-line `fetch(…, { body: … }) });` commented out the closing `});`, so the whole page script stopped.
+  It got pushed because the build step was chained as `node tools/build-index.mjs | grep -v ERROR && git push`: the
+  `grep` succeeded, which hid the build's failure. Rules:
+  - `node ~/.claude/skills/website-app/scripts/check-inline-js.mjs index.html` parses every inline script and the
+    JSON-LD and flags backspace bytes; gate the push on it: `check && build && git push`. Never pipe a check through
+    `grep`/`tail` before `&&` (the pipe's exit code is the last command's).
+  - Put comments on their own line, never in the middle of a line of code.
+  - After the LAST edit, reload and do one real action again (e.g. ask Ask Raj a question). A test done before a "tiny"
+    edit doesn't count.
+  - After pushing, poll the live page for a string from the change, then open it once in the browser pane and check
+    the console for errors.
+- **Grid columns holding long unbreakable content** (formula boxes with `white-space:nowrap`) need
+  `grid-template-columns:minmax(0,1fr)`, not `1fr`, or the column widens and the phone page scrolls sideways.
