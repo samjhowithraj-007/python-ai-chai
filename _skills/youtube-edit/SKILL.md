@@ -336,6 +336,8 @@ with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwi
 sweeping "Free notes + code" (or the lesson title) on the word. Caption: "Free notes + code: techsamjhoraj.com". Never a
 mock-up; re-capture if the page changed.
 
+**Website demo (when Raj says "add the website demo"; since 19 Oct 2026):** a REAL screen recording of techsamjhoraj.com running the part's code, made with `videos/python-chai-live-demo/record.mjs` (puppeteer-core + hyperframes chrome-headless-shell, CDP screencast, drawn cursor, dark theme): lesson page → ▶ Run → output → Edit code (change one value) → Run again (optionally Playground + Stop on an endless loop). Encode with `-g 30`, place it as a 720x837 `webwin` video in the approved Short frame (`python-chai-live-demo/build-short.py` scene S2), sync captions/POINT cards to `rec/marks.json`. It replaces the static website-glimpse scene. Selling lines: free, no install, phone pe bhi; "almost every" Python with Chai book example runs (ch 25/27/29 need Colab); future AI/LLM/Agentic lessons too. Never show the private discount code; the Diwali offer is "email do, Raj sends the code" (Brevo mails: check Promotions/Spam).
+
 **Thumbnail (every Short):** dark ink + amber/cyan glow + grid, series/part pill at top, huge two-line hook (second line
 coloured), a LEFT column with one hero card, one code line and a rotated yellow badge, and **Raj's photo bottom-right**
 (`financial planning/videos/_shared/thumbnail/raj-cutout.png`, 2560x1440 placed at left -200, top 820, 2048x1152, cyan
