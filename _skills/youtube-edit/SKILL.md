@@ -1655,3 +1655,21 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   re-send only when the only differences are your own edits (the publish wrapper doesn't count).
 - **Code on screen is run first:** every snippet in a script, terminal demo or teleprompter is executed with piped test input
   before it's used. The demo lines show that exact output (Part 4: "MENU" → Masala, Adrak! · "  Price " → Rs 20).
+- **Website-features promo reel (`videos/sites-promo-01`, 19 Oct, Campaigns):** copy `python-chai-live-demo` (record.mjs +
+  build-short.py) and change content only. Lessons:
+  - In record.mjs, `mark()` must use the wall clock (`Date.now()/1000 - T0`), not the last frame's time. No frames arrive while
+    the screen is still, so frame-time marks run early and segments show the previous page.
+  - Never build the clip with the ffconcat list (`frames.txt`). It rounds each frame to the jpeg time base and drifted ~4 s on 40 s.
+    Use `cut.py`: it picks frames by timestamp at a fixed 30 fps and cuts segments → `demo.mp4` + `cut-map.json`. Set each
+    segment's end before the next navigation (find the jump in frame sizes).
+  - For calculator demos, scroll so the slider AND the result row are both on screen (`fieldTop(k)`). At 860 wide the results
+    sit below the form.
+  - Close a chat panel (Ask Raj) before navigating by hash. It stays open across routes and covers the next shots.
+- **Claude in Chrome uploads cap at 10 MB per call.** For a ~35 s reel, make `upload-*.mp4` with two-pass x264 at
+  `-b:v 1950k` + `-b:a 128k` (≈9.4 MB). Meta Business Suite has no file input until a click opens the native picker,
+  so Raj picks the file there (he can pick the full-quality render).
+- **Scheduling (YouTube):** Studio → Visibility → Schedule: set the time zone to "(GMT+05:30) Kolkata" FIRST, then the date,
+  then pick the time from the list (typing in the time box does nothing). Community posts: Post ▾ → Schedule post → Kolkata →
+  date → time. Re-`find` the Schedule button after the panel opens: an old Post ref does nothing, and navigating away silently
+  drops the draft. The default "tomorrow 00:00 local" is already a valid future time, so never click Schedule before setting
+  all three. Check the Scheduled tab ("Scheduled for … (local time)"; 07:30 CEST = 11:00 IST).
