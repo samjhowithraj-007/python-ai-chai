@@ -249,6 +249,9 @@ folder for Part N. Raj reviewed this part over many rounds; these are his notes 
 - **Story characters (Rohan):** cut the AI character out of his photo (`npx hyperframes remove-background img.png -o cut.png`),
   crop slivers of other people, place him in a good Pexels scene (blurred, dimmed, slow parallax), add chips/props popping
   on his words. When Raj says "Rohan", show Rohan, never a stock stranger. Crop his photo to the face in small thumbnails.
+- **A story character's facts follow what Raj said on camera** (19 Oct 2026): check the final transcript and copy his words
+  into the script, SERIES.md, teleprompter and later episodes (Rohan is "B.Tech final year": the script said B.Com, Raj said
+  B.Tech). Story details must fit those facts (an engineering assignment, not accounting).
 - **Hinglish lines on scenes are plain bold text** (white, cyan key words, dark text-shadow) in the scene's free space,
   never a white plate/bubble, and never over chips or faces; a line that would cover the animation goes above Raj's head
   (x 930–1910, y ~400, wrap ≤ 2 lines) or at the bottom of the studio. Badges/chips must be in front of the cut-out (z-index).
