@@ -269,3 +269,27 @@ invent a new layout (see the reuse-approved-templates rule).
   private `money-book/templates/`, since they would give the product away.
 - **Two sessions editing one skill at once lose each other's text.** Append, then re-read with grep and confirm the
   section is there after the push.
+
+## Lessons from 19 Oct 2026 (📘 Tech books: "50 AI Prompts" pack)
+- **Prompt packs with real AI replies** (`vlog1/videos/ai-prompts-pdf/`, private `*` .gitignore):
+  - `prompts_data.py` holds every prompt as an (en, hi) pair. `[brackets]` mark what the reader changes.
+  - `run_prompts.py` sends each prompt exactly as printed (brackets removed, no system prompt) and saves the replies in
+    `outputs.json`. It skips the ones already saved, and `--redo N` reruns one.
+  - `make_pdf.py` refuses to build if a reply is missing (`draft` = layout only, never sell).
+  - The Hinglish prompt is run separately, so the Hinglish book shows a real Hinglish reply.
+  - Cost: 100 calls on `claude-haiku-5-5` with effort `low` is cents. Haiku has no server-side `fallbacks`, so leave that
+    parameter out.
+- **Never trim a real reply to fit.** If the overflow report lists a page, give that reply the next page to itself
+  (`SPLIT` set: prompt + tip + "reply on next page", then the reply), and add the extra pages to the contents numbers.
+- **Render the reply's markdown.** Raw output in a mono `<pre>` showed `|` pipes, backticks and tiny text. Convert
+  code fences to code blocks, `|` rows to a table, and `**`, `*` and backticks to bold, italic and code. Keep the words
+  exactly as the AI wrote them.
+- **Heredoc gotcha, part 2:** `r"\1"` inside a bash heredoc'd Python edit was saved as the control character chr(1), so
+  `<b>\1</b>` printed nothing. Write regex edits with the Write/Edit tool, then check `ast.parse` and `s.count(chr(1)) == 0`.
+- **Key steps: trust the disk, not the report.** Five times a "saved"/"ran it" report didn't match the disk. Check the
+  file (outside the sandbox) before doing anything. Never read a terminal where a plain `Read-Host` was used, because it
+  shows the key. Use the hidden-prompt `save-anthropic-key.ps1`.
+- **Page screenshots that work:** put the chosen pages (stacked, not a grid) in one HTML file via `B.doc`, then run Chrome
+  `--screenshot --window-size=559,<794 × pages>`.
+- **Selling a pack:** files + description + price → 💳 Payments & Gumroad. Raj asked (19 Oct) that once a PDF is live,
+  📢 Book ads & sales makes the ad and posts it on all his platforms (book and product ads are theirs, not 📣 Campaigns'), so send them the request at hand-off time too.
