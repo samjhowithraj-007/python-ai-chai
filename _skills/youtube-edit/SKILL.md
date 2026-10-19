@@ -1630,3 +1630,11 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
 - **Approvals:** any review, post or push that needs Raj → also send the Content Planner one line (what · where Raj
   answers · link) and "done: <what> + links" after. Raj reads one list, on his Shoot Plan page.
 - **Reports Raj reads are visual Artifact pages, never .md** ("I can not read the md file").
+- **Pre-build mechanics (Paisa Samjho 1, `short-01/build-short-01.py`):** write beats as plan seconds `BEATS_PLAN`; when
+  the take is cut, `beats.json` (flat second each beat starts) + `short/cut-map.json` re-time everything via `M()`.
+  Until then `#cam` shows a striped "your take goes here" box. Cover: `short-01/thumbnail/cover.html` + `shot.cjs`
+  (puppeteer-core from the npx cache), Python Chai layout, Raj cutout bottom-right.
+- **Render gotchas found 19 Oct:** no cursive/handwriting font stacks (`Segoe Print`, `Comic Sans`): lint error, the
+  renderer can't load them; use DM Sans. A highlighter with `mix-blend-mode:multiply` vanishes on a dark site: use plain
+  rgba(255,225,77,.38) + a 3px yellow ring. Show the planner capture at 1:1 (1440 wide, shifted left) so the tab is
+  readable in a 960 window; at 0.67 scale the text is mush. Chip rows of ~450 px fit "Subscription ₹99" only at 38 px.
