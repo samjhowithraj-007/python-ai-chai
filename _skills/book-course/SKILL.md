@@ -189,7 +189,7 @@ invent a new layout (see the reuse-approved-templates rule).
   💳 Payments sends a live one; planned slugs are never posted.
 - **Money products** always carry "Financial education, advice nahi" and never promise returns.
 - **Mascot by product (Raj, 19 Oct 2026):** money products (money book, Family Money Planner, tracker) use **Gullak Bhai**,
-  a clay piggy bank (kit: `C:\samjhowithrajrand\mascots\gullak-bhai\`, used once Raj approves the design). Chotu stays on
+  a clay piggy bank (kit: `C:\samjhowithrajbrand\mascots\gullak-bhai\`, used once Raj approves the design). Chotu stays on
   tech books and the AI prompts pack. Money ads swap the `chotu(...)` call for the Gullak Bhai kit; the layout stays the same.
 - **Raj's view:** Raj can't read .md files. `ADS-TRACKER.md` is the data, and `ads-tracker/build_page.py` turns it into the
   "Book Ads" Artifact page (live / drafts / calendar / ended / ideas). Republish to the SAME URL after every change.
@@ -300,7 +300,7 @@ invent a new layout (see the reuse-approved-templates rule).
 ## Lessons from 20 Oct 2026 (📗 Money Plan books: Gullak Bhai)
 - **Money content has its own mascot: Gullak Bhai** (Raj OK, 20 Oct 2026). He's a clay gullak with a coin slot on his head who
   fills up as savings grow. Catchphrase "Chhota-chhota daalo, bada-bada banao!". Chotu stays on tech/Python only.
-- **Shared kit, one source:** `C:\samjhowithrajrand\mascots\gullak-bhai\`
+- **Shared kit, one source:** `C:\samjhowithrajbrand\mascots\gullak-bhai\`
   - `gullak.py`: `gullak(pose, cls)` with 8 poses (happy, think, warn, party, point, worried, full, read)
   - `svg/`, plus transparent `png/512` and `png/256`
   - README with colours and usage
