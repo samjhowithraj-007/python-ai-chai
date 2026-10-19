@@ -190,6 +190,10 @@ under a gradient wash as the only change, because Raj asked for an AI-theme back
 - Snapshot 8–10 moments and compare with the Money Plan Short sheet before rendering; Raj can pick between two Shorts
   (A: the Short take, B: lines cut from the long take) when one is unsure.
 
+**7b. Shorts performance rules (first weekly report, 19 Oct 2026):** payoff or question in frame 1 (viewers leave in
+2–7 s), ≤ 45–50 s, captions always, one Short per day (batch posting cut FB reach from ~250 to ~6), never re-upload a
+posted reel.
+
 **8. Finish**: `finish.sh` (render segmented 1080p, BT.709, append the shared outro, voice −15 LUFS with Every Dawn
 ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old versions kept as `-v1`), then
 `short-finish.sh` (yt + ig). Long ≈ 1 h 10 min render on this laptop, Shorts ≈ 8 min each. Send a 60 s sample first.
