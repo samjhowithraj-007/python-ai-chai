@@ -345,6 +345,17 @@ with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwi
 sweeping "Free notes + code" (or the lesson title) on the word. Caption: "Free notes + code: techsamjhoraj.com". Never a
 mock-up; re-capture if the page changed.
 
+**Raw iPhone + CapCut take → flat cut (chatbot Part 4, 20 Oct 2026):** (1) denoise the MOV audio: `highpass=f=110,asendcmd`
+(sample_noise over a silent gap)`,afftdn=nr=28:nf=-50:tn=1,agate`. (2) Whisper medium on a long clip HANGS / hallucinates on
+this CPU: transcribe in 8-15 s chunks split at silences, `language="hi"`, `condition_on_previous_text=False`, drop segments with
+`len(set(text))<4`. An `initial_prompt` can come back verbatim as the "transcript" of a chunk: if a line equals the prompt,
+re-run that chunk with no prompt. (3) Keep list → energy islands (−38 dB, merge gaps ≤0.3 s, pad −0.08/+0.14) → one
+ffmpeg concat (12-15 ms fades per piece) + `atempo/setpts` 1.05 (ffmpeg 7: `-/filter_complex file`, not `-filter_complex_script`).
+(4) One fixed gain to −15 LUFS + a peak-only `alimiter=limit=0.891:level=disabled` (the gain alone clipped at +0.1 dBFS).
+(5) CapCut Remove-BG exports on black = the cam slot's black, so no matte: crop head-to-bottom (`crop=1080:1260:0:660`) and
+pad-fit 484x500 so the hands stay. (6) Label check = whisper on the FINAL flat audio. (7) Mux the clean voice + bed under
+the picture render (`render-both.sh`), never the render's own audio.
+
 **Website demo (when Raj says "add the website demo"; since 19 Oct 2026):** a REAL screen recording of techsamjhoraj.com running the part's code, made with `videos/python-chai-live-demo/record.mjs` (puppeteer-core + hyperframes chrome-headless-shell, CDP screencast, drawn cursor, dark theme): lesson page → ▶ Run → output → Edit code (change one value) → Run again (optionally Playground + Stop on an endless loop). Encode with `-g 30`, place it as a 720x837 `webwin` video in the approved Short frame (`python-chai-live-demo/build-short.py` scene S2), sync captions/POINT cards to `rec/marks.json`. It replaces the static website-glimpse scene. Selling lines: free, no install, phone pe bhi; "almost every" Python with Chai book example runs (ch 25/27/29 need Colab); future AI/LLM/Agentic lessons too. Never show the private discount code; the Diwali offer is "email do, Raj sends the code" (Brevo mails: check Promotions/Spam).
 
 **Thumbnail (every Short):** dark ink + amber/cyan glow + grid, series/part pill at top, huge two-line hook (second line
