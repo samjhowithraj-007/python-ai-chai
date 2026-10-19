@@ -237,3 +237,35 @@ invent a new layout (see the reuse-approved-templates rule).
   "subscriber gift" in the PDF Library), not part of the paid download.
 - **Hand-offs:** files + description + price → 💳 Payments & Gumroad (Raj publishes); teasers → the website session; ads →
   📢 Book ads & sales. Every review or Raj step also goes as one line to the Content Planner.
+
+## Lessons from 19 Oct 2026 (📗 Money Plan books: build gotchas)
+- **A space in the folder path breaks the fonts without any error.** The CSS `url(file:///C:/.../financial planning/...)` is
+  unquoted, so a path with a space fails and every heading falls back to serif. Encode it: `.replace(" ", "%20")` for the
+  fonts in `doc()`, for `book.py` image paths and for cover pages. After the first build, look at a page to check Caveat headings.
+- **Money check step (money-book/build.py):**
+  - Examples, mistakes and answers are "hisaab" dicts: `steps=[(name, label, expr[, unit])]`, `out` templates with `{name}`, and an `expect`.
+  - `check` fails on:
+    - a wrong `expect`
+    - any ₹ amount in the text that no hisaab produces (listed in `given` for the rare plain inputs)
+    - rule words (RBI, SEBI, repo, GST, tax…) in a chapter with no `facts`
+    - a `**` (compounding) step without `projection=True`
+    - a missing worksheet or tool
+  - Match amounts with `₹\d+(?:,\d+)*`. `₹[\d,]+` grabs the comma after "₹39,000," and fails.
+  - Test the checker by breaking one total and one amount on purpose.
+- **Money chapter = 11 pages.** It's the 10 Python-book page kinds (syntax → "rule") plus a worksheet page (blank table +
+  calculator link). Teasers still thumb pages 3–10.
+- **Looking at pages:** a headless-Chrome `--screenshot` of a CSS grid of pages came out blank. Open the PDF in the browser
+  pane instead (the first screenshot may still be loading; take another).
+- **.xlsx templates on Windows:**
+  - The xlsx skill's `recalc.py` fails here (`socket.AF_UNIX`). Instead, recalculate a copy with
+    `soffice --headless --calc --convert-to xlsx --outdir test out/*.xlsx`, then scan it with openpyxl `data_only=True` for `#` errors
+    and hand-check the key cells.
+  - Don't put `LibreOffice/program` FIRST on PATH: its own python.exe shadows the real one (no openpyxl). Append it, or
+    call `C:\Python314\python.exe`.
+  - Deliver the openpyxl file, not the LibreOffice copy, with `wb.calculation.fullCalcOnLoad = True`.
+  - Status formulas on blank tabs must handle empty input (say "Start with your income" instead of a false "OK").
+- **Template covers:** reuse the book's COVER_CSS gradient, Baloo 2, Chotu and a small "sheet" card with the example
+  numbers. Make 1280×720 + 600×600 (the square one needs its own layout, or it looks empty). Generator scripts stay in the
+  private `money-book/templates/`, since they would give the product away.
+- **Two sessions editing one skill at once lose each other's text.** Append, then re-read with grep and confirm the
+  section is there after the push.
