@@ -158,7 +158,7 @@ invent a new layout (see the reuse-approved-templates rule).
 - Flow: pre-launch teaser ("coming", free preview) → after the products are published and the site's Buy buttons are
   verified live, the "Now available" carousel on YouTube Community, Instagram, Facebook page and X.
 - Raj also announced "coming soon on Amazon, Flipkart and other online stores". That's his plan, not an error.
-- **One session posts book ads** (this payments/ads session). Check the platforms for existing posts before posting.
+- **One session posts book ads:** the 📢 Book ads & sales session (since 19 Oct 2026). Check the platforms for existing posts before posting.
 - Posting gotchas (Claude in Chrome):
   - **X:** click **Post by the dialog's `[data-testid=tweetButton]`**. A coordinate miss once sent the post without its
     images, and another "Post" ref was the wrong button. Check `[data-testid=tweetPhoto]` count = 4 on the status page,
@@ -171,6 +171,28 @@ invent a new layout (see the reuse-approved-templates rule).
     never click it. Crop **Original** (4:5). Type the caption with `computer.type`, check the line count, Share, then
     verify `og:description` with curl.
   - The site's service worker can show a stale page: call `registration.update()` and reload before judging the live site.
+
+### Ad sets, tracker and approvals (worked and approved by Raj, 19 Oct 2026)
+- **New ads = word swaps on the approved designs.** `adset_nov.py` imports `ads.py` / `carousel.py` and only replaces
+  text (kicker, price line, link line, slide hooks), the same way `carousel_live.py` does. Never a new layout. Output goes to
+  `out/set/`, and a contact sheet is checked before anything else.
+- **One ad set per push, reviewed as one page.** Make every platform's version (YT community 4:5, IG/FB carousel 4:5,
+  Story 9:16, X 16:9 or 4 images), then publish ONE review page with the exact images, captions and IST times
+  (`ads-tracker/build_review.py`, plus `book-ads/POSTS-NOV.md` as the posting sheet). Raj approves the set with "OK ad set".
+- **Calendar per book:** launch week → mid-month push (chapter peek with real pages) → festival tie-in if one falls in the
+  window → "3 din baaki" → "aaj last day". Don't repeat a feed post within ~3 days; use a Story instead.
+- **Posting rules:** one platform at a time (~30 min apart), at least 3 h from that day's Shorts, full caption always,
+  never re-upload, at most 5 book comments per platform per day. Stories with link stickers are Raj's (phone app only).
+  Check dates with 📣 Campaigns so promos don't land on the same day.
+- **Codes:** only the public launch code goes in ads, and only for the products it covers (LAUNCH = the Python with Chai
+  books only; not the ₹149/₹199 sheets and packs, since ₹100 off leaves nothing after fees). No buy link in an ad until
+  💳 Payments sends a live one; planned slugs are never posted.
+- **Money products** always carry "Financial education, advice nahi" and never promise returns.
+- **Raj's view:** Raj can't read .md files. `ADS-TRACKER.md` is the data, and `ads-tracker/build_page.py` turns it into the
+  "Book Ads" Artifact page (live / drafts / calendar / ended / ideas). Republish to the SAME URL after every change.
+- **Posting days** run from one-time reminder tasks that follow `ads-tracker/POSTING-DAY.md` and ask Raj "Post now?" first.
+- **Raj's list:** every approval, Raj-only step or change to review also goes as one line to the Content Planner
+  (what · where Raj answers · review link), then "done: <what>".
 
 ## Training course (next product, same assets)
 - Plan:
