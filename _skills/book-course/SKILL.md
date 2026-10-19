@@ -188,6 +188,9 @@ invent a new layout (see the reuse-approved-templates rule).
   books only; not the ₹149/₹199 sheets and packs, since ₹100 off leaves nothing after fees). No buy link in an ad until
   💳 Payments sends a live one; planned slugs are never posted.
 - **Money products** always carry "Financial education, advice nahi" and never promise returns.
+- **Mascot by product (Raj, 19 Oct 2026):** money products (money book, Family Money Planner, tracker) use **Gullak Bhai**,
+  a clay piggy bank (kit: `C:\samjhowithrajrand\mascots\gullak-bhai\`, used once Raj approves the design). Chotu stays on
+  tech books and the AI prompts pack. Money ads swap the `chotu(...)` call for the Gullak Bhai kit; the layout stays the same.
 - **Raj's view:** Raj can't read .md files. `ADS-TRACKER.md` is the data, and `ads-tracker/build_page.py` turns it into the
   "Book Ads" Artifact page (live / drafts / calendar / ended / ideas). Republish to the SAME URL after every change.
 - **Posting days** run from one-time reminder tasks that follow `ads-tracker/POSTING-DAY.md` and ask Raj "Post now?" first.
