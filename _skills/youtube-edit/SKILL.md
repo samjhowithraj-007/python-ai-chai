@@ -403,6 +403,10 @@ drop-shadow), footer "SAMJHO WITH RAJ · techsamjhoraj.com". Render with the hyp
   `money-plan-01`), never a shared series folder. Open the folder in Explorer and copy `CAPTION.md` there too.
   **After posting**, add the part's row (YouTube, Instagram and Facebook links) to `YouTube Renders\INDEX.md`, so the
   archive always shows what went live where.
+- **Archive + clean (Raj, 19 Oct 2026), only after the part is live on all 4 platforms with links in INDEX.md:** zip `<series>-NN`
+  (skip node_modules/caches) to `OneDrive\Samjho with Raj Archive\<series>-NN\<series>-NN-YYYYMMDD-HHMM.zip` + `CONTENTS.txt` (links,
+  rebuild steps, file list), verify the zip, send only heavy files (`raw\`, `cam\`, big .wav) to the Recycle Bin (never a hard delete; keep build
+  scripts + YouTube Renders), log it in INDEX.md, tell the planner "done: <series>-NN archived · freed N GB".
 - `CAPTION.md`: Instagram caption (website "link in bio", YouTube handle), YouTube title (#shorts) + description (code,
   `https://www.techsamjhoraj.com/#<lesson-id>`, Instagram + Facebook links) + tags, Facebook text (clickable site,
   YouTube, Instagram links, 3-5 hashtags). Website text is English; videos stay Hinglish. Every Facebook link
