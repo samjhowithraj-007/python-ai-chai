@@ -1605,3 +1605,28 @@ words, a specific reason to stay in the first three seconds that the video pays 
 - **Model and tokens:** routine passes run fine on a mid-size model; a new format, or a break this file does not cover,
   deserves the strongest. Most tokens go to snapshots and tool output: one snapshot per moment, scripts over retyping.
 
+## Lessons from 19 Oct 2026 (Content Planner)
+Raj: "I don't want to repeat those mistakes again in my next video." Read these before every Short, reel or long.
+- **Shorts format:** every Short, every series (chatbot from Part 4, Paisa Samjho, AI Jobs, promos) is 9:16 in the approved
+  Money Plan Short frame (`tech-explainer-01/mpshort.css` + `build-mpshort.py`; chatbot builder `ai-chai-bot-04/build-short.py`).
+  Never the old square look again (Raj, 19 Oct).
+- **Data rules from the first channel report (`C:\samjhowithraj\reports\`):**
+  - Never batch-post. Facebook reach fell from ~250 to ~6 views after 5 same-day reels. At most 2 reels a day per
+    platform, counting the daily tech + money Shorts; space posts hours apart. A promo reel takes a Short's slot that day
+    (the series shifts one day), it never becomes a 3rd reel.
+  - The payoff or question goes in frame 1 (IG/FB viewers leave after 2–7 s).
+  - Tech Shorts ≤ 45 s (Part 3 at 67 s fell to 33% viewed vs 57–58%).
+  - End every series Short with "Part N+1 kal, subscribe/follow karo".
+  - Always caption. Never re-upload a reel that's already posted (re-uploads got 9–32 views).
+  - Keep long videos PUBLIC (YouTube Partner watch hours come only from public longs) and set each Short's YouTube
+    "Related video" to a public long.
+- **Pre-build before the shoot:** when Raj says he's about to record, build every animation, the HD website capture and the
+  music bed from the script with placeholder timings, show one snapshot sheet, then re-time to his voice when the take lands.
+- **Website glimpse needs a live page:** publish the lesson page first (ask the website session; it's a push, so Raj OKs it).
+  Re-capture if the live page changes (e.g. a Run status fix).
+- **Outros:** tech longs use `videos/_shared/tech-outro/outro.mp4` (v2, 19 Oct: Run, Playground, book, email sign-up);
+  Money Plan uses `financial planning/videos/_shared/outro/outro.mp4`. Re-capture an outro whenever its website changes
+  (README in each folder); keep the old file as -v1.
+- **Approvals:** any review, post or push that needs Raj → also send the Content Planner one line (what · where Raj
+  answers · link) and "done: <what> + links" after. Raj reads one list, on his Shoot Plan page.
+- **Reports Raj reads are visual Artifact pages, never .md** ("I can not read the md file").

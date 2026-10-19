@@ -185,3 +185,23 @@ invent a new layout (see the reuse-approved-templates rule).
 ## Script backups
 `scripts/` holds copies of the ad, carousel, Gumroad-image and EPUB builders (no book text). The working copies live in
 `videos/book-ads/` and `videos/book-epub/`; copy them back from here if those folders are lost.
+
+## Lessons from 19 Oct 2026 (Content Planner)
+- **A book after every 20 Shorts** of a series: "AI Chatbot with Chai" Vol 1 (chatbot Parts 1–20; `vlog1/videos/ai-chatbot-book/`),
+  "Paisa Samjho: Salary se Savings tak" (money Shorts 1–20; `financial planning/money-book/`), one per AI Jobs sector.
+  Draft a chapter as soon as its Short script exists; build the full book after Part 20.
+- **Money-book adaptation** of this pipeline (same look, Chotu): code examples become worked Verma-family rupee examples
+  whose arithmetic the build's check step really verifies; "real error" becomes a real money mistake; every chapter ends
+  with a worksheet + the matching paisasamjhoraj.com calculator; "Financial education, advice nahi" on the cover page and
+  every chapter; every rate, tax or RBI/SEBI rule checked on a primary source with a date, listed in the back.
+- **Small paid products:** templates (Google Sheet "Make a copy" link + .xlsx, formulas tested, "Illustrative" note per tab)
+  and PDF packs. Price floor ₹149: at ₹99 Gumroad fees leave about ₹16 a sale (₹149 ≈ ₹60). Family Money Planner ₹199.
+- **Codes:** LAUNCH (public, ₹100 off) is meant only for the 3 Python with Chai products; Raj limits it in Gumroad.
+  Never put the private 10% code anywhere.
+- **API keys for running examples:** never ask Raj to paste a key in chat. Use `C:\samjhowithraj\tools\save-anthropic-key.ps1`
+  (hidden prompt, saves to the private `.anthropic_key` the runner reads), started in a Terminal tab; confirm only that
+  the file exists. Sandboxed checks may not see it; check with a command outside the sandbox.
+- **Track every PDF:** `python C:\samjhowithraj\tools\pdf_catalog.py` rebuilds the PDF Library page
+  (https://claude.ai/artifact/Hks2tq4VEAJNeRMQCb1XT5). Add a PRODUCTS rule when a new book or pack is made or goes on sale.
+- **Hand-offs:** files + description + price → 💳 Payments & Gumroad (Raj publishes); teasers → the website session; ads →
+  📢 Book ads & sales. Every review or Raj step also goes as one line to the Content Planner.

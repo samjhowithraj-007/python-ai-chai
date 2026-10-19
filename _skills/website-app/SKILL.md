@@ -183,3 +183,23 @@ On paisasamjhoraj.com `#series`, `EP_LIVE = { "01": "https://youtu.be/GyPQ-RxBRi
 ## Backup
 
 After any change to this skill, copy it to `C:\samjhowithraj\vlog1\.claude\skills\website-app` and `C:\samjhowithraj\vlog1\videos\_skills\website-app`. Then commit and push python-ai-chai, with the same rule as youtube-edit.
+
+## Lessons from 19 Oct 2026 (Content Planner)
+- **Push only with Raj's OK, and only what he OK'd.** A single urgent page (e.g. tonight's lesson `#chatbot-4`) can go
+  out alone while a redesign waits; bump `sw` on every push. A follow-up bug fix to an OK'd page is fine; say so.
+- **Before/after first:** show phone + desktop snapshots (folder `C:\samjhowithraj\website-snapshots\<date>\`) for any
+  redesign, then push after OK. Aim Lighthouse ≥ 90, accessibility 100, `prefers-reduced-motion` respected.
+- **Design direction (Raj, 19 Oct: "professional and high-tech"):** tech site = dev-tool/AI-product look (dark-first, glow,
+  animated code hero, Ctrl+K search that opens Ask Raj); money site = fintech look (slider calculators, instant charts,
+  trust blocks: sources, "checked on" dates, bylines). Ideas only from benchmark sites; never copy design, text or assets.
+- **Weekly ideas:** scheduled task `weekly-website-polish-ideas` (Wed 9 AM) adds ranked ideas to each repo's IMPROVEMENTS.md.
+- **Ask Raj:** Step 1 = hand-written replies first, then `site-index.json` (built before each push: `node tools/build-index.mjs`)
+  searched in the browser with a passage + link. Step 2 = one shared Cloudflare Worker (`C:\samjhowithraj\ask-raj-worker\`,
+  model claude-haiku-5-5, CORS for both domains, rate limit + daily cap, key only as a Worker secret Raj sets himself);
+  falls back to Step 1 on error or after 8 s. Money answers always carry "Educational, not advice".
+- **Earning features:** Shop (books + templates + packs), Workshops page with an enquiry form, cohort waitlist. Until Raj
+  OKs Brevo forms, forms open an email to samjhowithraj@gmail.com. No investment/insurance/credit-card affiliates (SEBI,
+  AMFI, IRDAI) and no AdSense for now.
+- **Money facts on the site** carry a source and "checked on" date (e.g. card interest "up to about 45% a year",
+  checked 19 Oct 2026).
+- **Approvals:** every push or Raj step also goes as one line to the Content Planner; "done: <what>" after.
