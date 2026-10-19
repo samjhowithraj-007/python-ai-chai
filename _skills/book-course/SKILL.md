@@ -325,3 +325,21 @@ invent a new layout (see the reuse-approved-templates rule).
   - a "Sources and checks" page built from every chapter's `facts`
   - the disclaimer and "Verma family is fictional" in the copyright page, the cover chip and every footer
   - outputs `paisa-samjho-{en,hi}-full.pdf` + `cover-{en,hi}.png`
+
+## Lessons from 20 Oct 2026 (📙 Exam puzzle book: "Reasoning Samjho")
+- **Puzzle-book adaptation** (`vlog1/videos/exam-puzzle-book/`, private `*` .gitignore): same page frame, fonts, auto-fit and
+  Chrome PDF as python-chai-book. Only `topic_pages` changes: title · story · method + rule · "Draw it like this" · 4 worked
+  puzzles (easy → hard) · 3 traps · 2 practice pages · boss puzzle + cheat sheet · worked answers. About 16 pages a chapter.
+- **The check step = a brute-force solver.** `solver.py` tries every arrangement (rows, round tables, two facing rows, mixed
+  facing). `build.py check` fails unless each puzzle has exactly ONE arrangement and every printed option equals the solver's.
+  Tune clues against the solver (0 solutions → loosen, 2+ → add one clue) before writing the steps.
+- **Draw diagrams from the solver's answer** (`diagram.py`), never by hand, so a picture can't disagree with the answer.
+- **Left/right traps:** if everyone faces the same way, mirroring keeps every relative answer the same, so a "left/right"
+  trap only bites with mixed facings. Use mixed facings (or a direction-of-counting question) for those traps.
+- **Mascot by product:** exam/puzzle content uses **Dimaag Dada** (kit `videos/exam-puzzles/mascot.py`, loaded by path with
+  importlib because the book's own file is also called mascot.py). Raj stays the author and the face on the cover.
+- **One puzzle bank for book + Shorts:** `python build.py bank` → `bank/bank.json` + `BANK.md`. Puzzle IDs are chapter.number;
+  each Short names its puzzle ID, and the book logs it.
+- **Looking at pages without PIL/pdftoppm:** split the chapter HTML into groups of 4 `<section>` pages and Chrome `--screenshot`
+  each at 559 × (794 × 4).
+- Book headings follow the brand pattern ("Paisa Samjho: Salary se Savings tak" → "Reasoning Samjho: Puzzle se Selection tak").
