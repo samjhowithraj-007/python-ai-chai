@@ -245,3 +245,18 @@ After any change to this skill, copy it to `C:\samjhowithraj\vlog1\.claude\skill
     the console for errors.
 - **Grid columns holding long unbreakable content** (formula boxes with `white-space:nowrap`) need
   `grid-template-columns:minmax(0,1fr)`, not `1fr`, or the column widens and the phone page scrolls sideways.
+- **Money site redesign (live 19 Oct, Raj: "same kind as the tech site"):** reuse the tech site's look, not new ideas:
+  dark-first, faint grid + glow on `body::before`, bold system-ui headings with a gradient `<em>`, one big gold CTA
+  (`.btn.cta`) + a ghost button, byline + stats row, a live widget on the right of the hero (money: mini SIP slider
+  with the SIP calculator's own maths), a 4-card trust strip, footer columns, and a moon button (`#theme`,
+  `localStorage psr-theme`). Money colours: gold `#F5B83D` + green `#3ccf8e` (dark), `#137a4f` (light).
+  - Make it dark-first by setting `data-theme="dark"` in a tiny `<head>` script before paint, so all the older
+    `:root[data-theme="dark"]` rules keep working; the light theme is the base `:root`.
+  - Put the redesign as an override block at the END of `<style>` (later rules win) instead of editing 60 old rules.
+  - A new header button can push the wordmark onto two lines on phones: `.brand{white-space:nowrap}` and smaller
+    sizes at ≤440 px / ≤370 px (as on the tech site).
+  - `html{overflow-x:clip}` makes `scrollWidth` always equal the screen width, so a "no sideways scroll" check by
+    `scrollWidth` proves nothing. Check elements instead: any `getBoundingClientRect().right > innerWidth`.
+  - Lighthouse runs locally from the npx cache: `node ~/AppData/Local/npm-cache/_npx/<hash>/node_modules/lighthouse/cli/index.js
+    <url> --form-factor=mobile --only-categories=performance,accessibility,best-practices,seo --chrome-flags=--headless=new`
+    with `CHROME_PATH` set. Compare old (live) vs new (localhost) in the same run.
