@@ -192,7 +192,9 @@ under a gradient wash as the only change, because Raj asked for an AI-theme back
 
 **7b. Shorts performance rules (first weekly report, 19 Oct 2026):** payoff or question in frame 1 (viewers leave in
 2–7 s), ≤ 45–50 s, captions always, one Short per day (batch posting cut FB reach from ~250 to ~6), never re-upload a
-posted reel.
+posted reel. Monetization path (500 subs + 3,000 long watch hours): long videos stay Public; every Short ends with
+"Part N+1 kal, subscribe/follow karo" and its YouTube Related video points to the current Money Plan long; Raj's face
+or the payoff in the first second for Instagram.
 
 **8. Finish**: `finish.sh` (render segmented 1080p, BT.709, append the shared outro, voice −15 LUFS with Every Dawn
 ducked under it, checks, copy to `Videos\YouTube Renders\money-plan-NN\`, old versions kept as `-v1`), then
