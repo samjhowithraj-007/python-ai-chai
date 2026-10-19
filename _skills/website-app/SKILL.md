@@ -203,3 +203,28 @@ After any change to this skill, copy it to `C:\samjhowithraj\vlog1\.claude\skill
 - **Money facts on the site** carry a source and "checked on" date (e.g. card interest "up to about 45% a year",
   checked 19 Oct 2026).
 - **Approvals:** every push or Raj step also goes as one line to the Content Planner; "done: <what>" after.
+
+## Lessons from 19 Oct 2026 (techsamjhoraj.com session, technical)
+- **Lesson-only push while a redesign is uncommitted:** build the file from the live code (`git show HEAD:index.html > tmp`),
+  apply the same patch script to it, then `git hash-object -w tmp` + `git update-index --cacheinfo 100644,<hash>,index.html`
+  (and sw.js with its bump), commit, push. The working copy keeps the redesign; its own push needs the next `sw` VERSION.
+- **Run box + chat loops:** lesson code that loops on `input()` with no `break` ends with EOFError when the preloaded input
+  runs out. Keep the code exactly as in the video; the site treats that case as a normal finish ("Done in N s" + a grey
+  "No more lines in the Input box…" note). The status next to Run shows in screen captures, so check it before telling the
+  video session a page is ready (it said "Finished with an error" once).
+- **Speed (phones):** a header `backdrop-filter` over a fixed, masked grid/glow layer cost ~900 ms of layout; a long
+  font-family list (Segoe UI Variable, SF Pro…) doubled layout time. Use `system-ui,-apple-system,"Segoe UI",Roboto,sans-serif`,
+  a near-solid header, `content-visibility:auto` on lower blocks, and `main{min-height:100svh}` so the footer doesn't shift
+  (CLS) when the page renders from JS. Local Lighthouse on this PC swings 75–92 while other sessions render: alternate
+  old/new runs, compare traces (`Layout` time per pass), then confirm on PageSpeed Insights after the push.
+- **Screenshots:** plain headless Chrome clips widths under ~500 px. Use puppeteer-core + the hyperframes
+  chrome-headless-shell (as in `videos/python-chai-live-demo/record.mjs`), one browser context per shot (localStorage leaks
+  between pages otherwise). `content-visibility` blocks look blank in full-page shots; scroll them into view to check.
+- **Ask Raj build details:** `tools/build-index.mjs` runs the page's own script in a Node `vm` with a do-nothing DOM stub and
+  calls the view functions (sign-up/promo boxes stubbed out). A local `.git/hooks/pre-push` refuses a push when
+  `site-index.json` is stale. The Worker looks up passage text by id in the site's published index; it never trusts text from
+  the browser (that would make it a free Claude proxy). Test with `test/fake-claude.mjs` + `wrangler dev` (no key, no cost).
+  `wrangler.toml` changes need a full restart (`--var` and `.dev.vars` did not override `[vars]`), and old `workerd`
+  processes can keep port 8787: stop them by command line before restarting.
+- **Patching index.html (CRLF):** write patch scripts to files with raw strings. Inline Python in a bash heredoc once
+  turned the regex word boundary (backslash + b) into a backspace character; after a patch, search the file for byte 0x08.
