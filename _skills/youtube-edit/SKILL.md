@@ -1638,3 +1638,20 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   renderer can't load them; use DM Sans. A highlighter with `mix-blend-mode:multiply` vanishes on a dark site: use plain
   rgba(255,225,77,.38) + a 3px yellow ring. Show the planner capture at 1:1 (1440 wide, shifted left) so the tab is
   readable in a 960 window; at 0.67 scale the text is mush. Chip rows of ~450 px fit "Subscription ₹99" only at 38 px.
+- **Frame 0 must really show the hook (chatbot Part 4, 19 Oct):** in the Money Plan Short template every `.h` element
+  starts hidden and each scene fades in over 0.3 s. For scene 1 build it with no fade-in (`scene(..., first=True)` in
+  `ai-chai-bot-04/build-short.py`) and `tl.set('#el',{opacity:1,y:0},0)` every element that must be in frame 0 (hook line
+  plus the first prop, e.g. the "MENU" bubble). Check with a snapshot at 0.03 s: an empty panel there fails the rule.
+- **Copied part folders carry the previous part's media:** `ai-chai-bot-04` still had Part 3's `assets/audio/voice.m4a`
+  and `assets/cam/face-cut.webm`. Before building a new part, move them to `assets/_old-partN/` so they can never render
+  as this part's voice or face. Builders only use cam and voice files once this part's take has made them.
+- **Lesson capture for the website glimpse (chatbot):** run `node capture/capture.mjs` (in `ai-chai-bot-04/capture/`, copy per part,
+  change the hash). It opens a fresh headless Chrome with a `?v=<time>` URL, so no cached page. It takes a 960-css-wide, 2x full-page shot,
+  clicks Run first and waits for the real output. In the 960 webwin show the image at `width:1300px;margin-left:-310px`
+  (the lesson column fits, text readable) and drift `y:0 → -1640` to the output. Zoom in on the status next to Run before
+  using it: it must say "Done …", not "Finished with an error". If it says error, ask the website session to fix the page and recapture.
+- **Teleprompter artifact is shared by several sessions:** a publish can be refused because another session republished.
+  Compare the SCRIPTS entries key by key against the saved live version, keep every entry the other session added, and
+  re-send only when the only differences are your own edits (the publish wrapper doesn't count).
+- **Code on screen is run first:** every snippet in a script, terminal demo or teleprompter is executed with piped test input
+  before it's used. The demo lines show that exact output (Part 4: "MENU" → Masala, Adrak! · "  Price " → Rs 20).
