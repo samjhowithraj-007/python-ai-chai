@@ -314,3 +314,14 @@ invent a new layout (see the reuse-approved-templates rule).
 - **Swapping a mascot without touching the layout:** keep the CSS classes (`chotu`, `withchotu`) and the page kinds. Only map
   `PAGE_POSE` to the new poses (mistakes → warn, practice → full, ex34 → party). Change the SAYS lines and the "tip" label.
   Rebuild and confirm 0 overflow. Re-make the product covers and tell Payments to replace the images in its Gumroad drafts.
+- **Raj's photo goes on every book and paid product** (Raj, 20 Oct 2026: "put my image on all the book like how it is for tech").
+  - **Book:** the cover keeps the tech layout (`#raj` half-body cutout bottom-right, mascot bottom-left, logo top-left). The title
+    page and "About the author" use the cutout too, and the back cover uses the round logo.
+  - **Product covers:** the cutout goes bottom-right with the mascot beside it. The square thumbnail needs its own sizes so the
+    photo doesn't cover the sheet card or the disclaimer line.
+- **Money book.py** (adapted 20 Oct 2026):
+  - 11-page chapters, so page numbers are `(n-1)*NPAGES + k + 1`
+  - levels 1–7 / 8–14 / 15–20
+  - a "Sources and checks" page built from every chapter's `facts`
+  - the disclaimer and "Verma family is fictional" in the copyright page, the cover chip and every footer
+  - outputs `paisa-samjho-{en,hi}-full.pdf` + `cover-{en,hi}.png`
