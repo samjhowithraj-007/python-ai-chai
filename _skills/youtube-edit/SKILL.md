@@ -1700,3 +1700,21 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   click, and a video must finish processing before Schedule works. Confirm in x.com/compose/post/unsent/scheduled.
   Scheduled replies don't exist on X, so put the links in the main post. Mind DST: on 25 Oct Europe is on CET
   (11:00 IST = 06:30 CET).
+
+## Lessons from 20 Oct 2026 (Exam Puzzles: Dimaag Dada Shorts)
+- **Mascot series = mascot in the cam slot.** Dimaag Dada (`videos/exam-puzzles/mascot.py`: `dada(pose)`, `face(expr)`,
+  `board(lines)`) sits in Raj's 484x500 cam slot with a small chalkboard. Stack all pose SVGs and switch them with `tl.set`
+  opacity at each beat (ask → think → timer → think/ask → aha → thumbs), a 0.94 → 1 pop and a slow y-bob. Template:
+  `videos/exam-puzzles-01/build-short.py` (copy it for every puzzle; change the content only). Raj approved the character
+  sheet first; a new mascot always gets a sheet + OK before any Short.
+- **Question in frame 1:** the first scene gets no fade-in, and its panel has no `h` class, so frame 0 already shows the hook + the
+  question. Check the 0.1 s snapshot.
+- **Re-check the answer inside the build script** (`assert` with `fractions.Fraction`), so a wrong answer can't render.
+- **Chalk text needs its own @font-face** (Caveat-700 copied into `public/fonts`). `hyperframes check` fails on any family
+  without one (Segoe Print and Comic Sans too). Chalk at 66 px looks small; use ≥ 70 px on the 960 board.
+- **Option cards:** `white-space:nowrap` + ≤ 70 px in a 465 px card, or "(a) 12.5 din" wraps. Before the full
+  render, look at the 2x2 options frame in the snapshot.
+- `check` "Browser process did not exit" errors are flaky shutdowns, not content: rerun or trust the snapshot.
+  Kill leftover `chrome-headless-shell.exe` after a stopped render before you restart it.
+- **Cadence for extra faceless series:** never batch-post; the 2-reels-a-day IG/FB cap counts Raj's own Shorts, so the
+  extra series goes daily on YT + X and on IG/FB only on alternate days (Raj decides via the Content Planner).
