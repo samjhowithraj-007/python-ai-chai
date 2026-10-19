@@ -296,3 +296,21 @@ invent a new layout (see the reuse-approved-templates rule).
   `--screenshot --window-size=559,<794 × pages>`.
 - **Selling a pack:** files + description + price → 💳 Payments & Gumroad. Raj asked (19 Oct) that once a PDF is live,
   📢 Book ads & sales makes the ad and posts it on all his platforms (book and product ads are theirs, not 📣 Campaigns'), so send them the request at hand-off time too.
+
+## Lessons from 20 Oct 2026 (📗 Money Plan books: Gullak Bhai)
+- **Money content has its own mascot: Gullak Bhai** (Raj OK, 20 Oct 2026). He's a clay gullak with a coin slot on his head who
+  fills up as savings grow. Catchphrase "Chhota-chhota daalo, bada-bada banao!". Chotu stays on tech/Python only.
+- **Shared kit, one source:** `C:\samjhowithrajrand\mascots\gullak-bhai\`
+  - `gullak.py`: `gullak(pose, cls)` with 8 poses (happy, think, warn, party, point, worried, full, read)
+  - `svg/`, plus transparent `png/512` and `png/256`
+  - README with colours and usage
+  - `sheet.py` builds the character sheet (Artifact https://claude.ai/artifact/Ey8j3HGmNybjKr32QZdpLq)
+  - The money book's `mascot.py` imports the kit, so a fix to the kit reaches the book on the next build.
+- **How a new mascot was made and approved:**
+  1. Draw it in code in Chotu's house style: 6px ink outline, flat fills, round hands, the same eyes and cheeks.
+  2. Use a square viewBox (here -2 -8 212 212) so PNGs export at exact 512/256.
+  3. Export with headless Chrome `--default-background-color=00000000` for transparent PNGs. Check the PNG is colour type 6 (RGBA).
+  4. Check a contact sheet, fix what reads wrong (a cobweb read as a feather; the belly band needed a clipPath), then show Raj ONE sheet page.
+- **Swapping a mascot without touching the layout:** keep the CSS classes (`chotu`, `withchotu`) and the page kinds. Only map
+  `PAGE_POSE` to the new poses (mistakes → warn, practice → full, ex34 → party). Change the SAYS lines and the "tip" label.
+  Rebuild and confirm 0 overflow. Re-make the product covers and tell Payments to replace the images in its Gumroad drafts.
