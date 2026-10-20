@@ -363,3 +363,12 @@ invent a new layout (see the reuse-approved-templates rule).
   which prints literally). Practice and boss `text` is raw HTML (`<br>`, `<b>` allowed). Check one page of every chapter after building.
 - **solve() returns a list of worlds.** When a world is a single value, wrap it, `[(value,)]`, so the checks can read `s[0]`.
 - Options can be `(en, hi)` tuples, and common option words ("Only I follows", "Cannot be determined") translate through the `OPT` map in build.py.
+- **Cover themes by track** (Raj, 20 Oct 2026):
+  - **Tech books** keep the purple→orange gradient.
+  - **Money books, templates and their covers** use the green money theme of paisasamjhoraj.com:
+    - deep green base `#0C1A14` → `#0E2A1F` → `#0F3526`, with soft green/gold glows and a faint green grid
+    - green `#10B981` and gold `#F5B83D` accents; the "sun" becomes a gold→green glow behind Raj
+    - title in Sora 800 (`fonts/Sora-800-brand.woff2`, from the site) with "Paisa" in gold and "Samjho" in white
+    - subtitle pill in gold with deep-green ink
+    - "Financial education, advice nahi" chip in green
+  - On white pages use gold `#B7791F` for "Paisa". The layout, photo, mascot and badge stay the same.
