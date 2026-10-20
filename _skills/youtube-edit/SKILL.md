@@ -1815,3 +1815,26 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   `input[name=Filedata]` + `file_upload`. Fill fields by ref, one action at a time. To change one line of a posted description,
   open `studio.youtube.com/video/<id>/edit`, select just that text with a JS Range in `#textbox`, type the new line, then Save
   ("Changes saved"). Check X's Scheduled list (`x.com/compose/post/unsent/scheduled`) for exactly one post each.
+
+## Social API (posting without Chrome, since 20 Oct 2026)
+Chrome froze on Studio, Meta, IG, X, Gumroad and Brevo all of 20 Oct, so posting moves to the official APIs. Scripts live in
+`C:\samjhowithraj\tools\social-api\` (not in this repo); secrets only in its `secrets\` (git-ignored; never open, print or commit
+them). Raj's setup page: https://claude.ai/artifact/GXPUHJUX9YTQbXW6ArjKm2. Raj does every login, consent and token step himself.
+- **One post file per video:** `tools\social-api\manifests\<slug>.json` (copy `EXAMPLE.json`): `id` (unique slug) + `posts[]`, each
+  with `platform` (youtube | facebook | instagram | x), `type` (fb: reel | video | photos | link; ig: reel | carousel | image),
+  `file` or `files`, `title`/`description`/`tags`/`category`/`playlist`/`thumbnail` (YT), `caption` (FB/IG), `time_ist`
+  ("2026-10-21 13:00") and `raj_ok`. The editing / Exam Puzzles / Campaigns / Book ads session fills it from CAPTION.md.
+- **`raj_ok` = Raj's own words OK-ing THAT post, relayed by the Content Planner.** Without it the scripts refuse anything that is
+  or will become public. Posting turns still come from the Planner.
+- **Run order:** `python post.py manifests\<slug>.json --dry-run` (checks files, limits, IST→UTC), then `--go`. One platform:
+  `yt_upload.py upload <m> --only N`, `meta_post.py post <m> --only N`. `logs\posted.json` blocks double posts (never `--force`
+  a real post). Tests: `yt_upload.py test <mp4>` (PRIVATE), `meta_post.py post <m> --test` (FB draft/unpublished, IG container never published).
+- **YouTube:** private + `publishAt` schedules it; madeForKids false; thumbnail ≤ 2 MB (`thumbnail-upload.jpg`); playlist found by
+  exact title or created. Quota 10k units/day, ~1,700 per upload, so ≤ 5 a day (script stops at 8,500; reset 12:30 IST).
+  **Until Google's API audit passes, every API upload is locked PRIVATE**: YT goes up by hand until Raj forwards the approval.
+  The Shorts "Related video" link is still set by hand in Studio.
+- **Facebook** schedules itself (`scheduled_publish_time`, 10 min to 29 days ahead). **Instagram** has no API scheduling: a future
+  `time_ist` registers a one-time Windows task under `\SamjhoSocial\` (`meta_post.py tasks` / `unschedule <name>`; log in
+  `logs\ig-tasks.log`). The PC must be on with Raj logged in; > 2 h late it doesn't post. IG images are converted to JPEG and staged
+  as unpublished, temporary Page photos to get the URL IG needs. Reels upload resumably (no public URL).
+- **X** stays by hand (API is pay-per-use ≈ $0.01/post; Raj decides). `post.py` prints the X text.
