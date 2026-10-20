@@ -1854,3 +1854,20 @@ them). Raj's setup page: https://claude.ai/artifact/GXPUHJUX9YTQbXW6ArjKm2. Raj 
   `logs\ig-tasks.log`). The PC must be on with Raj logged in; > 2 h late it doesn't post. IG images are converted to JPEG and staged
   as unpublished, temporary Page photos to get the URL IG needs. Reels upload resumably (no public URL).
 - **X** stays by hand (API is pay-per-use ≈ $0.01/post; Raj decides). `post.py` prints the X text.
+- **Hard check 7, VARIETY (Raj, 20 Oct 2026: "don't want the same pattern always, use creative one"):** compare each video
+  with the last 3 of its series on hook style, transition family, caption animation, B-roll/visual type and music mood;
+  at least 2 of the 5 must rotate, or QC fails it. The brand never rotates (mascots, logo, colours, Short frame, safe zones,
+  hard checks 1–6). Pick the rotation from "Creative rotation" below and name the 2 you changed in the QC note.
+
+## Creative rotation (menu; the Mon 10:00 weekly task refreshes it)
+Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that fight each other.
+- **Hook style:** the question (default) · a wrong answer shown, then struck/erased · a number counting fast to the payoff ·
+  "POV: …" line · a 1 s before/after · the viewer's comment as the hook.
+- **Transitions:** overlap crossfade (default) · slide/push left · a mask wipe along the panel · zoom-through into the next
+  card · a match cut on the same shape (bubble → card).
+- **Caption animation:** word rise (default) · one key word scaling in · a highlighter sweep on the key word · typewriter on
+  code only.
+- **Visual type:** designed cards (default) · real page capture · Pexels B-roll with a label · a mascot-acted mini scene ·
+  a hand-drawn/notebook board · a chart that builds.
+- **Music mood:** lo-fi bed (default) · a calmer piano bed · an upbeat light bed for launches (licensed, Epidemic/free library,
+  one track per video, ducked).
