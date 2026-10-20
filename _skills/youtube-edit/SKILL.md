@@ -1810,3 +1810,8 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
     word (key cues from the final flat audio's word times, not linear beat interpolation). Scenes overlap: the next
     one starts 0.15–0.3 s before the previous fades. With the render, write `short/qc-words.json` (whisper words of
     the final flat audio, `[{"w","s","e"}]` flat s) and `short/qc-cues.json` (element id → flat s) for the Delivery Manager.
+- **Chrome upload that works when Chrome is slow (20 Oct 2026):** Chrome window in FRONT (a background window freezes
+  the renderer), go to `youtube.com/upload`, wait 10 s, then use `find`/refs (not screenshots) for the hidden
+  `input[name=Filedata]` + `file_upload`. Fill fields by ref, one action at a time. To change one line of a posted description,
+  open `studio.youtube.com/video/<id>/edit`, select just that text with a JS Range in `#textbox`, type the new line, then Save
+  ("Changes saved"). Check X's Scheduled list (`x.com/compose/post/unsent/scheduled`) for exactly one post each.
