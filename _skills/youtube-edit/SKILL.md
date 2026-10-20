@@ -456,6 +456,10 @@ drop-shadow), footer "SAMJHO WITH RAJ · techsamjhoraj.com". Render with the hyp
   about the sites themselves (new site, domain, DNS, HTTPS, install-as-app, Search Console, profile links) use the
   **website-app** skill. If a lesson change touches a precached file, bump `VERSION` in that site's `sw.js`.
 - Posting through **Claude in Chrome** (Raj is signed in; upload copies re-encoded at CRF 20 so they stay < 10 MB):
+  - **No heavy jobs during a Chrome turn (20 Oct 2026; the likely cause of the day's Chrome freezes):** while the Content
+    Planner has announced a Chrome turn, no session runs HyperFrames renders/snapshots, whisper, or heavy ffmpeg (renders,
+    re-encodes, QC frame extraction); they hog CPU/GPU and freeze Claude in Chrome. Finish or pause them first, and
+    restart only after the Planner says the Chrome turn is over.
   - Order: YouTube → Instagram → Facebook (+ Story) → X, then INDEX.md. Close the tab you opened when done.
   - YouTube Studio (channel id UCMcwMtuOjp39M0JtLpbwvZg): open `studio.youtube.com/channel/<id>/videos/upload?d=ud`, find the file input through shadow DOM,
     `file_upload`, title/description/tags, thumbnail via the image file input, "Not made for kids", Public, Publish;
