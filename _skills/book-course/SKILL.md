@@ -349,3 +349,17 @@ invent a new layout (see the reuse-approved-templates rule).
 - **Looking at pages without PIL/pdftoppm:** split the chapter HTML into groups of 4 `<section>` pages and Chrome `--screenshot`
   each at 559 × (794 × 4).
 - Book headings follow the brand pattern ("Paisa Samjho: Salary se Savings tak" → "Reasoning Samjho: Puzzle se Selection tak").
+
+## Lessons from 20 Oct 2026 (📙 Exam puzzle book: chapters 2-16)
+- **One checker per topic, all in `checkers.py`:** grid assignment with pruning (floors, schedules, ranking, LRDI grids), a family-tree
+  engine (`Family.rel`), a direction walker, syllogism Venn models (every region empty/non-empty), inequality value tables, a data-sufficiency
+  judge (every candidate world), dice labellings, tournaments and truth-teller searches. Write the rule as code; the build fails if the answer differs.
+- **Let the checker design the puzzle:** write the clues, run `python build.py check N`, and add or loosen ONE clue at a time until there is
+  exactly one answer. It caught puzzles with no solution, an analogy with two valid rules, and a wrong paper-fold model (the 2nd fold's crease
+  is at 3/4, not 1/2). Never "fix" a checker to match the printed answer; fix whichever one is actually wrong.
+- **'Cannot be determined' answers:** mark the question `cbd=True`; the build then demands that the worlds really disagree.
+- **Words no script can check** (word analogies, critical reasoning) use `kind="verbal"`; `check` lists them as hand-reviewed every run.
+- **Escaped vs raw fields:** setup, clues, steps, shortcut, trap and answers are HTML-escaped, so write plain `>`, `<`, `&` there (never `&gt;`,
+  which prints literally). Practice and boss `text` is raw HTML (`<br>`, `<b>` allowed). Check one page of every chapter after building.
+- **solve() returns a list of worlds.** When a world is a single value, wrap it, `[(value,)]`, so the checks can read `s[0]`.
+- Options can be `(en, hi)` tuples, and common option words ("Only I follows", "Cannot be determined") translate through the `OPT` map in build.py.
