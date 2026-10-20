@@ -1673,7 +1673,7 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
     platform, counting the daily tech + money Shorts; space posts hours apart. A promo reel takes a Short's slot that day
     (the series shifts one day), it never becomes a 3rd reel.
   - The payoff or question goes in frame 1 (IG/FB viewers leave after 2–7 s).
-  - Tech Shorts ≤ 45 s (Part 3 at 67 s fell to 33% viewed vs 57–58%).
+  - Tech Shorts up to 55–60 s are fine (Raj, 20 Oct 2026: "55 or 60 S is fine"; replaces the 19 Oct ≤ 45 s rule). Aim 45–60 s, never over 60 s; the hook/payoff still goes in frame 1 (Part 3 at 67 s fell to 33% viewed).
   - End every series Short with "Part N+1 kal, subscribe/follow karo".
   - Always caption. Never re-upload a reel that's already posted (re-uploads got 9–32 views).
   - Keep long videos PUBLIC (YouTube Partner watch hours come only from public longs) and set each Short's YouTube
