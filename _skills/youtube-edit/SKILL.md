@@ -1718,3 +1718,7 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   Kill leftover `chrome-headless-shell.exe` after a stopped render before you restart it.
 - **Cadence for extra faceless series:** never batch-post; the 2-reels-a-day IG/FB cap counts Raj's own Shorts, so the
   extra series goes daily on YT + X and on IG/FB only on alternate days (Raj decides via the Content Planner).
+- **Dimaag Dada posting (Raj, 20 Oct 2026):** reel on YT Shorts + X daily at 13:00 IST. IG/FB get a 2-slide carousel
+  (1080x1350, `exam-puzzles-01/build-carousel.py`: puzzle + "Comment karo apna answer 👇", then answer + trick)
+  on alternate days, because Raj's 2 reels a day there are already used, and a carousel isn't a reel. Raj picks the IG/FB files
+  himself, so send the Planner the 2 paths + caption the day before. Full plan: `videos/exam-puzzles/SERIES.md`.
