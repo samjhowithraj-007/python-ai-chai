@@ -1756,3 +1756,14 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   real planner page, "Part 2 kal" end card). Put each new Short's 0 s / 2.5 s / middle / end frames next to its frames.
 - **Whisper on this CPU:** `qc.py` transcribes in 8–14 s chunks cut at the quietest 50 ms with `base`, beam 1 (~5 min per
   Short); one pass over 45 s with `small` + VAD hung for 15+ minutes.
+- **Delivery Manager QC of Paisa Samjho 1 (20 Oct, reference Short):** frame 0, cam crop, disclaimer and sound passed. Fix for
+  every next Short:
+  - Length ≤ 45–50 s from a ~100–110-word script; never rely on speed-up.
+  - Keep pauses ≤ 0.45 s (silence-shrink threshold 0.45, not 0.32 keep-gaps of 0.2).
+  - The end ask ("subscribe kar lo") must be as loud as the hook: per-phrase level check on the final voice,
+    lift any phrase > 3 dB under the median.
+  - No empty panel: every beat's visual must be filled from its first second (no lone chip or a single emoji), and a
+    caption must be on screen at every second.
+  - Money Shorts: Gullak Bhai on POINT cards, payoff, end card and cover, beside Raj.
+  - CAPTION.md gets a Tags line (10–14 tags).
+  - Send the render path to the Delivery Manager session (local_362eaa21-3514-4c64-8d83-5d23be568a36) for QC before Raj sees it.
