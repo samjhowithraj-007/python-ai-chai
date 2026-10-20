@@ -1722,3 +1722,9 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   (1080x1350, `exam-puzzles-01/build-carousel.py`: puzzle + "Comment karo apna answer 👇", then answer + trick)
   on alternate days, because Raj's 2 reels a day there are already used, and a carousel isn't a reel. Raj picks the IG/FB files
   himself, so send the Planner the 2 paths + caption the day before. Full plan: `videos/exam-puzzles/SERIES.md`.
+- **Upload route (20 Oct 2026):** a direct studio.youtube.com URL can stay blank in Claude's Chrome. Open
+  youtube.com → Create → Upload video instead, and Studio's upload dialog loads. `file_upload` only takes files this session can
+  read, so upload from `videos/<part>/renders/`, not `Videos\YouTube Renders`. Studio's schedule uses its own Time zone
+  picker (choose Kolkata). X's schedule uses the browser zone (CEST: 22:00 IST = 18:30). Ask the Planner for a Chrome turn first.
+- **Teaser = the real next puzzle:** write the "Kal ka puzzle" line from the NEXT bank id, not from the script's idea.
+  Puzzle 1 teased "3 log, 1 kaam" but Short 02 is the number series, so the YT description says "number series".
