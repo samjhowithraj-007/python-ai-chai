@@ -1754,8 +1754,8 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
 `delivery\QC-CHECKLIST.md`, Raj's page https://claude.ai/artifact/5XnM99WUSMLEiPwJKfRiZC). Mistakes it caught on the first four videos:
 - **Limiter last.** Chatbot Part 4 limited the voice, then `amix`ed the bed after it: true peak −0.4 dBTP. Put
   `alimiter=limit=0.89` as the LAST filter of the final mix (voice + bed), then measure ≤ −1 dBTP with `ebur128=peak=true`.
-- **Shorts masters ≥ 8 Mb/s.** `render --quality high` gave 3.0 Mb/s (chatbot 4), 1.6 Mb/s (Dimaag Dada 1), 6.9 Mb/s (promo).
-  Render every master with `--video-bitrate 16M` (as "Your channel style" says); the < 10 MB upload copies stay separate.
+- **Render masters with `--video-bitrate 16M`.** `render --quality high` gave 3.0 Mb/s (chatbot 4) and 1.6 Mb/s (Dimaag
+  Dada 1). The < 10 MB upload copies stay separate (see the bitrate rule below).
 - **Music-only Shorts are −14 LUFS too.** Dimaag Dada 1 shipped at −18.4 and the promo at −16.9, quieter than every other
   Short in the feed. One fixed gain to −14 LUFS, limiter last.
 - **No empty frame between scenes.** Dimaag Dada 1 at 3.0 s and chatbot 4 at 23 s showed only the tag pill: the next scene
@@ -1790,3 +1790,19 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   (1.5M) for the Chrome file picker. Scenes crossfade 0.15 s (`scene()` starts at a−.15, ends at b+.15) and switch the
   old `.hook` off as the next scene starts, so a panel is never empty and two hooks never overlap. If a posted teaser is
   wrong, make the next Short match the teaser instead of re-uploading.
+- **Raj's 6 hard checks (20 Oct 2026; any FIX = the video never reaches Raj):** (1) energy: every 5 s window ≥ 110 wpm
+  with pitch movement, no pause > 0.45 s (fix: tighter cuts, 1.05–1.1×, punch-ins, or a reshoot of that line); (2) every
+  key word (the coloured words on screen) within 6 dB of the voice and above the music (fix: gain/compress that word,
+  duck the bed, show it in the caption); (3) every rule of this skill + SHORTS-FORMAT.md gets PASS/FIX; (4) every overlay
+  starts 0–3 frames BEFORE its spoken word, never after; (5) story-matched: each animation shows exactly what Raj says in
+  that line (a line about an order slip gets an order slip), never a generic icon or loop; (6) **no empty frame**: every
+  second has a relevant animation next to the cam. For each gap, first build an animation for that line, then fill it.
+- **Scene crossfades must overlap.** The Short template's 0.3 s fade-out-then-fade-in leaves 0.25–0.5 s with an empty
+  panel (and often no caption) at every scene change: chatbot 4, Paisa 1, Dimaag Dada 1 and all 4 launch promos failed
+  here. Start the next scene 0.15–0.3 s BEFORE the previous one fades (Dimaag Dada Puzzle 2 passes with 0.15 s), and let
+  the end card come in under the last scene.
+- **Send QC what it needs to measure sync:** the render + `public/index.html` (GSAP positions in flat seconds) + the whisper
+  words of the FINAL audio as `[{"w","s","e"}]` in flat seconds. A warped ≥ 10000 timeline (Money Plan / Paisa builds)
+  also needs a cue list mapped back to flat seconds.
+- **Bitrate rule (updated):** render with `--video-bitrate 16M`; flat animation settles at ~6–7 Mb/s, which is fine
+  (≥ 5 Mb/s passes). Don't force a bitrate floor.
