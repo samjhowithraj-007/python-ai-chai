@@ -345,6 +345,13 @@ with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwi
 sweeping "Free notes + code" (or the lesson title) on the word. Caption: "Free notes + code: techsamjhoraj.com". Never a
 mock-up; re-capture if the page changed.
 
+**Shorts format = `videos/_format/SHORTS-FORMAT.md` (learned from every posted Short, 20 Oct 2026; read it before any Short):**
+tag pill + the question from frame 0, ONE big visual filling the middle panel by ~2.5 s (never small bubbles in an empty
+frame), one-line caption above the cam, POINT n/5 bottom-left, cam/mascot box bottom-right with cyan glow (Raj cropped
+tight, head to hands), end card `Series Part N ✓` + Subscribe + one line. Each series keeps its own mascot/look inside
+the frame (chatbot = cyan robot + "Agla Part" teaser). Before rendering, put the 2.5 s frame next to the last posted
+Short of the same series and of Paisa Samjho: if it looks emptier or different, fix it first.
+
 **Raw iPhone + CapCut take → flat cut (chatbot Part 4, 20 Oct 2026):** (1) denoise the MOV audio: `highpass=f=110,asendcmd`
 (sample_noise over a silent gap)`,afftdn=nr=28:nf=-50:tn=1,agate`. (2) Whisper medium on a long clip HANGS / hallucinates on
 this CPU: transcribe in 8-15 s chunks split at silences, `language="hi"`, `condition_on_previous_text=False`, drop segments with
