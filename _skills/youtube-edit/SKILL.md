@@ -350,6 +350,14 @@ Manager session for QC before Raj sees it. Time each overlay (bubble, code row, 
 keyword's start from whisper on the FINAL audio (land it 0–0.1 s before the word, never after), not to scene starts.
 Check every keyword is clearly audible in the final mix; if one is quiet, fix the voice first.
 
+**Delivery Manager hard checks (Part 4 look-back, 20 Oct 2026), self-check BEFORE sending:** run
+`python C:/samjhowithraj/delivery/qc.py <render> TS --name <slug> --index public/index.html --words-file <final-audio words>`.
+H4 sync: every overlay 0.1 s before its word (Part 4 had +0.8 to +1.7 s late rows/POINT cards). H6 empty panel: never
+a moment with an empty middle panel; build an animation FOR each spoken line (cross-fade scenes). H2 key words: no key
+word > 3 dB under the median word (`ai-chai-bot-05/voicecheck.py` boosts them). H1 energy: no 5 s window under ~120 wpm
+(tighten pauses / 1.08x). H5 story: show the thing he says (an "order slip" line gets an order slip, not the code box).
+Send the Delivery Manager the render + public/index.html + the final-audio words JSON.
+
 **Shorts format = `videos/_format/SHORTS-FORMAT.md` (learned from every posted Short, 20 Oct 2026; read it before any Short):**
 tag pill + the question from frame 0, ONE big visual filling the middle panel by ~2.5 s (never small bubbles in an empty
 frame), one-line caption above the cam, POINT n/5 bottom-left, cam/mascot box bottom-right with cyan glow (Raj cropped
