@@ -1830,6 +1830,9 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   panel (and often no caption) at every scene change: chatbot 4, Paisa 1, Dimaag Dada 1 and all 4 launch promos failed
   here. Start the next scene 0.15–0.3 s BEFORE the previous one fades (Dimaag Dada Puzzle 2 passes with 0.15 s), and let
   the end card come in under the last scene.
+  **The end card counts too:** Dimaag Dada Puzzles 2–5 each had a ~0.2 s almost blank frame where the "Kal ka puzzle"
+  scene faded out before the end card faded in. Start the end card ~0.3 s before the last scene fades. Never use the
+  Cyberline bed (Raj rejected it on 18 Oct; Puzzle 5 used it again).
 - **Send QC what it needs to measure sync:** the render + `public/index.html` (GSAP positions in flat seconds) + the whisper
   words of the FINAL audio as `[{"w","s","e"}]` in flat seconds. A warped ≥ 10000 timeline (Money Plan / Paisa builds)
   also needs a cue list mapped back to flat seconds.
