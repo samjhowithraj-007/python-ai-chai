@@ -238,6 +238,12 @@ invent a new layout (see the reuse-approved-templates rule).
   ends the link with `/copy`. It goes only in the receipt message, so only buyers see it.
 - **Free gifts stay off Gumroad:** the Python with Chai cheat sheets are a free gift for email subscribers (status
   "subscriber gift" in the PDF Library), not part of the paid download.
+- **Filling Gumroad in Chrome (20 Oct):** the Gumroad tab only responds while Chrome is the front window, so ask Raj
+  to keep it in front and not switch away. Typing long text key by key freezes the tab: put the description in with
+  one `document.execCommand('insertHTML', …)` on the focused editor, and set short fields with form_input. Currency
+  option value is `inr`. Cover = "Upload images or videos" → "Computer files" file input; thumbnail has its own file
+  input; product files use the Content tab's file input (an .xlsx may sit at 0% for ~20 s, then finish). Save each tab,
+  reload and read the values back. Create products as drafts; Raj limits codes and clicks Publish.
 - **Hand-offs:** files + description + price → 💳 Payments & Gumroad (Raj publishes); teasers → the website session; ads →
   📢 Book ads & sales. Every review or Raj step also goes as one line to the Content Planner.
 
