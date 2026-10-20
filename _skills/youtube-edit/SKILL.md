@@ -1767,3 +1767,11 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   - Money Shorts: Gullak Bhai on POINT cards, payoff, end card and cover, beside Raj.
   - CAPTION.md gets a Tags line (10–14 tags).
   - Send the render path to the Delivery Manager session (local_362eaa21-3514-4c64-8d83-5d23be568a36) for QC before Raj sees it.
+- **Launch promo reels (20 Oct, Campaigns; builders `videos/promo-*`; Delivery Manager QC):** every new launch gets a 9:16 reel
+  copied from `promo-ai-prompts/build-short.py` (real book pages in the webwin) or `promo-websites/` (screencast). Gates learned:
+  Gullak Bhai in the cam slot for ANY money segment (swap from Chotu mid-reel if the reel mixes tech + money);
+  "Financial education, advice nahi" ON SCREEN (footer) during money parts, not only in captions; record site screencasts at
+  **600x698** (not 860x1000) so text reads on a phone, and zoom book pages (`zoom=160`); loudness **−14 LUFS** via
+  `bash _shared/finish-promo.sh <reel>` (loudnorm, video copied, delivers to YouTube Renders with -vN safety); pre-launch
+  products show no price and no buy link. If a screencast shows a black block (paint glitch), swap that segment for a clean
+  `page.screenshot` still with a slow GSAP zoom (`promo-websites/paisa-still.mjs`). Thumbnails: `_shared/launch-thumbs.py`.
