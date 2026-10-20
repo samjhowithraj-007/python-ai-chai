@@ -308,6 +308,14 @@ folder for Part N. Raj reviewed this part over many rounds; these are his notes 
   only after the upload, so the RecallOnDataAccess bit (0x400000) = uploaded. Only then send the local project folder,
   render scratch and `YouTube Renders\<part>\old\` to the Recycle Bin (never a permanent delete).
 
+## Story-wrap rule for tech teaching (Raj via the Planner, 20 Oct 2026)
+Tech lessons (DSA, SQL, languages, AI) ride inside **Rohan's** story (character bible: `C:\samjhowithraj\brand\CHARACTER-BIBLE.md`), but the story is the wrapper, not the lesson.
+- **Shorts:** 0–3 s Rohan's problem as the hook ("Rohan ka placement list sort nahi ho raha…") → 3–50 s pure teaching (concept + code on screen) → last ~5 s payoff ("Rohan ne kar diya ✅" + the next topic). Story = only ~10–15% of the runtime.
+- **Longs:** 30–60 s Rohan cold open → chapters of pure teaching (concept → diagram → code → dry run → common mistakes). Rohan pops in only to ask the viewer's question ("Par agar list khaali ho toh?") → 30–60 s close + teaser.
+- **Rohan's world is the example data:** SQL tables `rohan_marks`, the Verma family expenses; DSA on his placement/company list; Python = Neha Didi's budget app; JavaScript = his portfolio site. Keep the facts as the bible says (Indore, B.Tech final year, ₹4 lakh education loan, family = the Vermas in Lucknow).
+- **Plain tutorials don't need a story** (quick syntax tips, tool how-tos).
+- Every video stands alone: one line of context ("Rohan, B.Tech final year, Indore") is enough; never require an earlier part.
+
 ## Your end-to-end routine (Samjho with Raj, every kind of video)
 
 Saved Oct 2026 after the first full "AI + Python" part went out. Do every step, in this order, for every video type;
