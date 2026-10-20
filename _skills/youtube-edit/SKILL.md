@@ -1775,3 +1775,10 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   `bash _shared/finish-promo.sh <reel>` (loudnorm, video copied, delivers to YouTube Renders with -vN safety); pre-launch
   products show no price and no buy link. If a screencast shows a black block (paint glitch), swap that segment for a clean
   `page.screenshot` still with a slow GSAP zoom (`promo-websites/paisa-still.mjs`). Thumbnails: `_shared/launch-thumbs.py`.
+- **Delivery Manager QC on Dimaag Dada (20 Oct 2026), now the template (`exam-puzzles-02/build-short.py`):**
+  music-only bed = the whole mix: measure it (`loudnorm print_format=json`), apply ONE gain to −14 LUFS, then `alimiter`
+  last (true peak ≤ −1), `data-volume="1"`. Render with `--video-bitrate 16M`. That's a ceiling: flat animation averages
+  ~6.5 Mb/s, and forcing a floor by re-encoding made it worse (4.9), so don't. Make a separate <10 MB `-upload.mp4`
+  (1.5M) for the Chrome file picker. Scenes crossfade 0.15 s (`scene()` starts at a−.15, ends at b+.15) and switch the
+  old `.hook` off as the next scene starts, so a panel is never empty and two hooks never overlap. If a posted teaser is
+  wrong, make the next Short match the teaser instead of re-uploading.
