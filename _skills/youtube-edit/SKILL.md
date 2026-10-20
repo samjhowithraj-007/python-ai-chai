@@ -345,6 +345,11 @@ with headless Chrome at 1360 px wide (2x), and show it in the template's `.webwi
 sweeping "Free notes + code" (or the lesson title) on the word. Caption: "Free notes + code: techsamjhoraj.com". Never a
 mock-up; re-capture if the page changed.
 
+**QC gate (Raj, 20 Oct 2026: "energy low, key words not heard, animation lags"):** every render goes to the 🎬 Delivery
+Manager session for QC before Raj sees it. Time each overlay (bubble, code row, POINT card, highlight) to the spoken
+keyword's start from whisper on the FINAL audio (land it 0–0.1 s before the word, never after), not to scene starts.
+Check every keyword is clearly audible in the final mix; if one is quiet, fix the voice first.
+
 **Shorts format = `videos/_format/SHORTS-FORMAT.md` (learned from every posted Short, 20 Oct 2026; read it before any Short):**
 tag pill + the question from frame 0, ONE big visual filling the middle panel by ~2.5 s (never small bubbles in an empty
 frame), one-line caption above the cam, POINT n/5 bottom-left, cam/mascot box bottom-right with cyan glow (Raj cropped
