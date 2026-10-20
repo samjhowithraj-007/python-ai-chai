@@ -1894,3 +1894,10 @@ Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that 
   (`setInterval` on `document.title`) and tell him to check the taskbar for a second Chrome window.
 - **Raj wants posting automated (20 Oct):** route IG/FB to the 📤 Social API session (Meta Graph) once Raj does its one-time Meta setup.
   YouTube stays on Chrome until Google's API audit, X on Chrome unless he buys API access.
+- **Loudness trap (Puzzle 4, 20 Oct 2026):** with a dynamic bed (mindscape) the HyperFrames render came out 5.5 dB below the bed
+  file (−19.9 vs −14.3 LUFS), even at `data-volume="1"`. Always measure the RENDERED mp4 (`ebur128=peak=true`), not the bed. Fix,
+  now in `exam-puzzles-04/render.sh`: make the bed with a two-pass `loudnorm` (I=-14, TP=-1.5, linear=true), then remux it into each
+  render (`-map 0:v -map 1:a -c:v copy`) before making the upload copy. That gives −14.1 / −1.4 dBTP with no re-render.
+- **Rotation done for Dimaag Dada 4 (QC H7):** question hook, slide transitions (`x:140→0` in, `0→−140` out), pop captions
+  (`scale .5→1 back.out`), ruled notebook (`repeating-linear-gradient` lines + red margin `inset` shadow) with a live seat row,
+  new bed. Puzzle 5 must rotate again (≥2 of 5 vs the last 3).
