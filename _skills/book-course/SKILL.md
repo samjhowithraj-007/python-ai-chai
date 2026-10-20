@@ -188,6 +188,11 @@ invent a new layout (see the reuse-approved-templates rule).
   books only; not the ₹149/₹199 sheets and packs, since ₹100 off leaves nothing after fees). No buy link in an ad until
   💳 Payments sends a live one; planned slugs are never posted.
 - **Money products** always carry "Financial education, advice nahi" and never promise returns.
+- **Money ad colours (Money PM, 20 Oct 2026):** new money ads keep the ads.py layout but swap to the green money theme
+  (money-book/templates/covers.py, matches paisasamjhoraj.com): bg linear-gradient(165deg, #0C1A14, #0E2A1F, #0F3526),
+  glow #10B981, gold #F5B83D / #FFD27A, mint #6EE7B7, body text #CFE9DC. Tech ads keep the purple-orange gradient.
+- **Routing (Raj, 20 Oct 2026):** ad questions go to 💻 Tech PM (tech, puzzle, kids) or 💰 Money PM (money); anything needing
+  Raj goes to the Content Planner as one P1/P2/P3 line. Re-shoot source pages from the current HTML (a peek.png can be stale).
 - **Mascot by product (Raj, 19 Oct 2026):** money products (money book, Family Money Planner, tracker) use **Gullak Bhai**,
   a clay piggy bank (kit: `C:\samjhowithraj\brand\mascots\gullak-bhai\`, used once Raj approves the design). Chotu stays on
   tech books and the AI prompts pack. Money ads swap the `chotu(...)` call for the Gullak Bhai kit; the layout stays the same.
