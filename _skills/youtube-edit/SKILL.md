@@ -1913,3 +1913,9 @@ Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that 
 - **Rotation done for Dimaag Dada 4 (QC H7):** question hook, slide transitions (`x:140→0` in, `0→−140` out), pop captions
   (`scale .5→1 back.out`), ruled notebook (`repeating-linear-gradient` lines + red margin `inset` shadow) with a live seat row,
   new bed. Puzzle 5 must rotate again (≥2 of 5 vs the last 3).
+- **End-card gap (QC A8, 20 Oct 2026):** the Money Plan end card started exactly at END while the last scene faded out at
+  END−0.3, which left a ~0.2 s near-blank frame. In every Short the end card now starts at END−0.3 (`data-duration` 3.54, fade 0.3),
+  so it covers the fade. Fixed in `exam-puzzles-04/build-short.py`; Dimaag Dada 2–3 are posted with the gap.
+- **Music check before every render:** grep the build + render.sh for the bed. Cyberline is rejected (Raj, 18 Oct) and still
+  slipped into Dimaag Dada 5 when it was picked only for variety. Calm beds only: all-of-the-things, mindscape (vary the start offset
+  if a bed repeats).
