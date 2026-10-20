@@ -474,6 +474,22 @@ drop-shadow), footer "SAMJHO WITH RAJ · techsamjhoraj.com". Render with the hyp
     Confirm: gone from Drafts, "Your reel is published" 1m, newest in the Reels tab with the right duration.
   - The Chrome window must be **visible** (not minimized or fully covered): a hidden tab reports innerHeight 0,
     screenshots time out and typing is dropped. Ask Raj to snap Chrome right / Claude left (Win+→ / Win+←).
+  - **Every post goes to all 4: YouTube + X + Instagram + Facebook** (Raj, 20 Oct 2026: "also handle the insta and fb").
+    Never stop at YT + X. Scheduling a Short, puzzle, promo reel or ad means scheduling the IG/FB copy too (a Reel, or the
+    2-slide carousel for Dimaag Dada on alternate days), in the same Chrome turn or the next one, and logging all 4.
+  - **Meta Business Suite works for SMALL files** (proved 20 Oct 2026 on the Dimaag Dada carousels): business.facebook.com
+    → Create post, tick FB "Samjho With Raj" + IG "samjhowithraj" together, caption, arrow next to Publish → **Schedule**
+    (the time shows in Chrome's zone, CEST: 13:00 IST = 9:30 CEST), no boost. Keep the upload copy small (< 10 MB video
+    at CRF 20–23, 1080 px; PNG/JPG slides). Meta blocks automated file picks: tell Raj the exact file name + folder, he
+    picks it in the native window and says "done", then Claude does the caption + schedule. Big files froze it.
+  - **The gentle Chrome method (what finally worked on 20 Oct 2026 after a day of freezes):** one session in Chrome at
+    a time (the Planner hands out turns); open YouTube via `youtube.com/upload` directly; wait ~10 s after every load;
+    use read_page/find refs + JS (hidden file input) instead of screenshots (at most one small confirm shot); one action
+    at a time; stop at the first freeze and hand Raj the exact steps left. Chrome froze on Gumroad, Brevo, Meta and X
+    when driven with screenshots.
+  - **No-Chrome fallback:** `C:\samjhowithraj\tools\social-api\post.py` (manifest per post, `--dry-run` then `--go`):
+    FB schedules natively, IG via a one-time Windows task (PC must be on). YouTube API uploads stay private until
+    Google approves the audit, so YT stays on Chrome or by hand until then.
   - Instagram accepts the **cover image** through its `image/jpeg,image/png` file input (the video still needs
     Raj's click); set crop to Original; type the caption with `computer.type` (click the box, Ctrl+A, Delete, type).
     Since Part 3, `execCommand('insertText')` drops Instagram's line breaks too; check the caption keeps its `\n`s before Share.
