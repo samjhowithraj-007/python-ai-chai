@@ -1806,3 +1806,7 @@ Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ
   also needs a cue list mapped back to flat seconds.
 - **Bitrate rule (updated):** render with `--video-bitrate 16M`; flat animation settles at ~6–7 Mb/s, which is fine
   (≥ 5 Mb/s passes). Don't force a bitrate floor.
+  - Raj's hard checks (20 Oct): no empty frame and animation on the word. Each overlay lands 0–0.1 s before its
+    word (key cues from the final flat audio's word times, not linear beat interpolation). Scenes overlap: the next
+    one starts 0.15–0.3 s before the previous fades. With the render, write `short/qc-words.json` (whisper words of
+    the final flat audio, `[{"w","s","e"}]` flat s) and `short/qc-cues.json` (element id → flat s) for the Delivery Manager.
