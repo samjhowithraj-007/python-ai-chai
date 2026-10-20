@@ -372,3 +372,17 @@ invent a new layout (see the reuse-approved-templates rule).
     - subtitle pill in gold with deep-green ink
     - "Financial education, advice nahi" chip in green
   - On white pages use gold `#B7791F` for "Paisa". The layout, photo, mascot and badge stay the same.
+
+## Lessons from 20 Oct 2026 (📙 Exam puzzle book: full book, mocks, covers, EPUB)
+- **Mock tests from generators:** `mocks.py` builds each question from a template with a fixed seed and computes the answer with the
+  chapter checkers, plus near-miss wrong options (off by one, the trap value). Puzzle sets inside mocks are hand-written clues solved by
+  brute force with `assert len(sols) == 1`. That gives 84 new, checked questions fast; still read every page once (repetitive solution lines are a smell).
+- **New covers get their own identity:** Raj asked for a new look per book line (not the purple-orange Python or the green money cover).
+  Make 2–3 options in `covers.py` (own CSS, rendered to PNG at 2×), show them on ONE review page with a thumbnail-size proof and the Hinglish pill, and let Raj pick.
+- **Put the chosen cover in the book as a full-page image** (`<img>` inside `section.page.cover`). Don't paste cover CSS into the book:
+  generic class names like `.dada`, `.pill`, `.by` collided with the mascot classes on every page.
+- **Raj's photo on every cover** (raj-cutout.png half-body + the round raj-mark as author mark) plus the tech badge (brand/logos/final/tech/badge-512.png).
+- **EPUB with diagrams:** keep inline SVG diagrams (mark those XHTML items `properties="svg"`), drop only the mascot art. epubcheck 5.4 now lives in
+  `C:\samjhowithraj\tools\epubcheck` (`java -jar epubcheck.jar book.epub`); target 0 errors / 0 warnings.
+- **Page map for EPUB:** book.py writes `out/book-map-<lang>.json` (the kind of every page, chapter start pages, puzzle → page), so the
+  EPUB builder and the exam-wise index never guess page numbers.
