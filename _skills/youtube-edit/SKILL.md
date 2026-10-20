@@ -1882,3 +1882,15 @@ Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that 
   parent-worded), built from the approved showcase email (`videos/newsletter-*/build.py`), sent only after Raj's "send". Every
   item goes on the one promo calendar artifact with Book ads' dates. Brevo is a paid plan since 20 Oct; check its limits in the
   account before quoting them.
+- **Meta Business Suite carousel (20 Oct 2026):** `business.facebook.com/latest/composer` (FB + IG together). Meta blocks
+  automated file picks: click "Add photo/video" and Raj pastes both quoted paths into the Windows File name box. Then caption
+  by ref, "Set date and time" switch → TWO rows (FB, IG): date `mm/dd/yyyy` + hours/minutes/AM-PM spinbuttons typed one field
+  at a time (a single "0930AM" doesn't take). Check with `aria-valuetext`. Schedule → "Your post is scheduled" → **Maybe later**
+  (never Boost, it costs money). Typing often "times out" yet lands: read the box back before retyping.
+- **DST:** Europe moves to CET on the last Sunday of October (25 Oct 2026): 13:00 IST = 9:30 before, **8:30 from 25 Oct**.
+- **X stuck upload:** if a video stays at "Uploading (1%)", remove it and attach again, then count `[aria-label="Remove media"]`
+  (must be 1) before Schedule. The scheduled list renders twice in the DOM, so every post appears twice in innerText.
+- **Raj can't find Claude's tab:** Claude's tabs open in their own Chrome window/group. Make the title blink by JS
+  (`setInterval` on `document.title`) and tell him to check the taskbar for a second Chrome window.
+- **Raj wants posting automated (20 Oct):** route IG/FB to the 📤 Social API session (Meta Graph) once Raj does its one-time Meta setup.
+  YouTube stays on Chrome until Google's API audit, X on Chrome unless he buys API access.
