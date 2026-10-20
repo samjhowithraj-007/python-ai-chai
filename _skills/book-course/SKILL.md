@@ -386,3 +386,10 @@ invent a new layout (see the reuse-approved-templates rule).
   `C:\samjhowithraj\tools\epubcheck` (`java -jar epubcheck.jar book.epub`); target 0 errors / 0 warnings.
 - **Page map for EPUB:** book.py writes `out/book-map-<lang>.json` (the kind of every page, chapter start pages, puzzle → page), so the
   EPUB builder and the exam-wise index never guess page numbers.
+
+## Launch day for a book or product (Raj, 20 Oct 2026)
+When a book or product goes live on Gumroad: Payments sends the links → 📢 Book ads makes the static ads → 📣 Campaigns makes
+the launch reel (youtube-edit "Launch workflow") and a same-day Brevo launch email to the right list (tech/puzzles → Tech
+lessons, money → Paisa lessons, kids → both, parent-worded), from the approved showcase email, with the same prices and links as
+the ads and the website (one price plan everywhere: full price, or the launch code once the site shows it). Pre-launch teasers
+show no price and no buy link. Every send/post needs Raj's OK; all items go on the shared promo calendar.

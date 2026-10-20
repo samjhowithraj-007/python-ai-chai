@@ -1875,3 +1875,10 @@ Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that 
   a hand-drawn/notebook board · a chart that builds.
 - **Music mood:** lo-fi bed (default) · a calmer piano bed · an upbeat light bed for launches (licensed, Epidemic/free library,
   one track per video, ducked).
+- **Launch workflow (Raj, 20 Oct: every new website feature, book, product or video launch):** Campaigns makes a 9:16 promo reel
+  (rotate ≥2 of hook / transition / caption animation / visual type / music vs the last 3 promos, QC H7) → Delivery Manager QC →
+  Raj OK → posts on YT Short + IG/FB Reel + X via a Planner Chrome turn (NO renders/snapshots/whisper during Chrome turns) →
+  a matching Brevo email the same day (Tech lessons #4 for tech/books/puzzles, Paisa lessons #3 for money, both for kids,
+  parent-worded), built from the approved showcase email (`videos/newsletter-*/build.py`), sent only after Raj's "send". Every
+  item goes on the one promo calendar artifact with Book ads' dates. Brevo is a paid plan since 20 Oct; check its limits in the
+  account before quoting them.
