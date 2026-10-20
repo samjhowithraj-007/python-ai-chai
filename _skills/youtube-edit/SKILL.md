@@ -484,8 +484,17 @@ drop-shadow), footer "SAMJHO WITH RAJ · techsamjhoraj.com". Render with the hyp
   - **Meta Business Suite works for SMALL files** (proved 20 Oct 2026 on the Dimaag Dada carousels): business.facebook.com
     → Create post, tick FB "Samjho With Raj" + IG "samjhowithraj" together, caption, arrow next to Publish → **Schedule**
     (the time shows in Chrome's zone, CEST: 13:00 IST = 9:30 CEST), no boost. Keep the upload copy small (< 10 MB video
-    at CRF 20–23, 1080 px; PNG/JPG slides). Meta blocks automated file picks: tell Raj the exact file name + folder, he
-    picks it in the native window and says "done", then Claude does the caption + schedule. Big files froze it.
+    at CRF 20–23, 1080 px; PNG/JPG slides). Big files froze it.
+  - **Meta Business Suite: upload ≤ 10 MB files directly, no file pick needed (20 Oct 2026, reel + 5-slide carousel +
+    Story).** MBS has no file input until a click, and that click opens the native window. So first run JS:
+    `const oc=HTMLInputElement.prototype.click; HTMLInputElement.prototype.click=function(){ if(this.type==='file'){
+    this.style.display='block'; if(!this.isConnected) document.body.appendChild(this); return; } return oc.call(this); };`
+    then click "Add Video" / "Add photo/video", `find` the type=file element and `file_upload` the paths (all together
+    under 10 MB: use `upload-ig.mp4`, slides are fine). Re-run the patch after every navigation. Raj picks only files
+    over 10 MB. Captions: focus the box, then dispatch a `ClipboardEvent('paste')` with a DataTransfer of text/plain
+    (keeps line breaks; `computer.type` / `insertText` garbled X's and Meta's editors). Scheduling: Schedule gives
+    separate FB and IG date + time fields (Europe/Vienna zone): type the date `10/25/2026` + Enter, then click each
+    hours/minutes/meridiem spinbutton and type `11`, `30`, `A`, for both. Story "Add link" only shows on Facebook.
   - **The gentle Chrome method (what finally worked on 20 Oct 2026 after a day of freezes):** one session in Chrome at
     a time (the Planner hands out turns); open YouTube via `youtube.com/upload` directly; wait ~10 s after every load;
     use read_page/find refs + JS (hidden file input) instead of screenshots (at most one small confirm shot); one action
@@ -1724,15 +1733,15 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
     sit below the form.
   - Close a chat panel (Ask Raj) before navigating by hash. It stays open across routes and covers the next shots.
 - **Claude in Chrome uploads cap at 10 MB per call.** For a ~35 s reel, make `upload-*.mp4` with two-pass x264 at
-  `-b:v 1950k` + `-b:a 128k` (≈9.4 MB). Meta Business Suite has no file input until a click opens the native picker,
-  so Raj picks the file there (he can pick the full-quality render).
+  `-b:v 1950k` + `-b:a 128k` (≈9.4 MB). Meta Business Suite: Claude uploads ≤ 10 MB files itself with the
+  click-patch trick (see "Meta Business Suite: upload ≤ 10 MB files directly"); Raj picks only bigger files.
 - **Scheduling (YouTube):** Studio → Visibility → Schedule: set the time zone to "(GMT+05:30) Kolkata" FIRST, then the date,
   then pick the time from the list (typing in the time box does nothing). Community posts: Post ▾ → Schedule post → Kolkata →
   date → time. Re-`find` the Schedule button after the panel opens: an old Post ref does nothing, and navigating away silently
   drops the draft. The default "tomorrow 00:00 local" is already a valid future time, so never click Schedule before setting
   all three. Check the Scheduled tab ("Scheduled for … (local time)"; 07:30 CEST = 11:00 IST).
-- **Scheduling via Claude in Chrome (19 Oct, promo set):** the Meta Business Suite *reel* composer works: Raj picks the file
-  in the native window, then "Customize post for Facebook and Instagram" gives separate captions, and Share → Schedule
+- **Scheduling via Claude in Chrome (19 Oct, promo set):** the Meta Business Suite *reel* composer works: Claude uploads the
+  ≤ 10 MB copy (click-patch trick; Raj picks only bigger files), then "Customize post for Facebook and Instagram" gives separate captions, and Share → Schedule
   uses the account time zone (Europe/Vienna: 21:00 IST = 17:30 CEST). The Meta *Create post* (photo carousel) page
   froze Chrome every time something was typed into it, and a frozen business.facebook.com tab blocks the whole
   extension. Don't retry more than twice. Hand the carousel and Story to Raj (caption from the review page) or try the
@@ -1882,8 +1891,8 @@ Starter menu, 20 Oct 2026. Rotate at least 2 per video; never two new ones that 
   parent-worded), built from the approved showcase email (`videos/newsletter-*/build.py`), sent only after Raj's "send". Every
   item goes on the one promo calendar artifact with Book ads' dates. Brevo is a paid plan since 20 Oct; check its limits in the
   account before quoting them.
-- **Meta Business Suite carousel (20 Oct 2026):** `business.facebook.com/latest/composer` (FB + IG together). Meta blocks
-  automated file picks: click "Add photo/video" and Raj pastes both quoted paths into the Windows File name box. Then caption
+- **Meta Business Suite carousel (20 Oct 2026):** `business.facebook.com/latest/composer` (FB + IG together). Slides go in
+  directly with the click-patch trick + `file_upload` (all slides in one call; see "upload ≤ 10 MB files directly"). Then caption
   by ref, "Set date and time" switch → TWO rows (FB, IG): date `mm/dd/yyyy` + hours/minutes/AM-PM spinbuttons typed one field
   at a time (a single "0930AM" doesn't take). Check with `aria-valuetext`. Schedule → "Your post is scheduled" → **Maybe later**
   (never Boost, it costs money). Typing often "times out" yet lands: read the box back before retyping.
