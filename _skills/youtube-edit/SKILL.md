@@ -1740,3 +1740,19 @@ Raj: "I don't want to repeat those mistakes again in my next video." Read these 
   picker (choose Kolkata). X's schedule uses the browser zone (CEST: 22:00 IST = 18:30). Ask the Planner for a Chrome turn first.
 - **Teaser = the real next puzzle:** write the "Kal ka puzzle" line from the NEXT bank id, not from the script's idea.
   Puzzle 1 teased "3 log, 1 kaam" but Short 02 is the number series, so the YT description says "number series".
+
+## Lessons from 20 Oct 2026 (🎬 Delivery Manager QC)
+Every render goes through `C:\samjhowithraj\delivery\qc.py <final.mp4> <TS|MS|PZ|TL|ML> --name <slug>` (checklist:
+`delivery\QC-CHECKLIST.md`, Raj's page https://claude.ai/artifact/5XnM99WUSMLEiPwJKfRiZC). Mistakes it caught on the first four videos:
+- **Limiter last.** Chatbot Part 4 limited the voice, then `amix`ed the bed after it: true peak −0.4 dBTP. Put
+  `alimiter=limit=0.89` as the LAST filter of the final mix (voice + bed), then measure ≤ −1 dBTP with `ebur128=peak=true`.
+- **Shorts masters ≥ 8 Mb/s.** `render --quality high` gave 3.0 Mb/s (chatbot 4), 1.6 Mb/s (Dimaag Dada 1), 6.9 Mb/s (promo).
+  Render every master with `--video-bitrate 16M` (as "Your channel style" says); the < 10 MB upload copies stay separate.
+- **Music-only Shorts are −14 LUFS too.** Dimaag Dada 1 shipped at −18.4 and the promo at −16.9, quieter than every other
+  Short in the feed. One fixed gain to −14 LUFS, limiter last.
+- **No empty frame between scenes.** Dimaag Dada 1 at 3.0 s and chatbot 4 at 23 s showed only the tag pill: the next scene
+  must start before the previous one fades (overlap ~0.3 s). Check the 1 fps contact sheet for any frame with an empty panel.
+- **Paisa Samjho Part 1 is the reference frame** (frame 0 calendar + balance, head-to-hands cam with glow, disclaimer footer,
+  real planner page, "Part 2 kal" end card). Put each new Short's 0 s / 2.5 s / middle / end frames next to its frames.
+- **Whisper on this CPU:** `qc.py` transcribes in 8–14 s chunks cut at the quietest 50 ms with `base`, beam 1 (~5 min per
+  Short); one pass over 45 s with `small` + VAD hung for 15+ minutes.
